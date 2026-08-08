@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>数学技能树 · 原型</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --panel-2: #1e222b;
+    --border: #2a2f3a;
+    --text: #e6e9ef;
+    --text-dim: #9aa3b2;
+    --accent: #4f9dff;
+    --accent-2: #ffb454;
+    --good: #4cc38a;
+    --warn: #f6c177;
+    --danger: #f7768e;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 14px; overflow: hidden;
+  }
+  #app { display: flex; flex-direction: column; height: 100vh; }
+  header {
+    display: flex; align-items: center; gap: 16px;
+    padding: 12px 18px; border-bottom: 1px solid var(--border);
+    background: linear-gradient(90deg, #13161d, #171a21);
+  }
+  header h1 { font-size: 16px; margin: 0; font-weight: 600; letter-spacing: .5px; }
+  header .sub { color: var(--text-dim); font-size: 12px; }
+  header .stats { margin-left: auto; display: flex; gap: 18px; color: var(--text-dim); font-size: 12px; }
+  header .stats b { color: var(--text); font-weight: 600; }
+  main { flex: 1; display: flex; min-height: 0; }
+  /* 左侧筛选 */
+  #sidebar {
+    width: 270px; flex-shrink: 0; border-right: 1px solid var(--border);
+    background: var(--panel); padding: 16px; overflow-y: auto;
+  }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-size: 12px; color: var(--text-dim); margin-bottom: 6px; letter-spacing: .3px; }
+  select, input[type=text] {
+    width: 100%; padding: 8px 10px; border-radius: 8px;
+    background: var(--panel-2); border: 1px solid var(--border); color: var(--text);
+    font-size: 13px; outline: none;
+  }
+  select:focus, input[type=text]:focus { border-color: var(--accent); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    padding: 5px 10px; border-radius: 999px; cursor: pointer; font-size: 12px;
+    background: var(--panel-2); border: 1px solid var(--border); color: var(--text-dim);
+    user-select: none; transition: .15s;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--text); }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: #07101f; font-weight: 600; }
+  .btns { display: flex; gap: 8px; }
+  .btn {
+    flex: 1; padding: 8px; border-radius: 8px; cursor: pointer; font-size: 12px;
+    background: var(--panel-2); border: 1px solid var(--border); color: var(--text);
+  }
+  .btn:hover { border-color: var(--accent); }
+  .legend { font-size: 12px; color: var(--text-dim); line-height: 1.9; }
+  .legend .row { display: flex; align-items: center; gap: 8px; }
+  .swatch { width: 22px; height: 0; border-top-width: 3px; border-top-style: solid; display: inline-block; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .note { font-size: 11px; color: var(--text-dim); line-height: 1.6; border-top: 1px dashed var(--border); padding-top: 12px; margin-top: 4px; }
+  /* 画布 */
+  #canvas-wrap { flex: 1; position: relative; min-width: 0; }
+  #graph { position: absolute; inset: 0; }
+  #hint {
+    position: absolute; left: 50%; top: 14px; transform: translateX(-50%);
+    background: rgba(23,26,33,.92); border: 1px solid var(--border); color: var(--text-dim);
+    padding: 6px 14px; border-radius: 999px; font-size: 12px; pointer-events: none;
+  }
+  /* 右侧详情 */
+  #detail {
+    width: 360px; flex-shrink: 0; border-left: 1px solid var(--border);
+    background: var(--panel); padding: 0; overflow-y: auto; display: none;
+  }
+  #detail.show { display: block; }
+  .detail-head { padding: 16px 18px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--panel); }
+  .detail-head .close { position: absolute; right: 14px; top: 12px; cursor: pointer; color: var(--text-dim); font-size: 18px; line-height: 1; }
+  .detail-head .close:hover { color: var(--text); }
+  .detail-head .name { font-size: 15px; font-weight: 600; margin: 0 24px 8px 0; line-height: 1.4; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 11px; padding: 3px 9px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--border); color: var(--text-dim); }
+  .detail-body { padding: 16px 18px; }
+  .sec { margin-bottom: 18px; }
+  .sec h3 { font-size: 12px; color: var(--accent); margin: 0 0 8px; letter-spacing: .5px; text-transform: uppercase; }
+  .sec p { margin: 0; line-height: 1.65; color: var(--text); }
+  .sec ul { margin: 0; padding-left: 18px; line-height: 1.7; }
+  .sec ul li { margin-bottom: 4px; }
+  .rel { display: flex; flex-direction: column; gap: 6px; }
+  .rel .item { padding: 7px 10px; border-radius: 8px; background: var(--panel-2); border: 1px solid var(--border); cursor: pointer; font-size: 13px; }
+  .rel .item:hover { border-color: var(--accent); }
+  .rel .item .kind { font-size: 10px; color: var(--text-dim); display: block; margin-bottom: 2px; }
+  .placeholder-note { font-size: 11px; color: var(--warn); margin-top: 8px; line-height: 1.5; }
+  .loading { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--text-dim); }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>🌳 数学技能树</h1>
+    <span class="sub">原型 · 基于 os-taxonomy 数学学科子集</span>
+    <div class="stats">
+      <span>节点 <b id="stat-nodes">0</b></span>
+      <span>依赖边 <b id="stat-edges">0</b></span>
+      <span>领域 <b id="stat-domains">0</b></span>
+    </div>
+  </header>
+  <main>
+    <aside id="sidebar">
+      <div class="field">
+        <label>学科领域</label>
+        <select id="domain-select"></select>
+      </div>
+      <div class="field">
+        <label>年龄段</label>
+        <div class="chips" id="age-chips">
+          <span class="chip active" data-min="0" data-max="99">全部</span>
+          <span class="chip" data-min="4" data-max="6">4–6 岁</span>
+          <span class="chip" data-min="7" data-max="9">7–9 岁</span>
+          <span class="chip" data-min="10" data-max="12">10–12 岁</span>
+          <span class="chip" data-min="13" data-max="99">13 岁+</span>
+        </div>
+      </div>
+      <div class="field">
+        <label>搜索</label>
+        <input type="text" id="search" placeholder="节点名称 / 描述关键词…" />
+      </div>
+      <div class="field">
+        <label>视图</label>
+        <div class="btns">
+          <button class="btn" id="btn-fit">适应屏幕</button>
+          <button class="btn" id="btn-reset">重置筛选</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>图例</label>
+        <div class="legend">
+          <div class="row"><span class="swatch" style="border-top-color:#e6e9ef"></span> 强制前置 (hard)</div>
+          <div class="row"><span class="swatch" style="border-top-color:#6b7280;border-top-style:dashed"></span> 推荐前置 (soft)</div>
+          <div class="row" style="margin-top:6px"><span class="dot" style="background:#4f9dff"></span> 节点大小 = 图谱中心度</div>
+          <div class="row"><span class="dot" style="background:#888"></span> 颜色 = 所属领域</div>
+        </div>
+      </div>
+      <div class="note">
+        数据源自 Marble 公开数据集（os-taxonomy 数学子集，503 节点 / 985 依赖边）。
+        领域、类型、节点名称与描述均已译为中文；少数不确定的条目保留英文原文并标记为「⚠ 待校对」，供你手动修正。
+        点击任意节点查看「掌握证据」与「评估提示」——这是后续做游戏化技能树 + 出题评估的起点。
+      </div>
+    </aside>
+
+    <div id="canvas-wrap">
+      <div id="graph"></div>
+      <div id="hint">点击节点查看掌握标准 · 拖拽平移 · 滚轮缩放</div>
+      <div class="loading" id="loading">正在加载数据…</div>
+    </div>
+
+    <aside id="detail">
+      <div class="detail-head">
+        <span class="close" id="detail-close">×</span>
+        <p class="name" id="d-name"></p>
+        <div class="tags" id="d-tags"></div>
+      </div>
+      <div class="detail-body">
+        <div class="sec">
+          <h3>描述</h3>
+          <p id="d-desc"></p>
+        </div>
+        <div class="sec">
+          <h3>掌握证据（判定标准）</h3>
+          <ul id="d-evidence"></ul>
+        </div>
+        <div class="sec">
+          <h3>评估提示（出题起点）</h3>
+          <p id="d-prompt"></p>
+          <div class="placeholder-note">※ 原文含占位符 {{name}}，已替换为「孩子」以便阅读。</div>
+        </div>
+        <div class="sec">
+          <h3>前置技能</h3>
+          <div class="rel" id="d-pre"></div>
+        </div>
+        <div class="sec">
+          <h3>后续技能</h3>
+          <div class="rel" id="d-post"></div>
+        </div>
+        <div class="sec">
+          <h3>对齐课程标准</h3>
+          <div class="tags" id="d-standards"></div>
+        </div>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<script src="vendor/vis-network.min.js"></script>
+<script>
+// ---------- 中文映射 ----------
+const DOMAIN_ZH = {
+  "Geometry": "几何", "Measurement": "测量", "Fractions": "分数",
+  "Multiplication & Division": "乘除法", "Addition & Subtraction": "加减法",
+  "Number Representation & Place Value": "数位与位值", "Mathematical Thinking": "数学思维",
+  "Algebra": "代数", "Data & Statistics": "数据与统计", "Ratio & Proportion": "比与比例",
+  "Probability": "概率", "Counting & Cardinality": "计数与基数"
+};
+const TYPE_ZH = {
+  "CONCEPTUAL": "概念性", "PROCEDURAL": "程序性", "REPRESENTATIONAL": "表征性",
+  "LINGUISTIC": "语言性", "METACOGNITIVE": "元认知"
+};
+const DOMAIN_COLORS = {
+  "Geometry": "#ff6b9d", "Measurement": "#ffb454", "Fractions": "#f6c177",
+  "Multiplication & Division": "#9ece6a", "Addition & Subtraction": "#4cc38a",
+  "Number Representation & Place Value": "#4f9dff", "Mathematical Thinking": "#7aa2f7",
+  "Algebra": "#bb9af7", "Data & Statistics": "#2ac3de", "Ratio & Proportion": "#e0af68",
+  "Probability": "#f7768e", "Counting & Cardinality": "#73daca"
+};
+const domainColor = d => DOMAIN_COLORS[d] || "#888888";
+
+// ---------- 中英文显示辅助 ----------
+// 优先显示中文；uncertain=true（待人工校对）或缺失时回退英文原文
+function zhName(n)  { return n.uncertain ? n.name  : (n.name_zh  || n.name); }
+function zhDesc(n)  { return n.uncertain ? n.description : (n.description_zh || n.description); }
+function zhEvid(n)  { return n.uncertain ? n.evidence : (n.evidence_zh || n.evidence); }
+function zhPrompt(n){
+  const raw = n.uncertain ? n.assessmentPrompt : (n.assessmentPrompt_zh || n.assessmentPrompt);
+  return (raw || '—').replace(/\{\{name\}\}/g, '孩子');
+}
+
+// ---------- 状态 ----------
+let TOPICS = [], DEPS = [], DOMAINS = [];
+let byId = {};
+let network = null;
+let currentDomain = "Addition & Subtraction"; // 默认展示基础领域，画面更清晰
+let currentAge = { min: 0, max: 99 };
+let currentSearch = "";
+
+// ---------- 加载数据 ----------
+async function loadData() {
+  const [t, d] = await Promise.all([
+    fetch('data/math-topics.json').then(r => r.json()),
+    fetch('data/math-dependencies.json').then(r => r.json())
+  ]);
+  TOPICS = t.topics; DEPS = d.dependencies; DOMAINS = t.domains;
+  TOPICS.forEach(x => byId[x.id] = x);
+  buildDomainSelect();
+  initNetwork();
+  applyFilters();
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('stat-nodes').textContent = TOPICS.length;
+  document.getElementById('stat-edges').textContent = DEPS.length;
+  document.getElementById('stat-domains').textContent = DOMAINS.length;
+}
+
+// ---------- 领域下拉 ----------
+function buildDomainSelect() {
+  const sel = document.getElementById('domain-select');
+  sel.innerHTML = '';
+  const optAll = document.createElement('option');
+  optAll.value = "__ALL__"; optAll.textContent = "全部数学（12 个领域）";
+  sel.appendChild(optAll);
+  DOMAINS.forEach(dm => {
+    const o = document.createElement('option');
+    o.value = dm.domain;
+    o.textContent = `${DOMAIN_ZH[dm.domain] || dm.domain}（${dm.count}）`;
+    sel.appendChild(o);
+  });
+  sel.value = currentDomain;
+  sel.addEventListener('change', () => {
+    currentDomain = sel.value === "__ALL__" ? "__ALL__" : sel.value;
+    applyFilters();
+  });
+}
+
+// ---------- 构建图数据 ----------
+function buildGraphData() {
+  let nodes = TOPICS, edges = DEPS;
+  // 领域筛选
+  if (currentDomain !== "__ALL__") {
+    const ids = new Set(TOPICS.filter(t => t.domain === currentDomain).map(t => t.id));
+    nodes = TOPICS.filter(t => ids.has(t.id));
+    edges = DEPS.filter(e => ids.has(e.topicId) && ids.has(e.prerequisiteId));
+  }
+  const nodeIds = new Set(nodes.map(n => n.id));
+  // 年龄筛选
+  if (currentAge.min > 0 || currentAge.max < 99) {
+    const filtered = nodes.filter(n =>
+      (n.ageStart || 0) <= currentAge.max && (n.ageEnd || 99) >= currentAge.min);
+    const ids = new Set(filtered.map(n => n.id));
+    nodes = filtered;
+    edges = edges.filter(e => ids.has(e.topicId) && ids.has(e.prerequisiteId));
+  }
+  // 搜索筛选（同时匹配中英文）
+  if (currentSearch) {
+    const q = currentSearch.toLowerCase();
+    const filtered = nodes.filter(n =>
+      (n.name || '').toLowerCase().includes(q) ||
+      (n.name_zh || '').toLowerCase().includes(q) ||
+      (n.description || '').toLowerCase().includes(q) ||
+      (n.description_zh || '').toLowerCase().includes(q));
+    const ids = new Set(filtered.map(n => n.id));
+    nodes = filtered;
+    edges = edges.filter(e => ids.has(e.topicId) && ids.has(e.prerequisiteId));
+  }
+  return { nodes, edges, nodeIds };
+}
+
+// ---------- 初始化网络 ----------
+function initNetwork() {
+  const container = document.getElementById('graph');
+  const data = { nodes: new vis.DataSet([]), edges: new vis.DataSet([]) };
+  const options = {
+    layout: {
+      hierarchical: {
+        enabled: true, direction: 'UD', sortMethod: 'directed',
+        levelSeparation: 160, nodeSpacing: 110, treeSpacing: 180,
+        blockShifting: true, edgeMinimization: true, parentCentralization: true
+      }
+    },
+    physics: { enabled: false },
+    interaction: { hover: true, zoomView: true, dragNodes: true, dragView: true },
+    nodes: {
+      shape: 'box',
+      margin: 8, widthConstraint: { maximum: 170 },
+      font: { color: '#e6e9ef', size: 12, face: 'PingFang SC, Microsoft YaHei, sans-serif' },
+      borderWidth: 1, shadow: false
+    },
+    edges: {
+      arrows: { to: { enabled: true, scaleFactor: 0.6 } },
+      smooth: { enabled: true, type: 'cubicBezier', forceDirection: 'vertical', roundness: 0.5 },
+      width: 1
+    }
+  };
+  network = new vis.Network(container, data, options);
+  network.on('click', params => {
+    if (params.nodes.length) showDetail(params.nodes[0]);
+    else { hideDetail(); }
+  });
+  network.on('doubleClick', params => {
+    if (params.nodes.length) focusNode(params.nodes[0]);
+  });
+}
+
+// ---------- 应用筛选并渲染 ----------
+function applyFilters() {
+  const { nodes, edges } = buildGraphData();
+  const vNodes = nodes.map(n => ({
+    id: n.id,
+    label: (() => {
+      const t = zhName(n);
+      return t.length > 26 ? t.slice(0, 25) + '…' : t;
+    })(),
+    group: n.domain,
+    color: {
+      background: domainColor(n.domain),
+      border: '#0f1115',
+      highlight: { background: domainColor(n.domain), border: '#fff' }
+    },
+    size: 12 + Math.min(28, Math.round((n.centrality || 0) * 60)),
+    title: `${DOMAIN_ZH[n.domain] || n.domain} · ${n.ageStart}–${n.ageEnd}岁`,
+    font: { color: '#0f1115', size: 11, multi: false },
+    _base: true
+  }));
+  const vEdges = edges.map(e => ({
+    id: e.topicId + '->' + e.prerequisiteId,
+    from: e.prerequisiteId, to: e.topicId,
+    dashes: e.strength === 'soft',
+    color: { color: e.strength === 'soft' ? '#6b7280' : '#5b6b78', opacity: 0.65 },
+    width: e.strength === 'soft' ? 1 : 1.6,
+    title: e.reason || ''
+  }));
+  network.body.data.nodes.clear();
+  network.body.data.edges.clear();
+  network.body.data.nodes.add(vNodes);
+  network.body.data.edges.add(vEdges);
+  setTimeout(() => network.fit({ animation: true }), 60);
+}
+
+// ---------- 详情面板 ----------
+function showDetail(id) {
+  const n = byId[id];
+  if (!n) return;
+  document.getElementById('d-name').textContent = zhName(n);
+  const tags = document.getElementById('d-tags');
+  tags.innerHTML = '';
+  const baseTags = [DOMAIN_ZH[n.domain] || n.domain, TYPE_ZH[n.type] || n.type, `${n.ageStart}–${n.ageEnd}岁`];
+  baseTags.forEach(t => { const s = document.createElement('span'); s.className = 'tag'; s.textContent = t; tags.appendChild(s); });
+  // 待校对手动修正标记
+  if (n.uncertain) {
+    const u = document.createElement('span'); u.className = 'tag';
+    u.style.cssText = 'background:#3a2a12;border-color:#f6c177;color:#f6c177';
+    u.textContent = '⚠ 待校对（原文为英文）'; tags.appendChild(u);
+  }
+  document.getElementById('d-desc').textContent = zhDesc(n) || '—';
+  const ev = document.getElementById('d-evidence'); ev.innerHTML = '';
+  (zhEvid(n) || []).forEach(e => { const li = document.createElement('li'); li.textContent = e; ev.appendChild(li); });
+  document.getElementById('d-prompt').textContent = zhPrompt(n);
+  // 前置 / 后续
+  const preIds = DEPS.filter(e => e.topicId === id).map(e => e.prerequisiteId);
+  const postIds = DEPS.filter(e => e.prerequisiteId === id).map(e => e.topicId);
+  renderRel('d-pre', preIds, '前置');
+  renderRel('d-post', postIds, '后续');
+  // 标准
+  const st = document.getElementById('d-standards'); st.innerHTML = '';
+  (n.standards || []).forEach(s => { const sp = document.createElement('span'); sp.className = 'tag'; sp.textContent = s; st.appendChild(sp); });
+  // 高亮邻居
+  highlightNeighbors(id, preIds, postIds);
+  document.getElementById('detail').classList.add('show');
+}
+function renderRel(elId, ids, kind) {
+  const el = document.getElementById(elId); el.innerHTML = '';
+  if (!ids.length) { el.innerHTML = '<div class="item" style="cursor:default;color:var(--text-dim)">无</div>'; return; }
+  ids.forEach(i => {
+    const t = byId[i]; if (!t) return;
+    const div = document.createElement('div'); div.className = 'item';
+    div.innerHTML = `<span class="kind">${DOMAIN_ZH[t.domain] || t.domain}</span>${zhName(t)}`;
+    div.onclick = () => { showDetail(i); network.selectNodes([i]); network.focus(i, { scale: 1.1, animation: true }); };
+    el.appendChild(div);
+  });
+}
+function highlightNeighbors(id, preIds, postIds) {
+  const rel = new Set([id, ...preIds, ...postIds]);
+  const nodes = network.body.data.nodes.get();
+  nodes.forEach(nd => {
+    if (rel.has(nd.id)) {
+      network.body.data.nodes.update({ id: nd.id, opacity: 1,
+        color: { background: nd.color.background, border: nd.id === id ? '#ffffff' : '#0f1115' } });
+    } else {
+      network.body.data.nodes.update({ id: nd.id, opacity: 0.18 });
+    }
+  });
+  const edges = network.body.data.edges.get();
+  edges.forEach(ed => {
+    const on = (ed.to === id && postIds.includes(ed.to)) || (ed.from === id) || (preIds.includes(ed.to));
+    const base = typeof ed.color === 'object' ? ed.color.color : ed.color;
+    network.body.data.edges.update({ id: ed.id, color: { color: base, opacity: on ? 0.9 : 0.06 } });
+  });
+}
+function hideDetail() { document.getElementById('detail').classList.remove('show'); clearHighlight(); }
+function clearHighlight() {
+  if (!network) return;
+  network.body.data.nodes.get().forEach(nd => {
+    network.body.data.nodes.update({ id: nd.id, opacity: 1 });
+  });
+  network.body.data.edges.get().forEach(ed => {
+    const base = typeof ed.color === 'object' ? ed.color.color : ed.color;
+    network.body.data.edges.update({ id: ed.id, color: { color: base, opacity: 0.65 } });
+  });
+}
+function focusNode(id) { network.focus(id, { scale: 1.1, animation: true }); }
+
+// ---------- 事件绑定 ----------
+document.getElementById('detail-close').onclick = hideDetail;
+document.getElementById('btn-fit').onclick = () => network.fit({ animation: true });
+document.getElementById('btn-reset').onclick = () => {
+  currentDomain = "Addition & Subtraction"; currentAge = { min: 0, max: 99 }; currentSearch = '';
+  document.getElementById('domain-select').value = currentDomain;
+  document.getElementById('search').value = '';
+  document.querySelectorAll('#age-chips .chip').forEach(c => c.classList.toggle('active', c.dataset.min === '0'));
+  applyFilters(); hideDetail();
+};
+document.getElementById('search').addEventListener('input', e => { currentSearch = e.target.value.trim(); applyFilters(); });
+document.querySelectorAll('#age-chips .chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('#age-chips .chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    currentAge = { min: +chip.dataset.min, max: +chip.dataset.max };
+    applyFilters();
+  });
+});
+
+loadData().catch(err => {
+  document.getElementById('loading').textContent = '数据加载失败：' + err.message;
+  console.error(err);
+});
+</script>
+</body>
+</html>
