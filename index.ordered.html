@@ -56,8 +56,6 @@
   select,input[type=text]{width:100%;padding:9px 11px;border-radius:9px;background:var(--panel-2);
     border:1px solid var(--border);color:var(--text);font-size:13px;outline:none;}
   select:focus,input:focus{border-color:var(--accent);}
-  .edge-toggle-label{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;color:var(--text);text-transform:none;letter-spacing:0;}
-  .edge-toggle-label input{width:16px;height:16px;accent-color:var(--accent);cursor:pointer;}
   .chips{display:flex;flex-wrap:wrap;gap:6px;}
   .chip{padding:5px 10px;border-radius:999px;cursor:pointer;font-size:12px;background:var(--panel-2);
     border:1px solid var(--border);color:var(--dim);user-select:none;transition:.15s var(--ease);}
@@ -121,18 +119,15 @@
   .node .glow{transform-box:fill-box;transform-origin:center;}
 
   /* ===== Edges ===== */
-  .sector-bg,.sector-border{pointer-events:none;}
-  .edge{display:none;fill:none;stroke:rgba(150,170,230,.16);stroke-width:1.4;transition:stroke .35s,opacity .35s;}
+  .edge{fill:none;stroke:rgba(150,170,230,.16);stroke-width:1.4;transition:stroke .35s,opacity .35s;}
   .edge.potential{stroke:rgba(150,200,255,.5);stroke-width:1.8;stroke-dasharray:5 7;
     animation:flowP 1.4s linear infinite;filter:drop-shadow(0 0 3px rgba(150,200,255,.5));}
-  .edge.active{display:inline;stroke:var(--c-edge,#9fe);stroke-width:2.4;stroke-dasharray:6 9;
+  .edge.active{stroke:var(--c-edge,#9fe);stroke-width:2.4;stroke-dasharray:6 9;
     animation:flowA 1s linear infinite;filter:drop-shadow(0 0 5px var(--c-edge,#9fe));}
   /* 选中节点的相连边：电流流动特效（方向＝前置→后继） */
-  .edge.neighbor{display:inline;stroke:#d8f7ff;stroke-width:3.2;stroke-dasharray:4 14;
+  .edge.neighbor{stroke:#d8f7ff;stroke-width:3.2;stroke-dasharray:4 14;
     animation:flowN .5s linear infinite;
     filter:drop-shadow(0 0 6px #8fe9ff) drop-shadow(0 0 15px #38b6ff);opacity:1 !important;}
-  /* 总开关：开启时显示全部边 */
-  .edges.show-all .edge{display:inline;}
   @keyframes flowP{to{stroke-dashoffset:-12;}}
   @keyframes flowA{to{stroke-dashoffset:-15;}}
   @keyframes flowN{to{stroke-dashoffset:-18;}}
@@ -192,14 +187,13 @@
     .node.selected .ring-out{animation-name:selRing !important;animation-duration:1.6s !important;animation-timing-function:ease-in-out !important;animation-iteration-count:infinite !important;}
     .node.selected .glow{animation-name:selPulse !important;animation-duration:1.6s !important;animation-timing-function:ease-in-out !important;animation-iteration-count:infinite !important;}
   }
-  /* ===== 星轨放射：领域射线 + 标签 ===== */
-  .cols-layer{pointer-events:none;}
-  .ref-ring{pointer-events:none;fill:none;}
-  .ray-line{pointer-events:none;}
-  .ray-label{pointer-events:none;}
-  .ray-label text{font-family:'Segoe UI',system-ui,sans-serif;pointer-events:none;user-select:none;}
-  .core-ring{pointer-events:none;}
-  .start-pill{filter:drop-shadow(0 0 16px rgba(255,216,77,.45));display:none;}
+  /* ===== 有序技能河：领域分列 + 列头 ===== */
+  .cols{pointer-events:none;}
+  .col-band{opacity:.07;transition:opacity .3s;}
+  .col-head rect{filter:drop-shadow(0 8px 18px rgba(0,0,0,.55));}
+  .col-head text{font-family:'Segoe UI',system-ui,sans-serif;pointer-events:none;user-select:none;}
+  .start-pill{filter:drop-shadow(0 0 16px rgba(255,216,77,.45));}
+  .start-pill text{font-family:'Segoe UI',system-ui,sans-serif;pointer-events:none;user-select:none;}
 </style>
 </head>
 <body>
@@ -249,13 +243,6 @@
         </div>
       </div>
       <div class="field">
-        <label>知识点连线</label>
-        <label class="edge-toggle-label">
-          <input type="checkbox" id="edge-toggle" />
-          <span>显示全部连线</span>
-        </label>
-      </div>
-      <div class="field">
         <label>搜索星体</label>
         <input type="text" id="search" placeholder="技能名 / 描述关键词…" />
       </div>
@@ -267,14 +254,14 @@
         <b>怎么玩：</b>点击任意星体查看「掌握证据」与「评估提示」。<br>
         当一颗星的所有<b>硬性前置</b>都被点亮，它就会进入<b>可学</b>状态（呼吸微光）；点击「✦ 点亮这个技能」即可点燃它，并唤醒连向下一颗星的脉络。<br>
         稀有度＝图谱中心度：<span style="color:var(--r-common)">普通</span> · <span style="color:var(--r-rare)">稀有</span> · <span style="color:var(--r-epic)">史诗</span> · <span style="color:var(--r-legendary)">传说</span>。<br>
-        <b>布局逻辑：</b>每条彩色射线是一个「领域」；<b>从中心向外</b>＝年龄与学习顺序递增，<b>同一射线由内到外</b>＝知识深化。脉络沿弧线从已掌握的星流向可学的下一颗，顺着射线走就是学习路径。<br>
+        <b>布局逻辑：</b>每条纵向轨道是一个「领域」（类型聚落，顶部有名称与符印）；<b>从左到右</b>＝学习先后（起始年龄递增），<b>同轨道从上到下</b>＝年龄递增。脉络从已掌握的星流向可学的下一颗，顺着方向走就是学习路径。<br>
         带金色虚线环与「<b style="color:var(--gold)">课</b>」角标的星体 = <b style="color:var(--gold)">人教版小学数学课标</b>内容；左侧「仅看中国课标」可单独筛选。
       </div>
     </aside>
 
     <div id="stage">
       <svg id="svg"><g id="viewport"></g></svg>
-      <div id="hint">拖拽平移 · 滚轮缩放 · 点击星体查看与点亮 · 从中心向外＝学习顺序</div>
+      <div id="hint">拖拽平移 · 滚轮缩放 · 点击星体查看与点亮 · 沿轨道从左到右＝学习顺序</div>
       <div id="toast"></div>
     </div>
 
@@ -29543,7 +29530,7 @@
 const SVGNS="http://www.w3.org/2000/svg";
 function el(tag,attrs,parent){const e=document.createElementNS(SVGNS,tag);if(attrs)for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
 
-// ===== 设计 token：23 领域 · 色相 / 符印 / 稀有度 =====
+// ===== 设计 token：12 领域 · 色相 / 符印 / 稀有度 =====
 const DOMAINS=[
   {key:"Geometry",zh:"几何",c:"#2fe0c8",c2:"#8af6e8",sigil:"M12 2 L21 12 L12 22 L3 12 Z"},
   {key:"Measurement",zh:"测量",c:"#f5a524",c2:"#ffd083",sigil:"M4 7 H20 V17 H4 Z M4 12 H20 M8 7 V12 M12 12 V17 M16 7 V12"},
@@ -29637,48 +29624,35 @@ function buildDefs(){
 }
 const cssId=s=>s.replace(/[^a-zA-Z0-9]/g,"_");
 
-// ===== 布局：星轨放射（中心发散的圆形技能树）=====
+// ===== 布局：有序技能河（领域分列 + 年龄有序）=====
 let LAYOUT=null;
-// 每个领域＝一条扇形射线；节点按年龄从内到外排列。
+// 每个「领域」＝一条纵向星座轨道（类型聚落）；
+// 轨道从左到右按起始年龄递增（学习先后）；轨道内节点从上到下按年龄递增。
 function layout(){
   const groups={};
   TOPICS.forEach(t=>{(groups[t.domain]||(groups[t.domain]=[])).push(t);});
-  const anglePer=Math.PI*2/DOMAINS.length;
-  const CENTER={x:0,y:0};
-  const R0=160, R_STEP=42, SECTOR_F=0.62, MIN_SPACING=30;
-  const sectorAngle=anglePer*SECTOR_F;
-  const rays=[];
-  DOMAINS.forEach((d,di)=>{
-    const items=groups[d.key]||[];
+  const repAge=dom=>{const a=groups[dom].map(t=>t.ageStart||0).sort((x,y)=>x-y);return a[Math.floor(a.length/2)]||0;};
+  const keys=Object.keys(groups);
+  keys.sort((a,b)=>{const ra=repAge(a),rb=repAge(b);if(ra!==rb)return ra-rb;
+    return DOMAINS.findIndex(d=>d.key===a)-DOMAINS.findIndex(d=>d.key===b);});
+  const COL_W=300, ROW_H=58, TOP=170, X0=210;
+  const cols=[];
+  let maxRows=0;
+  keys.forEach((key,ci)=>{
+    const items=groups[key];
     items.sort((p,q)=>(p.ageStart||0)-(q.ageStart||0)||(p.ageEnd||0)-(q.ageEnd||0)||
       (q.centrality||0)-(p.centrality||0)||(p.id<q.id?-1:1));
-    const baseAngle=di*anglePer-Math.PI/2;
-    const placed=[];
-    let i=0, ring=0;
-    while(i<items.length){
-      const r=R0+ring*R_STEP;
-      const arcLen=r*sectorAngle;
-      // 自适应：根据弧长计算此环最多能放多少节点（保证节点间最小间距）
-      const maxPerRing=Math.max(1, Math.floor(arcLen/MIN_SPACING)+1);
-      const perRing=Math.min(maxPerRing, items.length-i);
-      for(let j=0;j<perRing;j++){
-        const t=items[i+j];
-        const frac=perRing===1?0.5:j/(perRing-1);
-        const a=baseAngle-sectorAngle/2+frac*sectorAngle;
-        t._x=CENTER.x+Math.cos(a)*r;
-        t._y=CENTER.y+Math.sin(a)*r;
-        t._angle=a;t._radius=r;t._rayIndex=i+j;
-        placed.push(t);
-      }
-      i+=perRing;
-      ring++;
-    }
-    let maxR=0;placed.forEach(t=>maxR=Math.max(maxR,t._radius));
-    rays.push({key:d.key,zh:d.zh,c:d.c,sigil:d.sigil,baseAngle,count:items.length,maxR});
+    const x=X0+ci*COL_W;
+    items.forEach((t,ri)=>{t._x=x;t._y=TOP+ri*ROW_H;});
+    maxRows=Math.max(maxRows,items.length);
+    const d=DMAP[key];
+    const bot=TOP+(items.length-1)*ROW_H;
+    cols.push({key,zh:d?d.zh:key,c:d?d.c:"#8b95b8",sigil:d?d.sigil:"",x,count:items.length,
+      top:TOP-34,bot:bot+28});
   });
-  let maxR=0;
-  TOPICS.forEach(t=>maxR=Math.max(maxR,Math.hypot(t._x,t._y)));
-  LAYOUT={center:CENTER,r0:R0,maxR:maxR+70,rays,anglePer,sectorAngle};
+  LAYOUT={cols,minX:X0-COL_W*0.46,minY:TOP-160,
+    maxX:X0+(keys.length-1)*COL_W+COL_W*0.46,maxY:TOP+(maxRows-1)*ROW_H+30,
+    COL_W,ROW_H,TOP,X0};
   TOPICS.forEach(t=>{nodePos[t.id]={x:t._x,y:t._y};});
 }
 
@@ -29709,101 +29683,68 @@ function render(){
   const nodeEls={};
   for(const t of TOPICS){
     const pos=nodePos[t.id];const d=DMAP[t.domain];
-    // 节点半径大幅缩小，留出清晰空白
-    const R=t.rarity==="legendary"?10:t.rarity==="epic"?8:t.rarity==="rare"?7:6;
+    const R=t.rarity==="legendary"?21:t.rarity==="epic"?18:t.rarity==="rare"?16:14;
     const g=el("g",{class:"node",transform:`translate(${pos.x},${pos.y})`},nodesG);
     g.style.setProperty("--c",d.c);g.style.setProperty("--rarity",RARITY[t.rarity]);
     g.dataset.id=t.id;
-    el("circle",{class:"glow",r:R+4,fill:d.c},g);
-    el("circle",{class:"ring-out",r:R,fill:"none",stroke:RARITY[t.rarity],"stroke-width":1.5},g);
-    el("circle",{class:"orb",r:R-1.5,fill:`url(#grad-${cssId(d.key)})`},g);
-    // 符印（non-scaling-stroke 保持描边在任何缩放级别下都清晰可见）
-    const sigScale=R/12;
-    const sg=el("g",{class:"sigil",transform:`translate(${-12*sigScale} ${-12*sigScale}) scale(${sigScale})`,
-      fill:"none",stroke:"#fff","stroke-width":1.2,"stroke-linecap":"round","stroke-linejoin":"round",opacity:.92},g);
-    el("path",{d:d.sigil,"vector-effect":"non-scaling-stroke"},sg);
-    // 课标环（缩小后仅保留虚线环作为标识）
+    el("circle",{class:"glow",r:R+9,fill:d.c},g);
+    el("circle",{class:"ring-out",r:R,fill:"none",stroke:RARITY[t.rarity],"stroke-width":2},g);
+    el("circle",{class:"orb",r:R-3,fill:`url(#grad-${cssId(d.key)})`},g);
+    // 符印
+    const sg=el("g",{class:"sigil",transform:`translate(${-12*(R/13)} ${-12*(R/13)}) scale(${R/13})`,
+      fill:"none",stroke:"#fff","stroke-width":1.7,"stroke-linecap":"round","stroke-linejoin":"round",
+      "vector-effect":"non-scaling-stroke",opacity:.92},g);
+    el("path",{d:d.sigil},sg);
+    // 徽章：星（已掌握）/ 锁（未解锁）
+    const bs=el("g",{class:"badge badge-star",transform:`translate(${R*0.62},${-R*0.62})`},g);
+    el("path",{d:"M5 0 L6.2 3.3 L9.6 3.3 L6.9 5.4 L7.9 8.7 L5 6.6 L2.1 8.7 L3.1 5.4 L0.4 3.3 L3.8 3.3 Z",
+      fill:"#ffcf4d",stroke:"#3a2400","stroke-width":.6},bs);
+    const bl=el("g",{class:"badge badge-lock",transform:`translate(${R*0.55},${-R*0.6}) scale(.9)`},g);
+    el("path",{d:"M1.5 4.5 H8.5 V10 H1.5 Z M3.5 4.5 V3 a2 2 0 0 1 4 0 V4.5",
+      fill:"none",stroke:"rgba(255,255,255,.55)","stroke-width":1.2,"stroke-linecap":"round"},bl);
+    // 课标徽章（中国小学数学课标）
     if(t.inChineseCurriculum){
-      el("circle",{class:"cur-ring",r:R+1.5,fill:"none",stroke:"#ffd84d","stroke-width":1,"stroke-dasharray":"1.5 2",opacity:.9},g);
+      el("circle",{class:"cur-ring",r:R+4,fill:"none",stroke:"#ffd84d","stroke-width":1.5,"stroke-dasharray":"2.2 3",opacity:.9},g);
+      const cb=el("g",{class:"badge badge-cur",transform:`translate(${-R*0.62},${-R*0.62})`},g);
+      el("circle",{r:4.4,fill:"#ffd84d",stroke:"#7a5a00","stroke-width":1},cb);
+      const cbt=el("text",{x:0,y:1.6,"text-anchor":"middle","font-size":5.2,"font-weight":700,fill:"#5a4200"},cb);
+      cbt.textContent="课";
     }
     nodeEls[t.id]=g;
   }
   render._edgeEls=edgeEls;render._nodeEls=nodeEls;
   drawStarsBounds();
 }
-// 绘制星轨：同心参考环 + 领域射线 + 标签 + 核心环
+// 绘制领域纵向轨道：背景带 + 列头（名称/符印/数量）+ 起点提示
 function drawColumns(){
   if(!LAYOUT)return;
   const g=colsG;
-  // 扇形半透明背景分区（把每个领域用扇形区域分开）
-  for(const r of LAYOUT.rays){
-    const half=LAYOUT.anglePer/2;
-    const a1=r.baseAngle-half, a2=r.baseAngle+half;
-    const maxR=LAYOUT.maxR;
-    const x1=Math.cos(a1)*maxR, y1=Math.sin(a1)*maxR;
-    const x2=Math.cos(a2)*maxR, y2=Math.sin(a2)*maxR;
-    const dp=`M 0 0 L ${x1.toFixed(1)} ${y1.toFixed(1)} A ${maxR.toFixed(1)} ${maxR.toFixed(1)} 0 0 1 ${x2.toFixed(1)} ${y2.toFixed(1)} Z`;
-    el("path",{d:dp,fill:r.c,opacity:.06,stroke:"none",class:"sector-bg","pointer-events":"none"},g);
-    // 扇形分界线（径向）
-    el("line",{x1:0,y1:0,x2:x1.toFixed(1),y2:y1.toFixed(1),stroke:r.c,"stroke-width":1,opacity:.1,class:"sector-border","pointer-events":"none"},g);
+  const hw=LAYOUT.COL_W*0.92;
+  for(const c of LAYOUT.cols){
+    el("rect",{x:c.x-hw/2,y:c.top,width:hw,height:c.bot-c.top,rx:18,fill:c.c,class:"col-band"},g);
+    const hg=el("g",{class:"col-head",transform:`translate(${c.x},${LAYOUT.TOP-104})`},g);
+    el("rect",{x:-hw/2,y:0,width:hw,height:64,rx:14,fill:"#0b0f1c",stroke:c.c,"stroke-width":1.4,opacity:.94},hg);
+    if(c.sigil)el("path",{d:c.sigil,transform:`translate(${-hw/2+12},8) scale(1.05)`,
+      fill:"none",stroke:c.c,"stroke-width":1.5,"stroke-linecap":"round","stroke-linejoin":"round"},hg);
+    const tx=el("text",{x:-hw/2+40,y:27,"text-anchor":"start","font-size":15,"font-weight":700,fill:"#eaf0ff"},hg);
+    tx.textContent=c.zh;
+    const sx=el("text",{x:-hw/2+40,y:47,"text-anchor":"start","font-size":11,fill:c.c},hg);
+    sx.textContent=c.count+" 个 · 年龄↓";
   }
-  // 同心参考环（像星图轨道）
-  for(let k=0.3;k<=1;k+=0.2){
-    const r=LAYOUT.maxR*k;
-    el("circle",{cx:0,cy:0,r:r,fill:"none",stroke:"rgba(150,180,255,.07)","stroke-width":1.5,"stroke-dasharray":"4 6",class:"ref-ring"},g);
-  }
-  // 领域射线
-  for(const r of LAYOUT.rays){
-    const x2=Math.cos(r.baseAngle)*(LAYOUT.maxR-40);
-    const y2=Math.sin(r.baseAngle)*(LAYOUT.maxR-40);
-    el("line",{x1:0,y1:0,x2:x2,y2:y2,stroke:r.c,"stroke-width":2,opacity:.12,class:"ray-line"},g);
-    // 标签放在圆环内，沿射线方向由内向外（仅显示领域名）
-    const labelR=LAYOUT.r0*0.55;
-    const tx=Math.cos(r.baseAngle)*labelR;
-    const ty=Math.sin(r.baseAngle)*labelR;
-    // 旋转文字使其沿射线方向，底部半圆翻转保持可读
-    let rotDeg=r.baseAngle*180/Math.PI;
-    if(r.baseAngle>Math.PI/2&&r.baseAngle<Math.PI*3/2)rotDeg+=180;
-    const tg=el("g",{class:"ray-label",transform:`translate(${tx.toFixed(1)},${ty.toFixed(1)}) rotate(${rotDeg.toFixed(1)})`},g);
-    if(r.sigil)el("path",{d:r.sigil,transform:`translate(-8,-22) scale(.45)`,
-      fill:"none",stroke:r.c,"stroke-width":1.7,"stroke-linecap":"round","stroke-linejoin":"round"},tg);
-    const txt=el("text",{x:0,y:0,"text-anchor":"middle","font-size":11,"font-weight":700,fill:"#eaf0ff"},tg);
-    txt.textContent=r.zh;
-  }
-  // 中心标题卡片（游戏化技能树枢纽）
-  const cardG=el("g",{class:"core-card"},g);
-  const cardR=48, glowR=58;
-  // 外发光
-  el("circle",{cx:0,cy:0,r:glowR,fill:"rgba(255,207,77,.08)",stroke:"rgba(255,207,77,.25)","stroke-width":1.5,opacity:.9},cardG);
-  // 卡片背景
-  el("circle",{cx:0,cy:0,r:cardR,fill:"rgba(11,15,28,.92)",stroke:"#ffcf4d","stroke-width":1.8,opacity:.95},cardG);
-  // 内装饰环
-  el("circle",{cx:0,cy:0,r:cardR-8,fill:"none",stroke:"rgba(255,207,77,.15)","stroke-width":1,opacity:.9},cardG);
-  // 顶部小星
-  const starG=el("g",{transform:"translate(0,-22) scale(0.8)"},cardG);
-  el("path",{d:"M5 0 L6.2 3.3 L9.6 3.3 L6.9 5.4 L7.9 8.7 L5 6.6 L2.1 8.7 L3.1 5.4 L0.4 3.3 L3.8 3.3 Z",
-    fill:"#ffcf4d",stroke:"#3a2400","stroke-width":.5},starG);
-  // 标题
-  const titleT=el("text",{x:0,y:2,"text-anchor":"middle","font-size":11,"font-weight":800,fill:"#eaf0ff",style:"letter-spacing:.5px"},cardG);
-  titleT.textContent="数学天赋星图";
-  // 副标题
-  const subT=el("text",{x:0,y:16,"text-anchor":"middle","font-size":8,fill:"rgba(255,207,77,.9)"},cardG);
-  subT.textContent=(TOPICS.length||0)+" 颗星";
+  // 起点提示：最左轨道顶部
+  const first=LAYOUT.cols[0];
+  const sp=el("g",{class:"start-pill",transform:`translate(${first.x},${LAYOUT.TOP-150})`},g);
+  el("rect",{x:-92,y:0,width:184,height:30,rx:15,fill:"#10233a",stroke:"#ffd84d","stroke-width":1.4},sp);
+  const stx=el("text",{x:0,y:20,"text-anchor":"middle","font-size":13,"font-weight":700,fill:"#ffd84d"},sp);
+  stx.textContent="▶ 从这里开始";
 }
-
 function edgePath(a,b){
-  // 弧线：沿远离中心的方向凸出，像同心圆轨道
   const mx=(a.x+b.x)/2,my=(a.y+b.y)/2;
-  const mlen=Math.hypot(mx,my)||1;
-  const dx=b.x-a.x,dy=b.y-a.y,dlen=Math.hypot(dx,dy)||1;
-  // 弯曲量：同领域内短距离弯曲小，跨领域大弧线弯曲明显
-  const curve=Math.min(0.34, dlen/(mlen*1.6));
-  const cx=mx+(mx/mlen)*mlen*curve;
-  const cy=my+(my/mlen)*mlen*curve;
+  const dx=b.x-a.x,dy=b.y-a.y;const len=Math.hypot(dx,dy)||1;
+  const off=Math.min(46,len*0.18);
+  const cx=mx+(-dy/len)*off,cy=my+(dx/len)*off;
   return `M${a.x.toFixed(1)},${a.y.toFixed(1)} Q${cx.toFixed(1)},${cy.toFixed(1)} ${b.x.toFixed(1)},${b.y.toFixed(1)}`;
 }
-
-
 function drawStars(){
   // 占位（真实星点按布局范围生成）
 }
@@ -29977,14 +29918,13 @@ function highlightNeighbors(id,pre,post){
 function clearHighlight(){
   viewport.classList.remove("focus");
   for(const t of TOPICS){const g=render._nodeEls[t.id];if(!g)continue;g.classList.remove("neighbor","selected");}
-  if(render._edgeEls)for(const k in render._edgeEls)render._edgeEls[k].classList.remove("neighbor");
 }
 function selectNode(id){renderDetail(id);}
 
 // ===== 侧边栏 =====
 function buildSidebar(){
   const sel=document.getElementById("domain-select");sel.innerHTML="";
-  const o0=document.createElement("option");o0.value="__ALL__";o0.textContent="全部星座（23 领域）";sel.appendChild(o0);
+  const o0=document.createElement("option");o0.value="__ALL__";o0.textContent="全部星座（12 领域）";sel.appendChild(o0);
   const counts={};TOPICS.forEach(t=>counts[t.domain]=(counts[t.domain]||0)+1);
   DOMAINS.forEach(d=>{const o=document.createElement("option");o.value=d.key;
     o.textContent=`${d.zh}（${counts[d.key]||0}）`;sel.appendChild(o);});
@@ -30035,24 +29975,23 @@ function clientToWorld(cx,cy){
   return{x:(u.x-view.tx)/view.s,y:(u.y-view.ty)/view.s};
 }
 function fit(){
-  if(!LAYOUT)return;
-  const sw=stage.clientWidth,sh=stage.clientHeight;
-  const pad=80;
-  const s=Math.min((sw-pad*2)/(LAYOUT.maxR*2),(sh-pad*2)/(LAYOUT.maxR*2));
-  view.s=Math.max(0.10,Math.min(2.0,s));
-  view.tx=sw/2;
-  view.ty=sh/2;
+  let minX=1e9,minY=1e9,maxX=-1e9,maxY=-1e9;
+  for(const t of TOPICS){const p=nodePos[t.id];if(p.x<minX)minX=p.x;if(p.y<minY)minY=p.y;
+    if(p.x>maxX)maxX=p.x;if(p.y>maxY)maxY=p.y;}
+  const w=maxX-minX,h=maxY-minY;const sw=stage.clientWidth,sh=stage.clientHeight,pad=90;
+  const s=Math.min((sw-pad*2)/w,(sh-pad*2)/h);
+  view.s=Math.max(0.18,Math.min(1.6,s));
+  view.tx=sw/2-((minX+maxX)/2)*view.s;
+  view.ty=sh/2-((minY+maxY)/2)*view.s;
   applyView();
 }
-// 初始视图：中心聚焦，完整展示星图
+// 初始视图：舒适缩放，锚定左上「起点」，沿轨道向右即学习顺序
 function homeView(){
   if(!LAYOUT)return;
   const sw=stage.clientWidth,sh=stage.clientHeight;
-  const pad=90;
-  const s=Math.min((sw-pad*2)/(LAYOUT.maxR*2),(sh-pad*2)/(LAYOUT.maxR*2));
-  view.s=Math.max(0.12,Math.min(1.0,s));
-  view.tx=sw/2;
-  view.ty=sh/2;
+  view.s=Math.max(0.45,Math.min(1.0,(sw-120)/(LAYOUT.COL_W*3.4)));
+  view.tx=64-LAYOUT.minX*view.s;
+  view.ty=46-LAYOUT.minY*view.s;
   applyView();
 }
 
@@ -30073,38 +30012,47 @@ function bindEvents(){
     chip.onclick=()=>{document.querySelectorAll("#cur-chips .chip").forEach(c=>c.classList.remove("active"));
       chip.classList.add("active");currentCurriculum=chip.dataset.cur;applyFilters();};
   });
-  // 知识点连线总开关
-  document.getElementById("edge-toggle").addEventListener("change",e=>{
-    edgesG.classList.toggle("show-all",e.target.checked);
-  });
-  // 滚轮缩放（以光标世界坐标为锚点）
+  // 滚轮缩放（以光标为中心）
   stage.addEventListener("wheel",e=>{
     e.preventDefault();
     const wpt=clientToWorld(e.clientX,e.clientY);
     const f=e.deltaY<0?1.12:1/1.12;
     const ns=Math.max(0.15,Math.min(4,view.s*f));
-    // 正确公式：保持鼠标所指的世界坐标点在屏幕上不动
-    // screen = world * scale + translate，令缩放前后 screen 不变：
-    // world*old_s + old_tx = world*new_s + new_tx → new_tx = old_tx + world*(old_s - new_s)
-    view.tx=view.tx+wpt.x*(view.s-ns);
-    view.ty=view.ty+wpt.y*(view.s-ns);
+    view.tx=wpt.x-(wpt.x-view.tx)*(ns/view.s);
+    view.ty=wpt.y-(wpt.y-view.ty)*(ns/view.s);
     view.s=ns;applyView();
   },{passive:false});
-  // 平移 / 点击选择（节点位置固定，不可拖动）
+  // 平移 / 拖拽节点 / 点击选择
   let drag=null;
   stage.addEventListener("pointerdown",e=>{
     const nodeEl=e.target.closest(".node");
-    if(nodeEl){drag={type:"click",id:nodeEl.dataset.id,sx:e.clientX,sy:e.clientY,moved:false};}
+    const start=clientToWorld(e.clientX,e.clientY);
+    if(nodeEl){drag={type:"node",id:nodeEl.dataset.id,sx:e.clientX,sy:e.clientY,moved:false};}
     else{drag={type:"pan",sx:e.clientX,sy:e.clientY,tx0:view.tx,ty0:view.ty};}
     stage.setPointerCapture(e.pointerId);
   });
   stage.addEventListener("pointermove",e=>{
-    if(!drag||drag.type!=="pan")return;
-    view.tx=drag.tx0+(e.clientX-drag.sx);view.ty=drag.ty0+(e.clientY-drag.sy);applyView();
+    if(!drag)return;
+    if(drag.type==="pan"){
+      view.tx=drag.tx0+(e.clientX-drag.sx);view.ty=drag.ty0+(e.clientY-drag.sy);applyView();
+    }else{
+      if(Math.abs(e.clientX-drag.sx)+Math.abs(e.clientY-drag.sy)>4)drag.moved=true;
+      const w=clientToWorld(e.clientX,e.clientY);const g=render._nodeEls[drag.id];const t=byId[drag.id];
+      t._x=w.x;t._y=w.y;nodePos[drag.id]={x:w.x,y:w.y};
+      g.setAttribute("transform",`translate(${w.x},${w.y})`);
+      // 更新相连边
+      DEPS.forEach(ed=>{
+        if(ed.topicId===drag.id||ed.prerequisiteId===drag.id){
+          const a=nodePos[ed.prerequisiteId],b=nodePos[ed.topicId];
+          const path=render._edgeEls[ed.prerequisiteId+">"+ed.topicId];
+          if(a&&b&&path)path.setAttribute("d",edgePath(a,b));
+        }
+      });
+    }
   });
   stage.addEventListener("pointerup",e=>{
     if(!drag)return;
-    if(drag.type==="click"&&!drag.moved)selectNode(drag.id);
+    if(drag.type==="node"&&!drag.moved)selectNode(drag.id);
     drag=null;
   });
   stage.addEventListener("pointerleave",()=>{drag=null;});
