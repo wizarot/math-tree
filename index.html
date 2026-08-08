@@ -121,13 +121,16 @@
   /* ===== Edges ===== */
   .edge{fill:none;stroke:rgba(150,170,230,.16);stroke-width:1.4;transition:stroke .35s,opacity .35s;}
   .edge.potential{stroke:rgba(150,200,255,.5);stroke-width:1.8;stroke-dasharray:5 7;
-    animation:flow 1.4s linear infinite;filter:drop-shadow(0 0 3px rgba(150,200,255,.5));}
+    animation:flowP 1.4s linear infinite;filter:drop-shadow(0 0 3px rgba(150,200,255,.5));}
   .edge.active{stroke:var(--c-edge,#9fe);stroke-width:2.4;stroke-dasharray:6 9;
-    animation:flow 1s linear infinite;filter:drop-shadow(0 0 5px var(--c-edge,#9fe));}
+    animation:flowA 1s linear infinite;filter:drop-shadow(0 0 5px var(--c-edge,#9fe));}
   /* 选中节点的相连边：电流流动特效（方向＝前置→后继） */
-  .edge.neighbor{stroke:#ffffff;stroke-width:2.8;stroke-dasharray:2.5 9;
-    animation:flow .7s linear infinite;filter:drop-shadow(0 0 6px #aef) drop-shadow(0 0 11px #6cf);}
-  @keyframes flow{to{stroke-dashoffset:-30;}}
+  .edge.neighbor{stroke:#d8f7ff;stroke-width:3.2;stroke-dasharray:4 14;
+    animation:flowN .5s linear infinite;
+    filter:drop-shadow(0 0 6px #8fe9ff) drop-shadow(0 0 15px #38b6ff);opacity:1 !important;}
+  @keyframes flowP{to{stroke-dashoffset:-12;}}
+  @keyframes flowA{to{stroke-dashoffset:-15;}}
+  @keyframes flowN{to{stroke-dashoffset:-18;}}
 
   /* ===== Detail panel ===== */
   #detail{width:368px;flex-shrink:0;border-left:1px solid var(--border);background:var(--panel);
@@ -177,6 +180,12 @@
 
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.05ms !important;}
+    /* 用户主动触发的反馈动画不受「减弱动态」限制，以确保交互可感知且不突兀 */
+    .edge.neighbor{animation-name:flowN !important;animation-duration:.5s !important;animation-timing-function:linear !important;animation-iteration-count:infinite !important;}
+    .edge.active{animation-name:flowA !important;animation-duration:1s !important;animation-timing-function:linear !important;animation-iteration-count:infinite !important;}
+    .edge.potential{animation-name:flowP !important;animation-duration:1.4s !important;animation-timing-function:linear !important;animation-iteration-count:infinite !important;}
+    .node.selected .ring-out{animation-name:selRing !important;animation-duration:1.6s !important;animation-timing-function:ease-in-out !important;animation-iteration-count:infinite !important;}
+    .node.selected .glow{animation-name:selPulse !important;animation-duration:1.6s !important;animation-timing-function:ease-in-out !important;animation-iteration-count:infinite !important;}
   }
   /* ===== 有序技能河：领域分列 + 列头 ===== */
   .cols{pointer-events:none;}
@@ -29895,7 +29904,7 @@ function renderRel(elId,ids,kind,append){
   });
 }
 function highlightNeighbors(id,pre,post){
-  if(id!==_lastFlash){_lastFlash=id;const p=nodePos[id];if(p&&!reducedMotion)flashSelect(p,DMAP[byId[id].domain].c);}
+  if(id!==_lastFlash){_lastFlash=id;const p=nodePos[id];if(p)flashSelect(p,DMAP[byId[id].domain].c);}
   const nb=new Set([id,...pre,...post]);
   viewport.classList.add("focus");
   for(const t of TOPICS){const g=render._nodeEls[t.id];if(!g)continue;
