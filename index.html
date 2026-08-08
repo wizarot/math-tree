@@ -29952,6 +29952,8 @@ function renderDetail(id){
   // 高亮邻居
   highlightNeighbors(id,preIds.concat(softIds),postIds);
   document.getElementById("detail").classList.add("show");
+  // 选中节点自动居中成为焦点（先显示详情面板，使舞台宽度正确）
+  if(nodePos[id])centerOn(nodePos[id].x,nodePos[id].y);
 }
 function renderRel(elId,ids,kind,append){
   const elr=document.getElementById(elId);
@@ -30033,6 +30035,25 @@ function applyFilters(){
 
 // ===== 视图变换：缩放 / 平移 =====
 function applyView(){viewport.setAttribute("transform",`translate(${view.tx},${view.ty}) scale(${view.s})`);}
+// 将世界坐标点平滑居中到舞台中央（选中节点自动成为焦点）
+function centerOn(wx,wy,dur){
+  if(wx==null||wy==null)return;
+  dur=dur||450;
+  const sw=stage.clientWidth, sh=stage.clientHeight;
+  const tx1=sw/2-wx*view.s, ty1=sh/2-wy*view.s;
+  if(reducedMotion||(Math.abs(tx1-view.tx)<0.5&&Math.abs(ty1-view.ty)<0.5)){
+    view.tx=tx1;view.ty=ty1;applyView();return;
+  }
+  const tx0=view.tx,ty0=view.ty,t0=performance.now();
+  (function step(now){
+    let k=(now-t0)/dur;if(k>1)k=1;
+    const e=k<0.5?2*k*k:1-Math.pow(-2*k+2,2)/2; // easeInOutQuad
+    view.tx=tx0+(tx1-tx0)*e;
+    view.ty=ty0+(ty1-ty0)*e;
+    applyView();
+    if(k<1)requestAnimationFrame(step);
+  })(performance.now());
+}
 function clientToWorld(cx,cy){
   const p=svg.createSVGPoint();p.x=cx;p.y=cy;
   const m=svg.getScreenCTM();if(!m)return{x:cx,y:cy};
