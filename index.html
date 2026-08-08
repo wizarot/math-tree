@@ -29604,6 +29604,10 @@ async function load(){
     d=JSON.parse(document.getElementById("embed-deps").textContent);
   }
   TOPICS=t.topics;DEPS=d.dependencies;TOPICS.forEach(x=>byId[x.id]=x);
+  // 预计算每个节点的关联连线数（度数）：在前置关系里作为后继或前置出现的次数之和
+  const _connMap={};
+  for(const e of DEPS){ if(e.topicId)_connMap[e.topicId]=(_connMap[e.topicId]||0)+1; if(e.prerequisiteId)_connMap[e.prerequisiteId]=(_connMap[e.prerequisiteId]||0)+1; }
+  TOPICS.forEach(t=>{ t._conn=_connMap[t.id]||0; });
   try{learned=new Set(JSON.parse(localStorage.getItem(LS_KEY)||"[]").filter(id=>byId[id]));}catch(e){learned=new Set();}
   computeRarity();
   buildDefs();
@@ -29650,7 +29654,9 @@ function layout(){
   // 预计算：哪些节点有硬性前置（有则非基础节点）
   const hasHardPre=new Set(DEPS.filter(e=>e.strength==="hard").map(e=>e.topicId));
   const rays=[];
-  DOMAINS.forEach((d,di)=>{
+  // 领域按节点数从多到少顺时针排列（di=0 在顶端，顺时针递减）
+  const domainOrder=DOMAINS.slice().sort((a,b)=>((groups[b.key]||[]).length)-((groups[a.key]||[]).length));
+  domainOrder.forEach((d,di)=>{
     const items=groups[d.key]||[];
     // 排序：无硬性前置的基础节点优先（→ 内圈），然后按年龄/中心度
     items.sort((p,q)=>{
@@ -30059,10 +30065,13 @@ function render(){
   }
   // 节点
   const nodeEls={};
+  let connMin=Infinity,connMax=0;
+  for(const t of TOPICS){const c=t._conn||0; if(c<connMin)connMin=c; if(c>connMax)connMax=c;}
   for(const t of TOPICS){
     const pos=nodePos[t.id];const d=DMAP[t.domain];
-    // 节点半径大幅缩小，留出清晰空白
-    const R=t.rarity==="legendary"?10:t.rarity==="epic"?8:t.rarity==="rare"?7:6;
+    // 节点大小由关联连线数（度数）决定：连线越多节点越大（映射半径 5~13px）
+    const _norm=(connMax>connMin)?((t._conn||0)-connMin)/(connMax-connMin):0;
+    const R=Math.max(5,Math.min(13,5+Math.sqrt(_norm)*8));
     const g=el("g",{class:"node",transform:`translate(${pos.x},${pos.y})`},nodesG);
     g.style.setProperty("--c",d.c);g.style.setProperty("--rarity",RARITY[t.rarity]);
     g.dataset.id=t.id;
