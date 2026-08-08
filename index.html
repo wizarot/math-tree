@@ -29647,11 +29647,18 @@ function layout(){
   const CENTER={x:0,y:0};
   const R0=160, R_STEP=42, SECTOR_F=0.62, MIN_SPACING=30;
   const sectorAngle=anglePer*SECTOR_F;
+  // 预计算：哪些节点有硬性前置（有则非基础节点）
+  const hasHardPre=new Set(DEPS.filter(e=>e.strength==="hard").map(e=>e.topicId));
   const rays=[];
   DOMAINS.forEach((d,di)=>{
     const items=groups[d.key]||[];
-    items.sort((p,q)=>(p.ageStart||0)-(q.ageStart||0)||(p.ageEnd||0)-(q.ageEnd||0)||
-      (q.centrality||0)-(p.centrality||0)||(p.id<q.id?-1:1));
+    // 排序：无硬性前置的基础节点优先（→ 内圈），然后按年龄/中心度
+    items.sort((p,q)=>{
+      const pb=hasHardPre.has(p.id)?1:0, qb=hasHardPre.has(q.id)?1:0;
+      if(pb!==qb)return pb-qb;
+      return (p.ageStart||0)-(q.ageStart||0)||(p.ageEnd||0)-(q.ageEnd||0)||
+        (q.centrality||0)-(p.centrality||0)||(p.id<q.id?-1:1);
+    });
     const baseAngle=di*anglePer-Math.PI/2;
     const placed=[];
     let i=0, ring=0;
@@ -29765,8 +29772,6 @@ function drawColumns(){
     let rotDeg=r.baseAngle*180/Math.PI;
     if(r.baseAngle>Math.PI/2&&r.baseAngle<Math.PI*3/2)rotDeg+=180;
     const tg=el("g",{class:"ray-label",transform:`translate(${tx.toFixed(1)},${ty.toFixed(1)}) rotate(${rotDeg.toFixed(1)})`},g);
-    if(r.sigil)el("path",{d:r.sigil,transform:`translate(-8,-22) scale(.45)`,
-      fill:"none",stroke:r.c,"stroke-width":1.7,"stroke-linecap":"round","stroke-linejoin":"round"},tg);
     const txt=el("text",{x:0,y:0,"text-anchor":"middle","font-size":11,"font-weight":700,fill:"#eaf0ff"},tg);
     txt.textContent=r.zh;
   }
