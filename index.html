@@ -30130,25 +30130,15 @@ function drawColumns(){
     const txt=el("text",{x:0,y:0,"text-anchor":"middle","font-size":11,"font-weight":700,fill:"#eaf0ff"},tg);
     txt.textContent=r.zh;
   }
-  // 中心标题卡片（游戏化技能树枢纽）
+  // 中心罗盘（用一张 PNG 图片替代多个 SVG 元素）
   const cardG=el("g",{class:"core-card"},g);
-  const cardR=48, glowR=58;
+  const compassR=58;  // 罗盘显示半径
+  const imgSize=compassR*2;
   // 外发光
-  el("circle",{cx:0,cy:0,r:glowR,fill:"rgba(255,207,77,.08)",stroke:"rgba(255,207,77,.25)","stroke-width":1.5,opacity:.9},cardG);
-  // 卡片背景
-  el("circle",{cx:0,cy:0,r:cardR,fill:"rgba(11,15,28,.92)",stroke:"#ffcf4d","stroke-width":1.8,opacity:.95},cardG);
-  // 内装饰环
-  el("circle",{cx:0,cy:0,r:cardR-8,fill:"none",stroke:"rgba(255,207,77,.15)","stroke-width":1,opacity:.9},cardG);
-  // 顶部小星
-  const starG=el("g",{transform:"translate(0,-22) scale(0.8)"},cardG);
-  el("path",{d:"M5 0 L6.2 3.3 L9.6 3.3 L6.9 5.4 L7.9 8.7 L5 6.6 L2.1 8.7 L3.1 5.4 L0.4 3.3 L3.8 3.3 Z",
-    fill:"#ffcf4d",stroke:"#3a2400","stroke-width":.5},starG);
-  // 标题
-  const titleT=el("text",{x:0,y:2,"text-anchor":"middle","font-size":11,"font-weight":800,fill:"#eaf0ff",style:"letter-spacing:.5px"},cardG);
-  titleT.textContent="数学天赋星图";
-  // 副标题
-  const subT=el("text",{x:0,y:16,"text-anchor":"middle","font-size":8,fill:"rgba(255,207,77,.9)"},cardG);
-  subT.textContent=(TOPICS.length||0)+" 颗星";
+  el("circle",{cx:0,cy:0,r:compassR+6,fill:"rgba(255,207,77,.08)",stroke:"rgba(255,207,77,.25)","stroke-width":1.5,opacity:.9},cardG);
+  // 罗盘图片
+  el("image",{href:"assets/compass.png",x:-imgSize/2,y:-imgSize/2,width:imgSize,height:imgSize,
+    opacity:.95,style:"filter:drop-shadow(0 0 8px rgba(255,207,77,.3));"},cardG);
 }
 
 function edgePath(a,b){
