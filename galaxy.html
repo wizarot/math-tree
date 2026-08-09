@@ -156,6 +156,17 @@
     transition:.15s;transform:translate(-50%,-130%);}
   #tooltip.show{opacity:1;}
 
+  /* ===== 确认弹窗 ===== */
+  #confirmDlg{position:fixed;inset:0;z-index:60;display:none;place-items:center;
+    background:rgba(4,7,17,.7);backdrop-filter:blur(4px);}
+  #confirmDlg.show{display:grid;}
+  #confirmDlg .dlg{padding:24px 28px;border-radius:16px;text-align:center;
+    background:var(--glass-2);border:1px solid var(--border);
+    box-shadow:0 20px 60px rgba(0,0,0,.5);max-width:340px;}
+  #confirmDlg .dlg p{font-size:14px;margin:0 0 18px;line-height:1.5;}
+  #confirmDlg .dlg .row{display:flex;gap:10px;justify-content:center;}
+  #confirmDlg .dlg .gbtn{min-width:90px;justify-content:center;}
+
   /* ===== Loading ===== */
   #loading{position:fixed;inset:0;z-index:50;display:grid;place-items:center;
     background:#040711;transition:.6s;}
@@ -258,6 +269,17 @@
 <!-- Loading -->
 <div id="loading"><div class="orb"></div></div>
 
+<!-- 确认弹窗 -->
+<div id="confirmDlg">
+  <div class="dlg">
+    <p id="confirmMsg">确定重置所有学习进度？</p>
+    <div class="row">
+      <button class="gbtn" id="confirmNo">取消</button>
+      <button class="gbtn warn" id="confirmYes">确定</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // ============================================================
 //  数学天赋星图 · Galaxy 2d — Canvas 动态虚线版
@@ -316,12 +338,38 @@ let animTime=0,lastFrame=0;
 
 // ===== 解锁逻辑（与 index.html 一致）=====
 function hardPre(id){return DEPS.filter(e=>e.topicId===id&&e.strength==="hard").map(e=>e.prerequisiteId);}
+let _availCache=null,_availCacheLearnedSize=-1;
+function _rebuildAvailCache(){
+  _availCache=new Map();
+  for(const t of TOPICS){
+    if(learned.has(t.id)){_availCache.set(t.id,false);continue;}
+    const hp=hardPre(t.id);
+    _availCache.set(t.id,hp.length===0?true:hp.every(p=>learned.has(p)));
+  }
+  _availCacheLearnedSize=learned.size;
+}
 function isAvailable(id){
   if(learned.has(id))return false;
-  const hp=hardPre(id);if(hp.length===0)return true;
-  return hp.every(p=>learned.has(p));
+  if(_availCache===null||_availCacheLearnedSize!==learned.size)_rebuildAvailCache();
+  const v=_availCache.get(id);
+  return v!==undefined?v:true;
 }
-function stateOf(id){return learned.has(id)?"learned":isAvailable(id)?"available":"locked";}
+let _stateCache=null,_stateCacheLearnedSize=-1;
+function _rebuildStateCache(){
+  _stateCache=new Map();
+  if(_availCache===null||_availCacheLearnedSize!==learned.size)_rebuildAvailCache();
+  for(const t of TOPICS){
+    if(learned.has(t.id))_stateCache.set(t.id,"learned");
+    else if(_availCache.get(t.id))_stateCache.set(t.id,"available");
+    else _stateCache.set(t.id,"locked");
+  }
+  _stateCacheLearnedSize=learned.size;
+}
+function stateOf(id){
+  if(_stateCache===null||_stateCacheLearnedSize!==learned.size)_rebuildStateCache();
+  const v=_stateCache.get(id);
+  return v!==undefined?v:"locked";
+}
 
 // ===== Canvas =====
 const cv=document.getElementById("cv");
@@ -619,13 +667,12 @@ function render(time){
     if(isFocusMode&&!isNeighbor&&!isSelected)nodeAlpha*=0.16;
     if(isLocked)nodeAlpha*=0.5;
 
-    // 发光（仅对 learned/available/hovered/selected 绘制渐变发光，locked 跳过以省性能）
-    if(visible&&nodeAlpha>0.1&&(isLearned||isAvailableNode||isHovered||isSelected)){
+    // 发光（仅对 learned/hovered/selected 绘制渐变发光；available 用简单半透明圆以省性能）
+    if(visible&&nodeAlpha>0.1&&(isLearned||isHovered||isSelected)){
       let glowR=r*3;
       let glowColor=color;
       let glowAlpha=0.4;
       if(isLearned){glowR=r*4*pulse;glowAlpha=0.95;}
-      else if(isAvailableNode){glowR=r*3.5*pulse;glowAlpha=0.45;}
       else{glowR=r*2;glowAlpha=0.15;}
       if(isHovered)glowR*=2;
       if(isSelected)glowR=r*5*(0.8+0.2*pulse);
@@ -636,16 +683,21 @@ function render(time){
       ctx.fillStyle=g;
       ctx.globalAlpha=nodeAlpha;
       ctx.beginPath();ctx.arc(t._x,t._y,glowR,0,Math.PI*2);ctx.fill();
+    }else if(visible&&nodeAlpha>0.1&&isAvailableNode){
+      // available：简单半透明圆（无渐变，无 shadowBlur）
+      ctx.fillStyle=color+"22";
+      ctx.globalAlpha=nodeAlpha;
+      ctx.beginPath();ctx.arc(t._x,t._y,r*2.5*pulse,0,Math.PI*2);ctx.fill();
     }
 
-    // 主体
+    // 主体（仅 learned 用 shadowBlur；available/locked 无 shadowBlur 以省性能）
     ctx.globalAlpha=nodeAlpha;
     if(isLearned){
       ctx.fillStyle=color;
       ctx.shadowColor=color;ctx.shadowBlur=8;
     }else if(isAvailableNode){
       ctx.fillStyle="#fff";
-      ctx.shadowColor=color;ctx.shadowBlur=5;
+      ctx.shadowBlur=0;
     }else{
       // locked：灰化
       ctx.fillStyle="rgba(140,150,170,.7)";
@@ -960,6 +1012,7 @@ function toggleLearned(id){
     showToast("✦ 已点亮："+zhName(t));
   }
   saveLearned();updateHUD();
+  sectorGradCache=null;
   if(selectedId===id)renderDetail(id);
 }
 
@@ -1042,11 +1095,31 @@ function updateLegendDim(){
   });
 }
 
+// ===== 自定义确认弹窗（避免原生 confirm 卡死浏览器）=====
+function customConfirm(msg){
+  return new Promise(resolve=>{
+    const dlg=document.getElementById("confirmDlg");
+    document.getElementById("confirmMsg").textContent=msg;
+    dlg.classList.add("show");
+    const yes=document.getElementById("confirmYes");
+    const no=document.getElementById("confirmNo");
+    const cleanup=()=>{dlg.classList.remove("show");
+      yes.onclick=null;no.onclick=null;};
+    yes.onclick=()=>{cleanup();resolve(true);};
+    no.onclick=()=>{cleanup();resolve(false);};
+  });
+}
+
 // ===== 按钮事件 =====
 document.getElementById("btn-fit").addEventListener("click",fitScreen);
-document.getElementById("btn-reset").addEventListener("click",()=>{
-  if(confirm("确定重置所有学习进度？")){learned.clear();saveLearned();updateHUD();
-    if(selectedId)renderDetail(selectedId);}
+document.getElementById("btn-reset").addEventListener("click",async()=>{
+  if(!await customConfirm("确定重置所有学习进度？"))return;
+  learned.clear();
+  saveLearned();
+  clearSelection();
+  updateHUD();
+  sectorGradCache=null;
+  showToast("已重置所有学习进度");
 });
 
 // ===== 数据加载 =====
