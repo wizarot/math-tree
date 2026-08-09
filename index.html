@@ -197,7 +197,8 @@
   .ref-ring{pointer-events:none;fill:none;}
   .ray-line{pointer-events:none;}
   .ray-label{pointer-events:none;}
-  .ray-label text{font-family:'Segoe UI',system-ui,sans-serif;pointer-events:none;user-select:none;}
+  .ray-label text{font-family:"PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif;pointer-events:none;user-select:none;}
+  .core-card text{font-family:"PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif;}
   .core-ring{pointer-events:none;}
   .start-pill{filter:drop-shadow(0 0 16px rgba(255,216,77,.45));display:none;}
 </style>
@@ -29638,6 +29639,26 @@ function buildDefs(){
     el("stop",{offset:"0%","stop-color":d.c2},g);
     el("stop",{offset:"100%","stop-color":d.c},g);
   });
+  // 标题金色渐变
+  const titleGrad=el("linearGradient",{id:"title-grad",x1:"0%",y1:"0%",x2:"0%",y2:"100%"},defs);
+  el("stop",{offset:"0%","stop-color":"#fff5d4"},titleGrad);
+  el("stop",{offset:"45%","stop-color":"#ffd98a"},titleGrad);
+  el("stop",{offset:"100%","stop-color":"#e8a93a"},titleGrad);
+  // 副标题渐变
+  const subGrad=el("linearGradient",{id:"sub-grad",x1:"0%",y1:"0%",x2:"0%",y2:"100%"},defs);
+  el("stop",{offset:"0%","stop-color":"#ffe3a8"},subGrad);
+  el("stop",{offset:"100%","stop-color":"#c9943e"},subGrad);
+  // 领域标签渐变
+  const labelGrad=el("linearGradient",{id:"label-grad",x1:"0%",y1:"0%",x2:"0%",y2:"100%"},defs);
+  el("stop",{offset:"0%","stop-color":"#ffffff"},labelGrad);
+  el("stop",{offset:"60%","stop-color":"#d8e4ff"},labelGrad);
+  el("stop",{offset:"100%","stop-color":"#9cb3e8"},labelGrad);
+  // 文字发光滤镜
+  const glow=el("filter",{id:"text-glow",x:"-20%",y:"-20%",width:"140%",height:"140%"},defs);
+  el("feGaussianBlur",{in:"SourceGraphic",stdDeviation:"1.2",result:"blur"},glow);
+  el("feMerge",null,glow);
+  el("feMergeNode",{in:"blur"},glow);
+  el("feMergeNode",{in:"SourceGraphic"},glow);
 }
 const cssId=s=>s.replace(/[^a-zA-Z0-9]/g,"_");
 
@@ -30120,14 +30141,15 @@ function drawColumns(){
     const y2=Math.sin(r.baseAngle)*(LAYOUT.maxR-40);
     el("line",{x1:0,y1:0,x2:x2,y2:y2,stroke:r.c,"stroke-width":2,opacity:.12,class:"ray-line"},g);
     // 标签放在圆环内，沿射线方向由内向外（仅显示领域名）
-    const labelR=LAYOUT.r0*0.55;
+    const labelR=LAYOUT.r0*0.9;
     const tx=Math.cos(r.baseAngle)*labelR;
     const ty=Math.sin(r.baseAngle)*labelR;
     // 旋转文字使其沿射线方向，底部半圆翻转保持可读
     let rotDeg=r.baseAngle*180/Math.PI;
     if(r.baseAngle>Math.PI/2&&r.baseAngle<Math.PI*3/2)rotDeg+=180;
     const tg=el("g",{class:"ray-label",transform:`translate(${tx.toFixed(1)},${ty.toFixed(1)}) rotate(${rotDeg.toFixed(1)})`},g);
-    const txt=el("text",{x:0,y:0,"text-anchor":"middle","font-size":11,"font-weight":700,fill:"#eaf0ff"},tg);
+    const txt=el("text",{x:0,y:0,"text-anchor":"middle","font-size":36,"font-weight":700,
+      fill:"url(#label-grad)","letter-spacing":"2px","opacity":1},tg);
     txt.textContent=r.zh;
   }
   // 中心罗盘（用一张 PNG 图片替代多个 SVG 元素）
@@ -30139,6 +30161,17 @@ function drawColumns(){
   // 罗盘图片
   el("image",{href:"assets/compass.png",x:-imgSize/2,y:-imgSize/2,width:imgSize,height:imgSize,
     opacity:.95,style:"filter:drop-shadow(0 0 8px rgba(255,207,77,.3));"},cardG);
+  // 罗盘上方标题文字
+  const titleY=-(compassR+24);
+  // 主标题：金色渐变 + 发光
+  const titleT=el("text",{x:0,y:titleY,"text-anchor":"middle","font-size":38,"font-weight":800,
+    fill:"url(#title-grad)","letter-spacing":"3px","filter":"url(#text-glow)","opacity":.95},cardG);
+  titleT.textContent="数学天赋星图";
+  // 副标题（罗盘下方）：金色渐变 + 发光
+  const subY=compassR+22;
+  const subT=el("text",{x:0,y:subY,"text-anchor":"middle","font-size":30,"font-weight":600,
+    fill:"url(#sub-grad)","letter-spacing":"2px","filter":"url(#text-glow)","opacity":.88},cardG);
+  subT.textContent=(TOPICS.length||0)+" 颗星";
 }
 
 function edgePath(a,b){

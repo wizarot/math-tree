@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>数学天赋星图 · 3D</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;height:100%;overflow:hidden;background:#040711;
+    font-family:"PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif;color:#e9edff;}
+  canvas{display:block;}
+
+  /* ===== HUD ===== */
+  #hud{position:fixed;top:0;left:0;right:0;z-index:10;
+    display:flex;align-items:center;gap:18px;padding:11px 20px;
+    background:linear-gradient(180deg,rgba(6,9,20,.9),rgba(6,9,20,0));
+    pointer-events:none;}
+  #hud .brand{display:flex;align-items:center;gap:10px;pointer-events:auto;}
+  #hud h1{font-size:16px;font-weight:800;letter-spacing:1px;
+    background:linear-gradient(90deg,#bfe0ff,#fff,#ffd98a);
+    -webkit-background-clip:text;background-clip:text;color:transparent;}
+  #hud .sub{font-size:11px;color:#8b95b8;letter-spacing:.5px;}
+  #hud .spacer{flex:1;}
+  #hud .info{pointer-events:auto;font-size:12px;color:#8b95b8;}
+  #hud .info b{color:#ffcf4d;font-size:14px;font-weight:800;}
+
+  /* ===== Info Panel ===== */
+  #panel{position:fixed;left:20px;bottom:20px;width:340px;max-width:90vw;
+    z-index:10;background:rgba(12,16,32,.92);border:1px solid rgba(120,140,210,.2);
+    border-radius:14px;padding:16px 18px;backdrop-filter:blur(12px);
+    transform:translateY(20px);opacity:0;transition:.3s cubic-bezier(.16,1,.3,1);
+    pointer-events:none;}
+  #panel.show{transform:translateY(0);opacity:1;pointer-events:auto;}
+  #panel .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;
+    border-radius:5px;letter-spacing:.5px;margin-bottom:8px;}
+  #panel h3{font-size:15px;font-weight:700;margin-bottom:4px;}
+  #panel .desc{font-size:12px;color:#8b95b8;line-height:1.6;margin-top:8px;}
+  #panel .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+  #panel .meta span{font-size:11px;padding:3px 8px;border-radius:5px;
+    background:rgba(120,140,210,.1);color:#8b95b8;}
+
+  /* ===== Domain Legend ===== */
+  #legend{position:fixed;right:16px;top:60px;z-index:10;
+    background:rgba(12,16,32,.86);border:1px solid rgba(120,140,210,.15);
+    border-radius:12px;padding:10px 12px;backdrop-filter:blur(10px);
+    max-height:80vh;overflow-y:auto;font-size:11px;}
+  #legend .item{display:flex;align-items:center;gap:6px;padding:3px 0;cursor:pointer;
+    transition:.15s;}
+  #legend .item:hover{color:#fff;}
+  #legend .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;
+    box-shadow:0 0 4px currentColor;}
+
+  /* ===== Loading ===== */
+  #loading{position:fixed;inset:0;z-index:50;display:grid;place-items:center;
+    background:#040711;transition:.5s;}
+  #loading.hide{opacity:0;pointer-events:none;}
+  #loading .spin{width:40px;height:40px;border:3px solid rgba(120,140,210,.2);
+    border-top-color:#ffcf4d;border-radius:50%;animation:spin 1s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+</style>
+</head>
+<body>
+
+<div id="hud">
+  <div class="brand">
+    <h1>数学天赋星图 · 3D</h1>
+    <span class="sub">Three.js</span>
+  </div>
+  <div class="spacer"></div>
+  <div class="info">已发现 <b id="learned-count">0</b> / <b id="total-count">0</b> 颗星</div>
+</div>
+
+<div id="legend"></div>
+
+<div id="panel">
+  <span class="tag" id="p-domain"></span>
+  <h3 id="p-name"></h3>
+  <div class="desc" id="p-desc"></div>
+  <div class="meta" id="p-meta"></div>
+</div>
+
+<div id="loading"><div class="spin"></div></div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+// ===== 领域数据（与原项目一致）=====
+const DOMAINS=[
+  {key:"Geometry",zh:"几何",c:"#2fe0c8"},
+  {key:"Measurement",zh:"测量",c:"#f5a524"},
+  {key:"Fractions",zh:"分数",c:"#ffce4d"},
+  {key:"Multiplication & Division",zh:"乘除法",c:"#36d97b"},
+  {key:"Addition & Subtraction",zh:"加减法",c:"#2dd4a7"},
+  {key:"Number Representation & Place Value",zh:"数位与位值",c:"#5b8cff"},
+  {key:"Mathematical Thinking",zh:"数学思维",c:"#8b7bff"},
+  {key:"Algebra",zh:"代数",c:"#c06bff"},
+  {key:"Data & Statistics",zh:"数据与统计",c:"#22d3c5"},
+  {key:"Ratio & Proportion",zh:"比与比例",c:"#e0884b"},
+  {key:"Probability",zh:"概率",c:"#ff6b9d"},
+  {key:"Counting & Cardinality",zh:"计数与基数",c:"#a3e635"},
+  {key:"Number & Expression",zh:"数与式",c:"#ff7a45"},
+  {key:"Equations & Inequalities",zh:"方程与不等式",c:"#e5383b"},
+  {key:"Functions",zh:"函数",c:"#00b4d8"},
+  {key:"Trigonometry",zh:"三角",c:"#8a5cf0"},
+  {key:"Vectors",zh:"向量",c:"#48cae4"},
+  {key:"Solid Geometry",zh:"立体几何",c:"#4f6bd1"},
+  {key:"Analytic Geometry",zh:"解析几何",c:"#b15dd6"},
+  {key:"Sequences",zh:"数列",c:"#7cb518"},
+  {key:"Calculus",zh:"微积分",c:"#c33c9e"},
+  {key:"Complex Numbers",zh:"复数",c:"#d63a4a"},
+  {key:"Combinatorics",zh:"计数原理",c:"#bac94a"}
+];
+const DMAP={};DOMAINS.forEach((d,i)=>{d.angle=i/DOMAINS.length*Math.PI*2;DMAP[d.key]=d;});
+const RARITY={common:0x5b6577,rare:0x4f9dff,epic:0xb86bff,legendary:0xffcf4d};
+const TYPE_ZH={"CONCEPTUAL":"概念性","PROCEDURAL":"程序性","REPRESENTATIONAL":"表征性","LINGUISTIC":"语言性","METACOGNITIVE":"元认知"};
+
+// ===== 全局状态 =====
+let TOPICS=[],DEPS=[],byId={},learned=new Set();
+const LS_KEY="mathtree.learned.v1";
+let selectedId=null,hoveredId=null;
+const nodeMeshes=[]; // {mesh,topic} 数组
+let starPoints=null,labelSprites=[],lineSeg=null;
+
+// ===== Three.js 核心 =====
+const scene=new THREE.Scene();
+scene.background=new THREE.Color(0x040711);
+scene.fog=new THREE.FogExp2(0x040711,0.0008);
+
+const camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,5000);
+camera.position.set(0,400,900);
+
+const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:"high-performance"});
+renderer.setSize(innerWidth,innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.1;
+document.body.appendChild(renderer.domElement);
+
+const controls=new OrbitControls(camera,renderer.domElement);
+controls.enableDamping=true;
+controls.dampingFactor=0.06;
+controls.minDistance=100;
+controls.maxDistance=2500;
+controls.autoRotate=true;
+controls.autoRotateSpeed=0.3;
+
+// ===== 灯光 =====
+scene.add(new THREE.AmbientLight(0xffffff,0.4));
+const dirLight=new THREE.DirectionalLight(0xffffff,0.6);
+dirLight.position.set(200,500,300);
+scene.add(dirLight);
+const goldLight=new THREE.PointLight(0xffcf4d,0.8,600);
+goldLight.position.set(0,50,0);
+scene.add(goldLight);
+
+// ===== 星空背景粒子 =====
+function createBackgroundStars(){
+  const count=3000;
+  const geo=new THREE.BufferGeometry();
+  const pos=new Float32Array(count*3);
+  const col=new Float32Array(count*3);
+  for(let i=0;i<count;i++){
+    const r=1500+Math.random()*2000;
+    const theta=Math.random()*Math.PI*2;
+    const phi=Math.acos(2*Math.random()-1);
+    pos[i*3]=r*Math.sin(phi)*Math.cos(theta);
+    pos[i*3+1]=r*Math.sin(phi)*Math.sin(theta);
+    pos[i*3+2]=r*Math.cos(phi);
+    const b=0.3+Math.random()*0.7;
+    col[i*3]=b;col[i*3+1]=b;col[i*3+2]=b*1.1;
+  }
+  geo.setAttribute("position",new THREE.BufferAttribute(pos,3));
+  geo.setAttribute("color",new THREE.BufferAttribute(col,3));
+  const mat=new THREE.PointsMaterial({size:2,vertexColors:true,transparent:true,opacity:0.6,
+    sizeAttenuation:false,depthWrite:false});
+  scene.add(new THREE.Points(geo,mat));
+}
+createBackgroundStars();
+
+// ===== 中心罗盘（金色球体 + 光环）=====
+function createCompass(){
+  const group=new THREE.Group();
+
+  // 中心金色球
+  const sphereGeo=new THREE.SphereGeometry(20,32,32);
+  const sphereMat=new THREE.MeshStandardMaterial({
+    color:0xffcf4d,emissive:0xffcf4d,emissiveIntensity:0.4,
+    roughness:0.3,metalness:0.8});
+  const sphere=new THREE.Mesh(sphereGeo,sphereMat);
+  group.add(sphere);
+
+  // 外光环
+  const ringGeo=new THREE.RingGeometry(24,28,64);
+  const ringMat=new THREE.MeshBasicMaterial({color:0xffcf4d,transparent:true,opacity:0.3,
+    side:THREE.DoubleSide});
+  const ring=new THREE.Mesh(ringGeo,ringMat);
+  ring.rotation.x=-Math.PI/2;
+  group.add(ring);
+
+  // 第二层光环
+  const ring2Geo=new THREE.RingGeometry(30,32,64);
+  const ring2Mat=new THREE.MeshBasicMaterial({color:0xffe9a3,transparent:true,opacity:0.15,
+    side:THREE.DoubleSide});
+  const ring2=new THREE.Mesh(ring2Geo,ring2Mat);
+  ring2.rotation.x=-Math.PI/2;
+  group.add(ring2);
+
+  scene.add(group);
+  return {group,sphere,ring};
+}
+const compass=createCompass();
+
+// ===== 文字 Sprite 创建工具 =====
+function createTextSprite(text,color="#ffffff",fontSize=48){
+  const canvas=document.createElement("canvas");
+  const ctx=canvas.getContext("2d");
+  ctx.font=`${fontSize}px "PingFang SC","Microsoft YaHei",sans-serif`;
+  const w=ctx.measureText(text).width;
+  canvas.width=w+20;canvas.height=fontSize+12;
+  ctx.font=`${fontSize}px "PingFang SC","Microsoft YaHei",sans-serif`;
+  ctx.fillStyle=color;
+  ctx.textAlign="center";ctx.textBaseline="middle";
+  ctx.shadowColor=color;ctx.shadowBlur=8;
+  ctx.fillText(text,canvas.width/2,canvas.height/2);
+  const tex=new THREE.CanvasTexture(canvas);
+  tex.minFilter=THREE.LinearFilter;
+  const mat=new THREE.SpriteMaterial({map:tex,transparent:true,depthTest:false,depthWrite:false});
+  const sprite=new THREE.Sprite(mat);
+  sprite.scale.set(canvas.width*0.3,canvas.height*0.3,1);
+  return sprite;
+}
+
+// ===== 中心标题 =====
+function createCenterTitle(){
+  const title=createTextSprite("数学天赋星图","#ffd98a",56);
+  title.position.set(0,60,0);
+  title.scale.set(300,50,1);
+  scene.add(title);
+
+  const sub=createTextSprite("702 颗星","#ffe9a3",36);
+  sub.position.set(0,-60,0);
+  sub.scale.set(180,35,1);
+  scene.add(sub);
+}
+createCenterTitle();
+
+// ===== 布局算法（与原项目一致的径向布局，加上 Y 轴深度）=====
+function layout(){
+  const groups={};
+  TOPICS.forEach(t=>{(groups[t.domain]||(groups[t.domain]=[])).push(t);});
+  const anglePer=Math.PI*2/DOMAINS.length;
+  const R0=120,R_STEP=32,SECTOR_F=0.62,MIN_SPACING=22;
+  const sectorAngle=anglePer*SECTOR_F;
+  const hasHardPre=new Set(DEPS.filter(e=>e.strength==="hard").map(e=>e.topicId));
+
+  // 领域按节点数从多到少顺时针排列
+  const domainOrder=DOMAINS.slice().sort((a,b)=>
+    ((groups[b.key]||[]).length)-((groups[a.key]||[]).length));
+
+  domainOrder.forEach((d,di)=>{
+    const items=groups[d.key]||[];
+    items.sort((p,q)=>{
+      const pb=hasHardPre.has(p.id)?1:0,qb=hasHardPre.has(q.id)?1:0;
+      if(pb!==qb)return pb-qb;
+      return(p.ageStart||0)-(q.ageStart||0)||(p.ageEnd||0)-(q.ageEnd||0)||
+        (q.centrality||0)-(p.centrality||0)||(p.id<q.id?-1:1);
+    });
+    const baseAngle=di*anglePer-Math.PI/2;
+    let i=0,ring=0;
+    while(i<items.length){
+      const r=R0+ring*R_STEP;
+      const arcLen=r*sectorAngle;
+      const maxPerRing=Math.max(1,Math.floor(arcLen/MIN_SPACING)+1);
+      const perRing=Math.min(maxPerRing,items.length-i);
+      for(let j=0;j<perRing;j++){
+        const t=items[i+j];
+        const frac=perRing===1?0.5:j/(perRing-1);
+        const a=baseAngle-sectorAngle/2+frac*sectorAngle;
+        t._x=Math.cos(a)*r;
+        t._z=Math.sin(a)*r;
+        // Y 轴：按年龄递增，年龄越大越高
+        const ageNorm=((t.ageStart||6)+(t.ageEnd||12))/2/18;
+        t._y=ageNorm*60-20;
+        t._angle=a;t._radius=r;
+      }
+      i+=perRing;ring++;
+    }
+  });
+
+  // 领域标签位置
+  const labelR=R0-40;
+  DOMAINS.forEach(d=>{
+    // 找到该领域在 domainOrder 中的索引
+    const di=domainOrder.indexOf(d);
+    const baseAngle=di*anglePer-Math.PI/2;
+    d._labelX=Math.cos(baseAngle)*labelR;
+    d._labelZ=Math.sin(baseAngle)*labelR;
+    d._labelY=0;
+  });
+}
+
+// ===== 构建星点（使用 InstancedMesh 实现高性能 702 个星）=====
+function buildStars(){
+  const starGeo=new THREE.SphereGeometry(2.5,8,8);
+  const starMat=new THREE.MeshStandardMaterial({
+    emissive:0xffffff,emissiveIntensity:0.5,roughness:0.4,metalness:0.2});
+
+  const instanced=new THREE.InstancedMesh(starGeo,starMat,TOPICS.length);
+  instanced.instanceColor=new THREE.InstancedBufferAttribute(new Float32Array(TOPICS.length*3),3);
+  const dummy=new THREE.Object3D();
+  const color=new THREE.Color();
+
+  TOPICS.forEach((t,i)=>{
+    dummy.position.set(t._x,t._y,t._z);
+    const scale=t.rarity==="legendary"?2:t.rarity==="epic"?1.6:t.rarity==="rare"?1.3:1;
+    dummy.scale.setScalar(scale);
+    dummy.updateMatrix();
+    instanced.setMatrixAt(i,dummy.matrix);
+
+    const d=DMAP[t.domain];
+    const hex=d?d.c:"#888888";
+    color.set(hex);
+    instanced.setColorAt(i,color);
+
+    // 存储映射
+    nodeMeshes.push({index:i,topic:t});
+  });
+
+  instanced.instanceMatrix.needsUpdate=true;
+  if(instanced.instanceColor)instanced.instanceColor.needsUpdate=true;
+  instanced.userData.topics=TOPICS;
+  scene.add(instanced);
+  starPoints=instanced;
+
+  // 为每个星添加发光 halo（用 Points）
+  const haloGeo=new THREE.BufferGeometry();
+  const haloPos=new Float32Array(TOPICS.length*3);
+  const haloCol=new Float32Array(TOPICS.length*3);
+  const haloSize=new Float32Array(TOPICS.length);
+  TOPICS.forEach((t,i)=>{
+    haloPos[i*3]=t._x;haloPos[i*3+1]=t._y;haloPos[i*3+2]=t._z;
+    const d=DMAP[t.domain];
+    const c=new THREE.Color(d?d.c:"#888");
+    haloCol[i*3]=c.r;haloCol[i*3+1]=c.g;haloCol[i*3+2]=c.b;
+    haloSize[i]=t.rarity==="legendary"?18:t.rarity==="epic"?14:t.rarity==="rare"?11:8;
+  });
+  haloGeo.setAttribute("position",new THREE.BufferAttribute(haloPos,3));
+  haloGeo.setAttribute("color",new THREE.BufferAttribute(haloCol,3));
+  haloGeo.setAttribute("size",new THREE.BufferAttribute(haloSize,1));
+
+  const haloMat=new THREE.ShaderMaterial({
+    uniforms:{},
+    vertexShader:`
+      attribute float size;
+      attribute vec3 color;
+      varying vec3 vColor;
+      void main(){
+        vColor=color;
+        vec4 mvPosition=modelViewMatrix*vec4(position,1.0);
+        gl_PointSize=size*(300.0/-mvPosition.z);
+        gl_Position=projectionMatrix*mvPosition;
+      }
+    `,
+    fragmentShader:`
+      varying vec3 vColor;
+      void main(){
+        float d=length(gl_PointCoord-vec2(0.5));
+        if(d>0.5)discard;
+        float alpha=smoothstep(0.5,0.0,d)*0.6;
+        gl_FragColor=vec4(vColor,alpha);
+      }
+    `,
+    transparent:true,depthWrite:false,blending:THREE.AdditiveBlending
+  });
+  scene.add(new THREE.Points(haloGeo,haloMat));
+}
+
+// ===== 构建依赖连线 =====
+function buildLines(){
+  const positions=[];
+  const colors=[];
+  TOPICS.forEach(t=>{
+    const deps=DEPS.filter(e=>e.topicId===t.id);
+    deps.forEach(e=>{
+      const pre=byId[e.prerequisiteId];
+      if(!pre)return;
+      positions.push(pre._x,pre._y,pre._z,t._x,t._y,t._z);
+      const c1=new THREE.Color(DMAP[pre.domain]?.c||"#444");
+      const c2=new THREE.Color(DMAP[t.domain]?.c||"#444");
+      colors.push(c1.r,c1.g,c1.b,c2.r,c2.g,c2.b);
+    });
+  });
+  const geo=new THREE.BufferGeometry();
+  geo.setAttribute("position",new THREE.Float32BufferAttribute(positions,3));
+  geo.setAttribute("color",new THREE.Float32BufferAttribute(colors,3));
+  const mat=new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:0.12,
+    blending:THREE.AdditiveBlending,depthWrite:false});
+  lineSeg=new THREE.LineSegments(geo,mat);
+  scene.add(lineSeg);
+}
+
+// ===== 构建领域标签 =====
+function buildLabels(){
+  DOMAINS.forEach(d=>{
+    if(!d._labelX)return;
+    const sprite=createTextSprite(d.zh,d.c,32);
+    sprite.position.set(d._labelX,d._labelY+5,d._labelZ);
+    const scale=Math.max(sprite.scale.x,80);
+    sprite.scale.set(scale,scale*0.25,1);
+    scene.add(sprite);
+    labelSprites.push({sprite,domain:d});
+  });
+}
+
+// ===== 计算稀有度 =====
+function computeRarity(){
+  const cs=TOPICS.map(t=>t.centrality||0).sort((a,b)=>a-b);
+  const p=q=>cs[Math.floor((cs.length-1)*q)];
+  const t50=p(.5),t75=p(.75),t90=p(.9);
+  TOPICS.forEach(t=>{const c=t.centrality||0;
+    t.rarity=c>=t90?"legendary":c>=t75?"epic":c>=t50?"rare":"common";});
+}
+
+// ===== 图例 =====
+function buildLegend(){
+  const el=document.getElementById("legend");
+  DOMAINS.forEach(d=>{
+    const item=document.createElement("div");
+    item.className="item";
+    item.innerHTML=`<span class="dot" style="background:${d.c};color:${d.c}"></span>${d.zh}`;
+    el.appendChild(item);
+  });
+}
+
+// ===== Raycaster 交互 =====
+const raycaster=new THREE.Raycaster();
+const mouse=new THREE.Vector2();
+const dummy=new THREE.Object3D();
+
+function getIntersectedTopic(event){
+  mouse.x=(event.clientX/innerWidth)*2-1;
+  mouse.y=-(event.clientY/innerHeight)*2+1;
+  raycaster.setFromCamera(mouse,camera);
+  if(!starPoints)return null;
+  const intersects=raycaster.intersectObject(starPoints);
+  if(intersects.length>0){
+    const idx=intersects[0].instanceId;
+    return nodeMeshes[idx]?.topic||null;
+  }
+  return null;
+}
+
+// 悬停高亮
+let hoveredOrigColor=null;
+function onMouseMove(event){
+  const topic=getIntersectedTopic(event);
+  if(topic!==hoveredId){
+    // 恢复之前的高亮
+    if(hoveredId!==null){
+      const prev=nodeMeshes.find(n=>n.topic.id===hoveredId);
+      if(prev){
+        const d=DMAP[prev.topic.domain];
+        const c=new THREE.Color(d?.c||"#888");
+        starPoints.setColorAt(prev.index,c);
+      }
+    }
+    // 高亮新的
+    if(topic){
+      const cur=nodeMeshes.find(n=>n.topic.id===topic.id);
+      if(cur){
+        starPoints.setColorAt(cur.index,new THREE.Color(0xffffff));
+      }
+      document.body.style.cursor="pointer";
+    }else{
+      document.body.style.cursor="default";
+    }
+    if(starPoints.instanceColor)starPoints.instanceColor.needsUpdate=true;
+    hoveredId=topic?.id||null;
+  }
+}
+
+// 点击选中
+function onClick(event){
+  const topic=getIntersectedTopic(event);
+  if(topic){
+    selectedId=topic.id;
+    showPanel(topic);
+    // 标记为已学习
+    if(!learned.has(topic.id)){
+      learned.add(topic.id);
+      saveLearned();
+      updateHUD();
+    }
+    // 镜头聚焦
+    const target=new THREE.Vector3(topic._x,topic._y,topic._z);
+    focusCamera(target);
+  }else{
+    hidePanel();
+    selectedId=null;
+  }
+}
+
+// 镜头平滑移动到目标
+let camTarget=null,camFrom=null,camLerp=0;
+function focusCamera(target){
+  camFrom=camera.position.clone();
+  const dist=camera.position.distanceTo(target);
+  const dir=new THREE.Vector3().subVectors(camera.position,target).normalize();
+  camTarget=target.clone().add(dir.multiplyScalar(Math.max(120,dist*0.4)));
+  camLerp=0;
+}
+
+// ===== 信息面板 =====
+function showPanel(t){
+  const panel=document.getElementById("panel");
+  const d=DMAP[t.domain];
+  const tag=document.getElementById("p-domain");
+  tag.textContent=d?d.zh:t.domain;
+  tag.style.background=d?d.c+"33":"#333";
+  tag.style.color=d?d.c:"#fff";
+
+  document.getElementById("p-name").textContent=t.name_zh||t.name;
+
+  const desc=document.getElementById("p-desc");
+  desc.textContent=t.description_zh||t.description||"—";
+
+  const meta=document.getElementById("p-meta");
+  meta.innerHTML="";
+  if(t.ageStart)meta.innerHTML+=`<span>年龄 ${t.ageStart}–${t.ageEnd||"?"}</span>`;
+  if(t.type)meta.innerHTML+=`<span>${TYPE_ZH[t.type]||t.type}</span>`;
+  if(t.rarity)meta.innerHTML+=`<span style="color:#${RARITY[t.rarity].toString(16)}">${t.rarity}</span>`;
+  if(t.centrality)meta.innerHTML+=`<span>中心度 ${t.centrality.toFixed(2)}</span>`;
+
+  panel.classList.add("show");
+}
+function hidePanel(){
+  document.getElementById("panel").classList.remove("show");
+}
+
+// ===== HUD =====
+function updateHUD(){
+  document.getElementById("learned-count").textContent=learned.size;
+  document.getElementById("total-count").textContent=TOPICS.length;
+}
+
+// ===== localStorage =====
+function loadLearned(){
+  try{learned=new Set(JSON.parse(localStorage.getItem(LS_KEY)||"[]"));}catch(e){learned=new Set();}
+}
+function saveLearned(){
+  try{localStorage.setItem(LS_KEY,JSON.stringify([...learned]));}catch(e){}
+}
+
+// ===== 加载数据 =====
+async function loadData(){
+  const [t,d]=await Promise.all([
+    fetch("data/math-topics.json").then(r=>r.json()),
+    fetch("data/math-dependencies.json").then(r=>r.json())
+  ]);
+  TOPICS=t.topics;DEPS=d.dependencies;
+  TOPICS.forEach(x=>byId[x.id]=x);
+}
+
+// ===== 初始化 =====
+async function init(){
+  await loadData();
+  loadLearned();
+  computeRarity();
+  layout();
+  buildStars();
+  buildLines();
+  buildLabels();
+  buildLegend();
+  updateHUD();
+
+  // 副标题更新为实际数量
+  document.getElementById("loading").classList.add("hide");
+}
+
+// ===== 事件绑定 =====
+renderer.domElement.addEventListener("mousemove",onMouseMove);
+renderer.domElement.addEventListener("click",onClick);
+addEventListener("resize",()=>{
+  camera.aspect=innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+});
+
+// 用户交互后停止自动旋转
+controls.addEventListener("start",()=>{controls.autoRotate=false;});
+
+// ===== 动画循环 =====
+const clock=new THREE.Clock();
+function animate(){
+  requestAnimationFrame(animate);
+  const dt=clock.getDelta();
+  const t=clock.getElapsedTime();
+
+  controls.update();
+
+  // 罗盘旋转
+  if(compass.ring)compass.ring.rotation.z=t*0.2;
+
+  // 镜头平滑移动
+  if(camTarget&&camLerp<1){
+    camLerp=Math.min(1,camLerp+dt*1.5);
+    const ease=1-Math.pow(1-camLerp,3);
+    camera.position.lerpVectors(camFrom,camTarget,ease);
+    camera.lookAt(0,0,0);
+  }
+
+  renderer.render(scene,camera);
+}
+animate();
+
+init();
+</script>
+</body>
+</html>
