@@ -464,6 +464,31 @@ nodeImg.src="assets/node.png";
 const nodecImg=new Image();  // 点亮：nodec.png（金光亮盘）
 nodecImg.src="assets/nodec.png";
 
+// ===== 烘焙「霓虹光球」：彩色径向渐变，运行时直接 drawImage =====
+// 关键性能优化：全节点共享 3 张光球 sprite，零实时 shadowBlur（避免 700+ 节点卡顿）
+function hexA(hex,a){
+  const h=hex.replace('#','');
+  const r=parseInt(h.substring(0,2),16),g=parseInt(h.substring(2,4),16),b=parseInt(h.substring(4,6),16);
+  return `rgba(${r},${g},${b},${a})`;
+}
+function bakeGlowDisk(color,size){
+  const off=document.createElement("canvas");
+  off.width=size;off.height=size;
+  const octx=off.getContext("2d");
+  const c=size/2;
+  const g=octx.createRadialGradient(c,c,0,c,c,c);
+  g.addColorStop(0,hexA(color,0.95));
+  g.addColorStop(0.22,hexA(color,0.55));
+  g.addColorStop(0.55,hexA(color,0.16));
+  g.addColorStop(1,hexA(color,0));
+  octx.fillStyle=g;octx.fillRect(0,0,size,size);
+  return off;
+}
+const GLOW_DISK_SIZE=128;
+const glowDiskGold=bakeGlowDisk("#a070ff",GLOW_DISK_SIZE); // 已点亮=紫罗兰
+const glowDiskCyan=bakeGlowDisk("#6ef0ff",GLOW_DISK_SIZE); // 可学=青
+const glowDiskGray=bakeGlowDisk("#8ea2cc",GLOW_DISK_SIZE); // 未解锁=冷蓝（弱）
+
 // ===== SVG Sprite 符号系统 =====
 const symCache=new Map();  // {id: {gold,white,gray,ready}}
 let spritePromise=null;
@@ -504,15 +529,16 @@ function loadSymbols(){
         img.onload=()=>{
           octx.drawImage(img,0,0,SIZE,SIZE);
           URL.revokeObjectURL(url);
-          // 预着色：金色（已点亮）、白色（可学）、灰色（未解锁）
-          const gold = tintCanvas(off, "#ffe6a8");
+          // 预着色：金色（已点亮）、白色（高光管芯）、青色（可学霓虹）、灰色（未解锁）
+          const gold = tintCanvas(off, "#b088ff");
           const white = tintCanvas(off, "#ffffff");
           const gray = tintCanvas(off, "#aaaaaa");
-          symCache.set(id,{gold,white,gray,ready:true});
+          const cyan = tintCanvas(off, "#7af0ff");
+          symCache.set(id,{gold,white,gray,cyan,ready:true});
         };
         img.onerror=()=>{URL.revokeObjectURL(url);};
         img.src=url;
-        symCache.set(id,{gold:null,white:null,gray:null,ready:false});
+        symCache.set(id,{gold:null,white:null,gray:null,cyan:null,ready:false});
       });
       return new Promise(resolve=>{
         const check=()=>{
@@ -550,6 +576,19 @@ function initBgStars(){
       a:0.2+Math.random()*0.6,
       tw:Math.random()*Math.PI*2,
       tws:0.5+Math.random()*1.5
+    });
+  }
+  // 少量彩色辉光星，营造星云层次（呼应霓虹主题）
+  const glowColors=["#9fd8ff","#ffd98a","#c9a8ff","#a0ffd6"];
+  for(let i=0;i<26;i++){
+    bgStars.push({
+      x:Math.random()*W,y:Math.random()*H,
+      r:Math.random()*1.6+1.0,
+      a:0.25+Math.random()*0.5,
+      tw:Math.random()*Math.PI*2,
+      tws:0.3+Math.random()*0.8,
+      glow:true,
+      color:glowColors[i%glowColors.length]
     });
   }
 }
@@ -593,6 +632,15 @@ function render(time){
   for(const s of bgStars){
     s.tw+=0.02*s.tws;
     const a=s.a*(0.6+0.4*Math.sin(s.tw));
+    if(s.glow){
+      const gr=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*6);
+      gr.addColorStop(0,s.color);
+      gr.addColorStop(1,s.color+"00");
+      ctx.globalAlpha=a*0.5;
+      ctx.fillStyle=gr;
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r*6,0,Math.PI*2);ctx.fill();
+      ctx.globalAlpha=1;
+    }
     ctx.fillStyle=`rgba(180,200,255,${a})`;
     ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();
   }
@@ -737,7 +785,7 @@ function render(time){
     if(isFocusMode&&!isNeighbor&&!isSelected)nodeAlpha*=0.16;
     if(isLocked)nodeAlpha*=0.5;
 
-    // ===== 节点背景：PNG 图片 =====
+    // ===== 节点背景：烘焙 sprite 直接绘制（运行时零实时阴影）=====
     // 背景尺寸：PNG 为方形圆盘，画圆 r=4 时，图标尺寸 ≈ 2r×1.2 以覆盖圆盘外沿
     const iconSize = r * 2.6;  // PNG 圆盘绘制尺寸
     const bgImg = isLearned ? (nodecImg.complete ? nodecImg : null) : (nodeImg.complete ? nodeImg : null);
@@ -745,115 +793,93 @@ function render(time){
     if(bgImg && visible && nodeAlpha > 0.1){
       ctx.save();
       ctx.globalAlpha = nodeAlpha;
-      // available：呼吸微光（缩放+透明脉冲）
-      if(isAvailableNode && !isHovered && !isSelected){
-        const pulseScale = 1 + 0.04 * pulse;
-        const px = t._x - (iconSize * pulseScale)/2;
-        const py = t._y - (iconSize * pulseScale)/2;
-        ctx.globalAlpha = nodeAlpha * (0.78 + 0.1 * pulse);
-        ctx.drawImage(bgImg, px, py, iconSize * pulseScale, iconSize * pulseScale);
-      }
-      // selected：强烈脉冲
-      else if(isSelected){
+      // 仅选中/悬停（1~2 个节点）保留实时光晕，开销可忽略
+      if(isSelected){
         const selScale = 1 + 0.08 * (0.5 + 0.5 * Math.sin(time * 0.005));
-        const px = t._x - (iconSize * selScale)/2;
-        const py = t._y - (iconSize * selScale)/2;
-        ctx.shadowColor = isLearned ? "#ffd98a" : "#8fe9ff";
+        const ds = iconSize * selScale;
+        ctx.shadowColor = isLearned ? "#c8a0ff" : "#8fe9ff";
         ctx.shadowBlur = 14;
-        ctx.drawImage(bgImg, px, py, iconSize * selScale, iconSize * selScale);
-        ctx.shadowBlur = 0;
-      }
-      // hovered：放大 + 发光
-      else if(isHovered){
-        const hvScale = 1.1;
-        const px = t._x - (iconSize * hvScale)/2;
-        const py = t._y - (iconSize * hvScale)/2;
+        ctx.drawImage(bgImg, t._x - ds/2, t._y - ds/2, ds, ds);
+      }else if(isHovered){
+        const ds = iconSize * 1.1;
         ctx.shadowColor = color;
         ctx.shadowBlur = 10;
-        ctx.drawImage(bgImg, px, py, iconSize * hvScale, iconSize * hvScale);
-        ctx.shadowBlur = 0;
+        ctx.drawImage(bgImg, t._x - ds/2, t._y - ds/2, ds, ds);
       }
-      // learned：金色外光晕（图片本身已发光，再加柔和光晕）
-      else if(isLearned){
-        const px = t._x - iconSize/2;
-        const py = t._y - iconSize/2;
-        ctx.shadowColor = "#ffcf4d";
-        ctx.shadowBlur = 6 + 3 * pulse;
-        ctx.drawImage(bgImg, px, py, iconSize, iconSize);
-        ctx.shadowBlur = 0;
-      }
-      // locked / 普通
-      else{
-        const px = t._x - iconSize/2;
-        const py = t._y - iconSize/2;
-        ctx.drawImage(bgImg, px, py, iconSize, iconSize);
+      // 以下为「批量节点」：全部走 drawImage，无任何实时 shadowBlur
+      else if(isAvailableNode){
+        const pulseScale = 1 + 0.04 * pulse;   // 呼吸微光（缩放+透明脉冲）
+        const ds = iconSize * pulseScale;
+        ctx.globalAlpha = nodeAlpha * (0.78 + 0.1 * pulse);
+        ctx.drawImage(bgImg, t._x - ds/2, t._y - ds/2, ds, ds);
+      }else if(isLearned){
+        const ds = iconSize * (1 + 0.02 * pulse); // 金色呼吸（光晕已由符号霓虹承担）
+        ctx.drawImage(bgImg, t._x - ds/2, t._y - ds/2, ds, ds);
+      }else{
+        ctx.drawImage(bgImg, t._x - iconSize/2, t._y - iconSize/2, iconSize, iconSize);
       }
       ctx.restore();
     }else if(visible && nodeAlpha > 0.1){
-      // 图片未加载完成时回退：彩色圆
+      // 图片未加载完成回退：彩色圆（无实时阴影）
       ctx.globalAlpha = nodeAlpha;
       ctx.fillStyle = isLearned ? "#ffd98a" : (isAvailableNode ? "#fff" : "rgba(140,150,170,.7)");
-      if(isLearned){ctx.shadowColor="#ffcf4d";ctx.shadowBlur=8;}
       ctx.beginPath();ctx.arc(t._x,t._y,r,0,Math.PI*2);ctx.fill();
-      ctx.shadowBlur=0;
       ctx.globalAlpha = 1;
     }
 
-    // ===== SVG 符号覆盖（在 PNG 圆盘中央）=====
+    // ===== SVG 符号：呼吸霓虹灯（烘焙光球 sprite，运行时零实时模糊）=====
     if(visible && nodeAlpha > 0.05){
       const symEntry = symCache.get(t.id);
       if(symEntry && symEntry.ready){
-        const symSize = iconSize * 0.58;
-        const sx = t._x - symSize/2;
-        const sy = t._y - symSize/2;
-        ctx.save();
-        ctx.globalAlpha = nodeAlpha;
-        let symCanvas;
+        const symSize = iconSize * 0.6;
+        // 每颗星独立呼吸相位，形成自然错落的霓虹星海（而非整齐闪烁）
+        const phase = t._x * 0.021 + t._y * 0.029;
+        const breath = 0.5 + 0.5 * Math.sin(time * 0.0024 + phase);
+
+        // 霓虹配色：已点亮=紫罗兰、可学=青、未解锁=冷蓝（弱）
+        let gd, coreCanvas, glowBase, glowMax, sizeBase;
         if(isLearned){
-          // 金色荧光发光
-          symCanvas = symEntry.gold;
-          ctx.shadowColor = "#ffcf4d";
-          ctx.shadowBlur = 12;
-          ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
-          // 二次叠加增强发光
-          ctx.shadowBlur = 6;
-          ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
+          gd = glowDiskGold; coreCanvas = symEntry.gold;
+          glowBase = 0.30; glowMax = 0.55; sizeBase = 2.0;
         }else if(isAvailableNode){
-          // 白色荧光呼吸光
-          symCanvas = symEntry.white;
-          const glow = 8 + 4 * pulse;
-          ctx.shadowColor = "#aaddff";
-          ctx.shadowBlur = glow;
-          ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
-          ctx.shadowBlur = glow * 0.5;
-          ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
-        }else if(isLocked){
-          ctx.globalAlpha = nodeAlpha * 0.75;
-          symCanvas = symEntry.gray;
-          ctx.shadowColor = "rgba(120,130,160,.3)";
-          ctx.shadowBlur = 3;
-          ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
+          gd = glowDiskCyan; coreCanvas = symEntry.cyan;
+          glowBase = 0.30; glowMax = 0.55; sizeBase = 2.0;
         }else{
-          symCanvas = symEntry.gray;
-          ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
+          gd = glowDiskGray; coreCanvas = symEntry.gray;
+          glowBase = 0.06; glowMax = 0.16; sizeBase = 1.5; // 未解锁：极弱，避免整体蓝雾
         }
-        ctx.shadowBlur = 0;
+
+        // 呼吸光晕：彩色光球随 breath 缩放+调透明（霓虹呼吸）
+        const glowSize = symSize * (sizeBase + 0.7 * breath);
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+        // 外层光球（霓虹辉光）
+        ctx.globalAlpha = nodeAlpha * (glowBase + glowMax * breath);
+        ctx.drawImage(gd, t._x - glowSize/2, t._y - glowSize/2, glowSize, glowSize);
+        // 核心符号（亮色管，随呼吸明暗）
+        ctx.globalAlpha = nodeAlpha * (0.60 + 0.40 * breath);
+        ctx.drawImage(coreCanvas, t._x - symSize/2, t._y - symSize/2, symSize, symSize);
+        // 白色管芯高光
+        ctx.globalAlpha = nodeAlpha * (0.20 + 0.40 * breath);
+        ctx.drawImage(symEntry.white, t._x - symSize/2, t._y - symSize/2, symSize, symSize);
         ctx.restore();
       }
     }
 
-    // 已学习外环（稀有度色）——叠加在圆盘外缘
+    // 已学习外环（稀有度色）——叠加在圆盘外缘（无实时阴影，用 lighter 双层描边模拟辉光）
     if(isLearned && visible){
-      ctx.globalAlpha = nodeAlpha;
+      ctx.save();
+      ctx.globalCompositeOperation = "lighter";
       ctx.strokeStyle = rarityColor;
+      // 外层柔光环
+      ctx.globalAlpha = nodeAlpha * 0.5;
+      ctx.lineWidth = (2.5 / view.s) * 1.9;
+      ctx.beginPath();ctx.arc(t._x, t._y, iconSize/2 + 3, 0, Math.PI*2);ctx.stroke();
+      // 内层亮环
+      ctx.globalAlpha = nodeAlpha;
       ctx.lineWidth = 2.5 / view.s;
-      ctx.shadowColor = rarityColor;
-      ctx.shadowBlur = 4;
-      ctx.beginPath();
-      ctx.arc(t._x, t._y, iconSize/2 + 3, 0, Math.PI*2);
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-      ctx.globalAlpha = 1;
+      ctx.beginPath();ctx.arc(t._x, t._y, iconSize/2 + 3, 0, Math.PI*2);ctx.stroke();
+      ctx.restore();
     }
 
     // 悬停光环
