@@ -731,32 +731,38 @@ function render(time){
       if(!visible)continue;
 
       const c1=DMAP[from.domain]?.c||"#444";
-      let width,dash,dashSpeed,strokeStyle,glow=0;
+      let width,strokeStyle,glow=0;
+      let flowing=false,dash=null,dashSpeed=0;
 
       if(isNeighbor){
-        // 高亮边：亮青色电流
-        strokeStyle="#d8f7ff";width=3.2/view.s;dash=[5,12];dashSpeed=0.08;glow=8;
+        // 仅选中节点的连线：小颗粒流动虚线（青色电流）
+        // 颗粒更小：[3,14] 亮段 3 更短、间隙 14 更长，避免「亮线太长」
+        strokeStyle="#d8f7ff";width=3.2/view.s;
+        dash=[3,14];dashSpeed=0.09;glow=8;flowing=true;
         ctx.shadowColor="#8fe9ff";ctx.shadowBlur=glow;
       }else if(isActive){
-        // active 边：已掌握连接，绿色流动
-        strokeStyle="#7fefb0";width=2.2/view.s;dash=[6,8];dashSpeed=0.05;
+        // 已掌握连接：实心绿线，无动画（与最初版本一致，零渲染开销）
+        strokeStyle="#7fefb0";width=2.2/view.s;
       }else if(isPotential){
-        // potential 边：可解锁，蓝色流动
-        strokeStyle="rgba(140,200,255,.6)";width=1.8/view.s;dash=[4,8];dashSpeed=0.04;
+        // 可解锁连接：实心蓝线，无动画
+        strokeStyle="rgba(140,200,255,.6)";width=1.8/view.s;
       }else{
-        // 普通边：仅 showAllLines=true 时显示，领域色纯色
+        // 普通边（显示全部连线）：领域色实心细线，无虚线无动画
         const a1=Math.round(baseAlpha*255).toString(16).padStart(2,"0");
-        strokeStyle=c1+a1;width=1.2/view.s;dash=[3,10];dashSpeed=showFlow?0.03:0;
+        strokeStyle=c1+a1;width=1.2/view.s;
       }
       ctx.strokeStyle=strokeStyle;
       ctx.lineWidth=width;
-      if(dashSpeed>0&&showFlow){
+      if(flowing&&showFlow){
+        // 仅选中节点的少数几条邻居边才做流动偏移，极大节省渲染资源
         ctx.setLineDash(dash);
         ctx.lineDashOffset=-(animTime*dashSpeed)%(dash[0]+dash[1]);
+        ctx.beginPath();ctx.moveTo(from._x,from._y);ctx.lineTo(to._x,to._y);ctx.stroke();
+        ctx.setLineDash([]);
       }else{
-        ctx.setLineDash(dash); // 静态虚线
+        // 静止实心线：不调用 setLineDash 偏移，纯 stroke
+        ctx.beginPath();ctx.moveTo(from._x,from._y);ctx.lineTo(to._x,to._y);ctx.stroke();
       }
-      ctx.beginPath();ctx.moveTo(from._x,from._y);ctx.lineTo(to._x,to._y);ctx.stroke();
       ctx.shadowBlur=0;
     }
     ctx.setLineDash([]);
