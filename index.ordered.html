@@ -29580,6 +29580,16 @@ const stage=document.getElementById("stage");
 let edgesG,nodesG,fxG,starsG,colsG;
 
 // ===== 加载 =====
+// ===== 加载 mtf-sprite.svg 的专属符号（与 galaxy.html 同一套图标，按 topic id 取用）=====
+let SPRITE={}; // id -> <symbol> 元素
+async function loadSprite(){
+  try{
+    const txt=await fetch("assets/mtf-sprite.svg").then(r=>r.text());
+    const doc=new DOMParser().parseFromString(txt,"image/svg+xml");
+    doc.querySelectorAll("symbol").forEach(s=>{SPRITE[s.id]=s;});
+  }catch(e){console.warn("mtf-sprite load failed:",e);}
+}
+
 async function load(){
   let t,d;
   try{
@@ -29596,6 +29606,7 @@ async function load(){
   computeRarity();
   buildDefs();
   layout();
+  await loadSprite();
   render();
   buildSidebar();
   bindEvents();
@@ -29691,11 +29702,25 @@ function render(){
     el("circle",{class:"glow",r:R+9,fill:d.c},g);
     el("circle",{class:"ring-out",r:R,fill:"none",stroke:RARITY[t.rarity],"stroke-width":2},g);
     el("circle",{class:"orb",r:R-3,fill:`url(#grad-${cssId(d.key)})`},g);
-    // 符印
-    const sg=el("g",{class:"sigil",transform:`translate(${-12*(R/13)} ${-12*(R/13)}) scale(${R/13})`,
-      fill:"none",stroke:"#fff","stroke-width":1.7,"stroke-linecap":"round","stroke-linejoin":"round",
-      "vector-effect":"non-scaling-stroke",opacity:.92},g);
-    el("path",{d:d.sigil},sg);
+    // 符印：优先使用 mtf-sprite.svg 中按 topic id 的专属符号（与 galaxy 同款），回退领域 sigil
+    const symEl=SPRITE[t.id];
+    let sg;
+    if(symEl){
+      const symScale=(R/13)*0.375; // 将 64 体系符号适配到原 sigil 显示尺寸
+      sg=el("g",{class:"sigil",transform:`translate(${-32*symScale} ${-32*symScale}) scale(${symScale})`,
+        fill:"none",stroke:"#fff","stroke-linecap":"round","stroke-linejoin":"round",opacity:.92},g);
+      sg.style.color="#fff"; // 让 sprite 内 stroke/fill="currentColor" 取白色
+      symEl.childNodes.forEach(ch=>{ sg.appendChild(document.importNode(ch,true)); });
+      sg.querySelectorAll("path,polygon,circle,line,rect").forEach(p=>{
+        p.setAttribute("vector-effect","non-scaling-stroke");
+        if(p.getAttribute("stroke-width")) p.setAttribute("stroke-width","1.8");
+      });
+    }else{
+      sg=el("g",{class:"sigil",transform:`translate(${-12*(R/13)} ${-12*(R/13)}) scale(${R/13})`,
+        fill:"none",stroke:"#fff","stroke-width":1.7,"stroke-linecap":"round","stroke-linejoin":"round",
+        "vector-effect":"non-scaling-stroke",opacity:.92},g);
+      el("path",{d:d.sigil},sg);
+    }
     // 徽章：星（已掌握）/ 锁（未解锁）
     const bs=el("g",{class:"badge badge-star",transform:`translate(${R*0.62},${-R*0.62})`},g);
     el("path",{d:"M5 0 L6.2 3.3 L9.6 3.3 L6.9 5.4 L7.9 8.7 L5 6.6 L2.1 8.7 L3.1 5.4 L0.4 3.3 L3.8 3.3 Z",
