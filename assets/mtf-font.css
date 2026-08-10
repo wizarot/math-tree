@@ -1,0 +1,2133 @@
+/* MTF Icons - Icon Font CSS (自动生成, 勿手动编辑) */
+/* 用法: <i class="mtf-font mtf-mt_yJmvUCCym7"></i> */
+
+@font-face {
+  font-family: 'MTF Icons';
+  src: url('mtf.woff2') format('woff2'),
+       url('mtf.woff') format('woff'),
+       url('mtf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.mtf-font {
+  font-family: 'MTF Icons';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* 各节点图标类 (通过 ::before content 引用 PUA 码点) */
+.mtf-cn_acutetrig::before {
+  content: "\E001";
+}  /* 锐角三角函数 */
+.mtf-cn_add_elim::before {
+  content: "\E002";
+}  /* 加减消元法 */
+.mtf-cn_arc_sector::before {
+  content: "\E003";
+}  /* 弧长和扇形面积 */
+.mtf-cn_arith_seq::before {
+  content: "\E004";
+}  /* 等差数列 */
+.mtf-cn_arith_sum::before {
+  content: "\E005";
+}  /* 等差数列求和 */
+.mtf-cn_bayes::before {
+  content: "\E006";
+}  /* 贝叶斯公式 */
+.mtf-cn_bei::before {
+  content: "\E007";
+}  /* 倍的认识 */
+.mtf-cn_binom_dist::before {
+  content: "\E008";
+}  /* 二项分布 */
+.mtf-cn_binomial::before {
+  content: "\E009";
+}  /* 二项式定理 */
+.mtf-cn_calendar::before {
+  content: "\E00A";
+}  /* 年、月、日 */
+.mtf-cn_cbrt_def::before {
+  content: "\E00B";
+}  /* 立方根 */
+.mtf-cn_central_fig::before {
+  content: "\E00C";
+}  /* 中心对称图形 */
+.mtf-cn_central_sym::before {
+  content: "\E00D";
+}  /* 中心对称 */
+.mtf-cn_chisq::before {
+  content: "\E00E";
+}  /* 独立性检验 */
+.mtf-cn_circle_eq::before {
+  content: "\E00F";
+}  /* 圆的方程 */
+.mtf-cn_circle_prop::before {
+  content: "\E010";
+}  /* 圆的性质 */
+.mtf-cn_combination::before {
+  content: "\E011";
+}  /* 组合 */
+.mtf-cn_complex_concept::before {
+  content: "\E012";
+}  /* 复数的概念 */
+.mtf-cn_complex_geo::before {
+  content: "\E013";
+}  /* 复数的几何意义 */
+.mtf-cn_complex_op::before {
+  content: "\E014";
+}  /* 复数的运算 */
+.mtf-cn_complex_trig::before {
+  content: "\E015";
+}  /* 复数的三角形式 */
+.mtf-cn_compoundchart::before {
+  content: "\E016";
+}  /* 复式统计图 */
+.mtf-cn_cond_prob::before {
+  content: "\E017";
+}  /* 条件概率 */
+.mtf-cn_conic_comp::before {
+  content: "\E018";
+}  /* 圆锥曲线综合 */
+.mtf-cn_coord_app::before {
+  content: "\E019";
+}  /* 坐标方法的简单应用 */
+.mtf-cn_coord_plane::before {
+  content: "\E01A";
+}  /* 平面直角坐标系 */
+.mtf-cn_coordpair::before {
+  content: "\E01B";
+}  /* 用数对表示位置 */
+.mtf-cn_corr::before {
+  content: "\E01C";
+}  /* 变量间的相关关系 */
+.mtf-cn_cosine_law::before {
+  content: "\E01D";
+}  /* 余弦定理 */
+.mtf-cn_count_principle::before {
+  content: "\E01E";
+}  /* 分类加法与分步乘法计数原理 */
+.mtf-cn_cylcone::before {
+  content: "\E01F";
+}  /* 圆柱与圆锥 */
+.mtf-cn_deriv_app::before {
+  content: "\E020";
+}  /* 导数的实际应用 */
+.mtf-cn_deriv_concept::before {
+  content: "\E021";
+}  /* 导数的概念 */
+.mtf-cn_deriv_extreme::before {
+  content: "\E022";
+}  /* 导数与极值最值 */
+.mtf-cn_deriv_geo::before {
+  content: "\E023";
+}  /* 导数的几何意义 */
+.mtf-cn_deriv_mono::before {
+  content: "\E024";
+}  /* 导数与单调性 */
+.mtf-cn_deriv_rules::before {
+  content: "\E025";
+}  /* 基本初等函数求导 */
+.mtf-cn_direct_func::before {
+  content: "\E026";
+}  /* 正比例函数 */
+.mtf-cn_directions::before {
+  content: "\E027";
+}  /* 认识东南西北 */
+.mtf-cn_discriminant::before {
+  content: "\E028";
+}  /* 根的判别式 */
+.mtf-cn_dispersion::before {
+  content: "\E029";
+}  /* 数据的波动程度 */
+.mtf-cn_ellipse::before {
+  content: "\E02A";
+}  /* 椭圆 */
+.mtf-cn_eq_prop::before {
+  content: "\E02B";
+}  /* 等式的性质 */
+.mtf-cn_equi_tri::before {
+  content: "\E02C";
+}  /* 等边三角形 */
+.mtf-cn_exp_func::before {
+  content: "\E02D";
+}  /* 指数函数 */
+.mtf-cn_exp_op::before {
+  content: "\E02E";
+}  /* 指数与指数运算 */
+.mtf-cn_exp_var::before {
+  content: "\E02F";
+}  /* 数学期望与方差 */
+.mtf-cn_factoring::before {
+  content: "\E030";
+}  /* 因式分解 */
+.mtf-cn_formula_sqdiff::before {
+  content: "\E031";
+}  /* 平方差公式 */
+.mtf-cn_formula_square::before {
+  content: "\E032";
+}  /* 完全平方公式 */
+.mtf-cn_frac_expr::before {
+  content: "\E033";
+}  /* 分式 */
+.mtf-cn_frac_ops::before {
+  content: "\E034";
+}  /* 分式的运算 */
+.mtf-cn_frac_prop::before {
+  content: "\E035";
+}  /* 分式的基本性质 */
+.mtf-cn_freq_prob::before {
+  content: "\E036";
+}  /* 用频率估计概率 */
+.mtf-cn_func_concept::before {
+  content: "\E037";
+}  /* 函数的概念 */
+.mtf-cn_func_eq_ineq::before {
+  content: "\E038";
+}  /* 一次函数与方程不等式 */
+.mtf-cn_func_model::before {
+  content: "\E039";
+}  /* 函数模型应用 */
+.mtf-cn_func_mono::before {
+  content: "\E03A";
+}  /* 函数单调性 */
+.mtf-cn_func_parity::before {
+  content: "\E03B";
+}  /* 函数奇偶性 */
+.mtf-cn_func_period::before {
+  content: "\E03C";
+}  /* 函数周期性 */
+.mtf-cn_func_rep::before {
+  content: "\E03D";
+}  /* 函数的表示 */
+.mtf-cn_func_triple::before {
+  content: "\E03E";
+}  /* 函数的三要素 */
+.mtf-cn_geo_seq::before {
+  content: "\E03F";
+}  /* 等比数列 */
+.mtf-cn_geo_sum::before {
+  content: "\E040";
+}  /* 等比数列求和 */
+.mtf-cn_histogram::before {
+  content: "\E041";
+}  /* 直方图 */
+.mtf-cn_hms::before {
+  content: "\E042";
+}  /* 时、分、秒 */
+.mtf-cn_homothety::before {
+  content: "\E043";
+}  /* 位似 */
+.mtf-cn_hyperbola::before {
+  content: "\E044";
+}  /* 双曲线 */
+.mtf-cn_hypergeo::before {
+  content: "\E045";
+}  /* 超几何分布 */
+.mtf-cn_indep_event::before {
+  content: "\E046";
+}  /* 事件的独立性 */
+.mtf-cn_induction::before {
+  content: "\E047";
+}  /* 数学归纳法 */
+.mtf-cn_ineq_app::before {
+  content: "\E048";
+}  /* 不等式应用 */
+.mtf-cn_ineq_sys::before {
+  content: "\E049";
+}  /* 一元一次不等式组 */
+.mtf-cn_inequality::before {
+  content: "\E04A";
+}  /* 不等式 */
+.mtf-cn_int_exp::before {
+  content: "\E04B";
+}  /* 整数指数幂 */
+.mtf-cn_integral_app::before {
+  content: "\E04C";
+}  /* 积分应用 */
+.mtf-cn_integral_def::before {
+  content: "\E04D";
+}  /* 定积分 */
+.mtf-cn_integral_indef::before {
+  content: "\E04E";
+}  /* 不定积分 */
+.mtf-cn_inter_lines::before {
+  content: "\E04F";
+}  /* 相交线与平行线 */
+.mtf-cn_inverse_func::before {
+  content: "\E050";
+}  /* 反比例函数 */
+.mtf-cn_inverse_func2::before {
+  content: "\E051";
+}  /* 反函数 */
+.mtf-cn_iso_tri::before {
+  content: "\E052";
+}  /* 等腰三角形 */
+.mtf-cn_like_terms::before {
+  content: "\E053";
+}  /* 同类项与合并同类项 */
+.mtf-cn_limit::before {
+  content: "\E054";
+}  /* 极限初步 */
+.mtf-cn_line_circle::before {
+  content: "\E055";
+}  /* 直线与圆的位置关系 */
+.mtf-cn_line_circle_pos::before {
+  content: "\E056";
+}  /* 点直线与圆的位置关系 */
+.mtf-cn_line_conic::before {
+  content: "\E057";
+}  /* 直线与圆锥曲线 */
+.mtf-cn_line_eq::before {
+  content: "\E058";
+}  /* 直线的方程 */
+.mtf-cn_line_plane_par::before {
+  content: "\E059";
+}  /* 线面平行 */
+.mtf-cn_line_plane_perp::before {
+  content: "\E05A";
+}  /* 线面垂直 */
+.mtf-cn_line_rel::before {
+  content: "\E05B";
+}  /* 直线的位置关系 */
+.mtf-cn_line_slope::before {
+  content: "\E05C";
+}  /* 直线的斜率 */
+.mtf-cn_linear3::before {
+  content: "\E05D";
+}  /* 三元一次方程组 */
+.mtf-cn_linear_eq1::before {
+  content: "\E05E";
+}  /* 一元一次方程 */
+.mtf-cn_linear_func::before {
+  content: "\E05F";
+}  /* 一次函数 */
+.mtf-cn_linear_ineq::before {
+  content: "\E060";
+}  /* 一元一次不等式 */
+.mtf-cn_linear_sys::before {
+  content: "\E061";
+}  /* 二元一次方程组 */
+.mtf-cn_linechart::before {
+  content: "\E062";
+}  /* 折线统计图 */
+.mtf-cn_linreg::before {
+  content: "\E063";
+}  /* 线性回归方程 */
+.mtf-cn_list_prob::before {
+  content: "\E064";
+}  /* 用列举法求概率 */
+.mtf-cn_log_func::before {
+  content: "\E065";
+}  /* 对数函数 */
+.mtf-cn_log_op::before {
+  content: "\E066";
+}  /* 对数与对数运算 */
+.mtf-cn_mean::before {
+  content: "\E067";
+}  /* 平均数 */
+.mtf-cn_median_mode::before {
+  content: "\E068";
+}  /* 中位数与众数 */
+.mtf-cn_normal::before {
+  content: "\E069";
+}  /* 正态分布 */
+.mtf-cn_observe3d::before {
+  content: "\E06A";
+}  /* 观察物体（多面观察） */
+.mtf-cn_optimize::before {
+  content: "\E06B";
+}  /* 数学广角——优化 */
+.mtf-cn_parabola::before {
+  content: "\E06C";
+}  /* 抛物线 */
+.mtf-cn_parallel_judge::before {
+  content: "\E06D";
+}  /* 平行线的判定 */
+.mtf-cn_parallel_prop::before {
+  content: "\E06E";
+}  /* 平行线的性质 */
+.mtf-cn_parallelogram::before {
+  content: "\E06F";
+}  /* 平行四边形 */
+.mtf-cn_param_eq::before {
+  content: "\E070";
+}  /* 参数方程 */
+.mtf-cn_permcomb_app::before {
+  content: "\E071";
+}  /* 排列组合应用 */
+.mtf-cn_permutation::before {
+  content: "\E072";
+}  /* 排列 */
+.mtf-cn_plane_par::before {
+  content: "\E073";
+}  /* 面面平行 */
+.mtf-cn_plane_perp::before {
+  content: "\E074";
+}  /* 面面垂直 */
+.mtf-cn_polar::before {
+  content: "\E075";
+}  /* 极坐标 */
+.mtf-cn_poly_add::before {
+  content: "\E076";
+}  /* 整式的加减 */
+.mtf-cn_poly_div::before {
+  content: "\E077";
+}  /* 整式的除法 */
+.mtf-cn_poly_mul::before {
+  content: "\E078";
+}  /* 整式的乘法 */
+.mtf-cn_polygon::before {
+  content: "\E079";
+}  /* 多边形及其内角和 */
+.mtf-cn_polynomial::before {
+  content: "\E07A";
+}  /* 整式 */
+.mtf-cn_pow_mul::before {
+  content: "\E07B";
+}  /* 同底数幂的乘法 */
+.mtf-cn_pow_pow::before {
+  content: "\E07C";
+}  /* 幂的乘方 */
+.mtf-cn_pow_prod::before {
+  content: "\E07D";
+}  /* 积的乘方 */
+.mtf-cn_power::before {
+  content: "\E07E";
+}  /* 乘方与幂 */
+.mtf-cn_power_func::before {
+  content: "\E07F";
+}  /* 幂函数 */
+.mtf-cn_pt_line_plane::before {
+  content: "\E080";
+}  /* 点线面位置关系 */
+.mtf-cn_pythagoras::before {
+  content: "\E081";
+}  /* 勾股定理 */
+.mtf-cn_pythagoras_conv::before {
+  content: "\E082";
+}  /* 勾股定理的逆定理 */
+.mtf-cn_quad_app::before {
+  content: "\E083";
+}  /* 二次函数应用 */
+.mtf-cn_quad_complete::before {
+  content: "\E084";
+}  /* 配方法 */
+.mtf-cn_quad_eq::before {
+  content: "\E085";
+}  /* 一元二次方程 */
+.mtf-cn_quad_factor::before {
+  content: "\E086";
+}  /* 因式分解法解二次方程 */
+.mtf-cn_quad_formula::before {
+  content: "\E087";
+}  /* 求根公式 */
+.mtf-cn_quad_func::before {
+  content: "\E088";
+}  /* 二次函数 */
+.mtf-cn_quad_func_eq::before {
+  content: "\E089";
+}  /* 二次函数与方程 */
+.mtf-cn_quad_graph::before {
+  content: "\E08A";
+}  /* 二次函数的图象与性质 */
+.mtf-cn_radian::before {
+  content: "\E08B";
+}  /* 弧度制 */
+.mtf-cn_ratio_prop::before {
+  content: "\E08C";
+}  /* 比与比例 */
+.mtf-cn_rational::before {
+  content: "\E08D";
+}  /* 有理数 */
+.mtf-cn_rational_ops::before {
+  content: "\E08E";
+}  /* 有理数运算 */
+.mtf-cn_real::before {
+  content: "\E08F";
+}  /* 实数 */
+.mtf-cn_rectangle::before {
+  content: "\E090";
+}  /* 矩形 */
+.mtf-cn_regpoly_circle::before {
+  content: "\E091";
+}  /* 正多边形和圆 */
+.mtf-cn_renminbi::before {
+  content: "\E092";
+}  /* 认识人民币 */
+.mtf-cn_rhombus::before {
+  content: "\E093";
+}  /* 菱形 */
+.mtf-cn_rotation::before {
+  content: "\E094";
+}  /* 旋转 */
+.mtf-cn_rt_tri::before {
+  content: "\E095";
+}  /* 直角三角形 */
+.mtf-cn_rv::before {
+  content: "\E096";
+}  /* 离散型随机变量 */
+.mtf-cn_sample_est::before {
+  content: "\E097";
+}  /* 用样本估计总体 */
+.mtf-cn_scale::before {
+  content: "\E098";
+}  /* 比例尺 */
+.mtf-cn_sci_note::before {
+  content: "\E099";
+}  /* 科学记数法 */
+.mtf-cn_seq_concept::before {
+  content: "\E09A";
+}  /* 数列的概念 */
+.mtf-cn_seq_recur::before {
+  content: "\E09B";
+}  /* 数列通项与递推 */
+.mtf-cn_seq_sum_tech::before {
+  content: "\E09C";
+}  /* 数列求和技巧 */
+.mtf-cn_sim_tri::before {
+  content: "\E09D";
+}  /* 相似三角形 */
+.mtf-cn_similarity::before {
+  content: "\E09E";
+}  /* 图形的相似 */
+.mtf-cn_sine_law::before {
+  content: "\E09F";
+}  /* 正弦定理 */
+.mtf-cn_solid_angle::before {
+  content: "\E0A0";
+}  /* 空间角 */
+.mtf-cn_solid_area::before {
+  content: "\E0A1";
+}  /* 几何体的表面积 */
+.mtf-cn_solid_dist::before {
+  content: "\E0A2";
+}  /* 空间距离 */
+.mtf-cn_solid_intro::before {
+  content: "\E0A3";
+}  /* 立体图形认识 */
+.mtf-cn_solid_vol::before {
+  content: "\E0A4";
+}  /* 几何体的体积 */
+.mtf-cn_solve_rt::before {
+  content: "\E0A5";
+}  /* 解直角三角形 */
+.mtf-cn_solve_triangle::before {
+  content: "\E0A6";
+}  /* 解三角形 */
+.mtf-cn_special_angle::before {
+  content: "\E0A7";
+}  /* 特殊角三角函数值 */
+.mtf-cn_sqrt_add::before {
+  content: "\E0A8";
+}  /* 二次根式的加减 */
+.mtf-cn_sqrt_def::before {
+  content: "\E0A9";
+}  /* 平方根 */
+.mtf-cn_sqrt_expr::before {
+  content: "\E0AA";
+}  /* 二次根式 */
+.mtf-cn_sqrt_mul::before {
+  content: "\E0AB";
+}  /* 二次根式的乘除 */
+.mtf-cn_square::before {
+  content: "\E0AC";
+}  /* 正方形 */
+.mtf-cn_stat_survey::before {
+  content: "\E0AD";
+}  /* 统计调查 */
+.mtf-cn_sub_elim::before {
+  content: "\E0AE";
+}  /* 代入消元法 */
+.mtf-cn_symaxis::before {
+  content: "\E0AF";
+}  /* 轴对称图形 */
+.mtf-cn_tangent::before {
+  content: "\E0B0";
+}  /* 切线 */
+.mtf-cn_total_prob::before {
+  content: "\E0B1";
+}  /* 全概率公式 */
+.mtf-cn_translation::before {
+  content: "\E0B2";
+}  /* 平移 */
+.mtf-cn_trapezoid::before {
+  content: "\E0B3";
+}  /* 梯形 */
+.mtf-cn_treeplant::before {
+  content: "\E0B4";
+}  /* 植树问题 */
+.mtf-cn_trig_any::before {
+  content: "\E0B5";
+}  /* 任意角三角函数 */
+.mtf-cn_trig_double::before {
+  content: "\E0B6";
+}  /* 倍角公式 */
+.mtf-cn_trig_graph::before {
+  content: "\E0B7";
+}  /* 三角函数图象 */
+.mtf-cn_trig_identity::before {
+  content: "\E0B8";
+}  /* 同角三角函数关系 */
+.mtf-cn_trig_induce::before {
+  content: "\E0B9";
+}  /* 诱导公式 */
+.mtf-cn_trig_period::before {
+  content: "\E0BA";
+}  /* 三角函数的周期性 */
+.mtf-cn_trig_sum::before {
+  content: "\E0BB";
+}  /* 和差角公式 */
+.mtf-cn_var_const::before {
+  content: "\E0BC";
+}  /* 常量与变量 */
+.mtf-cn_variance::before {
+  content: "\E0BD";
+}  /* 方差 */
+.mtf-cn_vec3::before {
+  content: "\E0BE";
+}  /* 空间向量 */
+.mtf-cn_vec3_solid::before {
+  content: "\E0BF";
+}  /* 空间向量与立体几何 */
+.mtf-cn_vec_app::before {
+  content: "\E0C0";
+}  /* 向量应用 */
+.mtf-cn_vec_basis::before {
+  content: "\E0C1";
+}  /* 向量基本定理 */
+.mtf-cn_vec_concept::before {
+  content: "\E0C2";
+}  /* 平面向量概念 */
+.mtf-cn_vec_coord::before {
+  content: "\E0C3";
+}  /* 平面向量坐标表示 */
+.mtf-cn_vec_dot::before {
+  content: "\E0C4";
+}  /* 向量数量积 */
+.mtf-cn_vec_linear::before {
+  content: "\E0C5";
+}  /* 向量的线性运算 */
+.mtf-cn_vieta::before {
+  content: "\E0C6";
+}  /* 韦达定理 */
+.mtf-cn_view3::before {
+  content: "\E0C7";
+}  /* 三视图 */
+.mtf-mt_-3udyo6VyB::before {
+  content: "\E0C8";
+}  /* 绘制线性图像 */
+.mtf-mt_-F_Lv_apzH::before {
+  content: "\E0C9";
+}  /* 加减多步问题（9 岁+） */
+.mtf-mt_-P1kdZhHbL::before {
+  content: "\E0CA";
+}  /* 测量质量与重量（4 岁+） */
+.mtf-mt_-V7EnqU7gG::before {
+  content: "\E0CB";
+}  /* 异分母分数加减 */
+.mtf-mt_-af65bxfdp::before {
+  content: "\E0CC";
+}  /* 测量液体与质量 */
+.mtf-mt_-bMnJcPJy8::before {
+  content: "\E0CD";
+}  /* 实验概率与理论概率 */
+.mtf-mt_-c4Ca_nBzX::before {
+  content: "\E0CE";
+}  /* 用分数表示概率 */
+.mtf-mt_-hTTat0mBR::before {
+  content: "\E0CF";
+}  /* 什么是二分之一 */
+.mtf-mt_-vvVxpOHG2::before {
+  content: "\E0D0";
+}  /* 按时间排序事件 */
+.mtf-mt_09sySPqM9Z::before {
+  content: "\E0D1";
+}  /* 理解分数 a/b（a>1，9 岁+） */
+.mtf-mt_0Wg5F97osg::before {
+  content: "\E0D2";
+}  /* 因数、倍数与质数（9 岁+） */
+.mtf-mt_0XxyaQLRhn::before {
+  content: "\E0D3";
+}  /* 认时间：整点与半点 */
+.mtf-mt_0u4KLbvBa1::before {
+  content: "\E0D4";
+}  /* 奇数与偶数 */
+.mtf-mt_14T5yPXUq_::before {
+  content: "\E0D5";
+}  /* 异分母分数加减（含带分数） */
+.mtf-mt_167X6Ax8P7::before {
+  content: "\E0D6";
+}  /* 三角形全等判定（12 岁+） */
+.mtf-mt_18fK9sQdIz::before {
+  content: "\E0D7";
+}  /* 笔算乘法 */
+.mtf-mt_19j_5AuuQI::before {
+  content: "\E0D8";
+}  /* 数轴上的数 */
+.mtf-mt_1KkvzwYxbR::before {
+  content: "\E0D9";
+}  /* 情境中的负数 */
+.mtf-mt_1PAWhRhpdg::before {
+  content: "\E0DA";
+}  /* 整数除以单位分数 */
+.mtf-mt_1VSfm9yiLn::before {
+  content: "\E0DB";
+}  /* 解读分类数据（6 岁+） */
+.mtf-mt_1VmTUxBrNd::before {
+  content: "\E0DC";
+}  /* 勾股定理（13 岁+） */
+.mtf-mt_1YwOCMMwD8::before {
+  content: "\E0DD";
+}  /* 集合与韦恩图 */
+.mtf-mt_1badik7iKJ::before {
+  content: "\E0DE";
+}  /* 比例与相似形（11 岁+） */
+.mtf-mt_20WfHhnL39::before {
+  content: "\E0DF";
+}  /* 动手解决问题 */
+.mtf-mt_2ESZh70NyS::before {
+  content: "\E0E0";
+}  /* 理解分数（9 岁+） */
+.mtf-mt_2OtRUM_0zW::before {
+  content: "\E0E1";
+}  /* 比例与相似形 */
+.mtf-mt_2VR963szuk::before {
+  content: "\E0E2";
+}  /* 搭建与绘制图形 */
+.mtf-mt_2VpdPjvewx::before {
+  content: "\E0E3";
+}  /* 小数位值 */
+.mtf-mt_2XDGT5tei1::before {
+  content: "\E0E4";
+}  /* 一小时的分钟数 */
+.mtf-mt_2jbUekyTu4::before {
+  content: "\E0E5";
+}  /* 延伸乘法表规律 */
+.mtf-mt_2yas4Unc8o::before {
+  content: "\E0E6";
+}  /* 精确到分钟认时间（9 岁+） */
+.mtf-mt_3JgrHY221M::before {
+  content: "\E0E7";
+}  /* 加减法中的未知数 */
+.mtf-mt_3S10OOGPqu::before {
+  content: "\E0E8";
+}  /* 什么是角 */
+.mtf-mt_3VmBdlAeOZ::before {
+  content: "\E0E9";
+}  /* 数轴上的分数 */
+.mtf-mt_3XJkeIn6J6::before {
+  content: "\E0EA";
+}  /* 估算答案（7 岁+） */
+.mtf-mt_3e_PQxwC12::before {
+  content: "\E0EB";
+}  /* 加减法事实熟练 */
+.mtf-mt_3fwYu7imd4::before {
+  content: "\E0EC";
+}  /* 概率之和为 1 */
+.mtf-mt_3qrCtdoVAU::before {
+  content: "\E0ED";
+}  /* 简单公式（重排公式） */
+.mtf-mt_3rTIyJDw7-::before {
+  content: "\E0EE";
+}  /* 进阶数学词汇 */
+.mtf-mt_3tPI0HqqcN::before {
+  content: "\E0EF";
+}  /* 英里与公里 */
+.mtf-mt_3tz3Otap5j::before {
+  content: "\E0F0";
+}  /* 半与四分之一（7 岁+） */
+.mtf-mt_3y7xKP9MjU::before {
+  content: "\E0F1";
+}  /* 较难的数量分数 */
+.mtf-mt_42QD6nYjiZ::before {
+  content: "\E0F2";
+}  /* 测量的线图 */
+.mtf-mt_4K1dr204Hi::before {
+  content: "\E0F3";
+}  /* 分数与小数等值（10 岁+） */
+.mtf-mt_4Km38F4L-6::before {
+  content: "\E0F4";
+}  /* 分数即除法（10 岁+） */
+.mtf-mt_4MFUAsbx_6::before {
+  content: "\E0F5";
+}  /* 用量角器量角 */
+.mtf-mt_4WaKWECpcv::before {
+  content: "\E0F6";
+}  /* 写算式 */
+.mtf-mt_4emC463IyW::before {
+  content: "\E0F7";
+}  /* 比较时长 */
+.mtf-mt_4lp_b5Pzik::before {
+  content: "\E0F8";
+}  /* 容量与体积 */
+.mtf-mt_4m8BimI4G5::before {
+  content: "\E0F9";
+}  /* 精确到分钟认时间（7 岁+） */
+.mtf-mt_4ubP_RMg9o::before {
+  content: "\E0FA";
+}  /* 百分数与小数等值 */
+.mtf-mt_5HV4mbgSGH::before {
+  content: "\E0FB";
+}  /* 数轴上的分数 */
+.mtf-mt_5NwqN6pf_A::before {
+  content: "\E0FC";
+}  /* 大数四舍五入 */
+.mtf-mt_5TBUFnCy5-::before {
+  content: "\E0FD";
+}  /* 体积可加 */
+.mtf-mt_5mIcmKRCgA::before {
+  content: "\E0FE";
+}  /* 比例 */
+.mtf-mt_6-j1NO2ZUH::before {
+  content: "\E0FF";
+}  /* 乘法比较 */
+.mtf-mt_6J1wmCWf41::before {
+  content: "\E100";
+}  /* 货币的加减 */
+.mtf-mt_6XCURuNwPw::before {
+  content: "\E101";
+}  /* 排列时间间隔 */
+.mtf-mt_6_O6THdEDK::before {
+  content: "\E102";
+}  /* 找零 */
+.mtf-mt_6oxQPNLHNv::before {
+  content: "\E103";
+}  /* 用测量值计算 */
+.mtf-mt_6xNmQLzuqm::before {
+  content: "\E104";
+}  /* 理解面积 */
+.mtf-mt_70qDTI14td::before {
+  content: "\E105";
+}  /* 带分数的加减 */
+.mtf-mt_76SPWvdI7r::before {
+  content: "\E106";
+}  /* 数字单词（到 100） */
+.mtf-mt_7XcCG43ZZW::before {
+  content: "\E107";
+}  /* 把 10 以内的数拆成两数之和 */
+.mtf-mt_7rJM8eWUfw::before {
+  content: "\E108";
+}  /* 6 个 6 个数等 */
+.mtf-mt_89riIKwGYp::before {
+  content: "\E109";
+}  /* 角的可加性（9 岁+） */
+.mtf-mt_8A3pZNOp7Z::before {
+  content: "\E10A";
+}  /* 口算乘除（9 岁+） */
+.mtf-mt_8H2kO4k2B9::before {
+  content: "\E10B";
+}  /* 正多边形与不规则多边形 */
+.mtf-mt_8OAGVdeTJ_::before {
+  content: "\E10C";
+}  /* 理解角 */
+.mtf-mt_8RmpkDxT9L::before {
+  content: "\E10D";
+}  /* 认读 +、−、= 符号 */
+.mtf-mt_8atyuvPUZc::before {
+  content: "\E10E";
+}  /* 散点图与相关 */
+.mtf-mt_8gy7uxRlF6::before {
+  content: "\E10F";
+}  /* 一百是十个十 */
+.mtf-mt_8jFSnXxqQD::before {
+  content: "\E110";
+}  /* 算式中的括号 */
+.mtf-mt_8xVHooT4aI::before {
+  content: "\E111";
+}  /* 真实情境的数学建模 */
+.mtf-mt_933BohS9BH::before {
+  content: "\E112";
+}  /* 比较小数 */
+.mtf-mt_98c2qwEF7Q::before {
+  content: "\E113";
+}  /* 1000 以内的位值 */
+.mtf-mt_9IzhGUZ30z::before {
+  content: "\E114";
+}  /* 数字单词（一到二十） */
+.mtf-mt_9KmVWCuh5_::before {
+  content: "\E115";
+}  /* 理解分数（10 岁+） */
+.mtf-mt_9L3NQqgqRd::before {
+  content: "\E116";
+}  /* 数的表示 */
+.mtf-mt_9QzSnn8m80::before {
+  content: "\E117";
+}  /* 正数与负数 */
+.mtf-mt_9XVFje6Tyr::before {
+  content: "\E118";
+}  /* 多千或少千 */
+.mtf-mt_9Y96vxG_LH::before {
+  content: "\E119";
+}  /* 分数除以分数 */
+.mtf-mt_A-FyLLLLzy::before {
+  content: "\E11A";
+}  /* 图形规律 */
+.mtf-mt_AF2BeFQwfX::before {
+  content: "\E11B";
+}  /* 凑钱与找零 */
+.mtf-mt_AKAtWEwpcj::before {
+  content: "\E11C";
+}  /* 两位数加减一位数（心算） */
+.mtf-mt_ALUrJpY0cZ::before {
+  content: "\E11D";
+}  /* 百分比即分数 */
+.mtf-mt_AQcVRBddko::before {
+  content: "\E11E";
+}  /* 1000 以内排序 */
+.mtf-mt_AQo4u7O4sM::before {
+  content: "\E11F";
+}  /* 面积与分配律 */
+.mtf-mt_AR-K72OIIO::before {
+  content: "\E120";
+}  /* 乘加结合问题 */
+.mtf-mt_ATYLKt0je-::before {
+  content: "\E121";
+}  /* 比例推理词汇 */
+.mtf-mt_AYzE1EAvI0::before {
+  content: "\E122";
+}  /* 整数表示为分数（8 岁+） */
+.mtf-mt_AabJisinfi::before {
+  content: "\E123";
+}  /* 分数乘分数（10 岁+） */
+.mtf-mt_Ac7oMWhyPw::before {
+  content: "\E124";
+}  /* 读写数字（10 岁+） */
+.mtf-mt_B1zj1RwQ3a::before {
+  content: "\E125";
+}  /* 用阵列表示乘法（7 岁+） */
+.mtf-mt_BFJ-ch_8QU::before {
+  content: "\E126";
+}  /* 比较与排序测量值 */
+.mtf-mt_BdAeZJUOir::before {
+  content: "\E127";
+}  /* 散点图 */
+.mtf-mt_C9ZfT-4cgn::before {
+  content: "\E128";
+}  /* 乘法交换律 */
+.mtf-mt_CBHwluE6Lp::before {
+  content: "\E129";
+}  /* 同分母分数加减 */
+.mtf-mt_CDa5AVakLE::before {
+  content: "\E12A";
+}  /* 加减两步问题 */
+.mtf-mt_CUmjcE7W6c::before {
+  content: "\E12B";
+}  /* 数轴上的分数（9 岁+） */
+.mtf-mt_Cg8VPguS_V::before {
+  content: "\E12C";
+}  /* 计算平均数 */
+.mtf-mt_ChjMU2GDJa::before {
+  content: "\E12D";
+}  /* 条形图（离散与连续数据） */
+.mtf-mt_Cqm8iy48UI::before {
+  content: "\E12E";
+}  /* 读表格（含时刻表） */
+.mtf-mt_DLcEzmmj2r::before {
+  content: "\E12F";
+}  /* 加减法应用题 */
+.mtf-mt_DNYQLahbfa::before {
+  content: "\E130";
+}  /* 三角形与四边形性质 */
+.mtf-mt_DOe893F6gN::before {
+  content: "\E131";
+}  /* 选择测量单位 */
+.mtf-mt_DRlbMok2lT::before {
+  content: "\E132";
+}  /* 分数-小数等值 */
+.mtf-mt_DW2D1c0fKx::before {
+  content: "\E133";
+}  /* 图形中的规律 */
+.mtf-mt_DyGBW3ZHh3::before {
+  content: "\E134";
+}  /* 笔算乘除法 */
+.mtf-mt_EBYGhd8X3x::before {
+  content: "\E135";
+}  /* 表征间的转化 */
+.mtf-mt_EDgw64OmfA::before {
+  content: "\E136";
+}  /* 位值 ×10 与 ÷10 */
+.mtf-mt_ESgc4YBw-a::before {
+  content: "\E137";
+}  /* 百分比（9 岁+） */
+.mtf-mt_EXlmTURK_o::before {
+  content: "\E138";
+}  /* 时间单位与日历常识 */
+.mtf-mt_EmR5n58jZt::before {
+  content: "\E139";
+}  /* 多步乘除 */
+.mtf-mt_Ep7TDFuYUa::before {
+  content: "\E13A";
+}  /* 数轴上的等值分数 */
+.mtf-mt_FAXjFkgG6X::before {
+  content: "\E13B";
+}  /* 图形中的规律（7 岁+） */
+.mtf-mt_FHIAv6dfhU::before {
+  content: "\E13C";
+}  /* 因数、倍数与质数 */
+.mtf-mt_FP-mjXaq3B::before {
+  content: "\E13D";
+}  /* 等值分数（8 岁+） */
+.mtf-mt_FX4a2Q8XXN::before {
+  content: "\E13E";
+}  /* 展开单层括号 */
+.mtf-mt_FbDKeLfBCo::before {
+  content: "\E13F";
+}  /* 等值分数 */
+.mtf-mt_FieL-vVTI_::before {
+  content: "\E140";
+}  /* 进阶多步问题 */
+.mtf-mt_Fl7b8q9pI1::before {
+  content: "\E141";
+}  /* 小数位值（一位小数四舍五入） */
+.mtf-mt_FnUJMXPUZX::before {
+  content: "\E142";
+}  /* 理解分数 */
+.mtf-mt_FspV_imUGK::before {
+  content: "\E143";
+}  /* 比例图 */
+.mtf-mt_FvEq4heNBx::before {
+  content: "\E144";
+}  /* 除以两位数 */
+.mtf-mt_G3sVFQNCme::before {
+  content: "\E145";
+}  /* 用四舍五入验算 */
+.mtf-mt_GDG9_SZmsO::before {
+  content: "\E146";
+}  /* 除法即求未知因数 */
+.mtf-mt_GDtFU5fyUv::before {
+  content: "\E147";
+}  /* 树状图 */
+.mtf-mt_GRWwTDZ3wD::before {
+  content: "\E148";
+}  /* 用阵列表示乘法 */
+.mtf-mt_GZuoYaDdWd::before {
+  content: "\E149";
+}  /* 二次函数图像 */
+.mtf-mt_Gag_h98jWP::before {
+  content: "\E14A";
+}  /* 读写 1000 万以内的数 */
+.mtf-mt_GpltXPoaoc::before {
+  content: "\E14B";
+}  /* 复杂多步问题 */
+.mtf-mt_GzcJEVkNRn::before {
+  content: "\E14C";
+}  /* 用长乘以宽求面积（8 岁+） */
+.mtf-mt_H6LlpWgEYS::before {
+  content: "\E14D";
+}  /* 读取与比较条形图 */
+.mtf-mt_HFRYjTb-Z5::before {
+  content: "\E14E";
+}  /* 1000 以内加减法熟练 */
+.mtf-mt_HJA2Oz-Zh1::before {
+  content: "\E14F";
+}  /* 分数乘整数应用题（9 岁+） */
+.mtf-mt_HJTuIGHvcR::before {
+  content: "\E150";
+}  /* 减整十数 */
+.mtf-mt_HLUqHJ9Y7n::before {
+  content: "\E151";
+}  /* 10 的幂的规律 */
+.mtf-mt_HNOPGJYiRK::before {
+  content: "\E152";
+}  /* 认时间：五分钟精度 */
+.mtf-mt_HRKzwEQJgO::before {
+  content: "\E153";
+}  /* 第 n 项公式 */
+.mtf-mt_HY8Yycu_rz::before {
+  content: "\E154";
+}  /* 理解分数（7 岁+） */
+.mtf-mt_H_pNJ3ZI_S::before {
+  content: "\E155";
+}  /* 平行线中的角 */
+.mtf-mt_HhuSDxwDNM::before {
+  content: "\E156";
+}  /* 乘法表 */
+.mtf-mt_HnKbuCliNS::before {
+  content: "\E157";
+}  /* 比较分数（8 岁+） */
+.mtf-mt_I5j1ZWo2cn::before {
+  content: "\E158";
+}  /* 两位数加减整十（心算） */
+.mtf-mt_IHipFGTFEY::before {
+  content: "\E159";
+}  /* 用分数折线图展示测量数据 */
+.mtf-mt_IL86kadLSS::before {
+  content: "\E15A";
+}  /* 数轴上的数 */
+.mtf-mt_IM1G_7QzTa::before {
+  content: "\E15B";
+}  /* 现实与数学的联系 */
+.mtf-mt_IegHBHERVa::before {
+  content: "\E15C";
+}  /* 小数位值比较（8 岁+） */
+.mtf-mt_IfEgu0X449::before {
+  content: "\E15D";
+}  /* 比较分数（单位分数与同分母） */
+.mtf-mt_Ii1hV4V5ql::before {
+  content: "\E15E";
+}  /* 小数位值（9 岁+） */
+.mtf-mt_IuHa5UI5od::before {
+  content: "\E15F";
+}  /* 认识体积（10 岁+） */
+.mtf-mt_IwEOCN6bL1::before {
+  content: "\E160";
+}  /* 策略性地选择表征 */
+.mtf-mt_IzQvs7k_sE::before {
+  content: "\E161";
+}  /* 跳数（4、8、50、100） */
+.mtf-mt_J03RFlVdas::before {
+  content: "\E162";
+}  /* 三角形与多边形内角和 */
+.mtf-mt_J339bO7qLe::before {
+  content: "\E163";
+}  /* 分数与百分数作为算子（11 岁+） */
+.mtf-mt_J4j7d3iAfg::before {
+  content: "\E164";
+}  /* 简单的机会实验 */
+.mtf-mt_JH_6RpNWjr::before {
+  content: "\E165";
+}  /* 小数加减策略（10 岁+） */
+.mtf-mt_Jf8xcX4UTq::before {
+  content: "\E166";
+}  /* 量线段与读比例图（11 岁+） */
+.mtf-mt_Jvg8X0N5u0::before {
+  content: "\E167";
+}  /* 使用简单公式 */
+.mtf-mt_Jvvh5P06NV::before {
+  content: "\E168";
+}  /* 用铺砖求面积 */
+.mtf-mt_JwP9QFv6gQ::before {
+  content: "\E169";
+}  /* 读写数字（9 岁+） */
+.mtf-mt_K0Y15w48SY::before {
+  content: "\E16A";
+}  /* 坐标变换（平移/旋转/反射） */
+.mtf-mt_K3R0yaHVcx::before {
+  content: "\E16B";
+}  /* 用乘法与分数建模 */
+.mtf-mt_K5jM7vlVhA::before {
+  content: "\E16C";
+}  /* 全部乘法表到 12×12 */
+.mtf-mt_KB_Czd7RQH::before {
+  content: "\E16D";
+}  /* 三角学基础 */
+.mtf-mt_KFKUR_gBg_::before {
+  content: "\E16E";
+}  /* 矩形的性质（9 岁+） */
+.mtf-mt_KJeEeTutJI::before {
+  content: "\E16F";
+}  /* 二维图形 */
+.mtf-mt_KaF0SQvaiu::before {
+  content: "\E170";
+}  /* 测量长度与高度（5 岁+） */
+.mtf-mt_KhS7K1Mgrw::before {
+  content: "\E171";
+}  /* 展开双层括号 */
+.mtf-mt_Kr3IyA6m-O::before {
+  content: "\E172";
+}  /* 数轴上的分数 */
+.mtf-mt_KwdjWEmMNo::before {
+  content: "\E173";
+}  /* 代数记号 */
+.mtf-mt_Lb2ZnMdkYR::before {
+  content: "\E174";
+}  /* 运算性质 */
+.mtf-mt_LlMl2PbaZe::before {
+  content: "\E175";
+}  /* 乘除 10、100、1000 */
+.mtf-mt_LpSuPgL31x::before {
+  content: "\E176";
+}  /* 除法即等分分享 */
+.mtf-mt_M1tnXqmYbn::before {
+  content: "\E177";
+}  /* 加减多步问题（10 岁+） */
+.mtf-mt_M2v1A9OEuM::before {
+  content: "\E178";
+}  /* 1000 以内计数 */
+.mtf-mt_M5PPDJStGm::before {
+  content: "\E179";
+}  /* 顺数到 100 */
+.mtf-mt_MCu_SNg_OW::before {
+  content: "\E17A";
+}  /* 用阵列表示乘法（9 岁+） */
+.mtf-mt_MFfYcnv6Tv::before {
+  content: "\E17B";
+}  /* 直角与转动 */
+.mtf-mt_MHaiUd2FLA::before {
+  content: "\E17C";
+}  /* 比较大数 */
+.mtf-mt_MJZA90uc6H::before {
+  content: "\E17D";
+}  /* 周长（10 岁+） */
+.mtf-mt_ML5t7n2-U8::before {
+  content: "\E17E";
+}  /* 三角形与平行四边形的面积 */
+.mtf-mt_MWXPiaTnEu::before {
+  content: "\E17F";
+}  /* 大数加减心算（9 岁+） */
+.mtf-mt_MewIRdzpzz::before {
+  content: "\E180";
+}  /* 罗马数字到 100 */
+.mtf-mt_Mnodea7mG_::before {
+  content: "\E181";
+}  /* 棱、顶点与面 */
+.mtf-mt_MqqR7VUoz1::before {
+  content: "\E182";
+}  /* 组合二维图形 */
+.mtf-mt_MyGblah2yY::before {
+  content: "\E183";
+}  /* 认识分数（简单） */
+.mtf-mt_NLSfvB9vUl::before {
+  content: "\E184";
+}  /* 四舍五入到 10、100、1000 */
+.mtf-mt_NSC3LT_-ch::before {
+  content: "\E185";
+}  /* 估算体积 */
+.mtf-mt_NaqEP8xDhZ::before {
+  content: "\E186";
+}  /* 十分位换算成百分位 */
+.mtf-mt_NoB20kVa4w::before {
+  content: "\E187";
+}  /* 数轴上的分数（8 岁+） */
+.mtf-mt_NtJYlJdUe9::before {
+  content: "\E188";
+}  /* 物体的可测属性 */
+.mtf-mt_O_UOTiMvT_::before {
+  content: "\E189";
+}  /* 引导下的多步解题 */
+.mtf-mt_OkSJfrmFb_::before {
+  content: "\E18A";
+}  /* 整十进退数（6 岁+） */
+.mtf-mt_OvyoRo47K-::before {
+  content: "\E18B";
+}  /* 加法即合并两组 */
+.mtf-mt_OzRZ89GrQW::before {
+  content: "\E18C";
+}  /* 估算长度 */
+.mtf-mt_PL9VkDwXfh::before {
+  content: "\E18D";
+}  /* 比较分数（10 岁+，含大于 1） */
+.mtf-mt_PNSyfH56eQ::before {
+  content: "\E18E";
+}  /* 计算百分比 */
+.mtf-mt_PZ909yPrEC::before {
+  content: "\E18F";
+}  /* 乘法即重复相加 */
+.mtf-mt_PgsHGYJMH-::before {
+  content: "\E190";
+}  /* 用多种方式表示加减法 */
+.mtf-mt_PpWSHA-0kv::before {
+  content: "\E191";
+}  /* 加法与减法的策略 */
+.mtf-mt_PsylzZ9lHW::before {
+  content: "\E192";
+}  /* 数轴上的分数 */
+.mtf-mt_QCgbiVrwnp::before {
+  content: "\E193";
+}  /* 加法交换律 */
+.mtf-mt_QDTO3GAgcq::before {
+  content: "\E194";
+}  /* 角的关系求未知角（10 岁+） */
+.mtf-mt_QNxFnxikCN::before {
+  content: "\E195";
+}  /* 用三维图形搭建 */
+.mtf-mt_QU5R7Aajy9::before {
+  content: "\E196";
+}  /* 答案的四舍五入 */
+.mtf-mt_QaYfeVL-0C::before {
+  content: "\E197";
+}  /* 用四舍五入估算 */
+.mtf-mt_Qcp2d_kuta::before {
+  content: "\E198";
+}  /* 三维图形 */
+.mtf-mt_QhFEDyIwSO::before {
+  content: "\E199";
+}  /* 解一元一次方程 */
+.mtf-mt_QqG6IdmTSE::before {
+  content: "\E19A";
+}  /* 位值的 ×10 规律 */
+.mtf-mt_QysgF57dxh::before {
+  content: "\E19B";
+}  /* 点线射线角 */
+.mtf-mt_R2ccrI-nKD::before {
+  content: "\E19C";
+}  /* 100 的倍数 */
+.mtf-mt_R4AY0LKxfl::before {
+  content: "\E19D";
+}  /* 完整坐标系坐标（10 岁+） */
+.mtf-mt_REwgr0d_ss::before {
+  content: "\E19E";
+}  /* 认/搭三维图形含展开图（10 岁+） */
+.mtf-mt_RFeVlw0QvX::before {
+  content: "\E19F";
+}  /* 寻找高效方法 */
+.mtf-mt_RKeheOL9uo::before {
+  content: "\E1A0";
+}  /* 多步解题 */
+.mtf-mt_RVK655t391::before {
+  content: "\E1A1";
+}  /* 测量温度 */
+.mtf-mt_RWUY7_IXvw::before {
+  content: "\E1A2";
+}  /* 数轴上的数 */
+.mtf-mt_RXnyhCRYXA::before {
+  content: "\E1A3";
+}  /* 多步问题：选择运算 */
+.mtf-mt_SBkTGjiZjZ::before {
+  content: "\E1A4";
+}  /* 小数与分数互换（11 岁+） */
+.mtf-mt_SH7QgFl8-v::before {
+  content: "\E1A5";
+}  /* 网格上的图形变换 */
+.mtf-mt_SXbZ3bC9z7::before {
+  content: "\E1A6";
+}  /* 比较分数（9 岁+） */
+.mtf-mt_SmghasIvbT::before {
+  content: "\E1A7";
+}  /* 多步解题 */
+.mtf-mt_SoDP1fSQEB::before {
+  content: "\E1A8";
+}  /* 小数位值 */
+.mtf-mt_SqhXQhAEUf::before {
+  content: "\E1A9";
+}  /* 测量换算 */
+.mtf-mt_SrrsLiJkr3::before {
+  content: "\E1AA";
+}  /* 三位数的加减（7 岁+） */
+.mtf-mt_SsLWS_APM7::before {
+  content: "\E1AB";
+}  /* 分数综合问题（7 岁+） */
+.mtf-mt_T76hKqXf0z::before {
+  content: "\E1AC";
+}  /* 加法结合律（分组相加） */
+.mtf-mt_THl9GLxwoL::before {
+  content: "\E1AD";
+}  /* 两位数的两个数位 */
+.mtf-mt_TMoHjMhRS2::before {
+  content: "\E1AE";
+}  /* 精确的数学表达 */
+.mtf-mt_TcG90kS8nu::before {
+  content: "\E1AF";
+}  /* 比较时长 */
+.mtf-mt_TdV9YGJEoY::before {
+  content: "\E1B0";
+}  /* 位置、方向与运动 */
+.mtf-mt_TgHxujL81r::before {
+  content: "\E1B1";
+}  /* 分数乘整数 */
+.mtf-mt_TiQbi027PE::before {
+  content: "\E1B2";
+}  /* 多个两位数相加 */
+.mtf-mt_To9HdLy8vq::before {
+  content: "\E1B3";
+}  /* 罗马数字到 1000 */
+.mtf-mt_TqDq6jyOmL::before {
+  content: "\E1B4";
+}  /* 十分位与百分位的等值小数 */
+.mtf-mt_U0waNfD8PB::before {
+  content: "\E1B5";
+}  /* 比较与排序数字 */
+.mtf-mt_U4cIBXVug4::before {
+  content: "\E1B6";
+}  /* 乘法比较（方程） */
+.mtf-mt_U9sme87C32::before {
+  content: "\E1B7";
+}  /* 小数位值（11 岁+） */
+.mtf-mt_UNzojLkNdm::before {
+  content: "\E1B8";
+}  /* 精确到分钟认时间（8 岁+） */
+.mtf-mt_UQnAFPs83F::before {
+  content: "\E1B9";
+}  /* 两两位数加减 */
+.mtf-mt_UTnDKQkVX5::before {
+  content: "\E1BA";
+}  /* 矩形中的行与列 */
+.mtf-mt_UcGn2hjhYU::before {
+  content: "\E1BB";
+}  /* 排序可能性 */
+.mtf-mt_UooUHC_V7U::before {
+  content: "\E1BC";
+}  /* 立体图形上的平面 */
+.mtf-mt_Uq5vYqboCR::before {
+  content: "\E1BD";
+}  /* 描述平移运动 */
+.mtf-mt_VAWV_l7J0D::before {
+  content: "\E1BE";
+}  /* 早期应用题 */
+.mtf-mt_VFsuftfvYM::before {
+  content: "\E1BF";
+}  /* 读写 1000 以内的数 */
+.mtf-mt_VKW8lOcFaw::before {
+  content: "\E1C0";
+}  /* 乘法即缩放 */
+.mtf-mt_VUQNveSYjQ::before {
+  content: "\E1C1";
+}  /* 使用逆运算 */
+.mtf-mt_VVn1IXjkzn::before {
+  content: "\E1C2";
+}  /* 用四舍五入估算 */
+.mtf-mt_VgOePicFYK::before {
+  content: "\E1C3";
+}  /* 分数加减概念（分解） */
+.mtf-mt_VhBH8wrFC6::before {
+  content: "\E1C4";
+}  /* 图画图与条形图 */
+.mtf-mt_Vi4Vo5xs_g::before {
+  content: "\E1C5";
+}  /* 十分位与百分位小数记法 */
+.mtf-mt_W17Kbwm0-u::before {
+  content: "\E1C6";
+}  /* 小数与百分数记法 */
+.mtf-mt_WBdHkc2HTf::before {
+  content: "\E1C7";
+}  /* 线性函数图形 */
+.mtf-mt_WX30dzi4dt::before {
+  content: "\E1C8";
+}  /* 熟练乘除事实 */
+.mtf-mt_WXW0hjNhph::before {
+  content: "\E1C9";
+}  /* 规律与数列 */
+.mtf-mt_WcfaSfVT33::before {
+  content: "\E1CA";
+}  /* 一一对应计数 */
+.mtf-mt_WfrE_4r-kY::before {
+  content: "\E1CB";
+}  /* 12 小时与 24 小时制 */
+.mtf-mt_WkKkb7W9Qd::before {
+  content: "\E1CC";
+}  /* 理解问题 */
+.mtf-mt_WsM4EmdOLe::before {
+  content: "\E1CD";
+}  /* 带余数的除法（10 岁+） */
+.mtf-mt_WtIFJSCQIT::before {
+  content: "\E1CE";
+}  /* 几何记号与术语（11 岁+） */
+.mtf-mt_WtcFrxGOgw::before {
+  content: "\E1CF";
+}  /* 多边形的周长 */
+.mtf-mt_X5cypSGoGU::before {
+  content: "\E1D0";
+}  /* 复杂运算顺序（11 岁+） */
+.mtf-mt_XLP1IM3Qbb::before {
+  content: "\E1D1";
+}  /* 长乘法（10 岁+） */
+.mtf-mt_XNmGwNggdU::before {
+  content: "\E1D2";
+}  /* 千万以内的数 */
+.mtf-mt_XSXnTQoQ4l::before {
+  content: "\E1D3";
+}  /* 比较数据分布 */
+.mtf-mt_XV0B4kWwqL::before {
+  content: "\E1D4";
+}  /* 读写 120 以内的数 */
+.mtf-mt_XWSGuFW7It::before {
+  content: "\E1D5";
+}  /* 比的记号 */
+.mtf-mt_XfyqXLqzpx::before {
+  content: "\E1D6";
+}  /* 互补事件 */
+.mtf-mt_XjwUlmxdCT::before {
+  content: "\E1D7";
+}  /* 组合简单图形 */
+.mtf-mt_Xp-rj46S2w::before {
+  content: "\E1D8";
+}  /* 把图形分成相等部分（7 岁+） */
+.mtf-mt_Xt1cRqaBOW::before {
+  content: "\E1D9";
+}  /* 四边形分类（8 岁+） */
+.mtf-mt_XuHmIn2xje::before {
+  content: "\E1DA";
+}  /* 缺数问题（7 岁+） */
+.mtf-mt_Y9XKzLrUAZ::before {
+  content: "\E1DB";
+}  /* 转动与方向 */
+.mtf-mt_YFS7JFk64p::before {
+  content: "\E1DC";
+}  /* 含两个未知数的方程 */
+.mtf-mt_YUJ5pwalqL::before {
+  content: "\E1DD";
+}  /* 估算角度 */
+.mtf-mt_Yw1_4Nfsql::before {
+  content: "\E1DE";
+}  /* 加减法熟练（9 岁+） */
+.mtf-mt_Yw27nweoTj::before {
+  content: "\E1DF";
+}  /* 用图像估算答案（13 岁+） */
+.mtf-mt_YzM5goBctT::before {
+  content: "\E1E0";
+}  /* 十分位（十分之一） */
+.mtf-mt_ZJC7JnnPCu::before {
+  content: "\E1E1";
+}  /* 选择数学工具 */
+.mtf-mt_ZLqYE7la4Z::before {
+  content: "\E1E2";
+}  /* 分数加减应用题 */
+.mtf-mt_ZM9mhHsyYZ::before {
+  content: "\E1E3";
+}  /* 理解百分数 */
+.mtf-mt_ZOJ6EbdPOb::before {
+  content: "\E1E4";
+}  /* 理解分数 */
+.mtf-mt_Zdv-b-iW5K::before {
+  content: "\E1E5";
+}  /* 乘除应用题 */
+.mtf-mt_Zks8xyInSG::before {
+  content: "\E1E6";
+}  /* 换算测量单位（9 岁+） */
+.mtf-mt_ZrsqGVG-Wt::before {
+  content: "\E1E7";
+}  /* 尺规作图（12 岁+） */
+.mtf-mt_Zt30Gxi-qp::before {
+  content: "\E1E8";
+}  /* 计算简单概率 */
+.mtf-mt_Zx1xZM-RbX::before {
+  content: "\E1E9";
+}  /* 三个小数连加 */
+.mtf-mt__Itf4aQZUj::before {
+  content: "\E1EA";
+}  /* 运用数学结构 */
+.mtf-mt__N55B7u7HD::before {
+  content: "\E1EB";
+}  /* 精确到分钟认时间 */
+.mtf-mt__YRJ23GuIK::before {
+  content: "\E1EC";
+}  /* 比较 1–10 的两个数字 */
+.mtf-mt__casygEB85::before {
+  content: "\E1ED";
+}  /* 小数位值 */
+.mtf-mt__h7hvT4tEb::before {
+  content: "\E1EE";
+}  /* 比较多少：哪组更多/更少 */
+.mtf-mt__sMrmOv3bx::before {
+  content: "\E1EF";
+}  /* 位值解题 */
+.mtf-mt__t4afSyZRm::before {
+  content: "\E1F0";
+}  /* 20 以内加减法熟练 */
+.mtf-mt__we2TDqnJx::before {
+  content: "\E1F1";
+}  /* 10 以内加减法熟练 */
+.mtf-mt_a1FdAsRKOF::before {
+  content: "\E1F2";
+}  /* 同分母分数加减 */
+.mtf-mt_a3dov8CZkq::before {
+  content: "\E1F3";
+}  /* 论证数学推理（8 岁+） */
+.mtf-mt_aHAM29nidj::before {
+  content: "\E1F4";
+}  /* 3 个 3 个数（进退） */
+.mtf-mt_aHQ9kNt3is::before {
+  content: "\E1F5";
+}  /* 三位数加减整十（心算） */
+.mtf-mt_aPBzD28_mT::before {
+  content: "\E1F6";
+}  /* 三位数的三个数位 */
+.mtf-mt_aivrWs6jrS::before {
+  content: "\E1F7";
+}  /* 乘法表（8 岁+） */
+.mtf-mt_anAe11HAEH::before {
+  content: "\E1F8";
+}  /* 两步方程 */
+.mtf-mt_b4lbTOJYwI::before {
+  content: "\E1F9";
+}  /* 数集与无穷 */
+.mtf-mt_b7T-CjOYUR::before {
+  content: "\E1FA";
+}  /* 约分化简 */
+.mtf-mt_bESTSBB0wK::before {
+  content: "\E1FB";
+}  /* 饼图与折线图（10 岁+） */
+.mtf-mt_bO-njVOige::before {
+  content: "\E1FC";
+}  /* 十的幂记号 */
+.mtf-mt_bfhng6mOuy::before {
+  content: "\E1FD";
+}  /* 图形的定义性属性（6 岁+） */
+.mtf-mt_bj1YCgNWUx::before {
+  content: "\E1FE";
+}  /* 日、周、月与年 */
+.mtf-mt_c29FaCTNsx::before {
+  content: "\E1FF";
+}  /* 象形图与 tally 图 */
+.mtf-mt_cChv2j_-Da::before {
+  content: "\E200";
+}  /* 100 以内加减法熟练 */
+.mtf-mt_cFltwUQi-d::before {
+  content: "\E201";
+}  /* 数量的几分之几 */
+.mtf-mt_cPZwlUk8Nd::before {
+  content: "\E202";
+}  /* 硬币面值 */
+.mtf-mt_cdMlC7EpTJ::before {
+  content: "\E203";
+}  /* 三角形/四边形/多边形求未知角（10 岁+） */
+.mtf-mt_cqSf213hSa::before {
+  content: "\E204";
+}  /* 测量长度（6 岁+） */
+.mtf-mt_d-WZC2OyMB::before {
+  content: "\E205";
+}  /* 选择数学工具 */
+.mtf-mt_d7XktBQPxm::before {
+  content: "\E206";
+}  /* 数单位方块 */
+.mtf-mt_d8al9JcajP::before {
+  content: "\E207";
+}  /* 换算测量单位 */
+.mtf-mt_dXq9VWm31W::before {
+  content: "\E208";
+}  /* 理解分数 */
+.mtf-mt_dmNvjroCPT::before {
+  content: "\E209";
+}  /* 一共多少个？（基数原则） */
+.mtf-mt_doX1BhmFgk::before {
+  content: "\E20A";
+}  /* 百分位（8 岁+） */
+.mtf-mt_e4V6hvcuEJ::before {
+  content: "\E20B";
+}  /* 几何图例约定（8 岁+） */
+.mtf-mt_e4x3l2JeLI::before {
+  content: "\E20C";
+}  /* 测量长度（7 岁+） */
+.mtf-mt_e7filQgayF::before {
+  content: "\E20D";
+}  /* 异分母分数加减应用题 */
+.mtf-mt_e8CZ7E5qW7::before {
+  content: "\E20E";
+}  /* 凑十（10 的数的分合） */
+.mtf-mt_eKJG-0eC6D::before {
+  content: "\E20F";
+}  /* 频数表与统计图（11 岁+） */
+.mtf-mt_eMtV6tBSJm::before {
+  content: "\E210";
+}  /* 组合图形的面积 */
+.mtf-mt_ePXg_XyCKU::before {
+  content: "\E211";
+}  /* 用条形图解比例 */
+.mtf-mt_eSv_w46u6H::before {
+  content: "\E212";
+}  /* 韦恩图与计数结果 */
+.mtf-mt_ebPelt-qAl::before {
+  content: "\E213";
+}  /* 等值分数（9 岁+） */
+.mtf-mt_efOeaGFyGM::before {
+  content: "\E214";
+}  /* 网格上的平移与反射 */
+.mtf-mt_ehGS_uVSJv::before {
+  content: "\E215";
+}  /* 逆运算：加法抵消减法 */
+.mtf-mt_eiB3-6pu6a::before {
+  content: "\E216";
+}  /* 估算答案（9 岁+） */
+.mtf-mt_ewmuMMPAzP::before {
+  content: "\E217";
+}  /* 1000 以内的加减 */
+.mtf-mt_ezc2m_0dzN::before {
+  content: "\E218";
+}  /* 用找未知加数理解减法 */
+.mtf-mt_f67qGDhyfi::before {
+  content: "\E219";
+}  /* 数学与生活的联系 */
+.mtf-mt_fEuoBYw6bU::before {
+  content: "\E21A";
+}  /* 分类二维与三维图形 */
+.mtf-mt_fLOkq-HfPB::before {
+  content: "\E21B";
+}  /* 用实物建模实际问题 */
+.mtf-mt_fR0UtsSREU::before {
+  content: "\E21C";
+}  /* 读写 20 以内的数 */
+.mtf-mt_fZTn0W_iZR::before {
+  content: "\E21D";
+}  /* 规律的概括 */
+.mtf-mt_fmm-P17Vka::before {
+  content: "\E21E";
+}  /* 统计分析词汇 */
+.mtf-mt_fxPtngwUfz::before {
+  content: "\E21F";
+}  /* 数列间的关系 */
+.mtf-mt_g3W0mdADVu::before {
+  content: "\E220";
+}  /* 认识四分之一（5 岁+） */
+.mtf-mt_gNUE4B3vuk::before {
+  content: "\E221";
+}  /* 正负数的分数四则运算（11 岁+） */
+.mtf-mt_g_fkAqmz72::before {
+  content: "\E222";
+}  /* 表达式与方程词汇 */
+.mtf-mt_ghF3Vv6taM::before {
+  content: "\E223";
+}  /* 5 以内加减法熟练 */
+.mtf-mt_ghK1mnEstc::before {
+  content: "\E224";
+}  /* 半与四分之一（8 岁+） */
+.mtf-mt_glPPG-kTQY::before {
+  content: "\E225";
+}  /* 100 以内加法 */
+.mtf-mt_gtTl3R5buH::before {
+  content: "\E226";
+}  /* 乘法的含义 */
+.mtf-mt_gu0NPDvlhY::before {
+  content: "\E227";
+}  /* 系统列举 */
+.mtf-mt_gx6KQK5-Kx::before {
+  content: "\E228";
+}  /* 分数边长的矩形面积 */
+.mtf-mt_gxCIASSezX::before {
+  content: "\E229";
+}  /* 平方数与立方数 */
+.mtf-mt_h0CVtqI2xo::before {
+  content: "\E22A";
+}  /* 角的类型（锐角/钝角） */
+.mtf-mt_h0gJcSuwdL::before {
+  content: "\E22B";
+}  /* 比的问题 */
+.mtf-mt_hBZwbst0ow::before {
+  content: "\E22C";
+}  /* 线性数列 */
+.mtf-mt_hCVPYlF-7Y::before {
+  content: "\E22D";
+}  /* 平方数与立方数 */
+.mtf-mt_hImiKNiaNh::before {
+  content: "\E22E";
+}  /* 运算顺序（10 岁+） */
+.mtf-mt_hR2Y7NhMSY::before {
+  content: "\E22F";
+}  /* 补全对称图形 */
+.mtf-mt_hRZyKvz1KN::before {
+  content: "\E230";
+}  /* 对称轴（8 岁+） */
+.mtf-mt_hVpGOEz2kG::before {
+  content: "\E231";
+}  /* 四个象限中的坐标（11 岁+） */
+.mtf-mt_hdrMoiTgqu::before {
+  content: "\E232";
+}  /* 按给定尺寸和角度画二维图形（10 岁+） */
+.mtf-mt_hlGKg5M7qJ::before {
+  content: "\E233";
+}  /* 分数、小数与百分比 */
+.mtf-mt_hniI4E-OCE::before {
+  content: "\E234";
+}  /* 奇数或偶数 */
+.mtf-mt_hyvHv2BCwb::before {
+  content: "\E235";
+}  /* 分得越细份越小 */
+.mtf-mt_i2F1nWxJjv::before {
+  content: "\E236";
+}  /* 用数轴表示不等式 */
+.mtf-mt_i5_HnoFOYw::before {
+  content: "\E237";
+}  /* 坐标（8 岁+，描点连线） */
+.mtf-mt_i9rJbuFO3p::before {
+  content: "\E238";
+}  /* 列代数方程 */
+.mtf-mt_iEXqN48w3x::before {
+  content: "\E239";
+}  /* 百分比（12 岁+） */
+.mtf-mt_iFFKZd-Vgv::before {
+  content: "\E23A";
+}  /* 概率语言 */
+.mtf-mt_iNdrM2-oJf::before {
+  content: "\E23B";
+}  /* 除法的含义 */
+.mtf-mt_iQYPw8bMfN::before {
+  content: "\E23C";
+}  /* 处理货币问题 */
+.mtf-mt_idbKDrf9qZ::before {
+  content: "\E23D";
+}  /* 分数作为图形的部分 */
+.mtf-mt_ifPDOYvUqm::before {
+  content: "\E23E";
+}  /* 单位分数除以整数 */
+.mtf-mt_ilPrU0cbtT::before {
+  content: "\E23F";
+}  /* 用估算检验计算 */
+.mtf-mt_isojCL9yy-::before {
+  content: "\E240";
+}  /* 乘整十数 */
+.mtf-mt_iyovKgZC1q::before {
+  content: "\E241";
+}  /* 用重复推理概括 */
+.mtf-mt_izien3ZX51::before {
+  content: "\E242";
+}  /* 多十或多百/少十或少百 */
+.mtf-mt_j5YqQnN6xe::before {
+  content: "\E243";
+}  /* 构建数学论证 */
+.mtf-mt_jBQS-CicNn::before {
+  content: "\E244";
+}  /* 第一象限坐标 */
+.mtf-mt_jCy07DyBNU::before {
+  content: "\E245";
+}  /* 用等值关系推理 */
+.mtf-mt_jHgRQ4hR0g::before {
+  content: "\E246";
+}  /* 运算顺序 */
+.mtf-mt_jHv4BgRK8B::before {
+  content: "\E247";
+}  /* 用不同单位测量 */
+.mtf-mt_jY7uf0Cb7o::before {
+  content: "\E248";
+}  /* 每位数字的位值 */
+.mtf-mt_k2WE0-22-4::before {
+  content: "\E249";
+}  /* 单位分数与非单位分数 */
+.mtf-mt_kDMKJ5Ztt6::before {
+  content: "\E24A";
+}  /* 除以 10 和 100 */
+.mtf-mt_kJ5wYzO8qC::before {
+  content: "\E24B";
+}  /* 解释数学推理 */
+.mtf-mt_kJGCjnuelW::before {
+  content: "\E24C";
+}  /* 位值理解与数感 */
+.mtf-mt_kLQOzZYrd5::before {
+  content: "\E24D";
+}  /* 复合单位 */
+.mtf-mt_kdWoAel3Zl::before {
+  content: "\E24E";
+}  /* 千分位（9 岁+） */
+.mtf-mt_kw7xmp68rU::before {
+  content: "\E24F";
+}  /* 多十或少十 */
+.mtf-mt_lC_Q5mSL_I::before {
+  content: "\E250";
+}  /* 10000 以内的数 */
+.mtf-mt_lMz9nAs7VO::before {
+  content: "\E251";
+}  /* 早期数学词汇 */
+.mtf-mt_lNGpnILM5C::before {
+  content: "\E252";
+}  /* 读小数位 */
+.mtf-mt_lU-2aTRB9f::before {
+  content: "\E253";
+}  /* 小数除法 */
+.mtf-mt_liIW336odh::before {
+  content: "\E254";
+}  /* 按属性分类图形（层次） */
+.mtf-mt_lvaSGHwvQ5::before {
+  content: "\E255";
+}  /* 分数乘法实际应用 */
+.mtf-mt_lxaM6iVpdr::before {
+  content: "\E256";
+}  /* 平移与反射图形 */
+.mtf-mt_m1W6nTQJ2b::before {
+  content: "\E257";
+}  /* 20 以内加减法 */
+.mtf-mt_mFJ-2ZF6Tk::before {
+  content: "\E258";
+}  /* 估算与比较货币 */
+.mtf-mt_mQcWGh02no::before {
+  content: "\E259";
+}  /* 选择恰当策略 */
+.mtf-mt_mayItsxMUu::before {
+  content: "\E25A";
+}  /* 测量并绘制长度 */
+.mtf-mt_mnEVZNkX3p::before {
+  content: "\E25B";
+}  /* 平面图形与立体图形 */
+.mtf-mt_mpS-JK_p_m::before {
+  content: "\E25C";
+}  /* 四位数的加减（8 岁+） */
+.mtf-mt_mqgu72aCMz::before {
+  content: "\E25D";
+}  /* 联立方程 */
+.mtf-mt_mr_Vk7FGzK::before {
+  content: "\E25E";
+}  /* 加减法运算 */
+.mtf-mt_mywsN77hGZ::before {
+  content: "\E25F";
+}  /* 数学精确性 */
+.mtf-mt_n0AlyLQwC9::before {
+  content: "\E260";
+}  /* 组合图形的周长 */
+.mtf-mt_nNNVrLqPW3::before {
+  content: "\E261";
+}  /* 合并同类项 */
+.mtf-mt_nOCPx5qw0Z::before {
+  content: "\E262";
+}  /* 按比例分配数量 */
+.mtf-mt_nRksLqt-iR::before {
+  content: "\E263";
+}  /* 三维图形性质与截面（11 岁+） */
+.mtf-mt_nTL-owFJTF::before {
+  content: "\E264";
+}  /* 估算答案（10 岁+） */
+.mtf-mt_nZkL5-XjRX::before {
+  content: "\E265";
+}  /* 因数对与交换律 */
+.mtf-mt_ndGqFPWyen::before {
+  content: "\E266";
+}  /* 整体的分数（1/b 与 a/b） */
+.mtf-mt_nvdpxAJTBG::before {
+  content: "\E267";
+}  /* 2 个 2 个数（跳数） */
+.mtf-mt_nyK25mNOeR::before {
+  content: "\E268";
+}  /* 展示解题过程 */
+.mtf-mt_oDU_8zMZjp::before {
+  content: "\E269";
+}  /* 三位数加减一位数（心算，7 岁+） */
+.mtf-mt_oDlduFnemk::before {
+  content: "\E26A";
+}  /* 坐标系（两垂直数轴） */
+.mtf-mt_oIzycTBeE4::before {
+  content: "\E26B";
+}  /* 等号的含义 */
+.mtf-mt_o_p-3tCxiM::before {
+  content: "\E26C";
+}  /* 带分数与假分数 */
+.mtf-mt_oqziWKry-L::before {
+  content: "\E26D";
+}  /* 角和规则（点/直线/对顶角） */
+.mtf-mt_p-nbe0w_lf::before {
+  content: "\E26E";
+}  /* 带余数的除法 */
+.mtf-mt_p6MhZJYYPN::before {
+  content: "\E26F";
+}  /* 公制与英制换算 */
+.mtf-mt_pAcaehday5::before {
+  content: "\E270";
+}  /* 用物品表示数 */
+.mtf-mt_pbuhUQJjtt::before {
+  content: "\E271";
+}  /* 英镑与便士符号 */
+.mtf-mt_pjfmCMMPjO::before {
+  content: "\E272";
+}  /* 口算乘除 */
+.mtf-mt_pyMD_SIiYO::before {
+  content: "\E273";
+}  /* 论证数学推理 */
+.mtf-mt_q9EaJc2FP8::before {
+  content: "\E274";
+}  /* 长乘法 */
+.mtf-mt_qUGMyMYn9m::before {
+  content: "\E275";
+}  /* 度数与转动 */
+.mtf-mt_qeZYF6HZ4o::before {
+  content: "\E276";
+}  /* 位置语言 */
+.mtf-mt_r0VXbfAmsH::before {
+  content: "\E277";
+}  /* 十是个十 */
+.mtf-mt_r8XnXwRA6g::before {
+  content: "\E278";
+}  /* 带刻度的图画图与条形图（8 岁+） */
+.mtf-mt_r8c43QB6wx::before {
+  content: "\E279";
+}  /* 按线属性分类图形 */
+.mtf-mt_rCMdwG-YOE::before {
+  content: "\E27A";
+}  /* 单位分数与整数的除法应用 */
+.mtf-mt_rxInpOQ74w::before {
+  content: "\E27B";
+}  /* 乘除符号规则 */
+.mtf-mt_s2mfRBoTal::before {
+  content: "\E27C";
+}  /* 数的分合（凑数） */
+.mtf-mt_sA2OvTiech::before {
+  content: "\E27D";
+}  /* 三位小数 */
+.mtf-mt_sBcRdUfAzV::before {
+  content: "\E27E";
+}  /* 二维图形属性（6 岁+） */
+.mtf-mt_sHJqh6UUya::before {
+  content: "\E27F";
+}  /* 实验概率 */
+.mtf-mt_sYpKWbq5ra::before {
+  content: "\E280";
+}  /* 每次多一个 */
+.mtf-mt_skYly2Qm01::before {
+  content: "\E281";
+}  /* 测量长度 */
+.mtf-mt_snlqRCiA1R::before {
+  content: "\E282";
+}  /* 第一象限描点 */
+.mtf-mt_svFa6_mjO_::before {
+  content: "\E283";
+}  /* 圆的周长与面积 */
+.mtf-mt_t0g2SlP404::before {
+  content: "\E284";
+}  /* 0 到 1 的概率尺度 */
+.mtf-mt_tAJH5BrpOx::before {
+  content: "\E285";
+}  /* 面积与体积公式（11 岁+） */
+.mtf-mt_tAtMET4EIU::before {
+  content: "\E286";
+}  /* 正倒数（9 岁+） */
+.mtf-mt_tedML_iu4Y::before {
+  content: "\E287";
+}  /* 多步求未知角（11 岁+） */
+.mtf-mt_tpT9brpI6D::before {
+  content: "\E288";
+}  /* 单位换算 */
+.mtf-mt_u23IGDxOpk::before {
+  content: "\E289";
+}  /* 平行线与垂线 */
+.mtf-mt_u5HkSxZECM::before {
+  content: "\E28A";
+}  /* 数据收集与展示词汇（6 岁+） */
+.mtf-mt_uDJY0X0hgo::before {
+  content: "\E28B";
+}  /* 数轴上的分数（11 岁+） */
+.mtf-mt_uESbzWCZIq::before {
+  content: "\E28C";
+}  /* 因式分解表达式 */
+.mtf-mt_uG2mjHFOlO::before {
+  content: "\E28D";
+}  /* 发现数学规律 */
+.mtf-mt_uhuxX8sg9f::before {
+  content: "\E28E";
+}  /* 比较长短与高矮 */
+.mtf-mt_vHzVa3SURC::before {
+  content: "\E28F";
+}  /* 代入公式 */
+.mtf-mt_vJUa62bxeR::before {
+  content: "\E290";
+}  /* 画二维图形与认三维图形（7 岁+） */
+.mtf-mt_vKcxX6iNOA::before {
+  content: "\E291";
+}  /* 分数记法 */
+.mtf-mt_vXRzMbiPff::before {
+  content: "\E292";
+}  /* 负数 */
+.mtf-mt_vmQJAtAFuy::before {
+  content: "\E293";
+}  /* 概率尺度 */
+.mtf-mt_vmW2cb5c7A::before {
+  content: "\E294";
+}  /* 混合运算口算（10 岁+） */
+.mtf-mt_vnJEztczji::before {
+  content: "\E295";
+}  /* 立体图形的展开图 */
+.mtf-mt_w6MxaaoMXZ::before {
+  content: "\E296";
+}  /* 乘法表中的规律 */
+.mtf-mt_wB-GBDkoNr::before {
+  content: "\E297";
+}  /* 小数与分数（度量与货币） */
+.mtf-mt_wE7-Gs9ENL::before {
+  content: "\E298";
+}  /* 测量周长 */
+.mtf-mt_wPgpMJ0-PA::before {
+  content: "\E299";
+}  /* 乘除 10、100、1000（10 岁+） */
+.mtf-mt_wQ89AEXhz3::before {
+  content: "\E29A";
+}  /* 乘法表（7 岁+） */
+.mtf-mt_wUSbRt3-qw::before {
+  content: "\E29B";
+}  /* 从二维表示认三维图形（9 岁+） */
+.mtf-mt_wh3UqnWsa7::before {
+  content: "\E29C";
+}  /* 乘法即重复相加（6 岁+） */
+.mtf-mt_wzAZ8qFDc4::before {
+  content: "\E29D";
+}  /* 加减法的心算与笔算 */
+.mtf-mt_x8TshvbbQT::before {
+  content: "\E29E";
+}  /* 读写 100 以内的数 */
+.mtf-mt_xACS3rWWDp::before {
+  content: "\E29F";
+}  /* 图形的二分之一与四分之一 */
+.mtf-mt_xAf2bu9wYK::before {
+  content: "\E2A0";
+}  /* 一个量作为另一量的分数 */
+.mtf-mt_xMt1TLTs--::before {
+  content: "\E2A1";
+}  /* 处理大数 */
+.mtf-mt_xPqczp7zPX::before {
+  content: "\E2A2";
+}  /* 三位数加减整百（心算） */
+.mtf-mt_xSgAgg9Ej_::before {
+  content: "\E2A3";
+}  /* 等可能结果 */
+.mtf-mt_xWg0lI_gG4::before {
+  content: "\E2A4";
+}  /* 用测量比较长短 */
+.mtf-mt_xZvDCYA5Ae::before {
+  content: "\E2A5";
+}  /* 乘除中的未知数 */
+.mtf-mt_xfwv0M83mJ::before {
+  content: "\E2A6";
+}  /* 精确的数学词汇 */
+.mtf-mt_xhoOWnhtHq::before {
+  content: "\E2A7";
+}  /* 因数、倍数与质数（11 岁+） */
+.mtf-mt_xmmgAzxe5j::before {
+  content: "\E2A8";
+}  /* 十几的数 */
+.mtf-mt_xppl18avyY::before {
+  content: "\E2A9";
+}  /* 按类别分类 */
+.mtf-mt_xq3YHZ2zeR::before {
+  content: "\E2AA";
+}  /* 圆的各部分 */
+.mtf-mt_y-BuQAfw4B::before {
+  content: "\E2AB";
+}  /* 相似与放大（12 岁+） */
+.mtf-mt_y1XCVsIelg::before {
+  content: "\E2AC";
+}  /* 质数 */
+.mtf-mt_y1n0Zwhoca::before {
+  content: "\E2AD";
+}  /* 面积（8 岁+） */
+.mtf-mt_yGv8doDAmp::before {
+  content: "\E2AE";
+}  /* 用非正规语言描述图形属性（5 岁+） */
+.mtf-mt_yJmvUCCym7::before {
+  content: "\E2AF";
+}  /* 加减法应用题 */
+.mtf-mt_yK51ZnKA8m::before {
+  content: "\E2B0";
+}  /* 比的记号与关系 */
+.mtf-mt_yTWxkzzoOZ::before {
+  content: "\E2B1";
+}  /* 两步应用题 */
+.mtf-mt_yXO7lQ9Yn7::before {
+  content: "\E2B2";
+}  /* 生成数列 */
+.mtf-mt_ylXdiVRAYv::before {
+  content: "\E2B3";
+}  /* 把数据按类别整理 */
+.mtf-mt_yqAL6O5i_v::before {
+  content: "\E2B4";
+}  /* 数 20 以内的物体 */
+.mtf-mt_yqZiX6vS7D::before {
+  content: "\E2B5";
+}  /* 真实情境的数学建模 */
+.mtf-mt_z5iwdZyeDr::before {
+  content: "\E2B6";
+}  /* 代数变形 */
+.mtf-mt_zMEvtigoM3::before {
+  content: "\E2B7";
+}  /* 数轴上的数 */
+.mtf-mt_zOWwLxa77y::before {
+  content: "\E2B8";
+}  /* 认读 ×、÷、= 符号 */
+.mtf-mt_zd0YkB3xNj::before {
+  content: "\E2B9";
+}  /* 测量质量与重量 */
+.mtf-mt_zfy1gOEewd::before {
+  content: "\E2BA";
+}  /* 10 的倍数 */
+.mtf-mt_zkFbMLpu3U::before {
+  content: "\E2BB";
+}  /* 比较容量 */
+.mtf-mt_zuKAX6lcYR::before {
+  content: "\E2BC";
+}  /* 减法即拿走或分开 */
+.mtf-mt_zuOGOGFAKb::before {
+  content: "\E2BD";
+}  /* 按指定属性画图/认图形（7 岁+） */
+.mtf-mt_zxST3MarI9::before {
+  content: "\E2BE";
+}  /* 加减策略的理解（7 岁+） */

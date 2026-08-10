@@ -1,0 +1,7034 @@
+{
+  "description": "数学天赋星图 SVG 符号索引",
+  "totalNodes": 702,
+  "totalGenerated": 702,
+  "frames": {
+    "CRYSTAL": "八角切面晶体框 (CONCEPTUAL/CONCEPTURAL)",
+    "GEAR": "六边形齿轮框 (PROCEDURAL)",
+    "HOLO": "方形全息框-四角光标 (REPRESENTATIONAL)",
+    "RING": "圆环框 (LANGUAGE)",
+    "STAR": "五角星芒框 (META/METACOGNITIVE)"
+  },
+  "records": [
+    {
+      "id": "mt_yJmvUCCym7",
+      "name": "Addition and subtraction word problems",
+      "name_zh": "加减法应用题",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_OvyoRo47K-",
+      "name": "Addition as combining or putting together two",
+      "name_zh": "加法即合并两组",
+      "domain": "Addition & Subtraction",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "plus",
+      "matchedKeyword": "加法"
+    },
+    {
+      "id": "mt_e8CZ7E5qW7",
+      "name": "Number bonds to 9",
+      "name_zh": "凑十（10 的数的分合）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "number_bond",
+      "matchedKeyword": "凑十"
+    },
+    {
+      "id": "mt_7XcCG43ZZW",
+      "name": "Numbers up to 10 into pairs",
+      "name_zh": "把 10 以内的数拆成两数之和",
+      "domain": "Addition & Subtraction",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "number_bond",
+      "matchedKeyword": "拆成"
+    },
+    {
+      "id": "mt_PgsHGYJMH-",
+      "name": "Representing Addition and Subtraction",
+      "name_zh": "用多种方式表示加减法",
+      "domain": "Addition & Subtraction",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_zuKAX6lcYR",
+      "name": "Subtraction as taking away or separating",
+      "name_zh": "减法即拿走或分开",
+      "domain": "Addition & Subtraction",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "minus",
+      "matchedKeyword": "减法"
+    },
+    {
+      "id": "mt_mr_Vk7FGzK",
+      "name": "Adding and subtracting",
+      "name_zh": "加减法运算",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_VAWV_l7J0D",
+      "name": "Early Word Problems",
+      "name_zh": "早期应用题",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "question",
+      "matchedKeyword": "problem"
+    },
+    {
+      "id": "mt_ghF3Vv6taM",
+      "name": "Fluent adding and subtracting within 5",
+      "name_zh": "5 以内加减法熟练",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_s2mfRBoTal",
+      "name": "Number bonds",
+      "name_zh": "数的分合（凑数）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "number_bond",
+      "matchedKeyword": "number bond"
+    },
+    {
+      "id": "mt_8RmpkDxT9L",
+      "name": "Reading +, −, and = symbols",
+      "name_zh": "认读 +、−、= 符号",
+      "domain": "Addition & Subtraction",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "vocab",
+      "matchedKeyword": "读"
+    },
+    {
+      "id": "mt_Zx1xZM-RbX",
+      "name": "Adding Three Small Numbers",
+      "name_zh": "三个小数连加",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus",
+      "matchedKeyword": "加"
+    },
+    {
+      "id": "mt_I5j1ZWo2cn",
+      "name": "Adding and subtracting tens mentally",
+      "name_zh": "两位数加减整十（心算）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_UQnAFPs83F",
+      "name": "Adding two two-digit numbers",
+      "name_zh": "两两位数加减",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_glPPG-kTQY",
+      "name": "Adding within 100",
+      "name_zh": "100 以内加法",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus",
+      "matchedKeyword": "加法"
+    },
+    {
+      "id": "mt_PpWSHA-0kv",
+      "name": "Addition and subtraction strategies",
+      "name_zh": "加法与减法的策略",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "addition and subtraction"
+    },
+    {
+      "id": "mt_m1W6nTQJ2b",
+      "name": "Addition and subtraction within 20",
+      "name_zh": "20 以内加减法",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_QCgbiVrwnp",
+      "name": "Addition in any order",
+      "name_zh": "加法交换律",
+      "domain": "Addition & Subtraction",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "plus",
+      "matchedKeyword": "加法"
+    },
+    {
+      "id": "mt_ezc2m_0dzN",
+      "name": "Finding a missing number in addition",
+      "name_zh": "用找未知加数理解减法",
+      "domain": "Addition & Subtraction",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "plus",
+      "matchedKeyword": "加"
+    },
+    {
+      "id": "mt__we2TDqnJx",
+      "name": "Fluent adding and subtracting within 10",
+      "name_zh": "10 以内加减法熟练",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_3e_PQxwC12",
+      "name": "Fluent addition and subtraction",
+      "name_zh": "加减法事实熟练",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_T76hKqXf0z",
+      "name": "Grouping numbers to add",
+      "name_zh": "加法结合律（分组相加）",
+      "domain": "Addition & Subtraction",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "plus",
+      "matchedKeyword": "加法"
+    },
+    {
+      "id": "mt_ehGS_uVSJv",
+      "name": "Inverse: addition undoes subtraction",
+      "name_zh": "逆运算：加法抵消减法",
+      "domain": "Addition & Subtraction",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "plus",
+      "matchedKeyword": "加法"
+    },
+    {
+      "id": "mt_AKAtWEwpcj",
+      "name": "Mental addition and subtraction (age 6+)",
+      "name_zh": "两位数加减一位数（心算）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_wzAZ8qFDc4",
+      "name": "Mental and written addition and subtraction",
+      "name_zh": "加减法的心算与笔算",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_HJTuIGHvcR",
+      "name": "Subtracting multiples of 10",
+      "name_zh": "减整十数",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "minus",
+      "matchedKeyword": "减"
+    },
+    {
+      "id": "mt_3JgrHY221M",
+      "name": "Unknown in Addition & Subtraction",
+      "name_zh": "加减法中的未知数",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_oIzycTBeE4",
+      "name": "What the equals sign means",
+      "name_zh": "等号的含义",
+      "domain": "Addition & Subtraction",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "mean",
+      "matchedKeyword": "mean"
+    },
+    {
+      "id": "mt_SrrsLiJkr3",
+      "name": "Adding and subtracting (age 7+)",
+      "name_zh": "三位数的加减（7 岁+）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_TiQbi027PE",
+      "name": "Adding numbers",
+      "name_zh": "多个两位数相加",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus",
+      "matchedKeyword": "加"
+    },
+    {
+      "id": "mt_zxST3MarI9",
+      "name": "Addition and subtraction strategies (age 7+)",
+      "name_zh": "加减策略的理解（7 岁+）",
+      "domain": "Addition & Subtraction",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_ewmuMMPAzP",
+      "name": "Addition and subtraction within 1000",
+      "name_zh": "1000 以内的加减",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_QaYfeVL-0C",
+      "name": "Estimating by rounding",
+      "name_zh": "用四舍五入估算",
+      "domain": "Addition & Subtraction",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "estimation",
+      "matchedKeyword": "估算"
+    },
+    {
+      "id": "mt_cChv2j_-Da",
+      "name": "Fluent adding and subtracting within 100",
+      "name_zh": "100 以内加减法熟练",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt__t4afSyZRm",
+      "name": "Fluent adding and subtracting within 20",
+      "name_zh": "20 以内加减法熟练",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_oDU_8zMZjp",
+      "name": "Mental addition and subtraction (age 7+)",
+      "name_zh": "三位数加减一位数（心算，7 岁+）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_xPqczp7zPX",
+      "name": "Mentally adding hundreds to 3-digit numbers",
+      "name_zh": "三位数加减整百（心算）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_aHQ9kNt3is",
+      "name": "Mentally adding tens to 3-digit numbers",
+      "name_zh": "三位数加减整十（心算）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_XuHmIn2xje",
+      "name": "Missing number problems (age 7+)",
+      "name_zh": "缺数问题（7 岁+）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "question",
+      "matchedKeyword": "problem"
+    },
+    {
+      "id": "mt_19j_5AuuQI",
+      "name": "Numbers on a number line",
+      "name_zh": "数轴上的数",
+      "domain": "Addition & Subtraction",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_yTWxkzzoOZ",
+      "name": "Two-Step Word Problems",
+      "name_zh": "两步应用题",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "question",
+      "matchedKeyword": "problem"
+    },
+    {
+      "id": "mt_mpS-JK_p_m",
+      "name": "Adding and subtracting (age 8+)",
+      "name_zh": "四位数的加减（8 岁+）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_HFRYjTb-Z5",
+      "name": "Fluent adding and subtracting within 1000",
+      "name_zh": "1000 以内加减法熟练",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_anAe11HAEH",
+      "name": "Two-Step Equations",
+      "name_zh": "两步方程",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "equation_general",
+      "matchedKeyword": "方程"
+    },
+    {
+      "id": "mt_CDa5AVakLE",
+      "name": "Two-step addition and subtraction problems",
+      "name_zh": "加减两步问题",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_-F_Lv_apzH",
+      "name": "Adding and subtracting (age 9+)",
+      "name_zh": "加减多步问题（9 岁+）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_G3sVFQNCme",
+      "name": "Checking Answers by Rounding",
+      "name_zh": "用四舍五入验算",
+      "domain": "Addition & Subtraction",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "estimation",
+      "matchedKeyword": "rounding"
+    },
+    {
+      "id": "mt_Yw1_4Nfsql",
+      "name": "Fluent addition and subtraction (age 9+)",
+      "name_zh": "加减法熟练（9 岁+）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_MWXPiaTnEu",
+      "name": "Mental addition and subtraction (age 9+)",
+      "name_zh": "大数加减心算（9 岁+）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_M1tnXqmYbn",
+      "name": "Adding and subtracting (age 10+)",
+      "name_zh": "加减多步问题（10 岁+）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_JH_6RpNWjr",
+      "name": "Addition and subtraction strategies (age 10+)",
+      "name_zh": "小数加减策略（10 岁+）",
+      "domain": "Addition & Subtraction",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_9QzSnn8m80",
+      "name": "Positive and Negative Numbers",
+      "name_zh": "正数与负数",
+      "domain": "Addition & Subtraction",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "number_line",
+      "matchedKeyword": "负数"
+    },
+    {
+      "id": "mt_YFS7JFk64p",
+      "name": "Equations with Two Unknowns",
+      "name_zh": "含两个未知数的方程",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "equation_general",
+      "matchedKeyword": "方程"
+    },
+    {
+      "id": "mt_hBZwbst0ow",
+      "name": "Linear number sequences",
+      "name_zh": "线性数列",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "line_eq",
+      "matchedKeyword": "line"
+    },
+    {
+      "id": "mt_fxPtngwUfz",
+      "name": "Number Pattern Relationships",
+      "name_zh": "数列间的关系",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "sequence_general",
+      "matchedKeyword": "数列"
+    },
+    {
+      "id": "mt_gu0NPDvlhY",
+      "name": "Systematic Listing",
+      "name_zh": "系统列举",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "listing",
+      "matchedKeyword": "列举"
+    },
+    {
+      "id": "mt_Jvg8X0N5u0",
+      "name": "Using Simple Formulae",
+      "name_zh": "使用简单公式",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "formula_use",
+      "matchedKeyword": "公式"
+    },
+    {
+      "id": "mt_i9rJbuFO3p",
+      "name": "Writing Algebraic Equations",
+      "name_zh": "列代数方程",
+      "domain": "Algebra",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "algebra_general",
+      "matchedKeyword": "代数"
+    },
+    {
+      "id": "mt_KwdjWEmMNo",
+      "name": "Algebraic Notation",
+      "name_zh": "代数记号",
+      "domain": "Algebra",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "algebra_general",
+      "matchedKeyword": "代数"
+    },
+    {
+      "id": "mt_z5iwdZyeDr",
+      "name": "Algebraic Transformations",
+      "name_zh": "代数变形",
+      "domain": "Algebra",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "coordinate_transform",
+      "matchedKeyword": "transform"
+    },
+    {
+      "id": "mt_nNNVrLqPW3",
+      "name": "Collecting Like Terms",
+      "name_zh": "合并同类项",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "combine",
+      "matchedKeyword": "合并"
+    },
+    {
+      "id": "mt_hVpGOEz2kG",
+      "name": "Coordinates (age 11+)",
+      "name_zh": "四个象限中的坐标（11 岁+）",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plot_point",
+      "matchedKeyword": "坐标"
+    },
+    {
+      "id": "mt_FX4a2Q8XXN",
+      "name": "Expanding Single Brackets",
+      "name_zh": "展开单层括号",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "matrix",
+      "matchedKeyword": "展开"
+    },
+    {
+      "id": "mt_g_fkAqmz72",
+      "name": "Expressions & Equations Vocabulary",
+      "name_zh": "表达式与方程词汇",
+      "domain": "Algebra",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "expression_general",
+      "matchedKeyword": "表达式"
+    },
+    {
+      "id": "mt_yXO7lQ9Yn7",
+      "name": "Generating Sequences",
+      "name_zh": "生成数列",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "sequence_general",
+      "matchedKeyword": "数列"
+    },
+    {
+      "id": "mt_i2F1nWxJjv",
+      "name": "Numbers on a number line",
+      "name_zh": "用数轴表示不等式",
+      "domain": "Algebra",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_QhFEDyIwSO",
+      "name": "Solving Linear Equations",
+      "name_zh": "解一元一次方程",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "linear_eq",
+      "matchedKeyword": "一元一次"
+    },
+    {
+      "id": "mt_vHzVa3SURC",
+      "name": "Substituting into Formulae",
+      "name_zh": "代入公式",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "formula_use",
+      "matchedKeyword": "公式"
+    },
+    {
+      "id": "mt_uESbzWCZIq",
+      "name": "Factorising Expressions",
+      "name_zh": "因式分解表达式",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "number_bond",
+      "matchedKeyword": "分解"
+    },
+    {
+      "id": "mt_WBdHkc2HTf",
+      "name": "Linear Function Graphs",
+      "name_zh": "线性函数图形",
+      "domain": "Algebra",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "linear_fn",
+      "matchedKeyword": "linear function"
+    },
+    {
+      "id": "mt_HRKzwEQJgO",
+      "name": "Nth-Term Rules",
+      "name_zh": "第 n 项公式",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "formula_use",
+      "matchedKeyword": "公式"
+    },
+    {
+      "id": "mt_-3udyo6VyB",
+      "name": "Plotting Linear Graphs",
+      "name_zh": "绘制线性图像",
+      "domain": "Algebra",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "plot_point",
+      "matchedKeyword": "plotting"
+    },
+    {
+      "id": "mt_3qrCtdoVAU",
+      "name": "Simple formulae",
+      "name_zh": "简单公式（重排公式）",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "formula_use",
+      "matchedKeyword": "公式"
+    },
+    {
+      "id": "mt_Yw27nweoTj",
+      "name": "Estimating answers (age 13+)",
+      "name_zh": "用图像估算答案（13 岁+）",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "estimation",
+      "matchedKeyword": "估算"
+    },
+    {
+      "id": "mt_KhS7K1Mgrw",
+      "name": "Expanding Double Brackets",
+      "name_zh": "展开双层括号",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "matrix",
+      "matchedKeyword": "展开"
+    },
+    {
+      "id": "mt_GZuoYaDdWd",
+      "name": "Quadratic Graphs",
+      "name_zh": "二次函数图像",
+      "domain": "Algebra",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "quadratic_fn",
+      "matchedKeyword": "二次函数"
+    },
+    {
+      "id": "mt_mqgu72aCMz",
+      "name": "Simultaneous Equations",
+      "name_zh": "联立方程",
+      "domain": "Algebra",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "cube_3d",
+      "matchedKeyword": "立方"
+    },
+    {
+      "id": "mt__h7hvT4tEb",
+      "name": "Comparing groups: more or fewer",
+      "name_zh": "比较多少：哪组更多/更少",
+      "domain": "Counting & Cardinality",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "lt",
+      "matchedKeyword": "多少"
+    },
+    {
+      "id": "mt_dmNvjroCPT",
+      "name": "How Many in Total?",
+      "name_zh": "一共多少个？（基数原则）",
+      "domain": "Counting & Cardinality",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "counting_general",
+      "matchedKeyword": "基数"
+    },
+    {
+      "id": "mt_sYpKWbq5ra",
+      "name": "One More Each Time",
+      "name_zh": "每次多一个",
+      "domain": "Counting & Cardinality",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "time_duration",
+      "matchedKeyword": "time"
+    },
+    {
+      "id": "mt_WcfaSfVT33",
+      "name": "One-to-one counting",
+      "name_zh": "一一对应计数",
+      "domain": "Counting & Cardinality",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "combination",
+      "matchedKeyword": "一一对应"
+    },
+    {
+      "id": "mt_pAcaehday5",
+      "name": "Representing numbers with objects",
+      "name_zh": "用物品表示数",
+      "domain": "Counting & Cardinality",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "representation",
+      "matchedKeyword": "representing"
+    },
+    {
+      "id": "mt_nvdpxAJTBG",
+      "name": "Counting in 2s",
+      "name_zh": "2 个 2 个数（跳数）",
+      "domain": "Counting & Cardinality",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "sequence_dots",
+      "matchedKeyword": "跳数"
+    },
+    {
+      "id": "mt_yqAL6O5i_v",
+      "name": "Counting objects to 20",
+      "name_zh": "数 20 以内的物体",
+      "domain": "Counting & Cardinality",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "counting_general",
+      "matchedKeyword": "counting"
+    },
+    {
+      "id": "mt_M5PPDJStGm",
+      "name": "Rote counting to 100",
+      "name_zh": "顺数到 100",
+      "domain": "Counting & Cardinality",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "counting_general",
+      "matchedKeyword": "counting"
+    },
+    {
+      "id": "mt__YRJ23GuIK",
+      "name": "Two written numerals between 1 and 10",
+      "name_zh": "比较 1–10 的两个数字",
+      "domain": "Counting & Cardinality",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_aHAM29nidj",
+      "name": "Counting forwards and backwards",
+      "name_zh": "3 个 3 个数（进退）",
+      "domain": "Counting & Cardinality",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "counting_general",
+      "matchedKeyword": "counting"
+    },
+    {
+      "id": "mt_OkSJfrmFb_",
+      "name": "Counting forwards and backwards (age 6+)",
+      "name_zh": "整十进退数（6 岁+）",
+      "domain": "Counting & Cardinality",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "counting_general",
+      "matchedKeyword": "counting"
+    },
+    {
+      "id": "mt_M2v1A9OEuM",
+      "name": "Counting Within 1,000",
+      "name_zh": "1000 以内计数",
+      "domain": "Counting & Cardinality",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "counting_general",
+      "matchedKeyword": "counting"
+    },
+    {
+      "id": "mt_IzQvs7k_sE",
+      "name": "Skip Counting (4s, 8s, 50s, 100s)",
+      "name_zh": "跳数（4、8、50、100）",
+      "domain": "Counting & Cardinality",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "sequence_dots",
+      "matchedKeyword": "跳数"
+    },
+    {
+      "id": "mt_7rJM8eWUfw",
+      "name": "Counting in 6s",
+      "name_zh": "6 个 6 个数等",
+      "domain": "Counting & Cardinality",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "sequence_dots",
+      "matchedKeyword": "counting in"
+    },
+    {
+      "id": "mt_xppl18avyY",
+      "name": "Sorting into categories",
+      "name_zh": "按类别分类",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "sort",
+      "matchedKeyword": "分类"
+    },
+    {
+      "id": "mt_c29FaCTNsx",
+      "name": "Pictograms and tally charts",
+      "name_zh": "象形图与 tally 图",
+      "domain": "Data & Statistics",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "length_measure",
+      "matchedKeyword": "tall"
+    },
+    {
+      "id": "mt_u5HkSxZECM",
+      "name": "Pictograms and tally charts (age 6+)",
+      "name_zh": "数据收集与展示词汇（6 岁+）",
+      "domain": "Data & Statistics",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "length_measure",
+      "matchedKeyword": "tall"
+    },
+    {
+      "id": "mt_ylXdiVRAYv",
+      "name": "Sorting Data into Categories",
+      "name_zh": "把数据按类别整理",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "statistics_general",
+      "matchedKeyword": "data"
+    },
+    {
+      "id": "mt_1VSfm9yiLn",
+      "name": "Sorting into categories (age 6+)",
+      "name_zh": "解读分类数据（6 岁+）",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vocab",
+      "matchedKeyword": "读"
+    },
+    {
+      "id": "mt_VhBH8wrFC6",
+      "name": "Picture & Bar Graphs",
+      "name_zh": "图画图与条形图",
+      "domain": "Data & Statistics",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "bar_chart",
+      "matchedKeyword": "条形"
+    },
+    {
+      "id": "mt_ChjMU2GDJa",
+      "name": "Bar graphs",
+      "name_zh": "条形图（离散与连续数据）",
+      "domain": "Data & Statistics",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "bar_chart",
+      "matchedKeyword": "条形"
+    },
+    {
+      "id": "mt_r8XnXwRA6g",
+      "name": "Representing numbers with objects (age 8+)",
+      "name_zh": "带刻度的图画图与条形图（8 岁+）",
+      "domain": "Data & Statistics",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "degree",
+      "matchedKeyword": "度"
+    },
+    {
+      "id": "mt_H6LlpWgEYS",
+      "name": "Reading and Comparing Bar Graphs",
+      "name_zh": "读取与比较条形图",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_Cqm8iy48UI",
+      "name": "Reading tables",
+      "name_zh": "读表格（含时刻表）",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vocab",
+      "matchedKeyword": "读"
+    },
+    {
+      "id": "mt_fmm-P17Vka",
+      "name": "Statistical Analysis Vocabulary",
+      "name_zh": "统计分析词汇",
+      "domain": "Data & Statistics",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "statistics_general",
+      "matchedKeyword": "统计"
+    },
+    {
+      "id": "mt_Cg8VPguS_V",
+      "name": "Calculating the Mean",
+      "name_zh": "计算平均数",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "mean",
+      "matchedKeyword": "平均"
+    },
+    {
+      "id": "mt_bESTSBB0wK",
+      "name": "Line graphs (age 10+)",
+      "name_zh": "饼图与折线图（10 岁+）",
+      "domain": "Data & Statistics",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "pie_chart",
+      "matchedKeyword": "饼图"
+    },
+    {
+      "id": "mt_IHipFGTFEY",
+      "name": "Understanding fractions",
+      "name_zh": "用分数折线图展示测量数据",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_XSXnTQoQ4l",
+      "name": "Comparing measurements",
+      "name_zh": "比较数据分布",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_eKJG-0eC6D",
+      "name": "Pictograms and tally charts (age 11+)",
+      "name_zh": "频数表与统计图（11 岁+）",
+      "domain": "Data & Statistics",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "length_measure",
+      "matchedKeyword": "tall"
+    },
+    {
+      "id": "mt_BdAeZJUOir",
+      "name": "Scatter Graphs",
+      "name_zh": "散点图",
+      "domain": "Data & Statistics",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "scatter",
+      "matchedKeyword": "散点"
+    },
+    {
+      "id": "mt_8atyuvPUZc",
+      "name": "Scatter Graphs & Correlation",
+      "name_zh": "散点图与相关",
+      "domain": "Data & Statistics",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "scatter",
+      "matchedKeyword": "散点"
+    },
+    {
+      "id": "mt_g3W0mdADVu",
+      "name": "Finding halves and quarters (age 5+)",
+      "name_zh": "认识四分之一（5 岁+）",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "half",
+      "matchedKeyword": "halves"
+    },
+    {
+      "id": "mt_-hTTat0mBR",
+      "name": "What Is a Half?",
+      "name_zh": "什么是二分之一",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "half",
+      "matchedKeyword": "二分之一"
+    },
+    {
+      "id": "mt_hyvHv2BCwb",
+      "name": "Decomposing a shape into more equal shares",
+      "name_zh": "分得越细份越小",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "number_bond",
+      "matchedKeyword": "decompos"
+    },
+    {
+      "id": "mt_vKcxX6iNOA",
+      "name": "Fraction Notation",
+      "name_zh": "分数记法",
+      "domain": "Fractions",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_cFltwUQi-d",
+      "name": "Fractions of amounts",
+      "name_zh": "数量的几分之几",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "fraction",
+      "matchedKeyword": "fraction"
+    },
+    {
+      "id": "mt_xACS3rWWDp",
+      "name": "Halves & Quarters of Shapes",
+      "name_zh": "图形的二分之一与四分之一",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "half",
+      "matchedKeyword": "二分之一"
+    },
+    {
+      "id": "mt_MyGblah2yY",
+      "name": "Understanding fractions",
+      "name_zh": "认识分数（简单）",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_IfEgu0X449",
+      "name": "Comparing fractions",
+      "name_zh": "比较分数（单位分数与同分母）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_SsLWS_APM7",
+      "name": "Comparing fractions (age 7+)",
+      "name_zh": "分数综合问题（7 岁+）",
+      "domain": "Fractions",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "lt",
+      "matchedKeyword": "compar"
+    },
+    {
+      "id": "mt_FbDKeLfBCo",
+      "name": "Equivalent fractions",
+      "name_zh": "等值分数",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "identical",
+      "matchedKeyword": "等值"
+    },
+    {
+      "id": "mt_Kr3IyA6m-O",
+      "name": "Fractions on a number line",
+      "name_zh": "数轴上的分数",
+      "domain": "Fractions",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_a1FdAsRKOF",
+      "name": "Simple Fraction Sums",
+      "name_zh": "同分母分数加减",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_Xp-rj46S2w",
+      "name": "Splitting shapes into equal parts (age 7+)",
+      "name_zh": "把图形分成相等部分（7 岁+）",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "fraction",
+      "matchedKeyword": "相等部分"
+    },
+    {
+      "id": "mt_YzM5goBctT",
+      "name": "Tenths",
+      "name_zh": "十分位（十分之一）",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "decimal",
+      "matchedKeyword": "十分位"
+    },
+    {
+      "id": "mt_k2WE0-22-4",
+      "name": "Unit fractions",
+      "name_zh": "单位分数与非单位分数",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_CBHwluE6Lp",
+      "name": "Adding Fractions (Same Denominator)",
+      "name_zh": "同分母分数加减",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_HnKbuCliNS",
+      "name": "Comparing fractions (age 8+)",
+      "name_zh": "比较分数（8 岁+）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_W17Kbwm0-u",
+      "name": "Decimal & Percent Notation",
+      "name_zh": "小数与百分数记法",
+      "domain": "Fractions",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "decimal",
+      "matchedKeyword": "小数"
+    },
+    {
+      "id": "mt_TqDq6jyOmL",
+      "name": "Decimal equivalents of tenths and hundredths",
+      "name_zh": "十分位与百分位的等值小数",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "decimal",
+      "matchedKeyword": "小数"
+    },
+    {
+      "id": "mt_Fl7b8q9pI1",
+      "name": "Decimal place value",
+      "name_zh": "小数位值（一位小数四舍五入）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "frac_bar",
+      "matchedKeyword": "数位"
+    },
+    {
+      "id": "mt_IegHBHERVa",
+      "name": "Decimal place value (age 8+)",
+      "name_zh": "小数位值比较（8 岁+）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "frac_bar",
+      "matchedKeyword": "数位"
+    },
+    {
+      "id": "mt_wB-GBDkoNr",
+      "name": "Decimals and fractions",
+      "name_zh": "小数与分数（度量与货币）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "decimal",
+      "matchedKeyword": "小数"
+    },
+    {
+      "id": "mt_kDMKJ5Ztt6",
+      "name": "Dividing by 10 and 100",
+      "name_zh": "除以 10 和 100",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "divide",
+      "matchedKeyword": "除"
+    },
+    {
+      "id": "mt_FP-mjXaq3B",
+      "name": "Equivalent fractions (age 8+)",
+      "name_zh": "等值分数（8 岁+）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "identical",
+      "matchedKeyword": "等值"
+    },
+    {
+      "id": "mt_Ep7TDFuYUa",
+      "name": "Equivalent fractions on a number line",
+      "name_zh": "数轴上的等值分数",
+      "domain": "Fractions",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_DRlbMok2lT",
+      "name": "Fraction-Decimal Equivalents",
+      "name_zh": "分数-小数等值",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "decimal",
+      "matchedKeyword": "小数"
+    },
+    {
+      "id": "mt_idbKDrf9qZ",
+      "name": "Fractions as parts of shapes",
+      "name_zh": "分数作为图形的部分",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_ndGqFPWyen",
+      "name": "Fractions of a whole",
+      "name_zh": "整体的分数（1/b 与 a/b）",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_AYzE1EAvI0",
+      "name": "Fractions of a whole (age 8+)",
+      "name_zh": "整数表示为分数（8 岁+）",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_3y7xKP9MjU",
+      "name": "Fractions of amounts (harder)",
+      "name_zh": "较难的数量分数",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_NoB20kVa4w",
+      "name": "Fractions on a number line (age 8+)",
+      "name_zh": "数轴上的分数（8 岁+）",
+      "domain": "Fractions",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_doX1BhmFgk",
+      "name": "Tenths (age 8+)",
+      "name_zh": "百分位（8 岁+）",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "percent",
+      "matchedKeyword": "百分"
+    },
+    {
+      "id": "mt_70qDTI14td",
+      "name": "Adding and subtracting mixed numbers",
+      "name_zh": "带分数的加减",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_-V7EnqU7gG",
+      "name": "Adding fractions (different denominators)",
+      "name_zh": "异分母分数加减",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_ZLqYE7la4Z",
+      "name": "Addition and subtraction word problems",
+      "name_zh": "分数加减应用题",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_933BohS9BH",
+      "name": "Comparing Decimals",
+      "name_zh": "比较小数",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_SXbZ3bC9z7",
+      "name": "Comparing fractions (age 9+)",
+      "name_zh": "比较分数（9 岁+）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_NaqEP8xDhZ",
+      "name": "Converting tenths to hundredths",
+      "name_zh": "十分位换算成百分位",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "percent",
+      "matchedKeyword": "百分"
+    },
+    {
+      "id": "mt_Ii1hV4V5ql",
+      "name": "Decimal place value (age 9+)",
+      "name_zh": "小数位值（9 岁+）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "frac_bar",
+      "matchedKeyword": "数位"
+    },
+    {
+      "id": "mt_Vi4Vo5xs_g",
+      "name": "Decimals for Tenths & Hundredths",
+      "name_zh": "十分位与百分位小数记法",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "decimal",
+      "matchedKeyword": "小数"
+    },
+    {
+      "id": "mt_sA2OvTiech",
+      "name": "Decimals to three places",
+      "name_zh": "三位小数",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "decimal",
+      "matchedKeyword": "小数"
+    },
+    {
+      "id": "mt_ebPelt-qAl",
+      "name": "Equivalent fractions (age 9+)",
+      "name_zh": "等值分数（9 岁+）",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "identical",
+      "matchedKeyword": "等值"
+    },
+    {
+      "id": "mt_VgOePicFYK",
+      "name": "Fraction Addition Concepts",
+      "name_zh": "分数加减概念（分解）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_HJA2Oz-Zh1",
+      "name": "Fractions of a whole (age 9+)",
+      "name_zh": "分数乘整数应用题（9 岁+）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘"
+    },
+    {
+      "id": "mt_o_p-3tCxiM",
+      "name": "Mixed numbers and improper fractions",
+      "name_zh": "带分数与假分数",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_TgHxujL81r",
+      "name": "Multiplying fractions",
+      "name_zh": "分数乘整数",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘"
+    },
+    {
+      "id": "mt_4ubP_RMg9o",
+      "name": "Percentage and decimal equivalents",
+      "name_zh": "百分数与小数等值",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "decimal",
+      "matchedKeyword": "小数"
+    },
+    {
+      "id": "mt_kdWoAel3Zl",
+      "name": "Tenths (age 9+)",
+      "name_zh": "千分位（9 岁+）",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "decimal",
+      "matchedKeyword": "千分位"
+    },
+    {
+      "id": "mt_ZM9mhHsyYZ",
+      "name": "Understanding Percentages",
+      "name_zh": "理解百分数",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "percent",
+      "matchedKeyword": "百分"
+    },
+    {
+      "id": "mt_09sySPqM9Z",
+      "name": "Understanding fractions (age 9+)",
+      "name_zh": "理解分数 a/b（a>1，9 岁+）",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_14T5yPXUq_",
+      "name": "Adding Fractions (Unlike Denominators)",
+      "name_zh": "异分母分数加减（含带分数）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_gx6KQK5-Kx",
+      "name": "Area with Fractions",
+      "name_zh": "分数边长的矩形面积",
+      "domain": "Fractions",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_PL9VkDwXfh",
+      "name": "Comparing fractions (age 10+)",
+      "name_zh": "比较分数（10 岁+，含大于 1）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_4K1dr204Hi",
+      "name": "Decimals and fractions (age 10+)",
+      "name_zh": "分数与小数等值（10 岁+）",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "decimal",
+      "matchedKeyword": "小数"
+    },
+    {
+      "id": "mt_1PAWhRhpdg",
+      "name": "Dividing by Fractions",
+      "name_zh": "整数除以单位分数",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "divide",
+      "matchedKeyword": "除"
+    },
+    {
+      "id": "mt_ifPDOYvUqm",
+      "name": "Dividing fractions (unit fractions)",
+      "name_zh": "单位分数除以整数",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "divide",
+      "matchedKeyword": "除"
+    },
+    {
+      "id": "mt_rCMdwG-YOE",
+      "name": "Dividing unit fractions and whole numbers",
+      "name_zh": "单位分数与整数的除法应用",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "divide",
+      "matchedKeyword": "除法"
+    },
+    {
+      "id": "mt_e7filQgayF",
+      "name": "Fraction Word Problems",
+      "name_zh": "异分母分数加减应用题",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_4Km38F4L-6",
+      "name": "Fractions of a whole (age 10+)",
+      "name_zh": "分数即除法（10 岁+）",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "divide",
+      "matchedKeyword": "除法"
+    },
+    {
+      "id": "mt_VKW8lOcFaw",
+      "name": "Multiplication as scaling",
+      "name_zh": "乘法即缩放",
+      "domain": "Fractions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_AabJisinfi",
+      "name": "Multiplying fractions (age 10+)",
+      "name_zh": "分数乘分数（10 岁+）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘"
+    },
+    {
+      "id": "mt_lvaSGHwvQ5",
+      "name": "Real-world fraction multiplication",
+      "name_zh": "分数乘法实际应用",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_b7T-CjOYUR",
+      "name": "Simplifying Fractions",
+      "name_zh": "约分化简",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "fraction",
+      "matchedKeyword": "fraction"
+    },
+    {
+      "id": "mt_SBkTGjiZjZ",
+      "name": "Decimals and fractions (age 11+)",
+      "name_zh": "小数与分数互换（11 岁+）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "decimal",
+      "matchedKeyword": "小数"
+    },
+    {
+      "id": "mt_9Y96vxG_LH",
+      "name": "Dividing fractions",
+      "name_zh": "分数除以分数",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "divide",
+      "matchedKeyword": "除"
+    },
+    {
+      "id": "mt_gNUE4B3vuk",
+      "name": "Mixed & Improper Fractions",
+      "name_zh": "正负数的分数四则运算（11 岁+）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "number_line",
+      "matchedKeyword": "负数"
+    },
+    {
+      "id": "mt_J339bO7qLe",
+      "name": "Multiplying fractions (age 11+)",
+      "name_zh": "分数与百分数作为算子（11 岁+）",
+      "domain": "Fractions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "multiply"
+    },
+    {
+      "id": "mt_KJeEeTutJI",
+      "name": "2-D shapes",
+      "name_zh": "二维图形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "polygon_general",
+      "matchedKeyword": "二维"
+    },
+    {
+      "id": "mt_Qcp2d_kuta",
+      "name": "3-D shapes",
+      "name_zh": "三维图形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "cube_3d",
+      "matchedKeyword": "3-d shape"
+    },
+    {
+      "id": "mt_qeZYF6HZ4o",
+      "name": "Positional Language",
+      "name_zh": "位置语言",
+      "domain": "Geometry",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "position",
+      "matchedKeyword": "位置"
+    },
+    {
+      "id": "mt_yGv8doDAmp",
+      "name": "3-D shapes (age 5+)",
+      "name_zh": "用非正规语言描述图形属性（5 岁+）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "cube_3d",
+      "matchedKeyword": "3-d shape"
+    },
+    {
+      "id": "mt_2VR963szuk",
+      "name": "Building & Drawing Shapes",
+      "name_zh": "搭建与绘制图形",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "compass_tool",
+      "matchedKeyword": "搭建"
+    },
+    {
+      "id": "mt_XjwUlmxdCT",
+      "name": "Combining Simple Shapes",
+      "name_zh": "组合简单图形",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "combine",
+      "matchedKeyword": "combining"
+    },
+    {
+      "id": "mt_mnEVZNkX3p",
+      "name": "Flat vs Solid Shapes",
+      "name_zh": "平面图形与立体图形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "polygon_general",
+      "matchedKeyword": "平面图形"
+    },
+    {
+      "id": "mt_Y9XKzLrUAZ",
+      "name": "Turns & Directions",
+      "name_zh": "转动与方向",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "degree",
+      "matchedKeyword": "turn"
+    },
+    {
+      "id": "mt_UooUHC_V7U",
+      "name": "2-D faces on 3-D shapes",
+      "name_zh": "立体图形上的平面",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "cube_3d",
+      "matchedKeyword": "立体"
+    },
+    {
+      "id": "mt_sBcRdUfAzV",
+      "name": "2-D shapes (age 6+)",
+      "name_zh": "二维图形属性（6 岁+）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "polygon_general",
+      "matchedKeyword": "二维"
+    },
+    {
+      "id": "mt_bfhng6mOuy",
+      "name": "Angles in triangles (age 6+)",
+      "name_zh": "图形的定义性属性（6 岁+）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "triangle",
+      "matchedKeyword": "triangle"
+    },
+    {
+      "id": "mt_QNxFnxikCN",
+      "name": "Building with 3-D Shapes",
+      "name_zh": "用三维图形搭建",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "compass_tool",
+      "matchedKeyword": "搭建"
+    },
+    {
+      "id": "mt_MqqR7VUoz1",
+      "name": "Composing Shapes",
+      "name_zh": "组合二维图形",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "polygon_general",
+      "matchedKeyword": "二维"
+    },
+    {
+      "id": "mt_Mnodea7mG_",
+      "name": "Edges, vertices, and faces",
+      "name_zh": "棱、顶点与面",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "edge_vertex_face",
+      "matchedKeyword": "棱"
+    },
+    {
+      "id": "mt_WXW0hjNhph",
+      "name": "Patterns & Sequences",
+      "name_zh": "规律与数列",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "sequence_general",
+      "matchedKeyword": "数列"
+    },
+    {
+      "id": "mt_TdV9YGJEoY",
+      "name": "Position, direction, and movement",
+      "name_zh": "位置、方向与运动",
+      "domain": "Geometry",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "position",
+      "matchedKeyword": "位置"
+    },
+    {
+      "id": "mt_fEuoBYw6bU",
+      "name": "Sorting 2-D and 3-D shapes",
+      "name_zh": "分类二维与三维图形",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "polygon_general",
+      "matchedKeyword": "二维"
+    },
+    {
+      "id": "mt_vJUa62bxeR",
+      "name": "2-D shapes (age 7+)",
+      "name_zh": "画二维图形与认三维图形（7 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "polygon_general",
+      "matchedKeyword": "二维"
+    },
+    {
+      "id": "mt_zuOGOGFAKb",
+      "name": "Angles in triangles (age 7+)",
+      "name_zh": "按指定属性画图/认图形（7 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "triangle",
+      "matchedKeyword": "triangle"
+    },
+    {
+      "id": "mt_u23IGDxOpk",
+      "name": "Parallel and perpendicular lines",
+      "name_zh": "平行线与垂线",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "parallel_sym",
+      "matchedKeyword": "平行线"
+    },
+    {
+      "id": "mt_MFfYcnv6Tv",
+      "name": "Right Angles & Turns",
+      "name_zh": "直角与转动",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "right_angle",
+      "matchedKeyword": "直角"
+    },
+    {
+      "id": "mt_8OAGVdeTJ_",
+      "name": "Understanding angles",
+      "name_zh": "理解角",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "mt_hRZyKvz1KN",
+      "name": "2-D shapes (age 8+)",
+      "name_zh": "对称轴（8 岁+）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "polygon_general",
+      "matchedKeyword": "2-d shape"
+    },
+    {
+      "id": "mt_i5_HnoFOYw",
+      "name": "Coordinates (age 8+)",
+      "name_zh": "坐标（8 岁+，描点连线）",
+      "domain": "Geometry",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "plot_point",
+      "matchedKeyword": "坐标"
+    },
+    {
+      "id": "mt_Uq5vYqboCR",
+      "name": "Describing Movements",
+      "name_zh": "描述平移运动",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "translate",
+      "matchedKeyword": "平移"
+    },
+    {
+      "id": "mt_jBQS-CicNn",
+      "name": "First Quadrant Coordinates",
+      "name_zh": "第一象限坐标",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "plot_point",
+      "matchedKeyword": "坐标"
+    },
+    {
+      "id": "mt_hR2Y7NhMSY",
+      "name": "Lines of symmetry",
+      "name_zh": "补全对称图形",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "symmetry",
+      "matchedKeyword": "对称"
+    },
+    {
+      "id": "mt_vnJEztczji",
+      "name": "Nets of 3-D Shapes",
+      "name_zh": "立体图形的展开图",
+      "domain": "Geometry",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "net",
+      "matchedKeyword": "展开图"
+    },
+    {
+      "id": "mt_SH7QgFl8-v",
+      "name": "Transformations on a grid",
+      "name_zh": "网格上的图形变换",
+      "domain": "Geometry",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "coordinate_transform",
+      "matchedKeyword": "变换"
+    },
+    {
+      "id": "mt_h0CVtqI2xo",
+      "name": "Types of angles",
+      "name_zh": "角的类型（锐角/钝角）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "angle_type",
+      "matchedKeyword": "锐角"
+    },
+    {
+      "id": "mt_e4V6hvcuEJ",
+      "name": "Types of angles (age 8+)",
+      "name_zh": "几何图例约定（8 岁+）",
+      "domain": "Geometry",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "angle_type",
+      "matchedKeyword": "types of angle"
+    },
+    {
+      "id": "mt_Xt1cRqaBOW",
+      "name": "Understanding angles (age 8+)",
+      "name_zh": "四边形分类（8 岁+）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "angle_mark",
+      "matchedKeyword": "angle"
+    },
+    {
+      "id": "mt_wUSbRt3-qw",
+      "name": "3-D shapes (age 9+)",
+      "name_zh": "从二维表示认三维图形（9 岁+）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "polygon_general",
+      "matchedKeyword": "二维"
+    },
+    {
+      "id": "mt_oqziWKry-L",
+      "name": "Angle Sum Rules",
+      "name_zh": "角和规则（点/直线/对顶角）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "angle_sum",
+      "matchedKeyword": "angle sum"
+    },
+    {
+      "id": "mt_r8c43QB6wx",
+      "name": "Classifying shapes by line properties",
+      "name_zh": "按线属性分类图形",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "sort",
+      "matchedKeyword": "分类"
+    },
+    {
+      "id": "mt_qUGMyMYn9m",
+      "name": "Degrees and turns",
+      "name_zh": "度数与转动",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "degree",
+      "matchedKeyword": "度数"
+    },
+    {
+      "id": "mt_YUJ5pwalqL",
+      "name": "Estimating Angles",
+      "name_zh": "估算角度",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "estimation",
+      "matchedKeyword": "估算"
+    },
+    {
+      "id": "mt_QysgF57dxh",
+      "name": "Lines, Rays & Angles",
+      "name_zh": "点线射线角",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "mt_4MFUAsbx_6",
+      "name": "Measuring angles",
+      "name_zh": "用量角器量角",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "mt_89riIKwGYp",
+      "name": "Measuring angles (age 9+)",
+      "name_zh": "角的可加性（9 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus",
+      "matchedKeyword": "加"
+    },
+    {
+      "id": "mt_8H2kO4k2B9",
+      "name": "Regular and irregular polygons",
+      "name_zh": "正多边形与不规则多边形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "polygon_general",
+      "matchedKeyword": "多边形"
+    },
+    {
+      "id": "mt_efOeaGFyGM",
+      "name": "Transformations on a Grid",
+      "name_zh": "网格上的平移与反射",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "translate",
+      "matchedKeyword": "平移"
+    },
+    {
+      "id": "mt_KFKUR_gBg_",
+      "name": "Understanding angles (age 9+)",
+      "name_zh": "矩形的性质（9 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "rectangle_shape",
+      "matchedKeyword": "矩形"
+    },
+    {
+      "id": "mt_3S10OOGPqu",
+      "name": "What Is an Angle?",
+      "name_zh": "什么是角",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "mt_hdrMoiTgqu",
+      "name": "2-D shapes (age 10+)",
+      "name_zh": "按给定尺寸和角度画二维图形（10 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "polygon_general",
+      "matchedKeyword": "二维"
+    },
+    {
+      "id": "mt_REwgr0d_ss",
+      "name": "3-D shapes (age 10+)",
+      "name_zh": "认/搭三维图形含展开图（10 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "net",
+      "matchedKeyword": "展开图"
+    },
+    {
+      "id": "mt_cdMlC7EpTJ",
+      "name": "Angles in triangles (age 10+)",
+      "name_zh": "三角形/四边形/多边形求未知角（10 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "triangle",
+      "matchedKeyword": "三角形"
+    },
+    {
+      "id": "mt_liIW336odh",
+      "name": "Classifying shapes by properties",
+      "name_zh": "按属性分类图形（层次）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "sort",
+      "matchedKeyword": "分类"
+    },
+    {
+      "id": "mt_R4AY0LKxfl",
+      "name": "Coordinates (age 10+)",
+      "name_zh": "完整坐标系坐标（10 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "axes",
+      "matchedKeyword": "坐标系"
+    },
+    {
+      "id": "mt_oDlduFnemk",
+      "name": "Numbers on a number line",
+      "name_zh": "坐标系（两垂直数轴）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_xq3YHZ2zeR",
+      "name": "Parts of a circle",
+      "name_zh": "圆的各部分",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "circle_shape",
+      "matchedKeyword": "圆"
+    },
+    {
+      "id": "mt_snlqRCiA1R",
+      "name": "Plotting points in the first quadrant",
+      "name_zh": "第一象限描点",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plot_point",
+      "matchedKeyword": "plotting"
+    },
+    {
+      "id": "mt_lxaM6iVpdr",
+      "name": "Translating and reflecting shapes",
+      "name_zh": "平移与反射图形",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "translate",
+      "matchedKeyword": "平移"
+    },
+    {
+      "id": "mt_QDTO3GAgcq",
+      "name": "Understanding angles (age 10+)",
+      "name_zh": "角的关系求未知角（10 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "mt_nRksLqt-iR",
+      "name": "3-D shapes (age 11+)",
+      "name_zh": "三维图形性质与截面（11 岁+）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "cross_section",
+      "matchedKeyword": "截面"
+    },
+    {
+      "id": "mt_J03RFlVdas",
+      "name": "Angle sums in triangles and polygons",
+      "name_zh": "三角形与多边形内角和",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "triangle",
+      "matchedKeyword": "三角形"
+    },
+    {
+      "id": "mt_tAJH5BrpOx",
+      "name": "Angles in triangles (age 11+)",
+      "name_zh": "面积与体积公式（11 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "triangle",
+      "matchedKeyword": "triangle"
+    },
+    {
+      "id": "mt_K0Y15w48SY",
+      "name": "Coordinate Transformations",
+      "name_zh": "坐标变换（平移/旋转/反射）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "translate",
+      "matchedKeyword": "平移"
+    },
+    {
+      "id": "mt_Jf8xcX4UTq",
+      "name": "Measuring angles (age 11+)",
+      "name_zh": "量线段与读比例图（11 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vocab",
+      "matchedKeyword": "读"
+    },
+    {
+      "id": "mt_DNYQLahbfa",
+      "name": "Properties of triangles and quadrilaterals",
+      "name_zh": "三角形与四边形性质",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "triangle",
+      "matchedKeyword": "三角形"
+    },
+    {
+      "id": "mt_WtIFJSCQIT",
+      "name": "Types of angles (age 11+)",
+      "name_zh": "几何记号与术语（11 岁+）",
+      "domain": "Geometry",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "angle_type",
+      "matchedKeyword": "types of angle"
+    },
+    {
+      "id": "mt_tedML_iu4Y",
+      "name": "Understanding angles (age 11+)",
+      "name_zh": "多步求未知角（11 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "mt_167X6Ax8P7",
+      "name": "Angles in triangles (age 12+)",
+      "name_zh": "三角形全等判定（12 岁+）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "triangle",
+      "matchedKeyword": "三角形"
+    },
+    {
+      "id": "mt_H_pNJ3ZI_S",
+      "name": "Angles with parallel lines",
+      "name_zh": "平行线中的角",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "parallel_sym",
+      "matchedKeyword": "平行线"
+    },
+    {
+      "id": "mt_svFa6_mjO_",
+      "name": "Circles: Circumference & Area",
+      "name_zh": "圆的周长与面积",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "circle_shape",
+      "matchedKeyword": "圆"
+    },
+    {
+      "id": "mt_y-BuQAfw4B",
+      "name": "Coordinates (age 12+)",
+      "name_zh": "相似与放大（12 岁+）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "similar_figures",
+      "matchedKeyword": "相似"
+    },
+    {
+      "id": "mt_ZrsqGVG-Wt",
+      "name": "Understanding angles (age 12+)",
+      "name_zh": "尺规作图（12 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "angle_mark",
+      "matchedKeyword": "angle"
+    },
+    {
+      "id": "mt_KB_Czd7RQH",
+      "name": "Trigonometry basics",
+      "name_zh": "三角学基础",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "mt_1VmTUxBrNd",
+      "name": "Types of angles (age 13+)",
+      "name_zh": "勾股定理（13 岁+）",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "pythagoras",
+      "matchedKeyword": "勾股"
+    },
+    {
+      "id": "mt_lMz9nAs7VO",
+      "name": "Early Maths Vocabulary",
+      "name_zh": "早期数学词汇",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "vocab",
+      "matchedKeyword": "词汇"
+    },
+    {
+      "id": "mt_RFeVlw0QvX",
+      "name": "Finding efficient methods",
+      "name_zh": "寻找高效方法",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "efficient_method",
+      "matchedKeyword": "方法"
+    },
+    {
+      "id": "mt_20WfHhnL39",
+      "name": "Hands-On Problem Solving",
+      "name_zh": "动手解决问题",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "question",
+      "matchedKeyword": "problem solving"
+    },
+    {
+      "id": "mt_WkKkb7W9Qd",
+      "name": "Making Sense of Problems",
+      "name_zh": "理解问题",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "question",
+      "matchedKeyword": "problem"
+    },
+    {
+      "id": "mt_IM1G_7QzTa",
+      "name": "Real-World to Maths Connections",
+      "name_zh": "现实与数学的联系",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "real_world",
+      "matchedKeyword": "联系"
+    },
+    {
+      "id": "mt_nyK25mNOeR",
+      "name": "Showing Your Working",
+      "name_zh": "展示解题过程",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "question",
+      "matchedKeyword": "解题"
+    },
+    {
+      "id": "mt_uG2mjHFOlO",
+      "name": "Spotting mathematical patterns",
+      "name_zh": "发现数学规律",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "pattern",
+      "matchedKeyword": "规律"
+    },
+    {
+      "id": "mt_fLOkq-HfPB",
+      "name": "Using objects to model real problems",
+      "name_zh": "用实物建模实际问题",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "mode",
+      "matchedKeyword": "mode"
+    },
+    {
+      "id": "mt_EBYGhd8X3x",
+      "name": "Connecting Representations",
+      "name_zh": "表征间的转化",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "real_world",
+      "matchedKeyword": "connect"
+    },
+    {
+      "id": "mt_f67qGDhyfi",
+      "name": "Connecting maths to real life",
+      "name_zh": "数学与生活的联系",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "real_world",
+      "matchedKeyword": "联系"
+    },
+    {
+      "id": "mt_kJ5wYzO8qC",
+      "name": "Explaining Mathematical Reasoning",
+      "name_zh": "解释数学推理",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "reasoning",
+      "matchedKeyword": "推理"
+    },
+    {
+      "id": "mt_fZTn0W_iZR",
+      "name": "Generalising Patterns",
+      "name_zh": "规律的概括",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "pattern",
+      "matchedKeyword": "规律"
+    },
+    {
+      "id": "mt_O_UOTiMvT_",
+      "name": "Guided Multi-Step Problem Solving",
+      "name_zh": "引导下的多步解题",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "multi_step",
+      "matchedKeyword": "多步"
+    },
+    {
+      "id": "mt_zMEvtigoM3",
+      "name": "Numbers on a number line",
+      "name_zh": "数轴上的数",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_TMoHjMhRS2",
+      "name": "Precise Maths Communication",
+      "name_zh": "精确的数学表达",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "precise_comm",
+      "matchedKeyword": "communicat"
+    },
+    {
+      "id": "mt_DW2D1c0fKx",
+      "name": "Shape patterns",
+      "name_zh": "图形中的规律",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "pattern",
+      "matchedKeyword": "规律"
+    },
+    {
+      "id": "mt_mQcWGh02no",
+      "name": "Choosing the right strategy",
+      "name_zh": "选择恰当策略",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "strategy",
+      "matchedKeyword": "策略"
+    },
+    {
+      "id": "mt_2jbUekyTu4",
+      "name": "Extending Table Patterns",
+      "name_zh": "延伸乘法表规律",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_pyMD_SIiYO",
+      "name": "Justifying mathematical reasoning",
+      "name_zh": "论证数学推理",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "math_argument",
+      "matchedKeyword": "论证"
+    },
+    {
+      "id": "mt_RKeheOL9uo",
+      "name": "Multi-Step Problem Solving",
+      "name_zh": "多步解题",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "multi_step",
+      "matchedKeyword": "多步"
+    },
+    {
+      "id": "mt_FAXjFkgG6X",
+      "name": "Shape patterns (age 7+)",
+      "name_zh": "图形中的规律（7 岁+）",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "pattern",
+      "matchedKeyword": "规律"
+    },
+    {
+      "id": "mt_dXq9VWm31W",
+      "name": "Understanding fractions",
+      "name_zh": "理解分数",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_HY8Yycu_rz",
+      "name": "Understanding fractions (age 7+)",
+      "name_zh": "理解分数（7 岁+）",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_iQYPw8bMfN",
+      "name": "Working with money",
+      "name_zh": "处理货币问题",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "coin_value",
+      "matchedKeyword": "货币"
+    },
+    {
+      "id": "mt_d-WZC2OyMB",
+      "name": "Choosing mathematical tools",
+      "name_zh": "选择数学工具",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "tools_math",
+      "matchedKeyword": "工具"
+    },
+    {
+      "id": "mt_3VmBdlAeOZ",
+      "name": "Fractions on a number line",
+      "name_zh": "数轴上的分数",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_a3dov8CZkq",
+      "name": "Justifying mathematical reasoning (age 8+)",
+      "name_zh": "论证数学推理（8 岁+）",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "math_argument",
+      "matchedKeyword": "论证"
+    },
+    {
+      "id": "mt_mywsN77hGZ",
+      "name": "Mathematical Precision",
+      "name_zh": "数学精确性",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "math_precision",
+      "matchedKeyword": "精确"
+    },
+    {
+      "id": "mt_K3R0yaHVcx",
+      "name": "Modelling with multiplication and fractions",
+      "name_zh": "用乘法与分数建模",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_SmghasIvbT",
+      "name": "Multi-Step Problem Solving",
+      "name_zh": "多步解题",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "multi_step",
+      "matchedKeyword": "多步"
+    },
+    {
+      "id": "mt_aivrWs6jrS",
+      "name": "Times tables (age 8+)",
+      "name_zh": "乘法表（8 岁+）",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt__Itf4aQZUj",
+      "name": "Using Mathematical Structure",
+      "name_zh": "运用数学结构",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "math_structure",
+      "matchedKeyword": "结构"
+    },
+    {
+      "id": "mt_IwEOCN6bL1",
+      "name": "Choosing representations strategically",
+      "name_zh": "策略性地选择表征",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "representation",
+      "matchedKeyword": "表征"
+    },
+    {
+      "id": "mt_GpltXPoaoc",
+      "name": "Complex Multi-Step Problems",
+      "name_zh": "复杂多步问题",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "complex_plane",
+      "matchedKeyword": "complex"
+    },
+    {
+      "id": "mt_CUmjcE7W6c",
+      "name": "Fractions on a number line (age 9+)",
+      "name_zh": "数轴上的分数（9 岁+）",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_hlGKg5M7qJ",
+      "name": "Fractions, Decimals & Percentages",
+      "name_zh": "分数、小数与百分比",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "decimal",
+      "matchedKeyword": "小数"
+    },
+    {
+      "id": "mt_xfwv0M83mJ",
+      "name": "Precise Maths Vocabulary",
+      "name_zh": "精确的数学词汇",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "vocab",
+      "matchedKeyword": "词汇"
+    },
+    {
+      "id": "mt_8xVHooT4aI",
+      "name": "Real-World Maths Modelling",
+      "name_zh": "真实情境的数学建模",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "mode",
+      "matchedKeyword": "mode"
+    },
+    {
+      "id": "mt_jCy07DyBNU",
+      "name": "Reasoning with Equivalences",
+      "name_zh": "用等值关系推理",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "identical",
+      "matchedKeyword": "等值"
+    },
+    {
+      "id": "mt_2ESZh70NyS",
+      "name": "Understanding fractions (age 9+)",
+      "name_zh": "理解分数（9 岁+）",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_3rTIyJDw7-",
+      "name": "Advanced Maths Vocabulary",
+      "name_zh": "进阶数学词汇",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "vocab",
+      "matchedKeyword": "词汇"
+    },
+    {
+      "id": "mt_FieL-vVTI_",
+      "name": "Advanced Multi-Step Problems",
+      "name_zh": "进阶多步问题",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "multi_step",
+      "matchedKeyword": "多步"
+    },
+    {
+      "id": "mt_ZJC7JnnPCu",
+      "name": "Choosing Maths Tools",
+      "name_zh": "选择数学工具",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "tools_math",
+      "matchedKeyword": "工具"
+    },
+    {
+      "id": "mt_j5YqQnN6xe",
+      "name": "Constructing mathematical arguments",
+      "name_zh": "构建数学论证",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "math_argument",
+      "matchedKeyword": "论证"
+    },
+    {
+      "id": "mt_iyovKgZC1q",
+      "name": "Generalising with repeated reasoning",
+      "name_zh": "用重复推理概括",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "generalise",
+      "matchedKeyword": "概括"
+    },
+    {
+      "id": "mt_hImiKNiaNh",
+      "name": "Order of operations (age 10+)",
+      "name_zh": "运算顺序（10 岁+）",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "order_operations",
+      "matchedKeyword": "运算顺序"
+    },
+    {
+      "id": "mt_yqZiX6vS7D",
+      "name": "Real-World Mathematical Modelling",
+      "name_zh": "真实情境的数学建模",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "mode",
+      "matchedKeyword": "mode"
+    },
+    {
+      "id": "mt_9KmVWCuh5_",
+      "name": "Understanding fractions (age 10+)",
+      "name_zh": "理解分数（10 岁+）",
+      "domain": "Mathematical Thinking",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_zkFbMLpu3U",
+      "name": "Comparing Capacity",
+      "name_zh": "比较容量",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_uhuxX8sg9f",
+      "name": "Comparing Lengths & Heights",
+      "name_zh": "比较长短与高矮",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_TcG90kS8nu",
+      "name": "Comparing durations",
+      "name_zh": "比较时长",
+      "domain": "Measurement",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_NtJYlJdUe9",
+      "name": "Measurable Attributes of Objects",
+      "name_zh": "物体的可测属性",
+      "domain": "Measurement",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "measurement_general",
+      "matchedKeyword": "可测"
+    },
+    {
+      "id": "mt_-P1kdZhHbL",
+      "name": "Measuring mass and weight (age 4+)",
+      "name_zh": "测量质量与重量（4 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "mass_weight",
+      "matchedKeyword": "质量"
+    },
+    {
+      "id": "mt_-vvVxpOHG2",
+      "name": "Ordering Events in Time",
+      "name_zh": "按时间排序事件",
+      "domain": "Measurement",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "lt",
+      "matchedKeyword": "排序"
+    },
+    {
+      "id": "mt_4lp_b5Pzik",
+      "name": "Capacity and volume",
+      "name_zh": "容量与体积",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "volume_measure",
+      "matchedKeyword": "体积"
+    },
+    {
+      "id": "mt_cPZwlUk8Nd",
+      "name": "Coin Values",
+      "name_zh": "硬币面值",
+      "domain": "Measurement",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "coin_value",
+      "matchedKeyword": "coin"
+    },
+    {
+      "id": "mt_bj1YCgNWUx",
+      "name": "Days, Weeks, Months & Years",
+      "name_zh": "日、周、月与年",
+      "domain": "Measurement",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "calendar_sym",
+      "matchedKeyword": "年"
+    },
+    {
+      "id": "mt_KaF0SQvaiu",
+      "name": "Measuring length and height (age 5+)",
+      "name_zh": "测量长度与高度（5 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "degree",
+      "matchedKeyword": "度"
+    },
+    {
+      "id": "mt_zd0YkB3xNj",
+      "name": "Measuring mass and weight",
+      "name_zh": "测量质量与重量",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "mass_weight",
+      "matchedKeyword": "质量"
+    },
+    {
+      "id": "mt_0XxyaQLRhn",
+      "name": "Telling Time: Hours and Half Hours",
+      "name_zh": "认时间：整点与半点",
+      "domain": "Measurement",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "half",
+      "matchedKeyword": "half"
+    },
+    {
+      "id": "mt__N55B7u7HD",
+      "name": "Telling time to the minute",
+      "name_zh": "精确到分钟认时间",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "time_duration",
+      "matchedKeyword": "时间"
+    },
+    {
+      "id": "mt_AF2BeFQwfX",
+      "name": "Adding money and giving change",
+      "name_zh": "凑钱与找零",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus",
+      "matchedKeyword": "adding"
+    },
+    {
+      "id": "mt_DOe893F6gN",
+      "name": "Choosing measurement units",
+      "name_zh": "选择测量单位",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "measurement_general",
+      "matchedKeyword": "单位"
+    },
+    {
+      "id": "mt_BFJ-ch_8QU",
+      "name": "Comparing and ordering measurements",
+      "name_zh": "比较与排序测量值",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_skYly2Qm01",
+      "name": "Measuring length",
+      "name_zh": "测量长度",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "degree",
+      "matchedKeyword": "度"
+    },
+    {
+      "id": "mt_cqSf213hSa",
+      "name": "Measuring length (age 6+)",
+      "name_zh": "测量长度（6 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "degree",
+      "matchedKeyword": "度"
+    },
+    {
+      "id": "mt_6J1wmCWf41",
+      "name": "Money Addition & Subtraction",
+      "name_zh": "货币的加减",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_2XDGT5tei1",
+      "name": "Number of minutes in an hour",
+      "name_zh": "一小时的分钟数",
+      "domain": "Measurement",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "telling_time",
+      "matchedKeyword": "钟"
+    },
+    {
+      "id": "mt_pbuhUQJjtt",
+      "name": "Pounds & Pence Notation",
+      "name_zh": "英镑与便士符号",
+      "domain": "Measurement",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "coin_value",
+      "matchedKeyword": "pence"
+    },
+    {
+      "id": "mt_6XCURuNwPw",
+      "name": "Sequence intervals of time",
+      "name_zh": "排列时间间隔",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "time_duration",
+      "matchedKeyword": "时间"
+    },
+    {
+      "id": "mt_HNOPGJYiRK",
+      "name": "Telling Time: Minutes",
+      "name_zh": "认时间：五分钟精度",
+      "domain": "Measurement",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "degree",
+      "matchedKeyword": "度"
+    },
+    {
+      "id": "mt_DLcEzmmj2r",
+      "name": "Addition and subtraction word problems",
+      "name_zh": "加减法应用题",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "mt_6oxQPNLHNv",
+      "name": "Calculating with measurements",
+      "name_zh": "用测量值计算",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus",
+      "matchedKeyword": "测量值"
+    },
+    {
+      "id": "mt_4emC463IyW",
+      "name": "Comparing Time Durations",
+      "name_zh": "比较时长",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_xWg0lI_gG4",
+      "name": "Comparing lengths by measuring",
+      "name_zh": "用测量比较长短",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_OzRZ89GrQW",
+      "name": "Estimating Lengths",
+      "name_zh": "估算长度",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "estimation",
+      "matchedKeyword": "估算"
+    },
+    {
+      "id": "mt_3XJkeIn6J6",
+      "name": "Estimating answers (age 7+)",
+      "name_zh": "估算答案（7 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "estimation",
+      "matchedKeyword": "估算"
+    },
+    {
+      "id": "mt_6_O6THdEDK",
+      "name": "Giving Change",
+      "name_zh": "找零",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "coin_value",
+      "matchedKeyword": "change"
+    },
+    {
+      "id": "mt_3tz3Otap5j",
+      "name": "Halves and quarters (age 7+)",
+      "name_zh": "半与四分之一（7 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "half",
+      "matchedKeyword": "halves"
+    },
+    {
+      "id": "mt_mayItsxMUu",
+      "name": "Measuring & Plotting Lengths",
+      "name_zh": "测量并绘制长度",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "degree",
+      "matchedKeyword": "度"
+    },
+    {
+      "id": "mt_wE7-Gs9ENL",
+      "name": "Measuring Perimeters",
+      "name_zh": "测量周长",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "perimeter_measure",
+      "matchedKeyword": "周长"
+    },
+    {
+      "id": "mt_e4x3l2JeLI",
+      "name": "Measuring length (age 7+)",
+      "name_zh": "测量长度（7 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "degree",
+      "matchedKeyword": "度"
+    },
+    {
+      "id": "mt_jHv4BgRK8B",
+      "name": "Measuring with different units",
+      "name_zh": "用不同单位测量",
+      "domain": "Measurement",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "measurement_general",
+      "matchedKeyword": "单位"
+    },
+    {
+      "id": "mt_4m8BimI4G5",
+      "name": "Telling time to the minute (age 7+)",
+      "name_zh": "精确到分钟认时间（7 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "time_duration",
+      "matchedKeyword": "时间"
+    },
+    {
+      "id": "mt_EXlmTURK_o",
+      "name": "Time Units and Calendar Facts",
+      "name_zh": "时间单位与日历常识",
+      "domain": "Measurement",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "time_duration",
+      "matchedKeyword": "时间"
+    },
+    {
+      "id": "mt_WfrE_4r-kY",
+      "name": "12-hour and 24-hour time",
+      "name_zh": "12 小时与 24 小时制",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "time_duration",
+      "matchedKeyword": "time"
+    },
+    {
+      "id": "mt_y1n0Zwhoca",
+      "name": "Area (age 8+)",
+      "name_zh": "面积（8 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "area_measure",
+      "matchedKeyword": "面积"
+    },
+    {
+      "id": "mt_AQo4u7O4sM",
+      "name": "Area and the distributive property",
+      "name_zh": "面积与分配律",
+      "domain": "Measurement",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "area_measure",
+      "matchedKeyword": "面积"
+    },
+    {
+      "id": "mt_Jvvh5P06NV",
+      "name": "Area by Tiling",
+      "name_zh": "用铺砖求面积",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "area_measure",
+      "matchedKeyword": "面积"
+    },
+    {
+      "id": "mt_eMtV6tBSJm",
+      "name": "Area of compound shapes",
+      "name_zh": "组合图形的面积",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "area_measure",
+      "matchedKeyword": "面积"
+    },
+    {
+      "id": "mt_d8al9JcajP",
+      "name": "Converting measurement units",
+      "name_zh": "换算测量单位",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "unit_convert",
+      "matchedKeyword": "换算"
+    },
+    {
+      "id": "mt_mFJ-2ZF6Tk",
+      "name": "Estimating and comparing money",
+      "name_zh": "估算与比较货币",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "estimation",
+      "matchedKeyword": "估算"
+    },
+    {
+      "id": "mt_ghK1mnEstc",
+      "name": "Halves and quarters (age 8+)",
+      "name_zh": "半与四分之一（8 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "half",
+      "matchedKeyword": "halves"
+    },
+    {
+      "id": "mt_-af65bxfdp",
+      "name": "Measuring Liquids & Masses",
+      "name_zh": "测量液体与质量",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "mass_weight",
+      "matchedKeyword": "质量"
+    },
+    {
+      "id": "mt_IL86kadLSS",
+      "name": "Numbers on a number line",
+      "name_zh": "数轴上的数",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_WtcFrxGOgw",
+      "name": "Perimeters of polygons",
+      "name_zh": "多边形的周长",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "polygon_general",
+      "matchedKeyword": "多边形"
+    },
+    {
+      "id": "mt_UNzojLkNdm",
+      "name": "Telling time to the minute (age 8+)",
+      "name_zh": "精确到分钟认时间（8 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "time_duration",
+      "matchedKeyword": "时间"
+    },
+    {
+      "id": "mt_6xNmQLzuqm",
+      "name": "Understanding Area",
+      "name_zh": "理解面积",
+      "domain": "Measurement",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "area_measure",
+      "matchedKeyword": "面积"
+    },
+    {
+      "id": "mt_GzcJEVkNRn",
+      "name": "Understanding angles (age 8+)",
+      "name_zh": "用长乘以宽求面积（8 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘"
+    },
+    {
+      "id": "mt_Zks8xyInSG",
+      "name": "Converting measurement units (age 9+)",
+      "name_zh": "换算测量单位（9 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "unit_convert",
+      "matchedKeyword": "换算"
+    },
+    {
+      "id": "mt_eiB3-6pu6a",
+      "name": "Estimating answers (age 9+)",
+      "name_zh": "估算答案（9 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "estimation",
+      "matchedKeyword": "估算"
+    },
+    {
+      "id": "mt_NSC3LT_-ch",
+      "name": "Estimating volume",
+      "name_zh": "估算体积",
+      "domain": "Measurement",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "estimation",
+      "matchedKeyword": "估算"
+    },
+    {
+      "id": "mt_5HV4mbgSGH",
+      "name": "Fractions on a number line",
+      "name_zh": "数轴上的分数",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_42QD6nYjiZ",
+      "name": "Measurement Line Plots",
+      "name_zh": "测量的线图",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "line_plot",
+      "matchedKeyword": "line plot"
+    },
+    {
+      "id": "mt_p6MhZJYYPN",
+      "name": "Metric & Imperial Conversion",
+      "name_zh": "公制与英制换算",
+      "domain": "Measurement",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "unit_convert",
+      "matchedKeyword": "换算"
+    },
+    {
+      "id": "mt_n0AlyLQwC9",
+      "name": "Perimeter of Compound Shapes",
+      "name_zh": "组合图形的周长",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "perimeter_measure",
+      "matchedKeyword": "周长"
+    },
+    {
+      "id": "mt_2yas4Unc8o",
+      "name": "Telling time to the minute (age 9+)",
+      "name_zh": "精确到分钟认时间（9 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "time_duration",
+      "matchedKeyword": "时间"
+    },
+    {
+      "id": "mt_ML5t7n2-U8",
+      "name": "Area of Triangles & Parallelograms",
+      "name_zh": "三角形与平行四边形的面积",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "triangle",
+      "matchedKeyword": "三角形"
+    },
+    {
+      "id": "mt_d7XktBQPxm",
+      "name": "Counting Unit Cubes",
+      "name_zh": "数单位方块",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "counting_general",
+      "matchedKeyword": "counting"
+    },
+    {
+      "id": "mt_2VpdPjvewx",
+      "name": "Decimal place value",
+      "name_zh": "小数位值",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "frac_bar",
+      "matchedKeyword": "数位"
+    },
+    {
+      "id": "mt_nTL-owFJTF",
+      "name": "Estimating answers (age 10+)",
+      "name_zh": "估算答案（10 岁+）",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "estimation",
+      "matchedKeyword": "估算"
+    },
+    {
+      "id": "mt_SqhXQhAEUf",
+      "name": "Measurement Conversions",
+      "name_zh": "测量换算",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "unit_convert",
+      "matchedKeyword": "换算"
+    },
+    {
+      "id": "mt_IuHa5UI5od",
+      "name": "Measuring length (age 10+)",
+      "name_zh": "认识体积（10 岁+）",
+      "domain": "Measurement",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "volume_measure",
+      "matchedKeyword": "体积"
+    },
+    {
+      "id": "mt_3tPI0HqqcN",
+      "name": "Miles & Kilometres",
+      "name_zh": "英里与公里",
+      "domain": "Measurement",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "unit_convert",
+      "matchedKeyword": "英里"
+    },
+    {
+      "id": "mt_MJZA90uc6H",
+      "name": "Perimeter (age 10+)",
+      "name_zh": "周长（10 岁+）",
+      "domain": "Measurement",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "perimeter_measure",
+      "matchedKeyword": "周长"
+    },
+    {
+      "id": "mt_5TBUFnCy5-",
+      "name": "Volume as additive",
+      "name_zh": "体积可加",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus",
+      "matchedKeyword": "加"
+    },
+    {
+      "id": "mt_LpSuPgL31x",
+      "name": "Division as equal sharing",
+      "name_zh": "除法即等分分享",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "divide",
+      "matchedKeyword": "除法"
+    },
+    {
+      "id": "mt_GRWwTDZ3wD",
+      "name": "Arrays for multiplication",
+      "name_zh": "用阵列表示乘法",
+      "domain": "Multiplication & Division",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_PZ909yPrEC",
+      "name": "Multiplication as repeated addition",
+      "name_zh": "乘法即重复相加",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "plus",
+      "matchedKeyword": "加"
+    },
+    {
+      "id": "mt_C9ZfT-4cgn",
+      "name": "Commutative Multiplication",
+      "name_zh": "乘法交换律",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_wh3UqnWsa7",
+      "name": "Multiplication as repeated addition (age 6+)",
+      "name_zh": "乘法即重复相加（6 岁+）",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus",
+      "matchedKeyword": "加"
+    },
+    {
+      "id": "mt_0u4KLbvBa1",
+      "name": "Odd and even numbers",
+      "name_zh": "奇数与偶数",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "mode",
+      "matchedKeyword": "odd and even"
+    },
+    {
+      "id": "mt_zOWwLxa77y",
+      "name": "Reading ×, ÷, and = Symbols",
+      "name_zh": "认读 ×、÷、= 符号",
+      "domain": "Multiplication & Division",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "vocab",
+      "matchedKeyword": "读"
+    },
+    {
+      "id": "mt_HhuSDxwDNM",
+      "name": "Times tables",
+      "name_zh": "乘法表",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_B1zj1RwQ3a",
+      "name": "Arrays for multiplication (age 7+)",
+      "name_zh": "用阵列表示乘法（7 岁+）",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_EmR5n58jZt",
+      "name": "Multi-Step Multiply & Divide",
+      "name_zh": "多步乘除",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times_divide",
+      "matchedKeyword": "乘除"
+    },
+    {
+      "id": "mt_UTnDKQkVX5",
+      "name": "Rows & Columns in Rectangles",
+      "name_zh": "矩形中的行与列",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "order_ops",
+      "matchedKeyword": "column"
+    },
+    {
+      "id": "mt_wQ89AEXhz3",
+      "name": "Times tables (age 7+)",
+      "name_zh": "乘法表（7 岁+）",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_DyGBW3ZHh3",
+      "name": "Written Multiplication & Division",
+      "name_zh": "笔算乘除法",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times_divide",
+      "matchedKeyword": "乘除"
+    },
+    {
+      "id": "mt_K5jM7vlVhA",
+      "name": "All times tables to 12×12",
+      "name_zh": "全部乘法表到 12×12",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_GDG9_SZmsO",
+      "name": "Division as Unknown Factor",
+      "name_zh": "除法即求未知因数",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "divide",
+      "matchedKeyword": "除法"
+    },
+    {
+      "id": "mt_nZkL5-XjRX",
+      "name": "Factor Pairs & Commutativity",
+      "name_zh": "因数对与交换律",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "combination",
+      "matchedKeyword": "factor"
+    },
+    {
+      "id": "mt_WX30dzi4dt",
+      "name": "Fluent multiplication and division facts",
+      "name_zh": "熟练乘除事实",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times_divide",
+      "matchedKeyword": "乘除"
+    },
+    {
+      "id": "mt_pjfmCMMPjO",
+      "name": "Mental multiplication and division",
+      "name_zh": "口算乘除",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times_divide",
+      "matchedKeyword": "乘除"
+    },
+    {
+      "id": "mt_Zdv-b-iW5K",
+      "name": "Multiplication and Division Word Problems",
+      "name_zh": "乘除应用题",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times_divide",
+      "matchedKeyword": "乘除"
+    },
+    {
+      "id": "mt_AR-K72OIIO",
+      "name": "Multiply & Add Problems",
+      "name_zh": "乘加结合问题",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus",
+      "matchedKeyword": "加"
+    },
+    {
+      "id": "mt_isojCL9yy-",
+      "name": "Multiplying by Tens",
+      "name_zh": "乘整十数",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘"
+    },
+    {
+      "id": "mt_w6MxaaoMXZ",
+      "name": "Patterns in Times Tables",
+      "name_zh": "乘法表中的规律",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_Lb2ZnMdkYR",
+      "name": "Properties of Operations",
+      "name_zh": "运算性质",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "order_operations",
+      "matchedKeyword": "运算性质"
+    },
+    {
+      "id": "mt_xZvDCYA5Ae",
+      "name": "Unknown in Multiplication & Division",
+      "name_zh": "乘除中的未知数",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times_divide",
+      "matchedKeyword": "乘除"
+    },
+    {
+      "id": "mt_iNdrM2-oJf",
+      "name": "What Division Means",
+      "name_zh": "除法的含义",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "divide",
+      "matchedKeyword": "除法"
+    },
+    {
+      "id": "mt_gtTl3R5buH",
+      "name": "What Multiplication Means",
+      "name_zh": "乘法的含义",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_18fK9sQdIz",
+      "name": "Written Multiplication",
+      "name_zh": "笔算乘法",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_MCu_SNg_OW",
+      "name": "Arrays for multiplication (age 9+)",
+      "name_zh": "用阵列表示乘法（9 岁+）",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_p-nbe0w_lf",
+      "name": "Division with remainders",
+      "name_zh": "带余数的除法",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "divide",
+      "matchedKeyword": "除法"
+    },
+    {
+      "id": "mt_FHIAv6dfhU",
+      "name": "Factors, multiples, and primes",
+      "name_zh": "因数、倍数与质数",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "integer_num",
+      "matchedKeyword": "质数"
+    },
+    {
+      "id": "mt_0Wg5F97osg",
+      "name": "Factors, multiples, and primes (age 9+)",
+      "name_zh": "因数、倍数与质数（9 岁+）",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "integer_num",
+      "matchedKeyword": "质数"
+    },
+    {
+      "id": "mt_q9EaJc2FP8",
+      "name": "Long multiplication",
+      "name_zh": "长乘法",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_8A3pZNOp7Z",
+      "name": "Mental multiplication and division (age 9+)",
+      "name_zh": "口算乘除（9 岁+）",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times_divide",
+      "matchedKeyword": "乘除"
+    },
+    {
+      "id": "mt_6-j1NO2ZUH",
+      "name": "Multiplicative Comparison",
+      "name_zh": "乘法比较",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_U4cIBXVug4",
+      "name": "Multiplicative Comparison",
+      "name_zh": "乘法比较（方程）",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_LlMl2PbaZe",
+      "name": "Multiplying and dividing",
+      "name_zh": "乘除 10、100、1000",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times_divide",
+      "matchedKeyword": "乘除"
+    },
+    {
+      "id": "mt_y1XCVsIelg",
+      "name": "Prime numbers",
+      "name_zh": "质数",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "integer_num",
+      "matchedKeyword": "质数"
+    },
+    {
+      "id": "mt_A-FyLLLLzy",
+      "name": "Shape patterns",
+      "name_zh": "图形规律",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "pattern",
+      "matchedKeyword": "规律"
+    },
+    {
+      "id": "mt_gxCIASSezX",
+      "name": "Square and cube numbers",
+      "name_zh": "平方数与立方数",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "cube_3d",
+      "matchedKeyword": "立方"
+    },
+    {
+      "id": "mt_ZOJ6EbdPOb",
+      "name": "Understanding fractions",
+      "name_zh": "理解分数",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_8jFSnXxqQD",
+      "name": "Brackets in Expressions",
+      "name_zh": "算式中的括号",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "expression_general",
+      "matchedKeyword": "expression"
+    },
+    {
+      "id": "mt_SoDP1fSQEB",
+      "name": "Decimal place value",
+      "name_zh": "小数位值",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "frac_bar",
+      "matchedKeyword": "数位"
+    },
+    {
+      "id": "mt_FvEq4heNBx",
+      "name": "Dividing by two-digit numbers",
+      "name_zh": "除以两位数",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "divide",
+      "matchedKeyword": "除"
+    },
+    {
+      "id": "mt_lU-2aTRB9f",
+      "name": "Division with Decimals",
+      "name_zh": "小数除法",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "divide",
+      "matchedKeyword": "除法"
+    },
+    {
+      "id": "mt_WsM4EmdOLe",
+      "name": "Division with remainders (age 10+)",
+      "name_zh": "带余数的除法（10 岁+）",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "divide",
+      "matchedKeyword": "除法"
+    },
+    {
+      "id": "mt_ilPrU0cbtT",
+      "name": "Estimation to check answers to calculations",
+      "name_zh": "用估算检验计算",
+      "domain": "Multiplication & Division",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "estimation",
+      "matchedKeyword": "估算"
+    },
+    {
+      "id": "mt_XLP1IM3Qbb",
+      "name": "Long multiplication (age 10+)",
+      "name_zh": "长乘法（10 岁+）",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "mt_RXnyhCRYXA",
+      "name": "Multi-step problems: choosing operations",
+      "name_zh": "多步问题：选择运算",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "multi_step",
+      "matchedKeyword": "多步"
+    },
+    {
+      "id": "mt_wPgpMJ0-PA",
+      "name": "Multiplying and dividing (age 10+)",
+      "name_zh": "乘除 10、100、1000（10 岁+）",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times_divide",
+      "matchedKeyword": "乘除"
+    },
+    {
+      "id": "mt_jHgRQ4hR0g",
+      "name": "Order of operations",
+      "name_zh": "运算顺序",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "order_operations",
+      "matchedKeyword": "运算顺序"
+    },
+    {
+      "id": "mt_vmW2cb5c7A",
+      "name": "Ratio (age 10+)",
+      "name_zh": "混合运算口算（10 岁+）",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "order_operations",
+      "matchedKeyword": "混合运算"
+    },
+    {
+      "id": "mt_QU5R7Aajy9",
+      "name": "Rounding Answers",
+      "name_zh": "答案的四舍五入",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "estimation",
+      "matchedKeyword": "rounding"
+    },
+    {
+      "id": "mt_4WaKWECpcv",
+      "name": "Writing Number Sentences",
+      "name_zh": "写算式",
+      "domain": "Multiplication & Division",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "vocab",
+      "matchedKeyword": "写"
+    },
+    {
+      "id": "mt_xhoOWnhtHq",
+      "name": "Factors, multiples, and primes (age 11+)",
+      "name_zh": "因数、倍数与质数（11 岁+）",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "integer_num",
+      "matchedKeyword": "质数"
+    },
+    {
+      "id": "mt_X5cypSGoGU",
+      "name": "Ratio (age 11+)",
+      "name_zh": "复杂运算顺序（11 岁+）",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "order_operations",
+      "matchedKeyword": "运算顺序"
+    },
+    {
+      "id": "mt_rxInpOQ74w",
+      "name": "Sign Rules for Multiplication",
+      "name_zh": "乘除符号规则",
+      "domain": "Multiplication & Division",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times_divide",
+      "matchedKeyword": "乘除"
+    },
+    {
+      "id": "mt_VUQNveSYjQ",
+      "name": "Using inverse operations",
+      "name_zh": "使用逆运算",
+      "domain": "Multiplication & Division",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "arrow_bidir",
+      "matchedKeyword": "逆运算"
+    },
+    {
+      "id": "mt_9IzhGUZ30z",
+      "name": "Number Words to Twenty",
+      "name_zh": "数字单词（一到二十）",
+      "domain": "Number Representation & Place Value",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "vocab",
+      "matchedKeyword": "number words"
+    },
+    {
+      "id": "mt_x8TshvbbQT",
+      "name": "Reading and writing numbers to 100",
+      "name_zh": "读写 100 以内的数",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vocab",
+      "matchedKeyword": "读"
+    },
+    {
+      "id": "mt_fR0UtsSREU",
+      "name": "Reading and writing numbers to 20",
+      "name_zh": "读写 20 以内的数",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vocab",
+      "matchedKeyword": "读"
+    },
+    {
+      "id": "mt_xmmgAzxe5j",
+      "name": "The teen numbers",
+      "name_zh": "十几的数",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "number_general",
+      "matchedKeyword": "十几"
+    },
+    {
+      "id": "mt_kw7xmp68rU",
+      "name": "10 More or 10 Less",
+      "name_zh": "多十或少十",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "多十"
+    },
+    {
+      "id": "mt_r0VXbfAmsH",
+      "name": "A Ten Is Ten Ones",
+      "name_zh": "十是个十",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "number_general",
+      "matchedKeyword": "十是个十"
+    },
+    {
+      "id": "mt_U0waNfD8PB",
+      "name": "Comparing and ordering numbers",
+      "name_zh": "比较与排序数字",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_76SPWvdI7r",
+      "name": "Number Words to 100",
+      "name_zh": "数字单词（到 100）",
+      "domain": "Number Representation & Place Value",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "vocab",
+      "matchedKeyword": "number words"
+    },
+    {
+      "id": "mt_kJGCjnuelW",
+      "name": "Place value understanding and number facts",
+      "name_zh": "位值理解与数感",
+      "domain": "Number Representation & Place Value",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "frac_bar",
+      "matchedKeyword": "位值"
+    },
+    {
+      "id": "mt_XV0B4kWwqL",
+      "name": "Reading and writing numbers to 120",
+      "name_zh": "读写 120 以内的数",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vocab",
+      "matchedKeyword": "读"
+    },
+    {
+      "id": "mt_9L3NQqgqRd",
+      "name": "Representing Numbers",
+      "name_zh": "数的表示",
+      "domain": "Number Representation & Place Value",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "representation",
+      "matchedKeyword": "representing"
+    },
+    {
+      "id": "mt_zfy1gOEewd",
+      "name": "The multiples of 10",
+      "name_zh": "10 的倍数",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "sequence_dots",
+      "matchedKeyword": "倍数"
+    },
+    {
+      "id": "mt_THl9GLxwoL",
+      "name": "The two digits of a two-digit number",
+      "name_zh": "两位数的两个数位",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "frac_bar",
+      "matchedKeyword": "数位"
+    },
+    {
+      "id": "mt_izien3ZX51",
+      "name": "10 or 100 More or Less",
+      "name_zh": "多十或多百/少十或少百",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "more or less"
+    },
+    {
+      "id": "mt_8gy7uxRlF6",
+      "name": "A Hundred Is Ten Tens",
+      "name_zh": "一百是十个十",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "number_general",
+      "matchedKeyword": "一百是"
+    },
+    {
+      "id": "mt_hniI4E-OCE",
+      "name": "Odd or Even",
+      "name_zh": "奇数或偶数",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "mode",
+      "matchedKeyword": "odd or even"
+    },
+    {
+      "id": "mt_AQcVRBddko",
+      "name": "Ordering Numbers to 1000",
+      "name_zh": "1000 以内排序",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "排序"
+    },
+    {
+      "id": "mt_98c2qwEF7Q",
+      "name": "Place Value to 1000",
+      "name_zh": "1000 以内的位值",
+      "domain": "Number Representation & Place Value",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "frac_bar",
+      "matchedKeyword": "位值"
+    },
+    {
+      "id": "mt_VFsuftfvYM",
+      "name": "Reading and writing numbers to 1000",
+      "name_zh": "读写 1000 以内的数",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vocab",
+      "matchedKeyword": "读"
+    },
+    {
+      "id": "mt_R2ccrI-nKD",
+      "name": "The multiples of 100",
+      "name_zh": "100 的倍数",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "sequence_dots",
+      "matchedKeyword": "倍数"
+    },
+    {
+      "id": "mt_aPBzD28_mT",
+      "name": "The three digits of a three-digit number",
+      "name_zh": "三位数的三个数位",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "frac_bar",
+      "matchedKeyword": "数位"
+    },
+    {
+      "id": "mt_9XVFje6Tyr",
+      "name": "1000 More or Less",
+      "name_zh": "多千或少千",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "more or less"
+    },
+    {
+      "id": "mt_MHaiUd2FLA",
+      "name": "Comparing Large Numbers",
+      "name_zh": "比较大数",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "lt",
+      "matchedKeyword": "比较"
+    },
+    {
+      "id": "mt_vXRzMbiPff",
+      "name": "Negative Numbers",
+      "name_zh": "负数",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "number_line",
+      "matchedKeyword": "负数"
+    },
+    {
+      "id": "mt_lC_Q5mSL_I",
+      "name": "Numbers to 10,000",
+      "name_zh": "10000 以内的数",
+      "domain": "Number Representation & Place Value",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "number_general",
+      "matchedKeyword": "以内"
+    },
+    {
+      "id": "mt__sMrmOv3bx",
+      "name": "Place Value Problem-Solving",
+      "name_zh": "位值解题",
+      "domain": "Number Representation & Place Value",
+      "type": "META",
+      "frame": "STAR",
+      "symbol": "frac_bar",
+      "matchedKeyword": "位值"
+    },
+    {
+      "id": "mt_jY7uf0Cb7o",
+      "name": "Place value of each digit",
+      "name_zh": "每位数字的位值",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "frac_bar",
+      "matchedKeyword": "位值"
+    },
+    {
+      "id": "mt_MewIRdzpzz",
+      "name": "Roman numerals to 100",
+      "name_zh": "罗马数字到 100",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "number_general",
+      "matchedKeyword": "罗马"
+    },
+    {
+      "id": "mt_NLSfvB9vUl",
+      "name": "Rounding to 10, 100, 1000",
+      "name_zh": "四舍五入到 10、100、1000",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "estimation",
+      "matchedKeyword": "rounding"
+    },
+    {
+      "id": "mt_tAtMET4EIU",
+      "name": "Counting forwards and backwards (age 9+)",
+      "name_zh": "正倒数（9 岁+）",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "counting_general",
+      "matchedKeyword": "counting"
+    },
+    {
+      "id": "mt_1KkvzwYxbR",
+      "name": "Negative numbers in context",
+      "name_zh": "情境中的负数",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "number_line",
+      "matchedKeyword": "负数"
+    },
+    {
+      "id": "mt_QqG6IdmTSE",
+      "name": "Place Value × 10 Pattern",
+      "name_zh": "位值的 ×10 规律",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "frac_bar",
+      "matchedKeyword": "位值"
+    },
+    {
+      "id": "mt_JwP9QFv6gQ",
+      "name": "Reading and writing numbers (age 9+)",
+      "name_zh": "读写数字（9 岁+）",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vocab",
+      "matchedKeyword": "读"
+    },
+    {
+      "id": "mt_To9HdLy8vq",
+      "name": "Roman numerals to 1000",
+      "name_zh": "罗马数字到 1000",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "number_general",
+      "matchedKeyword": "罗马"
+    },
+    {
+      "id": "mt_5NwqN6pf_A",
+      "name": "Rounding Large Numbers",
+      "name_zh": "大数四舍五入",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "estimation",
+      "matchedKeyword": "rounding"
+    },
+    {
+      "id": "mt_xMt1TLTs--",
+      "name": "Working with Large Numbers",
+      "name_zh": "处理大数",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "showing_working",
+      "matchedKeyword": "working"
+    },
+    {
+      "id": "mt__casygEB85",
+      "name": "Decimal place value",
+      "name_zh": "小数位值",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "frac_bar",
+      "matchedKeyword": "数位"
+    },
+    {
+      "id": "mt_RVK655t391",
+      "name": "Measuring temperature",
+      "name_zh": "测量温度",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "degree",
+      "matchedKeyword": "度"
+    },
+    {
+      "id": "mt_XNmGwNggdU",
+      "name": "Numbers to Ten Million",
+      "name_zh": "千万以内的数",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "number_general",
+      "matchedKeyword": "以内"
+    },
+    {
+      "id": "mt_HLUqHJ9Y7n",
+      "name": "Patterns with Powers of Ten",
+      "name_zh": "10 的幂的规律",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "power",
+      "matchedKeyword": "幂"
+    },
+    {
+      "id": "mt_EDgw64OmfA",
+      "name": "Place Value × 10 and ÷ 10",
+      "name_zh": "位值 ×10 与 ÷10",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "frac_bar",
+      "matchedKeyword": "位值"
+    },
+    {
+      "id": "mt_lNGpnILM5C",
+      "name": "Reading Decimal Places",
+      "name_zh": "读小数位",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "frac_bar",
+      "matchedKeyword": "数位"
+    },
+    {
+      "id": "mt_Ac7oMWhyPw",
+      "name": "Reading and writing numbers (age 10+)",
+      "name_zh": "读写数字（10 岁+）",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vocab",
+      "matchedKeyword": "读"
+    },
+    {
+      "id": "mt_Gag_h98jWP",
+      "name": "Reading and writing numbers to 10,000,000",
+      "name_zh": "读写 1000 万以内的数",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vocab",
+      "matchedKeyword": "读"
+    },
+    {
+      "id": "mt_U9sme87C32",
+      "name": "Decimal place value (age 11+)",
+      "name_zh": "小数位值（11 岁+）",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "frac_bar",
+      "matchedKeyword": "数位"
+    },
+    {
+      "id": "mt_PsylzZ9lHW",
+      "name": "Fractions on a number line",
+      "name_zh": "数轴上的分数",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_uDJY0X0hgo",
+      "name": "Fractions on a number line (age 11+)",
+      "name_zh": "数轴上的分数（11 岁+）",
+      "domain": "Number Representation & Place Value",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_RWUY7_IXvw",
+      "name": "Numbers on a number line",
+      "name_zh": "数轴上的数",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "number_line",
+      "matchedKeyword": "数轴"
+    },
+    {
+      "id": "mt_hCVPYlF-7Y",
+      "name": "Square and cube numbers",
+      "name_zh": "平方数与立方数",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "cube_3d",
+      "matchedKeyword": "立方"
+    },
+    {
+      "id": "mt_VVn1IXjkzn",
+      "name": "Estimating by rounding",
+      "name_zh": "用四舍五入估算",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "estimation",
+      "matchedKeyword": "估算"
+    },
+    {
+      "id": "mt_bO-njVOige",
+      "name": "Powers of Ten Notation",
+      "name_zh": "十的幂记号",
+      "domain": "Number Representation & Place Value",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "power",
+      "matchedKeyword": "幂"
+    },
+    {
+      "id": "mt_b4lbTOJYwI",
+      "name": "Number Sets & Infinity",
+      "name_zh": "数集与无穷",
+      "domain": "Number Representation & Place Value",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "infinity",
+      "matchedKeyword": "数集"
+    },
+    {
+      "id": "mt_xSgAgg9Ej_",
+      "name": "Equally Likely Outcomes",
+      "name_zh": "等可能结果",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "likely",
+      "matchedKeyword": "可能"
+    },
+    {
+      "id": "mt_iFFKZd-Vgv",
+      "name": "Likelihood Language",
+      "name_zh": "概率语言",
+      "domain": "Probability",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "likely",
+      "matchedKeyword": "likelihood"
+    },
+    {
+      "id": "mt_UcGn2hjhYU",
+      "name": "Ordering Likelihoods",
+      "name_zh": "排序可能性",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "lt",
+      "matchedKeyword": "排序"
+    },
+    {
+      "id": "mt_-c4Ca_nBzX",
+      "name": "Probability as a Fraction",
+      "name_zh": "用分数表示概率",
+      "domain": "Probability",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_J4j7d3iAfg",
+      "name": "Simple Chance Experiments",
+      "name_zh": "简单的机会实验",
+      "domain": "Probability",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "experiment",
+      "matchedKeyword": "实验"
+    },
+    {
+      "id": "mt_Zt30Gxi-qp",
+      "name": "Calculating Simple Probability",
+      "name_zh": "计算简单概率",
+      "domain": "Probability",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "likely",
+      "matchedKeyword": "probability"
+    },
+    {
+      "id": "mt_-bMnJcPJy8",
+      "name": "Experimental vs Theoretical",
+      "name_zh": "实验概率与理论概率",
+      "domain": "Probability",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "experiment",
+      "matchedKeyword": "实验"
+    },
+    {
+      "id": "mt_3fwYu7imd4",
+      "name": "Probabilities Sum to One",
+      "name_zh": "概率之和为 1",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "probability_general",
+      "matchedKeyword": "概率"
+    },
+    {
+      "id": "mt_t0g2SlP404",
+      "name": "The 0-to-1 Probability Scale",
+      "name_zh": "0 到 1 的概率尺度",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "degree",
+      "matchedKeyword": "度"
+    },
+    {
+      "id": "mt_XfyqXLqzpx",
+      "name": "Complementary events",
+      "name_zh": "互补事件",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "complementary",
+      "matchedKeyword": "互补"
+    },
+    {
+      "id": "mt_sHJqh6UUya",
+      "name": "Experimental probability",
+      "name_zh": "实验概率",
+      "domain": "Probability",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "likely",
+      "matchedKeyword": "probability"
+    },
+    {
+      "id": "mt_vmQJAtAFuy",
+      "name": "The Probability Scale",
+      "name_zh": "概率尺度",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "degree",
+      "matchedKeyword": "度"
+    },
+    {
+      "id": "mt_1YwOCMMwD8",
+      "name": "Sets & Venn Diagrams",
+      "name_zh": "集合与韦恩图",
+      "domain": "Probability",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "venn",
+      "matchedKeyword": "韦恩"
+    },
+    {
+      "id": "mt_GDtFU5fyUv",
+      "name": "Tree diagrams",
+      "name_zh": "树状图",
+      "domain": "Probability",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "tree_diagram",
+      "matchedKeyword": "树状"
+    },
+    {
+      "id": "mt_eSv_w46u6H",
+      "name": "Venn Diagrams and Counting Outcomes",
+      "name_zh": "韦恩图与计数结果",
+      "domain": "Probability",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "counting_general",
+      "matchedKeyword": "counting"
+    },
+    {
+      "id": "mt_ePXg_XyCKU",
+      "name": "Bar Models for Ratios",
+      "name_zh": "用条形图解比例",
+      "domain": "Ratio & Proportion",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "mode",
+      "matchedKeyword": "mode"
+    },
+    {
+      "id": "mt_ESgc4YBw-a",
+      "name": "Percentages (age 9+)",
+      "name_zh": "百分比（9 岁+）",
+      "domain": "Ratio & Proportion",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "percent",
+      "matchedKeyword": "百分"
+    },
+    {
+      "id": "mt_PNSyfH56eQ",
+      "name": "Calculating Percentages",
+      "name_zh": "计算百分比",
+      "domain": "Ratio & Proportion",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "percent",
+      "matchedKeyword": "百分"
+    },
+    {
+      "id": "mt_h0gJcSuwdL",
+      "name": "Ratio Problems",
+      "name_zh": "比的问题",
+      "domain": "Ratio & Proportion",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "ratio_sym",
+      "matchedKeyword": "比的"
+    },
+    {
+      "id": "mt_2OtRUM_0zW",
+      "name": "Scale and similar shapes",
+      "name_zh": "比例与相似形",
+      "domain": "Ratio & Proportion",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "similar_figures",
+      "matchedKeyword": "相似"
+    },
+    {
+      "id": "mt_FnUJMXPUZX",
+      "name": "Understanding fractions",
+      "name_zh": "理解分数",
+      "domain": "Ratio & Proportion",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_kLQOzZYrd5",
+      "name": "Compound Units",
+      "name_zh": "复合单位",
+      "domain": "Ratio & Proportion",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "coin_value",
+      "matchedKeyword": "pound"
+    },
+    {
+      "id": "mt_nOCPx5qw0Z",
+      "name": "Dividing Quantities by Ratio",
+      "name_zh": "按比例分配数量",
+      "domain": "Ratio & Proportion",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "ratio_sym",
+      "matchedKeyword": "按比例"
+    },
+    {
+      "id": "mt_xAf2bu9wYK",
+      "name": "One Quantity as a Fraction",
+      "name_zh": "一个量作为另一量的分数",
+      "domain": "Ratio & Proportion",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "fraction",
+      "matchedKeyword": "分数"
+    },
+    {
+      "id": "mt_ALUrJpY0cZ",
+      "name": "Percentages as Fractions",
+      "name_zh": "百分比即分数",
+      "domain": "Ratio & Proportion",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "percent",
+      "matchedKeyword": "百分"
+    },
+    {
+      "id": "mt_FspV_imUGK",
+      "name": "Proportion Graphs",
+      "name_zh": "比例图",
+      "domain": "Ratio & Proportion",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "line_graph",
+      "matchedKeyword": "比例图"
+    },
+    {
+      "id": "mt_ATYLKt0je-",
+      "name": "Proportional Reasoning Vocabulary",
+      "name_zh": "比例推理词汇",
+      "domain": "Ratio & Proportion",
+      "type": "LANGUAGE",
+      "frame": "RING",
+      "symbol": "proportion",
+      "matchedKeyword": "比例"
+    },
+    {
+      "id": "mt_XWSGuFW7It",
+      "name": "Ratio Notation",
+      "name_zh": "比的记号",
+      "domain": "Ratio & Proportion",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "ratio_sym",
+      "matchedKeyword": "比的"
+    },
+    {
+      "id": "mt_1badik7iKJ",
+      "name": "Scale and similar shapes (age 11+)",
+      "name_zh": "比例与相似形（11 岁+）",
+      "domain": "Ratio & Proportion",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "similar_figures",
+      "matchedKeyword": "相似"
+    },
+    {
+      "id": "mt_tpT9brpI6D",
+      "name": "Unit Conversions",
+      "name_zh": "单位换算",
+      "domain": "Ratio & Proportion",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "unit_convert",
+      "matchedKeyword": "换算"
+    },
+    {
+      "id": "mt_iEXqN48w3x",
+      "name": "Percentages (age 12+)",
+      "name_zh": "百分比（12 岁+）",
+      "domain": "Ratio & Proportion",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "percent",
+      "matchedKeyword": "百分"
+    },
+    {
+      "id": "mt_5mIcmKRCgA",
+      "name": "Proportion",
+      "name_zh": "比例",
+      "domain": "Ratio & Proportion",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "proportion",
+      "matchedKeyword": "比例"
+    },
+    {
+      "id": "mt_yK51ZnKA8m",
+      "name": "Ratio Notation and Relationships",
+      "name_zh": "比的记号与关系",
+      "domain": "Ratio & Proportion",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "ratio_sym",
+      "matchedKeyword": "比的"
+    },
+    {
+      "id": "cn_renminbi",
+      "name": "Recognizing and using RMB (Chinese currency)",
+      "name_zh": "认识人民币",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "coin_value",
+      "matchedKeyword": "人民币"
+    },
+    {
+      "id": "cn_observe3d",
+      "name": "Viewing 3D objects from different viewpoints",
+      "name_zh": "观察物体（多面观察）",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "three_views",
+      "matchedKeyword": "viewing"
+    },
+    {
+      "id": "cn_symaxis",
+      "name": "Line symmetry / axisymmetric figures",
+      "name_zh": "轴对称图形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "axis_symmetry",
+      "matchedKeyword": "轴对称"
+    },
+    {
+      "id": "cn_hms",
+      "name": "Units of time: hours, minutes, seconds",
+      "name_zh": "时、分、秒",
+      "domain": "Measurement",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "time_duration",
+      "matchedKeyword": "time"
+    },
+    {
+      "id": "cn_bei",
+      "name": "Concept of 'times' (multiplicative comparison)",
+      "name_zh": "倍的认识",
+      "domain": "Ratio & Proportion",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "times",
+      "matchedKeyword": "times"
+    },
+    {
+      "id": "cn_directions",
+      "name": "Cardinal directions (N/E/S/W) and describing position",
+      "name_zh": "认识东南西北",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "counting_general",
+      "matchedKeyword": "cardinal"
+    },
+    {
+      "id": "cn_compoundchart",
+      "name": "Compound / dual-category statistical charts",
+      "name_zh": "复式统计图",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "coin_value",
+      "matchedKeyword": "pound"
+    },
+    {
+      "id": "cn_calendar",
+      "name": "Calendar: years, months, days, leap year",
+      "name_zh": "年、月、日",
+      "domain": "Measurement",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "calendar_sym",
+      "matchedKeyword": "calendar"
+    },
+    {
+      "id": "cn_optimize",
+      "name": "Optimization / making the best arrangement",
+      "name_zh": "数学广角——优化",
+      "domain": "Mathematical Thinking",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "cn_coordpair",
+      "name": "Describing position with coordinate pairs",
+      "name_zh": "用数对表示位置",
+      "domain": "Algebra",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plot_point",
+      "matchedKeyword": "coordinate"
+    },
+    {
+      "id": "cn_treeplant",
+      "name": "Tree-planting / interval problems",
+      "name_zh": "植树问题",
+      "domain": "Mathematical Thinking",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "interval",
+      "matchedKeyword": "interval"
+    },
+    {
+      "id": "cn_linechart",
+      "name": "Line graphs",
+      "name_zh": "折线统计图",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "line_plot",
+      "matchedKeyword": "折线"
+    },
+    {
+      "id": "cn_cylcone",
+      "name": "Cylinders and cones",
+      "name_zh": "圆柱与圆锥",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "circle_shape",
+      "matchedKeyword": "圆"
+    },
+    {
+      "id": "cn_scale",
+      "name": "Scale (map scale) and scaled drawings",
+      "name_zh": "比例尺",
+      "domain": "Ratio & Proportion",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "ruler",
+      "matchedKeyword": "尺"
+    },
+    {
+      "id": "cn_rational",
+      "name": "有理数",
+      "name_zh": "有理数",
+      "domain": "Number & Expression",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "rational_num",
+      "matchedKeyword": "有理数"
+    },
+    {
+      "id": "cn_rational_ops",
+      "name": "有理数运算",
+      "name_zh": "有理数运算",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "rational_num",
+      "matchedKeyword": "有理数"
+    },
+    {
+      "id": "cn_power",
+      "name": "乘方与幂",
+      "name_zh": "乘方与幂",
+      "domain": "Number & Expression",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "times",
+      "matchedKeyword": "乘"
+    },
+    {
+      "id": "cn_sci_note",
+      "name": "科学记数法",
+      "name_zh": "科学记数法",
+      "domain": "Number & Expression",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "scientific",
+      "matchedKeyword": "科学记数"
+    },
+    {
+      "id": "cn_polynomial",
+      "name": "整式",
+      "name_zh": "整式",
+      "domain": "Number & Expression",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "expression_general",
+      "matchedKeyword": "整式"
+    },
+    {
+      "id": "cn_like_terms",
+      "name": "同类项与合并同类项",
+      "name_zh": "同类项与合并同类项",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "combine",
+      "matchedKeyword": "合并"
+    },
+    {
+      "id": "cn_poly_add",
+      "name": "整式的加减",
+      "name_zh": "整式的加减",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "cn_pow_mul",
+      "name": "同底数幂的乘法",
+      "name_zh": "同底数幂的乘法",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "cn_pow_pow",
+      "name": "幂的乘方",
+      "name_zh": "幂的乘方",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘"
+    },
+    {
+      "id": "cn_pow_prod",
+      "name": "积的乘方",
+      "name_zh": "积的乘方",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘"
+    },
+    {
+      "id": "cn_poly_mul",
+      "name": "整式的乘法",
+      "name_zh": "整式的乘法",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times",
+      "matchedKeyword": "乘法"
+    },
+    {
+      "id": "cn_formula_sqdiff",
+      "name": "平方差公式",
+      "name_zh": "平方差公式",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "variance",
+      "matchedKeyword": "方差"
+    },
+    {
+      "id": "cn_formula_square",
+      "name": "完全平方公式",
+      "name_zh": "完全平方公式",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "formula_use",
+      "matchedKeyword": "公式"
+    },
+    {
+      "id": "cn_poly_div",
+      "name": "整式的除法",
+      "name_zh": "整式的除法",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "divide",
+      "matchedKeyword": "除法"
+    },
+    {
+      "id": "cn_factoring",
+      "name": "因式分解",
+      "name_zh": "因式分解",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "number_bond",
+      "matchedKeyword": "分解"
+    },
+    {
+      "id": "cn_frac_expr",
+      "name": "分式",
+      "name_zh": "分式",
+      "domain": "Number & Expression",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "fraction",
+      "matchedKeyword": "分式"
+    },
+    {
+      "id": "cn_frac_prop",
+      "name": "分式的基本性质",
+      "name_zh": "分式的基本性质",
+      "domain": "Number & Expression",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "fraction",
+      "matchedKeyword": "分式"
+    },
+    {
+      "id": "cn_frac_ops",
+      "name": "分式的运算",
+      "name_zh": "分式的运算",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "fraction",
+      "matchedKeyword": "分式"
+    },
+    {
+      "id": "cn_int_exp",
+      "name": "整数指数幂",
+      "name_zh": "整数指数幂",
+      "domain": "Number & Expression",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "power",
+      "matchedKeyword": "幂"
+    },
+    {
+      "id": "cn_sqrt_expr",
+      "name": "二次根式",
+      "name_zh": "二次根式",
+      "domain": "Number & Expression",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "sqrt",
+      "matchedKeyword": "根式"
+    },
+    {
+      "id": "cn_sqrt_mul",
+      "name": "二次根式的乘除",
+      "name_zh": "二次根式的乘除",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "times_divide",
+      "matchedKeyword": "乘除"
+    },
+    {
+      "id": "cn_sqrt_add",
+      "name": "二次根式的加减",
+      "name_zh": "二次根式的加减",
+      "domain": "Number & Expression",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "cn_real",
+      "name": "实数",
+      "name_zh": "实数",
+      "domain": "Number & Expression",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "real_num",
+      "matchedKeyword": "实数"
+    },
+    {
+      "id": "cn_eq_prop",
+      "name": "等式的性质",
+      "name_zh": "等式的性质",
+      "domain": "Equations & Inequalities",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "equation_property",
+      "matchedKeyword": "等式"
+    },
+    {
+      "id": "cn_linear_eq1",
+      "name": "一元一次方程",
+      "name_zh": "一元一次方程",
+      "domain": "Equations & Inequalities",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "linear_eq",
+      "matchedKeyword": "一元一次"
+    },
+    {
+      "id": "cn_linear_sys",
+      "name": "二元一次方程组",
+      "name_zh": "二元一次方程组",
+      "domain": "Equations & Inequalities",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "system_eq",
+      "matchedKeyword": "二元"
+    },
+    {
+      "id": "cn_sub_elim",
+      "name": "代入消元法",
+      "name_zh": "代入消元法",
+      "domain": "Equations & Inequalities",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "elimination",
+      "matchedKeyword": "消元"
+    },
+    {
+      "id": "cn_add_elim",
+      "name": "加减消元法",
+      "name_zh": "加减消元法",
+      "domain": "Equations & Inequalities",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plus_minus",
+      "matchedKeyword": "加减"
+    },
+    {
+      "id": "cn_linear3",
+      "name": "三元一次方程组",
+      "name_zh": "三元一次方程组",
+      "domain": "Equations & Inequalities",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "system_eq",
+      "matchedKeyword": "方程组"
+    },
+    {
+      "id": "cn_quad_eq",
+      "name": "一元二次方程",
+      "name_zh": "一元二次方程",
+      "domain": "Equations & Inequalities",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "quadratic_eq",
+      "matchedKeyword": "一元二次"
+    },
+    {
+      "id": "cn_quad_complete",
+      "name": "配方法",
+      "name_zh": "配方法",
+      "domain": "Equations & Inequalities",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "complete_square",
+      "matchedKeyword": "配方"
+    },
+    {
+      "id": "cn_quad_formula",
+      "name": "求根公式",
+      "name_zh": "求根公式",
+      "domain": "Equations & Inequalities",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "formula_use",
+      "matchedKeyword": "公式"
+    },
+    {
+      "id": "cn_quad_factor",
+      "name": "因式分解法解二次方程",
+      "name_zh": "因式分解法解二次方程",
+      "domain": "Equations & Inequalities",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "number_bond",
+      "matchedKeyword": "分解"
+    },
+    {
+      "id": "cn_discriminant",
+      "name": "根的判别式",
+      "name_zh": "根的判别式",
+      "domain": "Equations & Inequalities",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "discriminant",
+      "matchedKeyword": "判别式"
+    },
+    {
+      "id": "cn_vieta",
+      "name": "韦达定理",
+      "name_zh": "韦达定理",
+      "domain": "Equations & Inequalities",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "vieta",
+      "matchedKeyword": "韦达"
+    },
+    {
+      "id": "cn_inequality",
+      "name": "不等式",
+      "name_zh": "不等式",
+      "domain": "Equations & Inequalities",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "inequality",
+      "matchedKeyword": "不等"
+    },
+    {
+      "id": "cn_linear_ineq",
+      "name": "一元一次不等式",
+      "name_zh": "一元一次不等式",
+      "domain": "Equations & Inequalities",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "linear_eq",
+      "matchedKeyword": "一元一次"
+    },
+    {
+      "id": "cn_ineq_sys",
+      "name": "一元一次不等式组",
+      "name_zh": "一元一次不等式组",
+      "domain": "Equations & Inequalities",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "linear_eq",
+      "matchedKeyword": "一元一次"
+    },
+    {
+      "id": "cn_ineq_app",
+      "name": "不等式应用",
+      "name_zh": "不等式应用",
+      "domain": "Equations & Inequalities",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "inequality",
+      "matchedKeyword": "不等"
+    },
+    {
+      "id": "cn_var_const",
+      "name": "常量与变量",
+      "name_zh": "常量与变量",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "variable_x",
+      "matchedKeyword": "变量"
+    },
+    {
+      "id": "cn_func_concept",
+      "name": "函数的概念",
+      "name_zh": "函数的概念",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "function_general",
+      "matchedKeyword": "函数"
+    },
+    {
+      "id": "cn_func_rep",
+      "name": "函数的表示",
+      "name_zh": "函数的表示",
+      "domain": "Functions",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "function_general",
+      "matchedKeyword": "函数"
+    },
+    {
+      "id": "cn_direct_func",
+      "name": "正比例函数",
+      "name_zh": "正比例函数",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "proportion",
+      "matchedKeyword": "比例"
+    },
+    {
+      "id": "cn_linear_func",
+      "name": "一次函数",
+      "name_zh": "一次函数",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "linear_fn",
+      "matchedKeyword": "一次函数"
+    },
+    {
+      "id": "cn_func_eq_ineq",
+      "name": "一次函数与方程不等式",
+      "name_zh": "一次函数与方程不等式",
+      "domain": "Functions",
+      "type": "METACOGNITIVE",
+      "frame": "STAR",
+      "symbol": "inequality",
+      "matchedKeyword": "不等"
+    },
+    {
+      "id": "cn_inverse_func",
+      "name": "反比例函数",
+      "name_zh": "反比例函数",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "proportion",
+      "matchedKeyword": "比例"
+    },
+    {
+      "id": "cn_quad_func",
+      "name": "二次函数",
+      "name_zh": "二次函数",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "quadratic_fn",
+      "matchedKeyword": "二次函数"
+    },
+    {
+      "id": "cn_quad_graph",
+      "name": "二次函数的图象与性质",
+      "name_zh": "二次函数的图象与性质",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "quadratic_fn",
+      "matchedKeyword": "二次函数"
+    },
+    {
+      "id": "cn_quad_func_eq",
+      "name": "二次函数与方程",
+      "name_zh": "二次函数与方程",
+      "domain": "Functions",
+      "type": "METACOGNITIVE",
+      "frame": "STAR",
+      "symbol": "equation_general",
+      "matchedKeyword": "方程"
+    },
+    {
+      "id": "cn_quad_app",
+      "name": "二次函数应用",
+      "name_zh": "二次函数应用",
+      "domain": "Functions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "quadratic_fn",
+      "matchedKeyword": "二次函数"
+    },
+    {
+      "id": "cn_func_triple",
+      "name": "函数的三要素",
+      "name_zh": "函数的三要素",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "domain_range",
+      "matchedKeyword": "三要素"
+    },
+    {
+      "id": "cn_func_mono",
+      "name": "函数单调性",
+      "name_zh": "函数单调性",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "monotonic",
+      "matchedKeyword": "单调"
+    },
+    {
+      "id": "cn_func_parity",
+      "name": "函数奇偶性",
+      "name_zh": "函数奇偶性",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "mode",
+      "matchedKeyword": "奇偶"
+    },
+    {
+      "id": "cn_func_period",
+      "name": "函数周期性",
+      "name_zh": "函数周期性",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "periodic",
+      "matchedKeyword": "周期"
+    },
+    {
+      "id": "cn_power_func",
+      "name": "幂函数",
+      "name_zh": "幂函数",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "power",
+      "matchedKeyword": "幂"
+    },
+    {
+      "id": "cn_exp_op",
+      "name": "指数与指数运算",
+      "name_zh": "指数与指数运算",
+      "domain": "Functions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "power",
+      "matchedKeyword": "指数运算"
+    },
+    {
+      "id": "cn_exp_func",
+      "name": "指数函数",
+      "name_zh": "指数函数",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "exponential_fn",
+      "matchedKeyword": "指数函数"
+    },
+    {
+      "id": "cn_log_op",
+      "name": "对数与对数运算",
+      "name_zh": "对数与对数运算",
+      "domain": "Functions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "log_fn",
+      "matchedKeyword": "对数"
+    },
+    {
+      "id": "cn_log_func",
+      "name": "对数函数",
+      "name_zh": "对数函数",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "log_fn",
+      "matchedKeyword": "对数"
+    },
+    {
+      "id": "cn_inverse_func2",
+      "name": "反函数",
+      "name_zh": "反函数",
+      "domain": "Functions",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "inverse_fn",
+      "matchedKeyword": "反函数"
+    },
+    {
+      "id": "cn_func_model",
+      "name": "函数模型应用",
+      "name_zh": "函数模型应用",
+      "domain": "Functions",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "function_general",
+      "matchedKeyword": "函数"
+    },
+    {
+      "id": "cn_rt_tri",
+      "name": "直角三角形",
+      "name_zh": "直角三角形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "triangle",
+      "matchedKeyword": "三角形"
+    },
+    {
+      "id": "cn_acutetrig",
+      "name": "锐角三角函数",
+      "name_zh": "锐角三角函数",
+      "domain": "Trigonometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "angle_type",
+      "matchedKeyword": "锐角"
+    },
+    {
+      "id": "cn_special_angle",
+      "name": "特殊角三角函数值",
+      "name_zh": "特殊角三角函数值",
+      "domain": "Trigonometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "cn_solve_rt",
+      "name": "解直角三角形",
+      "name_zh": "解直角三角形",
+      "domain": "Trigonometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "triangle",
+      "matchedKeyword": "三角形"
+    },
+    {
+      "id": "cn_radian",
+      "name": "弧度制",
+      "name_zh": "弧度制",
+      "domain": "Trigonometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "degree",
+      "matchedKeyword": "度"
+    },
+    {
+      "id": "cn_trig_any",
+      "name": "任意角三角函数",
+      "name_zh": "任意角三角函数",
+      "domain": "Trigonometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "cn_trig_graph",
+      "name": "三角函数图象",
+      "name_zh": "三角函数图象",
+      "domain": "Trigonometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "cn_trig_period",
+      "name": "三角函数的周期性",
+      "name_zh": "三角函数的周期性",
+      "domain": "Trigonometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "cn_trig_induce",
+      "name": "诱导公式",
+      "name_zh": "诱导公式",
+      "domain": "Trigonometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "formula_use",
+      "matchedKeyword": "公式"
+    },
+    {
+      "id": "cn_trig_identity",
+      "name": "同角三角函数关系",
+      "name_zh": "同角三角函数关系",
+      "domain": "Trigonometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "cn_trig_sum",
+      "name": "和差角公式",
+      "name_zh": "和差角公式",
+      "domain": "Trigonometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "cn_trig_double",
+      "name": "倍角公式",
+      "name_zh": "倍角公式",
+      "domain": "Trigonometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "cn_sine_law",
+      "name": "正弦定理",
+      "name_zh": "正弦定理",
+      "domain": "Trigonometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "sine",
+      "matchedKeyword": "正弦定理"
+    },
+    {
+      "id": "cn_cosine_law",
+      "name": "余弦定理",
+      "name_zh": "余弦定理",
+      "domain": "Trigonometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "cosine",
+      "matchedKeyword": "余弦定理"
+    },
+    {
+      "id": "cn_solve_triangle",
+      "name": "解三角形",
+      "name_zh": "解三角形",
+      "domain": "Trigonometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "triangle",
+      "matchedKeyword": "三角形"
+    },
+    {
+      "id": "cn_vec_concept",
+      "name": "平面向量概念",
+      "name_zh": "平面向量概念",
+      "domain": "Vectors",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "vector_arrow",
+      "matchedKeyword": "向量"
+    },
+    {
+      "id": "cn_vec_linear",
+      "name": "向量的线性运算",
+      "name_zh": "向量的线性运算",
+      "domain": "Vectors",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vector_arrow",
+      "matchedKeyword": "线性运算"
+    },
+    {
+      "id": "cn_vec_basis",
+      "name": "向量基本定理",
+      "name_zh": "向量基本定理",
+      "domain": "Vectors",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "vector_basis",
+      "matchedKeyword": "基本定理"
+    },
+    {
+      "id": "cn_vec_coord",
+      "name": "平面向量坐标表示",
+      "name_zh": "平面向量坐标表示",
+      "domain": "Vectors",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "plot_point",
+      "matchedKeyword": "坐标"
+    },
+    {
+      "id": "cn_vec_dot",
+      "name": "向量数量积",
+      "name_zh": "向量数量积",
+      "domain": "Vectors",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "dot_product",
+      "matchedKeyword": "数量积"
+    },
+    {
+      "id": "cn_vec_app",
+      "name": "向量应用",
+      "name_zh": "向量应用",
+      "domain": "Vectors",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vector_arrow",
+      "matchedKeyword": "向量应用"
+    },
+    {
+      "id": "cn_vec3",
+      "name": "空间向量",
+      "name_zh": "空间向量",
+      "domain": "Vectors",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "vector_3d",
+      "matchedKeyword": "空间向量"
+    },
+    {
+      "id": "cn_vec3_solid",
+      "name": "空间向量与立体几何",
+      "name_zh": "空间向量与立体几何",
+      "domain": "Vectors",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "vector_3d",
+      "matchedKeyword": "空间向量"
+    },
+    {
+      "id": "cn_solid_intro",
+      "name": "立体图形认识",
+      "name_zh": "立体图形认识",
+      "domain": "Solid Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "cube_3d",
+      "matchedKeyword": "立体"
+    },
+    {
+      "id": "cn_solid_area",
+      "name": "几何体的表面积",
+      "name_zh": "几何体的表面积",
+      "domain": "Solid Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "surface_area",
+      "matchedKeyword": "表面积"
+    },
+    {
+      "id": "cn_solid_vol",
+      "name": "几何体的体积",
+      "name_zh": "几何体的体积",
+      "domain": "Solid Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "volume_measure",
+      "matchedKeyword": "体积"
+    },
+    {
+      "id": "cn_view3",
+      "name": "三视图",
+      "name_zh": "三视图",
+      "domain": "Solid Geometry",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "three_views",
+      "matchedKeyword": "三视图"
+    },
+    {
+      "id": "cn_pt_line_plane",
+      "name": "点线面位置关系",
+      "name_zh": "点线面位置关系",
+      "domain": "Solid Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "position",
+      "matchedKeyword": "位置"
+    },
+    {
+      "id": "cn_line_plane_par",
+      "name": "线面平行",
+      "name_zh": "线面平行",
+      "domain": "Solid Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "parallel_sym",
+      "matchedKeyword": "线面平行"
+    },
+    {
+      "id": "cn_plane_par",
+      "name": "面面平行",
+      "name_zh": "面面平行",
+      "domain": "Solid Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "parallel_sym",
+      "matchedKeyword": "面面平行"
+    },
+    {
+      "id": "cn_line_plane_perp",
+      "name": "线面垂直",
+      "name_zh": "线面垂直",
+      "domain": "Solid Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "perp_sym",
+      "matchedKeyword": "线面垂直"
+    },
+    {
+      "id": "cn_plane_perp",
+      "name": "面面垂直",
+      "name_zh": "面面垂直",
+      "domain": "Solid Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "perp_sym",
+      "matchedKeyword": "面面垂直"
+    },
+    {
+      "id": "cn_solid_angle",
+      "name": "空间角",
+      "name_zh": "空间角",
+      "domain": "Solid Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "angle_mark",
+      "matchedKeyword": "角"
+    },
+    {
+      "id": "cn_solid_dist",
+      "name": "空间距离",
+      "name_zh": "空间距离",
+      "domain": "Solid Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "distance",
+      "matchedKeyword": "空间距离"
+    },
+    {
+      "id": "cn_coord_plane",
+      "name": "平面直角坐标系",
+      "name_zh": "平面直角坐标系",
+      "domain": "Analytic Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "right_angle",
+      "matchedKeyword": "直角"
+    },
+    {
+      "id": "cn_coord_app",
+      "name": "坐标方法的简单应用",
+      "name_zh": "坐标方法的简单应用",
+      "domain": "Analytic Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "plot_point",
+      "matchedKeyword": "坐标"
+    },
+    {
+      "id": "cn_line_eq",
+      "name": "直线的方程",
+      "name_zh": "直线的方程",
+      "domain": "Analytic Geometry",
+      "type": "CONCEPTURAL",
+      "frame": "CRYSTAL",
+      "symbol": "equation_general",
+      "matchedKeyword": "方程"
+    },
+    {
+      "id": "cn_line_slope",
+      "name": "直线的斜率",
+      "name_zh": "直线的斜率",
+      "domain": "Analytic Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "slope",
+      "matchedKeyword": "斜率"
+    },
+    {
+      "id": "cn_line_rel",
+      "name": "直线的位置关系",
+      "name_zh": "直线的位置关系",
+      "domain": "Analytic Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "position",
+      "matchedKeyword": "位置"
+    },
+    {
+      "id": "cn_circle_eq",
+      "name": "圆的方程",
+      "name_zh": "圆的方程",
+      "domain": "Analytic Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "circle_shape",
+      "matchedKeyword": "圆"
+    },
+    {
+      "id": "cn_line_circle",
+      "name": "直线与圆的位置关系",
+      "name_zh": "直线与圆的位置关系",
+      "domain": "Analytic Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "circle_shape",
+      "matchedKeyword": "圆"
+    },
+    {
+      "id": "cn_ellipse",
+      "name": "椭圆",
+      "name_zh": "椭圆",
+      "domain": "Analytic Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "circle_shape",
+      "matchedKeyword": "圆"
+    },
+    {
+      "id": "cn_hyperbola",
+      "name": "双曲线",
+      "name_zh": "双曲线",
+      "domain": "Analytic Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "hyperbola",
+      "matchedKeyword": "双曲线"
+    },
+    {
+      "id": "cn_parabola",
+      "name": "抛物线",
+      "name_zh": "抛物线",
+      "domain": "Analytic Geometry",
+      "type": "CONCEPTURAL",
+      "frame": "CRYSTAL",
+      "symbol": "parabola",
+      "matchedKeyword": "抛物线"
+    },
+    {
+      "id": "cn_conic_comp",
+      "name": "圆锥曲线综合",
+      "name_zh": "圆锥曲线综合",
+      "domain": "Analytic Geometry",
+      "type": "METACOGNITIVE",
+      "frame": "STAR",
+      "symbol": "circle_shape",
+      "matchedKeyword": "圆"
+    },
+    {
+      "id": "cn_line_conic",
+      "name": "直线与圆锥曲线",
+      "name_zh": "直线与圆锥曲线",
+      "domain": "Analytic Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "circle_shape",
+      "matchedKeyword": "圆"
+    },
+    {
+      "id": "cn_param_eq",
+      "name": "参数方程",
+      "name_zh": "参数方程",
+      "domain": "Analytic Geometry",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "equation_general",
+      "matchedKeyword": "方程"
+    },
+    {
+      "id": "cn_polar",
+      "name": "极坐标",
+      "name_zh": "极坐标",
+      "domain": "Analytic Geometry",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "plot_point",
+      "matchedKeyword": "坐标"
+    },
+    {
+      "id": "cn_seq_concept",
+      "name": "数列的概念",
+      "name_zh": "数列的概念",
+      "domain": "Sequences",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "sequence_general",
+      "matchedKeyword": "数列"
+    },
+    {
+      "id": "cn_arith_seq",
+      "name": "等差数列",
+      "name_zh": "等差数列",
+      "domain": "Sequences",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "arithmetic_seq",
+      "matchedKeyword": "等差"
+    },
+    {
+      "id": "cn_arith_sum",
+      "name": "等差数列求和",
+      "name_zh": "等差数列求和",
+      "domain": "Sequences",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "arithmetic_seq",
+      "matchedKeyword": "等差"
+    },
+    {
+      "id": "cn_geo_seq",
+      "name": "等比数列",
+      "name_zh": "等比数列",
+      "domain": "Sequences",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "geometric_seq",
+      "matchedKeyword": "等比"
+    },
+    {
+      "id": "cn_geo_sum",
+      "name": "等比数列求和",
+      "name_zh": "等比数列求和",
+      "domain": "Sequences",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "geometric_seq",
+      "matchedKeyword": "等比"
+    },
+    {
+      "id": "cn_seq_recur",
+      "name": "数列通项与递推",
+      "name_zh": "数列通项与递推",
+      "domain": "Sequences",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "general_term",
+      "matchedKeyword": "通项"
+    },
+    {
+      "id": "cn_induction",
+      "name": "数学归纳法",
+      "name_zh": "数学归纳法",
+      "domain": "Sequences",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "induction",
+      "matchedKeyword": "归纳"
+    },
+    {
+      "id": "cn_seq_sum_tech",
+      "name": "数列求和技巧",
+      "name_zh": "数列求和技巧",
+      "domain": "Sequences",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "sum_series",
+      "matchedKeyword": "求和"
+    },
+    {
+      "id": "cn_limit",
+      "name": "极限初步",
+      "name_zh": "极限初步",
+      "domain": "Calculus",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "limit_formal",
+      "matchedKeyword": "极限"
+    },
+    {
+      "id": "cn_deriv_concept",
+      "name": "导数的概念",
+      "name_zh": "导数的概念",
+      "domain": "Calculus",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "derivative",
+      "matchedKeyword": "导数"
+    },
+    {
+      "id": "cn_deriv_geo",
+      "name": "导数的几何意义",
+      "name_zh": "导数的几何意义",
+      "domain": "Calculus",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "derivative_geo",
+      "matchedKeyword": "几何意义"
+    },
+    {
+      "id": "cn_deriv_rules",
+      "name": "基本初等函数求导",
+      "name_zh": "基本初等函数求导",
+      "domain": "Calculus",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "function_general",
+      "matchedKeyword": "函数"
+    },
+    {
+      "id": "cn_deriv_mono",
+      "name": "导数与单调性",
+      "name_zh": "导数与单调性",
+      "domain": "Calculus",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "monotonic",
+      "matchedKeyword": "单调"
+    },
+    {
+      "id": "cn_deriv_extreme",
+      "name": "导数与极值最值",
+      "name_zh": "导数与极值最值",
+      "domain": "Calculus",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "derivative_extrema",
+      "matchedKeyword": "极值"
+    },
+    {
+      "id": "cn_deriv_app",
+      "name": "导数的实际应用",
+      "name_zh": "导数的实际应用",
+      "domain": "Calculus",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "derivative_app",
+      "matchedKeyword": "实际应用"
+    },
+    {
+      "id": "cn_integral_indef",
+      "name": "不定积分",
+      "name_zh": "不定积分",
+      "domain": "Calculus",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "indefinite_integral",
+      "matchedKeyword": "不定积分"
+    },
+    {
+      "id": "cn_integral_def",
+      "name": "定积分",
+      "name_zh": "定积分",
+      "domain": "Calculus",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "definite_integral",
+      "matchedKeyword": "定积分"
+    },
+    {
+      "id": "cn_integral_app",
+      "name": "积分应用",
+      "name_zh": "积分应用",
+      "domain": "Calculus",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "area_integral",
+      "matchedKeyword": "积分应用"
+    },
+    {
+      "id": "cn_complex_concept",
+      "name": "复数的概念",
+      "name_zh": "复数的概念",
+      "domain": "Complex Numbers",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "complex_plane",
+      "matchedKeyword": "复数"
+    },
+    {
+      "id": "cn_complex_op",
+      "name": "复数的运算",
+      "name_zh": "复数的运算",
+      "domain": "Complex Numbers",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "complex_plane",
+      "matchedKeyword": "复数"
+    },
+    {
+      "id": "cn_complex_geo",
+      "name": "复数的几何意义",
+      "name_zh": "复数的几何意义",
+      "domain": "Complex Numbers",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "derivative_geo",
+      "matchedKeyword": "几何意义"
+    },
+    {
+      "id": "cn_complex_trig",
+      "name": "复数的三角形式",
+      "name_zh": "复数的三角形式",
+      "domain": "Complex Numbers",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "triangle",
+      "matchedKeyword": "三角形"
+    },
+    {
+      "id": "cn_count_principle",
+      "name": "分类加法与分步乘法计数原理",
+      "name_zh": "分类加法与分步乘法计数原理",
+      "domain": "Combinatorics",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "plus",
+      "matchedKeyword": "加法"
+    },
+    {
+      "id": "cn_permutation",
+      "name": "排列",
+      "name_zh": "排列",
+      "domain": "Combinatorics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "permutation",
+      "matchedKeyword": "排列"
+    },
+    {
+      "id": "cn_combination",
+      "name": "组合",
+      "name_zh": "组合",
+      "domain": "Combinatorics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "combination",
+      "matchedKeyword": "组合"
+    },
+    {
+      "id": "cn_permcomb_app",
+      "name": "排列组合应用",
+      "name_zh": "排列组合应用",
+      "domain": "Combinatorics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "combination",
+      "matchedKeyword": "排列组合"
+    },
+    {
+      "id": "cn_binomial",
+      "name": "二项式定理",
+      "name_zh": "二项式定理",
+      "domain": "Combinatorics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "binomial",
+      "matchedKeyword": "二项式"
+    },
+    {
+      "id": "cn_cond_prob",
+      "name": "条件概率",
+      "name_zh": "条件概率",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "conditional_prob",
+      "matchedKeyword": "条件概率"
+    },
+    {
+      "id": "cn_indep_event",
+      "name": "事件的独立性",
+      "name_zh": "事件的独立性",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "independence",
+      "matchedKeyword": "独立"
+    },
+    {
+      "id": "cn_total_prob",
+      "name": "全概率公式",
+      "name_zh": "全概率公式",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "conditional_prob",
+      "matchedKeyword": "全概率"
+    },
+    {
+      "id": "cn_bayes",
+      "name": "贝叶斯公式",
+      "name_zh": "贝叶斯公式",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "bayes",
+      "matchedKeyword": "贝叶斯"
+    },
+    {
+      "id": "cn_rv",
+      "name": "离散型随机变量",
+      "name_zh": "离散型随机变量",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "random_variable",
+      "matchedKeyword": "随机"
+    },
+    {
+      "id": "cn_binom_dist",
+      "name": "二项分布",
+      "name_zh": "二项分布",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "distribution",
+      "matchedKeyword": "分布"
+    },
+    {
+      "id": "cn_hypergeo",
+      "name": "超几何分布",
+      "name_zh": "超几何分布",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "distribution",
+      "matchedKeyword": "分布"
+    },
+    {
+      "id": "cn_exp_var",
+      "name": "数学期望与方差",
+      "name_zh": "数学期望与方差",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "variance",
+      "matchedKeyword": "方差"
+    },
+    {
+      "id": "cn_normal",
+      "name": "正态分布",
+      "name_zh": "正态分布",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "distribution",
+      "matchedKeyword": "分布"
+    },
+    {
+      "id": "cn_sample_est",
+      "name": "用样本估计总体",
+      "name_zh": "用样本估计总体",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "estimation",
+      "matchedKeyword": "估计"
+    },
+    {
+      "id": "cn_corr",
+      "name": "变量间的相关关系",
+      "name_zh": "变量间的相关关系",
+      "domain": "Data & Statistics",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "correlation",
+      "matchedKeyword": "相关"
+    },
+    {
+      "id": "cn_linreg",
+      "name": "线性回归方程",
+      "name_zh": "线性回归方程",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "regression",
+      "matchedKeyword": "回归"
+    },
+    {
+      "id": "cn_chisq",
+      "name": "独立性检验",
+      "name_zh": "独立性检验",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "independence",
+      "matchedKeyword": "独立性检验"
+    },
+    {
+      "id": "cn_inter_lines",
+      "name": "相交线与平行线",
+      "name_zh": "相交线与平行线",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "parallel_sym",
+      "matchedKeyword": "平行线"
+    },
+    {
+      "id": "cn_parallel_judge",
+      "name": "平行线的判定",
+      "name_zh": "平行线的判定",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "parallel_sym",
+      "matchedKeyword": "平行线"
+    },
+    {
+      "id": "cn_parallel_prop",
+      "name": "平行线的性质",
+      "name_zh": "平行线的性质",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "parallel_sym",
+      "matchedKeyword": "平行线"
+    },
+    {
+      "id": "cn_translation",
+      "name": "平移",
+      "name_zh": "平移",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "translate",
+      "matchedKeyword": "平移"
+    },
+    {
+      "id": "cn_iso_tri",
+      "name": "等腰三角形",
+      "name_zh": "等腰三角形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "triangle",
+      "matchedKeyword": "三角形"
+    },
+    {
+      "id": "cn_equi_tri",
+      "name": "等边三角形",
+      "name_zh": "等边三角形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "triangle",
+      "matchedKeyword": "三角形"
+    },
+    {
+      "id": "cn_polygon",
+      "name": "多边形及其内角和",
+      "name_zh": "多边形及其内角和",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "polygon_general",
+      "matchedKeyword": "多边形"
+    },
+    {
+      "id": "cn_parallelogram",
+      "name": "平行四边形",
+      "name_zh": "平行四边形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "parallelogram",
+      "matchedKeyword": "平行四边形"
+    },
+    {
+      "id": "cn_rectangle",
+      "name": "矩形",
+      "name_zh": "矩形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "rectangle_shape",
+      "matchedKeyword": "矩形"
+    },
+    {
+      "id": "cn_rhombus",
+      "name": "菱形",
+      "name_zh": "菱形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "rhombus",
+      "matchedKeyword": "菱形"
+    },
+    {
+      "id": "cn_square",
+      "name": "正方形",
+      "name_zh": "正方形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "square_shape",
+      "matchedKeyword": "正方形"
+    },
+    {
+      "id": "cn_trapezoid",
+      "name": "梯形",
+      "name_zh": "梯形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "trapezoid",
+      "matchedKeyword": "梯形"
+    },
+    {
+      "id": "cn_pythagoras",
+      "name": "勾股定理",
+      "name_zh": "勾股定理",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "pythagoras",
+      "matchedKeyword": "勾股"
+    },
+    {
+      "id": "cn_pythagoras_conv",
+      "name": "勾股定理的逆定理",
+      "name_zh": "勾股定理的逆定理",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "pythagoras",
+      "matchedKeyword": "勾股"
+    },
+    {
+      "id": "cn_rotation",
+      "name": "旋转",
+      "name_zh": "旋转",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "rotate",
+      "matchedKeyword": "旋转"
+    },
+    {
+      "id": "cn_central_sym",
+      "name": "中心对称",
+      "name_zh": "中心对称",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "center_symmetry",
+      "matchedKeyword": "中心对称"
+    },
+    {
+      "id": "cn_central_fig",
+      "name": "中心对称图形",
+      "name_zh": "中心对称图形",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "center_symmetry",
+      "matchedKeyword": "中心对称"
+    },
+    {
+      "id": "cn_similarity",
+      "name": "图形的相似",
+      "name_zh": "图形的相似",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "similar_figures",
+      "matchedKeyword": "相似"
+    },
+    {
+      "id": "cn_sim_tri",
+      "name": "相似三角形",
+      "name_zh": "相似三角形",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "triangle",
+      "matchedKeyword": "三角形"
+    },
+    {
+      "id": "cn_homothety",
+      "name": "位似",
+      "name_zh": "位似",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "similar_figures",
+      "matchedKeyword": "位似"
+    },
+    {
+      "id": "cn_circle_prop",
+      "name": "圆的性质",
+      "name_zh": "圆的性质",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "circle_shape",
+      "matchedKeyword": "圆"
+    },
+    {
+      "id": "cn_line_circle_pos",
+      "name": "点直线与圆的位置关系",
+      "name_zh": "点直线与圆的位置关系",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "circle_shape",
+      "matchedKeyword": "圆"
+    },
+    {
+      "id": "cn_regpoly_circle",
+      "name": "正多边形和圆",
+      "name_zh": "正多边形和圆",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "polygon_general",
+      "matchedKeyword": "多边形"
+    },
+    {
+      "id": "cn_arc_sector",
+      "name": "弧长和扇形面积",
+      "name_zh": "弧长和扇形面积",
+      "domain": "Geometry",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "arc_sector",
+      "matchedKeyword": "弧"
+    },
+    {
+      "id": "cn_tangent",
+      "name": "切线",
+      "name_zh": "切线",
+      "domain": "Geometry",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "tangent_line",
+      "matchedKeyword": "切线"
+    },
+    {
+      "id": "cn_list_prob",
+      "name": "用列举法求概率",
+      "name_zh": "用列举法求概率",
+      "domain": "Probability",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "listing",
+      "matchedKeyword": "列举"
+    },
+    {
+      "id": "cn_freq_prob",
+      "name": "用频率估计概率",
+      "name_zh": "用频率估计概率",
+      "domain": "Probability",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "estimation",
+      "matchedKeyword": "估计"
+    },
+    {
+      "id": "cn_stat_survey",
+      "name": "统计调查",
+      "name_zh": "统计调查",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "survey_sym",
+      "matchedKeyword": "调查"
+    },
+    {
+      "id": "cn_histogram",
+      "name": "直方图",
+      "name_zh": "直方图",
+      "domain": "Data & Statistics",
+      "type": "REPRESENTATIONAL",
+      "frame": "HOLO",
+      "symbol": "histogram",
+      "matchedKeyword": "直方"
+    },
+    {
+      "id": "cn_mean",
+      "name": "平均数",
+      "name_zh": "平均数",
+      "domain": "Data & Statistics",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "mean",
+      "matchedKeyword": "平均"
+    },
+    {
+      "id": "cn_median_mode",
+      "name": "中位数与众数",
+      "name_zh": "中位数与众数",
+      "domain": "Data & Statistics",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "median",
+      "matchedKeyword": "中位数"
+    },
+    {
+      "id": "cn_dispersion",
+      "name": "数据的波动程度",
+      "name_zh": "数据的波动程度",
+      "domain": "Data & Statistics",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "degree",
+      "matchedKeyword": "度"
+    },
+    {
+      "id": "cn_variance",
+      "name": "方差",
+      "name_zh": "方差",
+      "domain": "Data & Statistics",
+      "type": "PROCEDURAL",
+      "frame": "GEAR",
+      "symbol": "variance",
+      "matchedKeyword": "方差"
+    },
+    {
+      "id": "cn_sqrt_def",
+      "name": "平方根",
+      "name_zh": "平方根",
+      "domain": "Number & Expression",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "sqrt",
+      "matchedKeyword": "平方根"
+    },
+    {
+      "id": "cn_cbrt_def",
+      "name": "立方根",
+      "name_zh": "立方根",
+      "domain": "Number & Expression",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "cube_3d",
+      "matchedKeyword": "立方"
+    },
+    {
+      "id": "cn_ratio_prop",
+      "name": "比与比例",
+      "name_zh": "比与比例",
+      "domain": "Ratio & Proportion",
+      "type": "CONCEPTUAL",
+      "frame": "CRYSTAL",
+      "symbol": "proportion",
+      "matchedKeyword": "比例"
+    }
+  ]
+}

@@ -456,9 +456,62 @@ function layout(){
   TOPICS.forEach(t=>{nodePos[t.id]={x:t._x,y:t._y};});
 }
 
-// ===== 罗盘图片预加载 =====
+// ===== 图片预加载 =====
 const compassImg=new Image();
 compassImg.src="assets/compass.png";
+const nodeImg=new Image();   // 未点亮：node.png（青铜暗盘）
+nodeImg.src="assets/node.png";
+const nodecImg=new Image();  // 点亮：nodec.png（金光亮盘）
+nodecImg.src="assets/nodec.png";
+
+// ===== SVG Sprite 符号系统 =====
+const symCache=new Map();  // {id: offscreenCanvas}
+let spritePromise=null;
+function loadSymbols(){
+  if(spritePromise)return spritePromise;
+  spritePromise=fetch("assets/mtf-sprite.svg")
+    .then(r=>r.text())
+    .then(svgText=>{
+      const parser=new DOMParser();
+      const doc=parser.parseFromString(svgText,"image/svg+xml");
+      const symbols=doc.querySelectorAll("symbol");
+      const SIZE=64;
+      const NS="http://www.w3.org/2000/svg";
+      symbols.forEach(sym=>{
+        const id=sym.id;
+        const off=document.createElement("canvas");
+        off.width=SIZE;off.height=SIZE;
+        const octx=off.getContext("2d");
+        // 将 symbol 内容包装成独立 SVG 字符串
+        const inner=sym.innerHTML;
+        const svgStr=`<svg xmlns="${NS}" width="${SIZE}" height="${SIZE}" viewBox="0 0 ${SIZE} ${SIZE}">${inner}</svg>`;
+        const blob=new Blob([svgStr],{type:"image/svg+xml"});
+        const url=URL.createObjectURL(blob);
+        const img=new Image();
+        img.onload=()=>{
+          octx.drawImage(img,0,0,SIZE,SIZE);
+          URL.revokeObjectURL(url);
+        };
+        img.onerror=()=>{URL.revokeObjectURL(url);};
+        img.src=url;
+        symCache.set(id,{canvas:off,ready:false,img});
+      });
+      // 等待全部就绪
+      return new Promise(resolve=>{
+        const check=()=>{
+          let allReady=true;
+          for(const [,v] of symCache){if(!v.img.complete){allReady=false;break;}}
+          if(allReady){resolve();}
+          else{setTimeout(check,50);}
+        };
+        setTimeout(check,50);
+      });
+    })
+    .catch(err=>console.warn("SVG sprite load failed:",err));
+  return spritePromise;
+}
+// 延迟加载
+loadSymbols();
 
 // ===== 稀有度 =====
 function computeRarity(){
@@ -667,72 +720,148 @@ function render(time){
     if(isFocusMode&&!isNeighbor&&!isSelected)nodeAlpha*=0.16;
     if(isLocked)nodeAlpha*=0.5;
 
-    // 发光（仅对 learned/hovered/selected 绘制渐变发光；available 用简单半透明圆以省性能）
-    if(visible&&nodeAlpha>0.1&&(isLearned||isHovered||isSelected)){
-      let glowR=r*3;
-      let glowColor=color;
-      let glowAlpha=0.4;
-      if(isLearned){glowR=r*4*pulse;glowAlpha=0.95;}
-      else{glowR=r*2;glowAlpha=0.15;}
-      if(isHovered)glowR*=2;
-      if(isSelected)glowR=r*5*(0.8+0.2*pulse);
-      const g=ctx.createRadialGradient(t._x,t._y,0,t._x,t._y,glowR);
-      const hexA=Math.round(glowAlpha*255).toString(16).padStart(2,"0");
-      g.addColorStop(0,(isSelected?"#ffffff":glowColor)+hexA);
-      g.addColorStop(1,(isSelected?"#ffffff":glowColor)+"00");
-      ctx.fillStyle=g;
-      ctx.globalAlpha=nodeAlpha;
-      ctx.beginPath();ctx.arc(t._x,t._y,glowR,0,Math.PI*2);ctx.fill();
-    }else if(visible&&nodeAlpha>0.1&&isAvailableNode){
-      // available：简单半透明圆（无渐变，无 shadowBlur）
-      ctx.fillStyle=color+"22";
-      ctx.globalAlpha=nodeAlpha;
-      ctx.beginPath();ctx.arc(t._x,t._y,r*2.5*pulse,0,Math.PI*2);ctx.fill();
+    // ===== 节点背景：PNG 图片 =====
+    // 背景尺寸：PNG 为方形圆盘，画圆 r=4 时，图标尺寸 ≈ 2r×1.2 以覆盖圆盘外沿
+    const iconSize = r * 2.6;  // PNG 圆盘绘制尺寸
+    const bgImg = isLearned ? (nodecImg.complete ? nodecImg : null) : (nodeImg.complete ? nodeImg : null);
+
+    if(bgImg && visible && nodeAlpha > 0.1){
+      ctx.save();
+      ctx.globalAlpha = nodeAlpha;
+      // available：呼吸微光（缩放+透明脉冲）
+      if(isAvailableNode && !isHovered && !isSelected){
+        const pulseScale = 1 + 0.04 * pulse;
+        const px = t._x - (iconSize * pulseScale)/2;
+        const py = t._y - (iconSize * pulseScale)/2;
+        ctx.globalAlpha = nodeAlpha * (0.78 + 0.1 * pulse);
+        ctx.drawImage(bgImg, px, py, iconSize * pulseScale, iconSize * pulseScale);
+      }
+      // selected：强烈脉冲
+      else if(isSelected){
+        const selScale = 1 + 0.08 * (0.5 + 0.5 * Math.sin(time * 0.005));
+        const px = t._x - (iconSize * selScale)/2;
+        const py = t._y - (iconSize * selScale)/2;
+        ctx.shadowColor = isLearned ? "#ffd98a" : "#8fe9ff";
+        ctx.shadowBlur = 14;
+        ctx.drawImage(bgImg, px, py, iconSize * selScale, iconSize * selScale);
+        ctx.shadowBlur = 0;
+      }
+      // hovered：放大 + 发光
+      else if(isHovered){
+        const hvScale = 1.1;
+        const px = t._x - (iconSize * hvScale)/2;
+        const py = t._y - (iconSize * hvScale)/2;
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 10;
+        ctx.drawImage(bgImg, px, py, iconSize * hvScale, iconSize * hvScale);
+        ctx.shadowBlur = 0;
+      }
+      // learned：金色外光晕（图片本身已发光，再加柔和光晕）
+      else if(isLearned){
+        const px = t._x - iconSize/2;
+        const py = t._y - iconSize/2;
+        ctx.shadowColor = "#ffcf4d";
+        ctx.shadowBlur = 6 + 3 * pulse;
+        ctx.drawImage(bgImg, px, py, iconSize, iconSize);
+        ctx.shadowBlur = 0;
+      }
+      // locked / 普通
+      else{
+        const px = t._x - iconSize/2;
+        const py = t._y - iconSize/2;
+        ctx.drawImage(bgImg, px, py, iconSize, iconSize);
+      }
+      ctx.restore();
+    }else if(visible && nodeAlpha > 0.1){
+      // 图片未加载完成时回退：彩色圆
+      ctx.globalAlpha = nodeAlpha;
+      ctx.fillStyle = isLearned ? "#ffd98a" : (isAvailableNode ? "#fff" : "rgba(140,150,170,.7)");
+      if(isLearned){ctx.shadowColor="#ffcf4d";ctx.shadowBlur=8;}
+      ctx.beginPath();ctx.arc(t._x,t._y,r,0,Math.PI*2);ctx.fill();
+      ctx.shadowBlur=0;
+      ctx.globalAlpha = 1;
     }
 
-    // 主体（仅 learned 用 shadowBlur；available/locked 无 shadowBlur 以省性能）
-    ctx.globalAlpha=nodeAlpha;
-    if(isLearned){
-      ctx.fillStyle=color;
-      ctx.shadowColor=color;ctx.shadowBlur=8;
-    }else if(isAvailableNode){
-      ctx.fillStyle="#fff";
-      ctx.shadowBlur=0;
-    }else{
-      // locked：灰化
-      ctx.fillStyle="rgba(140,150,170,.7)";
-      ctx.shadowBlur=0;
+    // ===== SVG 符号覆盖（在 PNG 圆盘中央）=====
+    if(visible && nodeAlpha > 0.05){
+      const symEntry = symCache.get(t.id);
+      if(symEntry && symEntry.img && symEntry.img.complete){
+        // 符号尺寸：比圆盘略小，留边距
+        const symSize = iconSize * 0.58;
+        const sx = t._x - symSize/2;
+        const sy = t._y - symSize/2;
+        ctx.save();
+        ctx.globalAlpha = nodeAlpha;
+        // 符号颜色：learned→金色，available→白色，locked→灰色
+        if(isLearned){
+          // 金色符号：source-atop 着色
+          ctx.shadowColor = "rgba(0,0,0,.35)";
+          ctx.shadowBlur = 2;
+          ctx.drawImage(symEntry.canvas, sx, sy, symSize, symSize);
+          // 叠加金色
+          ctx.globalCompositeOperation = "source-atop";
+          ctx.fillStyle = "#ffe6a8";
+          ctx.fillRect(sx, sy, symSize, symSize);
+          ctx.globalCompositeOperation = "source-over";
+        }else if(isAvailableNode){
+          ctx.shadowColor = "rgba(255,255,255,.4)";
+          ctx.shadowBlur = 3;
+          ctx.drawImage(symEntry.canvas, sx, sy, symSize, symSize);
+        }else if(isLocked){
+          ctx.globalAlpha = nodeAlpha * 0.75;
+          ctx.drawImage(symEntry.canvas, sx, sy, symSize, symSize);
+        }else{
+          ctx.drawImage(symEntry.canvas, sx, sy, symSize, symSize);
+        }
+        ctx.shadowBlur = 0;
+        ctx.restore();
+      }
     }
-    ctx.beginPath();ctx.arc(t._x,t._y,r,0,Math.PI*2);ctx.fill();
-    ctx.shadowBlur=0;
 
-    // 已学习外环（稀有度色）
-    if(isLearned&&visible){
-      ctx.strokeStyle=rarityColor;
-      ctx.lineWidth=2.5/view.s;
-      ctx.beginPath();ctx.arc(t._x,t._y,r+3,0,Math.PI*2);ctx.stroke();
+    // 已学习外环（稀有度色）——叠加在圆盘外缘
+    if(isLearned && visible){
+      ctx.globalAlpha = nodeAlpha;
+      ctx.strokeStyle = rarityColor;
+      ctx.lineWidth = 2.5 / view.s;
+      ctx.shadowColor = rarityColor;
+      ctx.shadowBlur = 4;
+      ctx.beginPath();
+      ctx.arc(t._x, t._y, iconSize/2 + 3, 0, Math.PI*2);
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+      ctx.globalAlpha = 1;
     }
 
     // 悬停光环
     if(isHovered){
-      ctx.strokeStyle="#fff";
-      ctx.lineWidth=2/view.s;
-      ctx.beginPath();ctx.arc(t._x,t._y,r+6,0,Math.PI*2);ctx.stroke();
-      ctx.strokeStyle=color+"44";
-      ctx.lineWidth=1/view.s;
-      ctx.beginPath();ctx.arc(t._x,t._y,r+10,0,Math.PI*2);ctx.stroke();
+      ctx.globalAlpha = nodeAlpha;
+      ctx.strokeStyle = "#fff";
+      ctx.lineWidth = 2 / view.s;
+      ctx.beginPath();
+      ctx.arc(t._x, t._y, iconSize/2 + 6, 0, Math.PI*2);
+      ctx.stroke();
+      ctx.strokeStyle = color + "44";
+      ctx.lineWidth = 1 / view.s;
+      ctx.beginPath();
+      ctx.arc(t._x, t._y, iconSize/2 + 10, 0, Math.PI*2);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
     }
 
     // 选中标记（白色脉冲环）
     if(isSelected){
-      const ringPulse=0.5+0.5*Math.sin(time*0.005);
-      ctx.strokeStyle=`rgba(255,255,255,${ringPulse})`;
-      ctx.lineWidth=3.5/view.s;
-      ctx.shadowColor="#fff";ctx.shadowBlur=10;
-      ctx.beginPath();ctx.arc(t._x,t._y,r+5+ringPulse*4,0,Math.PI*2);ctx.stroke();
-      ctx.shadowBlur=0;
+      const ringPulse = 0.5 + 0.5 * Math.sin(time * 0.005);
+      ctx.globalAlpha = nodeAlpha;
+      ctx.strokeStyle = `rgba(255,255,255,${ringPulse})`;
+      ctx.lineWidth = 3.5 / view.s;
+      ctx.shadowColor = "#fff";
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.arc(t._x, t._y, iconSize/2 + 5 + ringPulse*4, 0, Math.PI*2);
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+      ctx.globalAlpha = 1;
     }
-    ctx.globalAlpha=1;
   }
 
   // ===== 2. 中心罗盘（compass.png）—— 放大一倍 =====
