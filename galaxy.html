@@ -196,6 +196,7 @@
   <div class="spacer"></div>
   <div class="progress-info">已发现 <b id="learned-count">0</b> / <b id="total-count">0</b></div>
   <div class="btns">
+    <button class="gbtn" id="btn-ordered">有序视图</button>
     <button class="gbtn" id="btn-fit">适应屏幕</button>
     <button class="gbtn gold" id="btn-reset">重置进度</button>
   </div>
@@ -1313,6 +1314,7 @@ function customConfirm(msg){
 }
 
 // ===== 按钮事件 =====
+document.getElementById("btn-ordered").addEventListener("click",()=>{location.href="index.ordered.html";});
 document.getElementById("btn-fit").addEventListener("click",fitScreen);
 document.getElementById("btn-reset").addEventListener("click",async()=>{
   if(!await customConfirm("确定重置所有学习进度？"))return;

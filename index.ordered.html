@@ -214,6 +214,7 @@
         <div class="meta">已点亮 <b id="cnt">0</b> / <span id="tot">0</span><br>掌握进度</div>
       </div>
       <div class="hbtns">
+        <button class="hbtn" id="btn-galaxy">返回星图</button>
         <button class="hbtn" id="btn-fit">适应屏幕</button>
         <button class="hbtn warn" id="btn-reset">重置进度</button>
       </div>
@@ -29999,6 +30000,7 @@ function homeView(){
 function bindEvents(){
   document.getElementById("d-close").onclick=()=>{document.getElementById("detail").classList.remove("show");clearHighlight();selectedId=null;};
   document.getElementById("btn-fit").onclick=fit;
+  document.getElementById("btn-galaxy").onclick=()=>{location.href="galaxy.html";};
   document.getElementById("btn-reset").onclick=()=>{
     if(learned.size&&!confirm("确定要清空所有已点亮的技能吗？"))return;
     learned.clear();save();refreshStates();if(selectedId)renderDetail(selectedId);
@@ -30018,8 +30020,9 @@ function bindEvents(){
     const wpt=clientToWorld(e.clientX,e.clientY);
     const f=e.deltaY<0?1.12:1/1.12;
     const ns=Math.max(0.15,Math.min(4,view.s*f));
-    view.tx=wpt.x-(wpt.x-view.tx)*(ns/view.s);
-    view.ty=wpt.y-(wpt.y-view.ty)*(ns/view.s);
+    // 以鼠标位置为中心缩放：保持光标下的世界点屏幕位置不变
+    view.tx=view.tx+wpt.x*(view.s-ns);
+    view.ty=view.ty+wpt.y*(view.s-ns);
     view.s=ns;applyView();
   },{passive:false});
   // 平移 / 拖拽节点 / 点击选择
