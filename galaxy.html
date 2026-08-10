@@ -808,23 +808,33 @@ function render(time){
         const sy = t._y - symSize/2;
         ctx.save();
         ctx.globalAlpha = nodeAlpha;
-        // 直接绘制预着色的符号canvas
         let symCanvas;
         if(isLearned){
-          ctx.shadowColor = "rgba(0,0,0,.35)";
-          ctx.shadowBlur = 2;
+          // 金色荧光发光
           symCanvas = symEntry.gold;
+          ctx.shadowColor = "#ffcf4d";
+          ctx.shadowBlur = 12;
+          ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
+          // 二次叠加增强发光
+          ctx.shadowBlur = 6;
+          ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
         }else if(isAvailableNode){
-          ctx.shadowColor = "rgba(255,255,255,.4)";
-          ctx.shadowBlur = 3;
+          // 白色荧光呼吸光
           symCanvas = symEntry.white;
+          const glow = 8 + 4 * pulse;
+          ctx.shadowColor = "#aaddff";
+          ctx.shadowBlur = glow;
+          ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
+          ctx.shadowBlur = glow * 0.5;
+          ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
         }else if(isLocked){
           ctx.globalAlpha = nodeAlpha * 0.75;
           symCanvas = symEntry.gray;
+          ctx.shadowColor = "rgba(120,130,160,.3)";
+          ctx.shadowBlur = 3;
+          ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
         }else{
           symCanvas = symEntry.gray;
-        }
-        if(symCanvas){
           ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
         }
         ctx.shadowBlur = 0;
@@ -1026,7 +1036,7 @@ cv.addEventListener("mouseup",e=>{
 cv.addEventListener("wheel",e=>{
   e.preventDefault();
   const factor=e.deltaY>0?0.9:1.1;
-  const newS=Math.max(0.05,Math.min(10,view.targetS*factor));
+  const newS=Math.max(0.05,Math.min(20,view.targetS*factor));
   const wp=screenToWorld(e.clientX,e.clientY);
   view.targetTx=e.clientX-wp.x*newS;
   view.targetTy=e.clientY-wp.y*newS;
