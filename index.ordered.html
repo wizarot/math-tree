@@ -29580,7 +29580,7 @@ const stage=document.getElementById("stage");
 let edgesG,nodesG,fxG,starsG,colsG;
 
 // ===== 加载 =====
-// ===== 加载 mtf-sprite.svg 的专属符号（与 galaxy.html 同一套图标，按 topic id 取用）=====
+// ===== 加载 mtf-sprite.svg 的专属符号（与 index.html 星图主页同一套图标，按 topic id 取用）=====
 let SPRITE={}; // id -> <symbol> 元素
 async function loadSprite(){
   try{
@@ -30025,7 +30025,7 @@ function homeView(){
 function bindEvents(){
   document.getElementById("d-close").onclick=()=>{document.getElementById("detail").classList.remove("show");clearHighlight();selectedId=null;};
   document.getElementById("btn-fit").onclick=fit;
-  document.getElementById("btn-galaxy").onclick=()=>{location.href="galaxy.html";};
+  document.getElementById("btn-galaxy").onclick=()=>{location.href="index.html";};
   document.getElementById("btn-reset").onclick=()=>{
     if(learned.size&&!confirm("确定要清空所有已点亮的技能吗？"))return;
     learned.clear();save();refreshStates();if(selectedId)renderDetail(selectedId);
