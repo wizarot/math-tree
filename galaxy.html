@@ -385,7 +385,7 @@ function resize(){
   ctx.setTransform(DPR,0,0,DPR,0,0);
 }
 resize();
-addEventListener("resize",()=>{resize();fitScreen();});
+addEventListener("resize",preserveViewOnResize);
 
 // ===== 布局 =====
 let LAYOUT=null;
@@ -609,8 +609,25 @@ function fitScreen(){
   const s=Math.min((W-padding*2)/(maxR*2),(H-padding*2)/(maxR*2));
   view.targetS=s;
   view.targetTx=W/2;
-  view.targetty=H/2;
   view.targetTy=H/2;
+}
+
+// 初始视图：放大星系中心核心，使其充满首屏（而非适配全图）
+const INITIAL_ZOOM=18; // 相对「适配全图」的放大倍数
+function initialZoom(){
+  if(!LAYOUT)return;
+  const padding=80;
+  const maxR=LAYOUT.maxR;
+  const fit=Math.min((W-padding*2)/(maxR*2),(H-padding*2)/(maxR*2));
+  const s=fit*INITIAL_ZOOM;
+  view.targetS=s;view.targetTx=W/2;view.targetTy=H/2; // 世界原点（星系中心）居中
+}
+// 窗口尺寸变化时保持当前视图中心，避免重置缩放导致跳回适配全图
+function preserveViewOnResize(){
+  const cx=(W/2-view.tx)/view.s, cy=(H/2-view.ty)/view.s; // 当前屏幕中心对应的世界坐标
+  resize();
+  view.tx=W/2-cx*view.s; view.ty=H/2-cy*view.s;
+  view.targetTx=view.tx; view.targetTy=view.ty;
 }
 
 // ===== 渲染 =====
@@ -1327,7 +1344,7 @@ async function init(){
   buildSidebar();
   buildLegend();
   updateHUD();
-  fitScreen();
+  initialZoom();
   // 立即对齐视图（不动画）
   view.s=view.targetS;view.tx=view.targetTx;view.ty=view.targetTy;
   document.getElementById("loading").classList.add("hide");
