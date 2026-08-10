@@ -465,8 +465,22 @@ const nodecImg=new Image();  // 点亮：nodec.png（金光亮盘）
 nodecImg.src="assets/nodec.png";
 
 // ===== SVG Sprite 符号系统 =====
-const symCache=new Map();  // {id: offscreenCanvas}
+const symCache=new Map();  // {id: {gold,white,gray,ready}}
 let spritePromise=null;
+
+function tintCanvas(srcCanvas, color) {
+  const SIZE = srcCanvas.width;
+  const off = document.createElement("canvas");
+  off.width = SIZE; off.height = SIZE;
+  const octx = off.getContext("2d");
+  octx.drawImage(srcCanvas, 0, 0);
+  octx.globalCompositeOperation = "source-in";
+  octx.fillStyle = color;
+  octx.fillRect(0, 0, SIZE, SIZE);
+  octx.globalCompositeOperation = "source-over";
+  return off;
+}
+
 function loadSymbols(){
   if(spritePromise)return spritePromise;
   spritePromise=fetch("assets/mtf-sprite.svg")
@@ -482,7 +496,6 @@ function loadSymbols(){
         const off=document.createElement("canvas");
         off.width=SIZE;off.height=SIZE;
         const octx=off.getContext("2d");
-        // 将 symbol 内容包装成独立 SVG 字符串
         const inner=sym.innerHTML;
         const svgStr=`<svg xmlns="${NS}" width="${SIZE}" height="${SIZE}" viewBox="0 0 ${SIZE} ${SIZE}">${inner}</svg>`;
         const blob=new Blob([svgStr],{type:"image/svg+xml"});
@@ -491,16 +504,20 @@ function loadSymbols(){
         img.onload=()=>{
           octx.drawImage(img,0,0,SIZE,SIZE);
           URL.revokeObjectURL(url);
+          // 预着色：金色（已点亮）、白色（可学）、灰色（未解锁）
+          const gold = tintCanvas(off, "#ffe6a8");
+          const white = tintCanvas(off, "#ffffff");
+          const gray = tintCanvas(off, "#aaaaaa");
+          symCache.set(id,{gold,white,gray,ready:true});
         };
         img.onerror=()=>{URL.revokeObjectURL(url);};
         img.src=url;
-        symCache.set(id,{canvas:off,ready:false,img});
+        symCache.set(id,{gold:null,white:null,gray:null,ready:false});
       });
-      // 等待全部就绪
       return new Promise(resolve=>{
         const check=()=>{
           let allReady=true;
-          for(const [,v] of symCache){if(!v.img.complete){allReady=false;break;}}
+          for(const [,v] of symCache){if(!v.ready){allReady=false;break;}}
           if(allReady){resolve();}
           else{setTimeout(check,50);}
         };
@@ -785,33 +802,30 @@ function render(time){
     // ===== SVG 符号覆盖（在 PNG 圆盘中央）=====
     if(visible && nodeAlpha > 0.05){
       const symEntry = symCache.get(t.id);
-      if(symEntry && symEntry.img && symEntry.img.complete){
-        // 符号尺寸：比圆盘略小，留边距
+      if(symEntry && symEntry.ready){
         const symSize = iconSize * 0.58;
         const sx = t._x - symSize/2;
         const sy = t._y - symSize/2;
         ctx.save();
         ctx.globalAlpha = nodeAlpha;
-        // 符号颜色：learned→金色，available→白色，locked→灰色
+        // 直接绘制预着色的符号canvas
+        let symCanvas;
         if(isLearned){
-          // 金色符号：source-atop 着色
           ctx.shadowColor = "rgba(0,0,0,.35)";
           ctx.shadowBlur = 2;
-          ctx.drawImage(symEntry.canvas, sx, sy, symSize, symSize);
-          // 叠加金色
-          ctx.globalCompositeOperation = "source-atop";
-          ctx.fillStyle = "#ffe6a8";
-          ctx.fillRect(sx, sy, symSize, symSize);
-          ctx.globalCompositeOperation = "source-over";
+          symCanvas = symEntry.gold;
         }else if(isAvailableNode){
           ctx.shadowColor = "rgba(255,255,255,.4)";
           ctx.shadowBlur = 3;
-          ctx.drawImage(symEntry.canvas, sx, sy, symSize, symSize);
+          symCanvas = symEntry.white;
         }else if(isLocked){
           ctx.globalAlpha = nodeAlpha * 0.75;
-          ctx.drawImage(symEntry.canvas, sx, sy, symSize, symSize);
+          symCanvas = symEntry.gray;
         }else{
-          ctx.drawImage(symEntry.canvas, sx, sy, symSize, symSize);
+          symCanvas = symEntry.gray;
+        }
+        if(symCanvas){
+          ctx.drawImage(symCanvas, sx, sy, symSize, symSize);
         }
         ctx.shadowBlur = 0;
         ctx.restore();
@@ -1012,7 +1026,7 @@ cv.addEventListener("mouseup",e=>{
 cv.addEventListener("wheel",e=>{
   e.preventDefault();
   const factor=e.deltaY>0?0.9:1.1;
-  const newS=Math.max(0.05,Math.min(5,view.targetS*factor));
+  const newS=Math.max(0.05,Math.min(10,view.targetS*factor));
   const wp=screenToWorld(e.clientX,e.clientY);
   view.targetTx=e.clientX-wp.x*newS;
   view.targetTy=e.clientY-wp.y*newS;
