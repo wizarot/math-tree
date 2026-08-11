@@ -18,3 +18,13 @@
 ## 性能要点（Canvas 大量节点）
 - 发光预烘焙 sprite，运行时零 per-frame `shadowBlur`（否则 700+ 节点每帧上千次实时模糊必卡死）。
 - 批量连线用实心静线；仅选中节点的邻居边播放流动虚线。
+
+## 本地预览
+- 启动：`python -m http.server 8000`（在 D:\projects\math-skill-tree 下）。
+- 预览入口（用户指定，记住）：**http://127.0.0.1:8000/index.html**（主入口星图）。
+- 有序视图：http://127.0.0.1:8000/index.ordered.html
+
+## 侧边栏背景（items.png 雪碧图用法）
+- `#sidebar.glass` 用 `url("assets/items.png") -60px -80px no-repeat` + `background-color #46342B` 抠出 MAIN PANEL TEXTURE (430×460 @ items.png 60,80)。
+- **不要预切 sidebar_bg.png**：雪碧图的本意就是整张引用 + background-position。
+- 面板带边框不可平铺（上下边缘 RGB 差 128），下沿靠 `background-color` 暗皮革色衔接。
