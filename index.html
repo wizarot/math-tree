@@ -90,13 +90,17 @@
     border:1px solid var(--border);}
   #sidebar .note b{color:var(--text);}
 
-  /* ===== 侧边栏——沿用 items.png 古铜皮革纹理（覆盖默认 .glass） ===== */
+  /* ===== 侧边栏——直接引用 items.png 作为雪碧图（不开新文件），用 background-position
+         把"MAIN PANEL TEXTURE"那块带金边+古铜卷草的暗皮革面板抠出来当背景 =====
+     雪碧图坐标：面板在 items.png 内的左上角 (60,80)，所以 background-position 取负偏移。
+     该面板带边框不可平铺；侧栏宽 240 < 面板宽 430，横向完整覆盖；
+     侧栏高于面板约 180px，下沿由 background-color (#46342B) 补暗皮革，与面板底沿 RGB(70,52,43) 无痕衔接。 */
   #sidebar.glass{
     background:
-      url("assets/sidebar_bg.png") center/100% 100% no-repeat,
       radial-gradient(120% 80% at 0% 0%, rgba(216,160,77,.14), transparent 60%),
       radial-gradient(120% 80% at 100% 100%, rgba(140,80,32,.12), transparent 60%),
-      #2a1810;
+      url("assets/items.png") -60px -80px no-repeat,
+      #46342B;
     backdrop-filter:none;-webkit-backdrop-filter:none;
     border:1px solid rgba(216,160,77,.4);
     box-shadow:
