@@ -34,3 +34,8 @@ remotion-videos/output/_chk*.png
 Thumbs.db
 *.swp
 *~
+
+# =====================
+# Workbuddy tmp (debug crops / scratch files)
+# =====================
+.workbuddy/tmp/

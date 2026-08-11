@@ -90,6 +90,92 @@
     border:1px solid var(--border);}
   #sidebar .note b{color:var(--text);}
 
+  /* ===== 侧边栏——沿用 items.png 古铜皮革纹理（覆盖默认 .glass） ===== */
+  #sidebar.glass{
+    background:
+      url("assets/sidebar_bg.png") center/100% 100% no-repeat,
+      radial-gradient(120% 80% at 0% 0%, rgba(216,160,77,.14), transparent 60%),
+      radial-gradient(120% 80% at 100% 100%, rgba(140,80,32,.12), transparent 60%),
+      #2a1810;
+    backdrop-filter:none;-webkit-backdrop-filter:none;
+    border:1px solid rgba(216,160,77,.4);
+    box-shadow:
+      0 0 30px rgba(0,0,0,.6),
+      inset 0 1px 0 rgba(216,160,77,.18),
+      inset 0 0 36px rgba(0,0,0,.5);
+    padding:18px 14px 14px;
+    color:#f3e4c4;
+  }
+  #sidebar h2{
+    color:#e3b46f;
+    font-family:"Cinzel","Trajan Pro",Georgia,"Times New Roman",serif;
+    font-weight:800;
+    font-size:11px;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    margin:18px 0 8px;
+    padding-bottom:6px;
+    border-bottom:1px solid rgba(216,160,77,.32);
+    text-shadow:0 0 6px rgba(216,160,77,.3);
+  }
+  #sidebar h2:first-child{margin-top:0;}
+  /* select / input：深皮革底 + 金边 */
+  #sidebar select,#sidebar input{
+    background:rgba(20,12,4,.7);border:1px solid rgba(216,160,77,.32);
+    color:#f3e4c4;font-family:inherit;padding:9px 10px;border-radius:7px;font-size:12px;
+  }
+  #sidebar select:focus,#sidebar input:focus{
+    border-color:#d8a04d;
+    box-shadow:0 0 12px rgba(216,160,77,.22),inset 0 0 6px rgba(216,160,77,.1);
+    outline:none;
+  }
+  #sidebar input::placeholder{color:#93754a;}
+  /* chips：默认暗金边，激活态亮金 */
+  #sidebar .chip{
+    background:rgba(20,12,4,.55);
+    border:1px solid rgba(216,160,77,.3);
+    color:#cdb78d;
+    padding:5px 10px;font-weight:600;
+  }
+  #sidebar .chip:hover{
+    border-color:#d8a04d;background:rgba(40,28,16,.65);color:#f3e4c4;
+    transform:translateY(-1px);
+  }
+  #sidebar .chip.active{
+    background:linear-gradient(180deg,#e0a14a 0%,#a06c20 100%);
+    border-color:#f7c84a;color:#2a1608;font-weight:800;
+    box-shadow:0 0 12px rgba(216,160,77,.45),inset 0 1px 0 rgba(255,255,255,.25);
+  }
+  /* 图例文字色统一暖化 */
+  #sidebar .legend-list .item{color:#e8d4a3;padding:5px 6px;border-radius:6px;}
+  #sidebar .toggle-row,#sidebar .edge-toggle{color:#e8d4a3;font-weight:500;}
+  #sidebar .toggle-row input,#sidebar .edge-toggle input{accent-color:#d8a04d;}
+  /* 图例 dot：用 items.png 的 4 种辉光球替换默认 8px 圆点 */
+  #sidebar .legend-list .dot{
+    width:18px;height:18px;border-radius:0;
+    background:transparent;
+    background-image:url("assets/orb_cyan.png");
+    background-size:contain;background-repeat:no-repeat;background-position:center;
+    box-shadow:none;flex-shrink:0;
+    filter:drop-shadow(0 0 3px rgba(0,0,0,.4));
+    animation:orbGlow 2.4s ease-in-out infinite;
+  }
+  #sidebar .legend-list .dot.orb-orange {background-image:url("assets/orb_orange.png")}
+  #sidebar .legend-list .dot.orb-pink   {background-image:url("assets/orb_pink.png")}
+  #sidebar .legend-list .dot.orb-purple {background-image:url("assets/orb_purple.png")}
+  #sidebar .legend-list .item:hover .dot{transform:scale(1.18);transition:.2s}
+  @keyframes orbGlow{
+    0%,100%{filter:drop-shadow(0 0 3px rgba(0,0,0,.4))}
+    50%    {filter:drop-shadow(0 0 8px currentColor)}
+  }
+  /* 底部 note：羊皮纸感 */
+  #sidebar .note{
+    background:rgba(20,12,4,.5);
+    border:1px solid rgba(216,160,77,.25);
+    color:#cdb78d;border-radius:9px;
+  }
+  #sidebar .note b{color:#f7c84a;font-weight:700;}
+
   /* ===== 信息面板 ===== */
   #panel{position:fixed;right:12px;top:72px;bottom:12px;width:360px;z-index:20;
     padding:0;transform:translateX(20px);opacity:0;
@@ -1274,6 +1360,20 @@ function buildSidebar(){
 }
 
 // ===== 图例 =====
+// 领域色 -> 辉光球种类（items.png 切出的 4 张）
+const ORB_BY_COLOR={
+  // 青色系：cyan orb
+  "#2fe0c8":"cyan","#22d3c5":"cyan","#00b4d8":"cyan","#48cae4":"cyan",
+  // 橙/金系：orange orb
+  "#f5a524":"orange","#ffce4d":"orange","#ff7a45":"orange","#e0884b":"orange",
+  // 紫系：purple orb
+  "#c06bff":"purple","#b86bff":"purple","#8a5cf0":"purple","#b15dd6":"purple",
+  "#8b7bff":"purple","#5b8cff":"purple","#4f6bd1":"purple",
+  // 粉/红/品红：pink orb
+  "#ff6b9d":"pink","#c33c9e":"pink","#d63a4a":"pink","#e5383b":"pink",
+  // 绿系归 cyan（最相近）：cyan orb
+  "#36d97b":"cyan","#2dd4a7":"cyan","#7cb518":"cyan","#a3e635":"cyan","#bac94a":"cyan"
+};
 function buildLegend(){
   const list=document.getElementById("legend-list");
   list.innerHTML="";
@@ -1282,7 +1382,8 @@ function buildLegend(){
     const item=document.createElement("div");
     item.className="item";
     item.dataset.key=d.key;
-    item.innerHTML=`<span class="dot" style="background:${d.c};color:${d.c}"></span>${d.zh} <span style="color:var(--dim);font-size:10px">${count}</span>`;
+    const orb=ORB_BY_COLOR[d.c]||"orange";
+    item.innerHTML=`<span class="dot orb-${orb}" style="color:${d.c}"></span>${d.zh} <span style="color:rgba(216,160,77,.6);font-size:10px">${count}</span>`;
     item.addEventListener("click",()=>{
       const sel=document.getElementById("sel-domain");
       sel.value=currentDomain===d.key?"__ALL__":d.key;
