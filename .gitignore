@@ -1,0 +1,36 @@
+# =====================
+# Dependencies (regenerable via npm install)
+# =====================
+node_modules/
+
+# =====================
+# Render output (large binaries, regenerable)
+# =====================
+remotion-videos/output/
+
+# =====================
+# Regenerable media assets
+# (recreated by scripts/capture.mjs, record_clips.mjs, generate_audio.py)
+# =====================
+remotion-videos/public/assets/clips/
+remotion-videos/public/assets/audio/
+remotion-videos/public/assets/img/
+
+# =====================
+# Logs
+# =====================
+*.log
+render*.log
+
+# =====================
+# Temp check frames
+# =====================
+remotion-videos/output/_chk*.png
+
+# =====================
+# OS / editor cruft
+# =====================
+.DS_Store
+Thumbs.db
+*.swp
+*~
