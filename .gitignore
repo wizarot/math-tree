@@ -12,6 +12,6 @@ Thumbs.db
 *~
 
 # =====================
-# Workbuddy tmp (debug crops / scratch files)
+# WorkBuddy project data (memory logs, runtime state) — not source
 # =====================
-.workbuddy/tmp/
+.workbuddy/
