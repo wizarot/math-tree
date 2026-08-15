@@ -12,8 +12,6 @@
 
 ![Platform](https://img.shields.io/badge/Platform-Static%20HTML-8b7bff)
 
-![License](https://img.shields.io/badge/License-MIT-ffce4d)
-
 ![径向星图预览](preview-radial.png)
 
 </div>
@@ -39,7 +37,9 @@
 
 ## 🌠 在线预览
 
-> 部署到 GitHub Pages 后，访问以下地址即可体验：
+> 项目已上线，直接访问 **https://wizarot.github.io/math-tree** 即可体验两个视图。
+>
+> 源码仓库：**https://github.com/wizarot/math-tree**
 
 ### 🌀 径向星图 Galaxy 2D — 沉浸式知识宇宙
 
@@ -137,7 +137,7 @@
 2. 进入仓库 **Settings → Pages**
 3. **Source** 选择 `Deploy from a branch`
 4. **Branch** 选择 `main` / `master`，目录选 `/ (root)`，保存
-5. 等待 1~2 分钟后访问 `https://<你的用户名>.github.io/math-skill-tree/` ✅
+5. 部署完成后访问 **https://wizarot.github.io/math-tree** 即可体验 ✅
 
 ### 方式二：本地预览
 
@@ -161,7 +161,7 @@ npx http-server -p 8000
 ## 📁 项目结构
 
 ```
-math-skill-tree/
+math-tree/
 ├── index.html              # 🌀 主入口：径向星图 Galaxy 2D
 ├── index.ordered.html      # 📊 有序视图：按年龄技能树排列
 ├── preview-radial.png      # 🖼️ README 预览图
@@ -286,8 +286,8 @@ math-skill-tree/
 
 ```bash
 # 1. Fork + Clone
-git clone https://github.com/wizarot/math-skill-tree.git
-cd math-skill-tree
+git clone https://github.com/wizarot/math-tree.git
+cd math-tree
 
 # 2. 起一个本地服务器
 python -m http.server 8000
@@ -297,22 +297,11 @@ python -m http.server 8000
 
 ---
 
-## 📄 开源协议
-
-[MIT License](LICENSE) © 数学天赋星图贡献者
-
-> 数据层基于 [Marble Skill Taxonomy](https://github.com/…) 公开数据集构建，  
-> 中文翻译与课标对齐内容遵循 CC BY-SA 4.0。
-
----
-
-
-
 **如果这个项目对你有启发，请给它一颗 ⭐ Star**
 
 **给数学学习一张全局地图，让每一步都看得见方向。**
 
-![访问数](https://komarev.com/ghpvc/?username=math-skill-tree\&color=blueviolet)
+![访问数](https://komarev.com/ghpvc/?username=math-tree\&color=blueviolet)
 
 
 
