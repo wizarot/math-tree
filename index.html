@@ -577,9 +577,9 @@ const glowDiskGold=bakeGlowDisk("#a070ff",GLOW_DISK_SIZE); // 已点亮=紫罗�
 const glowDiskCyan=bakeGlowDisk("#6ef0ff",GLOW_DISK_SIZE); // 可学=青
 const glowDiskGray=bakeGlowDisk("#8ea2cc",GLOW_DISK_SIZE); // 未解锁=冷蓝（弱）
 
-// ===== SVG Sprite 符号系统 =====
-const symCache=new Map();  // {id: {gold,white,gray,ready}}
-let spritePromise=null;
+// ===== SVG Sprite 符号系统（懒加载：仅对可见节点按需栅格化，避免启动时一次性 702×4 画布操作）=====
+const symCache=new Map();        // id -> {gold,white,gray,cyan,ready,none?}
+let spriteTextPromise=null;      // 一次抓取 SVG 文本（浏览器缓存复用）
 
 function tintCanvas(srcCanvas, color) {
   const SIZE = srcCanvas.width;
@@ -594,55 +594,50 @@ function tintCanvas(srcCanvas, color) {
   return off;
 }
 
-function loadSymbols(){
-  if(spritePromise)return spritePromise;
-  spritePromise=fetch("assets/mtf-sprite.svg")
+function getSpriteText(){
+  if(spriteTextPromise)return spriteTextPromise;
+  spriteTextPromise=fetch("assets/mtf-sprite.svg")
     .then(r=>r.text())
-    .then(svgText=>{
-      const parser=new DOMParser();
-      const doc=parser.parseFromString(svgText,"image/svg+xml");
-      const symbols=doc.querySelectorAll("symbol");
-      const SIZE=64;
-      const NS="http://www.w3.org/2000/svg";
-      symbols.forEach(sym=>{
-        const id=sym.id;
-        const off=document.createElement("canvas");
-        off.width=SIZE;off.height=SIZE;
-        const octx=off.getContext("2d");
-        const inner=sym.innerHTML;
-        const svgStr=`<svg xmlns="${NS}" width="${SIZE}" height="${SIZE}" viewBox="0 0 ${SIZE} ${SIZE}">${inner}</svg>`;
-        const blob=new Blob([svgStr],{type:"image/svg+xml"});
-        const url=URL.createObjectURL(blob);
-        const img=new Image();
-        img.onload=()=>{
-          octx.drawImage(img,0,0,SIZE,SIZE);
-          URL.revokeObjectURL(url);
-          // 预着色：金色（已点亮）、白色（高光管芯）、青色（可学霓虹）、灰色（未解锁）
-          const gold = tintCanvas(off, "#b088ff");
-          const white = tintCanvas(off, "#ffffff");
-          const gray = tintCanvas(off, "#aaaaaa");
-          const cyan = tintCanvas(off, "#7af0ff");
-          symCache.set(id,{gold,white,gray,cyan,ready:true});
-        };
-        img.onerror=()=>{URL.revokeObjectURL(url);};
-        img.src=url;
-        symCache.set(id,{gold:null,white:null,gray:null,cyan:null,ready:false});
-      });
-      return new Promise(resolve=>{
-        const check=()=>{
-          let allReady=true;
-          for(const [,v] of symCache){if(!v.ready){allReady=false;break;}}
-          if(allReady){resolve();}
-          else{setTimeout(check,50);}
-        };
-        setTimeout(check,50);
-      });
-    })
-    .catch(err=>console.warn("SVG sprite load failed:",err));
-  return spritePromise;
+    .catch(err=>{console.warn("SVG sprite load failed:",err);return null;});
+  return spriteTextPromise;
 }
-// 延迟加载
-loadSymbols();
+
+function rasterizeSymbol(id, svgText){
+  const esc=id.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+  const m=new RegExp('<symbol[^>]*id="'+esc+'"[^>]*>([\\s\\S]*?)</symbol>').exec(svgText);
+  if(!m){ symCache.set(id,{gold:null,white:null,gray:null,cyan:null,ready:true,none:true}); return; }
+  const inner=m[1];
+  const SIZE=64, NS="http://www.w3.org/2000/svg";
+  const svgStr=`<svg xmlns="${NS}" width="${SIZE}" height="${SIZE}" viewBox="0 0 ${SIZE} ${SIZE}">${inner}</svg>`;
+  const blob=new Blob([svgStr],{type:"image/svg+xml"});
+  const url=URL.createObjectURL(blob);
+  const img=new Image();
+  img.onload=()=>{
+    const off=document.createElement("canvas");off.width=SIZE;off.height=SIZE;
+    const octx=off.getContext("2d");
+    octx.drawImage(img,0,0,SIZE,SIZE);
+    URL.revokeObjectURL(url);
+    // 预着色：金色（已点亮）、白色（高光管芯）、青色（可学霓虹）、灰色（未解锁）
+    symCache.set(id,{
+      gold:tintCanvas(off,"#b088ff"),
+      white:tintCanvas(off,"#ffffff"),
+      gray:tintCanvas(off,"#aaaaaa"),
+      cyan:tintCanvas(off,"#7af0ff"),
+      ready:true
+    });
+  };
+  img.onerror=()=>{URL.revokeObjectURL(url);
+    symCache.set(id,{gold:null,white:null,gray:null,cyan:null,ready:true,none:true});};
+  img.src=url;
+}
+
+// 渲染某节点前调用：确保该符号已（按需）发起栅格化。仅可见节点会走到这里，
+// 因此启动时不一次性处理 702 个符号，而是随视角/缩放逐步加载（分批加载）。
+function ensureSymbol(id){
+  if(symCache.has(id))return;       // 已有结果（含 none 占位）
+  symCache.set(id,{ready:false});   // 占位，避免重复发起
+  getSpriteText().then(txt=>{ if(txt) rasterizeSymbol(id, txt); });
+}
 
 // ===== 稀有度 =====
 function computeRarity(){
@@ -940,8 +935,9 @@ function render(time){
 
     // ===== SVG 符号：呼吸霓虹灯（烘焙光球 sprite，运行时零实时模糊）=====
     if(visible && nodeAlpha > 0.05){
+      ensureSymbol(t.id);                 // 按需懒加载该符号（仅可见节点）
       const symEntry = symCache.get(t.id);
-      if(symEntry && symEntry.ready){
+      if(symEntry && symEntry.ready && !symEntry.none){
         const symSize = iconSize * 0.6;
         // 每颗星独立呼吸相位，形成自然错落的霓虹星海（而非整齐闪烁）
         const phase = t._x * 0.021 + t._y * 0.029;
