@@ -315,7 +315,7 @@
     body:not(.sidebar-collapsed) #hud .btns{display:none;}
 
     /* 侧边栏 → 全屏抽屉 */
-    #sidebar{left:0;top:0;bottom:0;width:86%;max-width:340px;height:auto;
+    #sidebar{left:0;top:calc(56px + env(safe-area-inset-top));bottom:0;width:86%;max-width:340px;height:auto;
       border-radius:0 14px 14px 0;border-left:none;z-index:16;transform:translateX(-100%);}
     body:not(.sidebar-collapsed) #sidebar{transform:translateX(0);}
     body:not(.sidebar-collapsed) #scrim{opacity:1;pointer-events:auto;}

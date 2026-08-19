@@ -80,13 +80,29 @@
   function ce(tag, cls) { var e = document.createElement(tag); if (cls) e.className = cls; return e; }
   function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
-  function rectOf(step) {
+  function targetEl(step) {
     if (!step || !step.target) return null;
-    var el = typeof step.target === "function" ? step.target() : $(step.target);
+    try { return typeof step.target === "function" ? step.target() : document.querySelector(step.target); }
+    catch (e) { return null; }
+  }
+  function rectOf(step) {
+    var el = targetEl(step);
     if (!el || !el.getBoundingClientRect) return null;
     var r = el.getBoundingClientRect();
     if (r.width === 0 && r.height === 0) return null;
     return r;
+  }
+
+  // 侧栏（左侧 HUD）相关：讲解侧栏内容时展开它，并把目标滚动到可视区中央，
+  // 以避开移动端顶部横条 HUD 对侧栏顶部的遮挡。
+  function isInSidebar(step) {
+    var el = targetEl(step);
+    return !!(el && el.closest && el.closest("#sidebar"));
+  }
+  function setSidebar(open) {
+    if (!document.body) return;
+    if (open) document.body.classList.remove("sidebar-collapsed");
+    else document.body.classList.add("sidebar-collapsed");
   }
 
   // ---------- 欢迎弹层 ----------
@@ -181,6 +197,24 @@
       pop.style.visibility = "visible";
     }
 
+    // 定位调度：侧栏步骤需等滑入过渡结束再定位，并把目标滚动到可视区中央
+    function schedulePosition(needSidebar) {
+      if (needSidebar) {
+        spot.style.display = "none";
+        pop.style.visibility = "hidden";
+        setTimeout(function () {
+          var el = targetEl(steps[idx]);
+          if (el && el.scrollIntoView) {
+            try { el.scrollIntoView({ block: "center", inline: "nearest" }); }
+            catch (e) { try { el.scrollIntoView(); } catch (e2) {} }
+          }
+          position();
+        }, 400);
+      } else {
+        requestAnimationFrame(position);
+      }
+    }
+
     function render() {
       var step = steps[idx];
       if (curStep && curStep.onLeave) { try { curStep.onLeave(); } catch (e) {} }
@@ -202,7 +236,12 @@
       pop.appendChild(h); pop.appendChild(p); pop.appendChild(foot);
 
       if (step.onEnter) { try { step.onEnter(); } catch (e) {} }
-      requestAnimationFrame(position);
+
+      // 侧栏步骤：展开左侧 HUD（若已折叠），并把目标滚动到可视区中央，
+      // 同时避开移动端顶部横条 HUD 对侧栏顶部的遮挡；非侧栏步骤则收起侧栏。
+      var needSidebar = !!(step.expandSidebar || isInSidebar(step));
+      setSidebar(needSidebar);
+      schedulePosition(needSidebar);
 
       skipBtn.onclick = finish;
       prevBtn.onclick = function () { if (idx > 0) { idx--; render(); } };
