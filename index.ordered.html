@@ -29531,6 +29531,7 @@
   }
  ]
 }</script>
+<script src="./guide.js"></script>
 <script>
 "use strict";
 const SVGNS="http://www.w3.org/2000/svg";
@@ -29619,6 +29620,95 @@ async function load(){
   homeView();
   document.getElementById("tot").textContent=TOPICS.length;
   updateHUD();
+
+  // 新手指引（首次访问自动播放；右下「?」可重看）
+  if (window.MathGuide) {
+    MathGuide.run({
+      page: "ordered",
+      welcome: {
+        title: "欢迎来到数学天赋星图 · 技能树",
+        subtitle: "一张按领域分列、年龄递进、依赖为脉的「学习之河」：沿轨道从左到右＝学习顺序，帮你看清孩子该先学什么、再学什么。",
+        points: [
+          "<b>按序看知识</b>：每列是一个领域，从上到下＝年龄递增",
+          "<b>点节点看详情</b>：掌握证据、评估提示、硬性前置清晰罗列",
+          "<b>点亮技能</b>：前置全亮才能点亮，三态（已掌握 / 可学 / 锁定）一眼区分",
+          "<b>精准筛选</b>：按领域 / 年龄段 / 中国课标快速定位"
+        ],
+        cta: "开始探索"
+      },
+      steps: [
+        {
+          target: "#ring",
+          title: "掌握进度环",
+          body: "这个环形进度显示已点亮知识点占总量的百分比，随你点亮技能实时增长。",
+          placement: "bottom"
+        },
+        {
+          target: "#btn-galaxy",
+          title: "返回星图",
+          body: "想回到那张可自由漫游的全局星图？点这里跳回径向星图视图。",
+          placement: "bottom"
+        },
+        {
+          target: "#btn-fit",
+          title: "适应屏幕",
+          body: "无论放大还是拖动到角落，点这里都能把整棵技能树一键缩放回视野中心。",
+          placement: "bottom"
+        },
+        {
+          target: "#domain-select",
+          title: "缩小范围：领域 / 年龄 / 课标",
+          body: "用领域下拉、年龄段与课标视图 chips，把视图聚焦到你关心的那几条轨道。",
+          placement: "right"
+        },
+        {
+          target: "#search",
+          title: "搜索节点",
+          body: "输入技能名或描述关键词，视图会实时过滤，帮你快速定位某个知识点。",
+          placement: "right"
+        },
+        {
+          target: "#legend",
+          title: "图例",
+          body: "每种颜色代表一个领域，带符印示意。点击某个领域，可单独筛选显示它。",
+          placement: "right"
+        },
+        {
+          target: "svg",
+          title: "在技能树上漫游",
+          body: "拖拽空白平移视野，滚轮以光标为锚点缩放；还可以直接拖动节点临时重排（仅本次会话）。",
+          placement: "left",
+          rect: false
+        },
+        {
+          target: "#detail",
+          title: "点击节点看详情",
+          body: "点任意节点，右侧滑出详情：描述、掌握证据（判定标准）、评估提示，以及「硬性前置」与「后续星体」。",
+          placement: "left",
+          onEnter: function () {
+            var sample = TOPICS.find(function (t) { return t && t.id; });
+            if (sample && typeof selectNode === "function") selectNode(sample.id);
+          },
+          onLeave: function () {
+            var dc = document.getElementById("d-close");
+            if (dc) dc.click();
+          }
+        },
+        {
+          target: "#d-master",
+          title: "点亮按钮（三态）",
+          body: "已掌握→可取消点亮；可学→金色「点亮这个技能」；前置未齐→锁定并提示缺失前置。前置全亮才能点亮。",
+          placement: "left"
+        },
+        {
+          target: function () { return document.querySelector(".start-pill") || document.querySelector("#svg"); },
+          title: "从这里开始",
+          body: "左上角的「▶ 从这里开始」是整条学习路径的起点。顺着依赖脉络往下，就是孩子循序渐进的学习路线。",
+          placement: "right"
+        }
+      ]
+    });
+  }
 }
 
 // ===== 稀有度（按中心度分位）=====
