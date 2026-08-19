@@ -197,9 +197,10 @@
       pop.style.visibility = "visible";
     }
 
-    // 定位调度：侧栏步骤需等滑入过渡结束再定位，并把目标滚动到可视区中央
-    function schedulePosition(needSidebar) {
-      if (needSidebar) {
+    // 定位调度：仅当侧栏刚从「折叠→展开」时才需等滑入过渡结束再定位（并把目标滚动到可视区中央）；
+    // 若侧栏已展开（连续侧栏步骤之间）则立即定位，避免气泡空白闪烁。
+    function schedulePosition(wait) {
+      if (wait) {
         spot.style.display = "none";
         pop.style.visibility = "hidden";
         setTimeout(function () {
@@ -240,8 +241,10 @@
       // 侧栏步骤：展开左侧 HUD（若已折叠），并把目标滚动到可视区中央，
       // 同时避开移动端顶部横条 HUD 对侧栏顶部的遮挡；非侧栏步骤则收起侧栏。
       var needSidebar = !!(step.expandSidebar || isInSidebar(step));
+      var wasCollapsed = document.body.classList.contains("sidebar-collapsed");
       setSidebar(needSidebar);
-      schedulePosition(needSidebar);
+      // 仅当侧栏从折叠→展开（确实需要滑入过渡）时才等待；已展开则跳过等待，避免连续侧栏步骤气泡空白
+      schedulePosition(needSidebar && wasCollapsed);
 
       skipBtn.onclick = finish;
       prevBtn.onclick = function () { if (idx > 0) { idx--; render(); } };
