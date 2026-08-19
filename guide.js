@@ -95,30 +95,17 @@
 
   // 侧栏（左侧 HUD）相关：讲解侧栏内容时展开它，并把目标滚动到可视区中央，
   // 以避开移动端顶部横条 HUD 对侧栏顶部的遮挡。
-  // 注意：仅靠移除 body.sidebar-collapsed 在部分真实浏览器/缓存场景下不够可靠，
-  // 所以展开时会额外强制设置 inline style 确保侧栏和 scrim 确实可见。
-  var GUIDE_VERSION = "2026-08-19b"; // 版本标记，控制台可查
+  // 逻辑极简：sidebar-collapsed = 隐藏态。侧栏步骤若处于隐藏态就 toggle 一次展开；
+  // 非侧栏步骤若处于显示态就 toggle 一次收起。不碰任何 inline style，完全交给页面 CSS。
+  var GUIDE_VERSION = "2026-08-19c"; // 版本标记，控制台可查（确认加载的是最新版，避免浏览器缓存旧 guide.js）
   function isInSidebar(step) {
     var el = targetEl(step);
     return !!(el && el.closest && el.closest("#sidebar"));
   }
-  function setSidebar(open) {
-    if (!document.body) return;
-    var sb = document.getElementById("sidebar");
-    var sc = document.getElementById("scrim");
-    if (open) {
-      document.body.classList.remove("sidebar-collapsed");
-      // 强制确保侧栏可见（覆盖可能的缓存样式/过渡残留）
-      if (sb) { sb.style.transform = "translateX(0)"; sb.style.display = ""; }
-      // 强制确保移动端 scrim 可见
-      if (sc) { sc.style.opacity = "1"; sc.style.pointerEvents = "auto"; sc.style.display = ""; }
-      console.log("[MathGuide v" + GUIDE_VERSION + "] sidebar FORCE EXPANDED");
-    } else {
-      document.body.classList.add("sidebar-collapsed");
-      // 收起时清除 inline style，让 CSS 类接管
-      if (sb) { sb.style.transform = ""; sb.style.display = ""; }
-      if (sc) { sc.style.opacity = ""; sc.style.pointerEvents = ""; sc.style.display = ""; }
-    }
+  // 仅当「需要的状态」与「当前状态」不符时才 toggle 一次，绝不多余操作。
+  function ensureSidebar(open) {
+    var collapsed = document.body.classList.contains("sidebar-collapsed");
+    if (open !== !collapsed) document.body.classList.toggle("sidebar-collapsed");
   }
 
   // ---------- 欢迎弹层 ----------
@@ -261,7 +248,7 @@
       // 同时避开移动端顶部横条 HUD 对侧栏顶部的遮挡；非侧栏步骤则收起侧栏。
       var needSidebar = !!(step.expandSidebar || isInSidebar(step));
       var wasCollapsed = document.body.classList.contains("sidebar-collapsed");
-      setSidebar(needSidebar);
+      ensureSidebar(needSidebar);
       // 侧栏步骤：把目标滚动到可视区中央（连续侧栏步骤也要滚，不能只在首次展开时滚）；
       // 仅当侧栏从折叠→展开（确需滑入过渡）时才等 400ms，已展开则立即定位，避免气泡空白闪烁。
       var scrollEl = needSidebar ? targetEl(step) : null;
