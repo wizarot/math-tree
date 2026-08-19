@@ -195,11 +195,52 @@
   .col-head text{font-family:'Segoe UI',system-ui,sans-serif;pointer-events:none;user-select:none;}
   .start-pill{filter:drop-shadow(0 0 16px rgba(255,216,77,.45));}
   .start-pill text{font-family:'Segoe UI',system-ui,sans-serif;pointer-events:none;user-select:none;}
+
+  /* ===== 响应式 & 移动端 ===== */
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;
+    border-radius:9px;cursor:pointer;flex-shrink:0;font-size:17px;line-height:1;
+    background:var(--panel-2);border:1px solid var(--border);color:var(--text);transition:.18s var(--ease);}
+  .menu-btn:hover{border-color:var(--accent);color:#fff;}
+  #scrim{position:fixed;inset:0;z-index:15;background:rgba(6,9,20,.6);
+    -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+    opacity:0;pointer-events:none;transition:opacity .3s var(--ease);}
+
+  @media (max-width:860px){
+    header{flex-wrap:wrap;gap:10px;padding:10px 14px;}
+    header .sub{display:none;}
+    header h1{font-size:15px;}
+    .hud{margin-left:0;width:100%;justify-content:space-between;gap:10px;}
+    .hbtns{flex-wrap:wrap;flex:1;justify-content:flex-end;}
+    .hbtn{padding:8px 10px;font-size:11px;}
+    .hbtn svg{margin-right:3px;}
+
+    /* 侧边栏 → 抽屉 */
+    #sidebar{position:fixed;top:0;left:0;bottom:0;width:84%;max-width:330px;height:auto;
+      transform:translateX(-100%);transition:transform .3s var(--ease);z-index:25;
+      box-shadow:8px 0 40px rgba(0,0,0,.5);}
+    body:not(.sidebar-collapsed) #sidebar{transform:translateX(0);}
+    body:not(.sidebar-collapsed) #scrim{opacity:1;pointer-events:auto;}
+
+    /* 详情面板 → 底部弹层 */
+    #detail{position:fixed;left:0;right:0;bottom:0;top:auto;width:auto;max-height:80vh;
+      border-left:none;border-top:1px solid var(--border);border-radius:16px 16px 0 0;
+      z-index:26;padding-bottom:env(safe-area-inset-bottom);}
+    #detail::before{content:"";display:block;width:40px;height:4px;border-radius:99px;
+      background:rgba(124,196,255,.5);margin:8px auto 4px;}
+
+    #hint{font-size:11px;padding:5px 12px;top:10px;}
+  }
+  @media (max-width:480px){
+    .progress .meta{display:none;}
+    .ring{width:40px;height:40px;}
+    header .brand .sigil-mark{width:26px;height:26px;}
+  }
 </style>
 </head>
 <body>
 <div id="app">
   <header>
+    <button class="menu-btn" id="btn-menu" aria-label="收起/展开 菜单" title="菜单">☰</button>
     <div class="brand">
       <svg class="sigil-mark" viewBox="0 0 24 24" fill="none" stroke="#7cc4ff" stroke-width="1.6">
         <path d="M12 2 L21 12 L12 22 L3 12 Z"/><circle cx="12" cy="12" r="3.2" fill="#ffcf4d" stroke="none"/>
@@ -291,6 +332,7 @@
       </div>
     </aside>
   </main>
+  <div id="scrim"></div>
 </div>
 
 <script id="embed-topics" type="application/json">{
@@ -30186,6 +30228,17 @@ load().catch(err=>{
   document.getElementById("hint").textContent="数据加载失败："+err.message;
   console.error(err);
 });
+</script>
+<script>
+(function(){
+  var body=document.body;
+  var menu=document.getElementById("btn-menu");
+  var scrim=document.getElementById("scrim");
+  function toggle(){body.classList.toggle("sidebar-collapsed");}
+  if(menu)menu.addEventListener("click",toggle);
+  if(scrim)scrim.addEventListener("click",function(){body.classList.add("sidebar-collapsed");});
+  body.classList.add("sidebar-collapsed");
+})();
 </script>
 </body>
 </html>

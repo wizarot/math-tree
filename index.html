@@ -264,6 +264,76 @@
   ::-webkit-scrollbar-track{background:transparent;}
   ::-webkit-scrollbar-thumb{background:rgba(120,140,210,.2);border-radius:3px;}
   ::-webkit-scrollbar-thumb:hover{background:rgba(120,140,210,.4);}
+
+  /* ===== 响应式 & 移动端增强 ===== */
+  #cv{touch-action:none;}
+
+  /* 菜单（折叠）按钮：全尺寸可见，用于收起/展开侧边栏 */
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:10px;cursor:pointer;flex-shrink:0;
+    font-size:18px;line-height:1;background:var(--glass-2);color:var(--text);
+    border:1px solid var(--border);transition:.2s var(--ease);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);user-select:none;}
+  .menu-btn:hover{border-color:var(--accent);color:#fff;background:rgba(124,196,255,.12);
+    box-shadow:0 0 20px rgba(124,196,255,.15);}
+  .menu-btn:active{transform:translateY(1px);}
+
+  /* 侧边栏平滑收起 */
+  #sidebar{transition:transform .35s var(--ease);will-change:transform;}
+
+  /* 移动端抽屉遮罩 */
+  #scrim{position:fixed;inset:0;z-index:14;background:rgba(4,7,17,.62);
+    -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+    opacity:0;pointer-events:none;transition:opacity .3s var(--ease);}
+
+  /* 折叠态：桌面滑出左侧 / 移动关闭抽屉 */
+  body.sidebar-collapsed #sidebar{transform:translateX(calc(-100% - 28px));}
+
+  /* 窄桌面/平板：HUD 变两行，按钮单独占第二行 */
+  @media (max-width:1180px){
+    #sidebar{width:280px;top:118px;}
+    #panel{width:320px;top:118px;}
+    #hud{flex-wrap:wrap;padding:10px 14px;gap:10px;padding-top:calc(10px + env(safe-area-inset-top));}
+    #hud h1{font-size:15px;}
+    #hud .progress-info{font-size:11px;margin-left:auto;}
+    #hud .progress-info b{font-size:13px;}
+
+    /* 第二行：github / 有序视图 / 适应屏幕 / 重置进度 整行排布 */
+    #hud .btns{flex:1 1 100%;justify-content:space-between;gap:8px;padding:0;margin-top:2px;}
+    #hud .btns .gbtn{flex:1;justify-content:center;}
+  }
+
+  /* 手机（<768）：仍保持两行 HUD，仅按钮在抽屉打开时隐藏避免遮挡 */
+  @media (max-width:768px){
+    #hud{padding:9px 12px;gap:8px;padding-top:calc(9px + env(safe-area-inset-top));}
+    #hud h1{font-size:14px;}
+    #hud .progress-info{font-size:11px;}
+    #hud .progress-info b{font-size:13px;}
+    /* 第二行按钮沿用 ≤1180 的 flex:1 1 100% 两行布局 */
+    #hud .btns .gbtn{padding:10px 4px;font-size:12px;}
+    /* 抽屉打开时隐藏操作按钮，避免遮挡抽屉顶部 */
+    body:not(.sidebar-collapsed) #hud .btns{display:none;}
+
+    /* 侧边栏 → 全屏抽屉 */
+    #sidebar{left:0;top:0;bottom:0;width:86%;max-width:340px;height:auto;
+      border-radius:0 14px 14px 0;border-left:none;z-index:16;transform:translateX(-100%);}
+    body:not(.sidebar-collapsed) #sidebar{transform:translateX(0);}
+    body:not(.sidebar-collapsed) #scrim{opacity:1;pointer-events:auto;}
+
+    /* 信息面板 → 底部弹层 */
+    #panel{left:0;right:0;top:auto;bottom:0;width:auto;max-height:80vh;
+      border-radius:16px 16px 0 0;z-index:32;padding-top:6px;
+      padding-bottom:env(safe-area-inset-bottom);}
+    #panel::before{content:"";display:block;width:40px;height:4px;border-radius:99px;
+      background:rgba(216,160,77,.5);margin:8px auto 4px;}
+    #panel .close{font-size:22px;top:14px;}
+  }
+
+  @media (max-width:480px){
+    #hud h1{display:none;}
+    #hud .badge{font-size:9px;}
+    #hud .progress-info{font-size:10px;}
+  }
 </style>
 </head>
 <body>
@@ -272,13 +342,14 @@
 
 <!-- HUD -->
 <div id="hud" class="glass">
+  <button class="menu-btn" id="btn-menu" aria-label="收起/展开 菜单" title="菜单">☰</button>
   <div class="brand">
     <h1>数学天赋星图</h1>
     <span class="badge">Galaxy 2D</span>
   </div>
   <div class="spacer"></div>
   <div class="progress-info">已发现 <b id="learned-count">0</b> / <b id="total-count">0</b></div>
-  <div class="btns">
+  <div class="btns" id="actionbar">
     <a class="gbtn" id="btn-github" href="https://github.com/wizarot/math-tree" target="_blank" rel="noopener" title="在 GitHub 上查看源码并 Star">
       <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
       GitHub
@@ -326,6 +397,9 @@
     带金色虚线环与「<b style="color:var(--gold)">课</b>」角标的星体＝<b style="color:var(--gold)">人教版小学数学课标</b>内容；左侧「仅看中国课标」可单独筛选。
   </div>
 </div>
+
+<!-- 移动端抽屉遮罩 -->
+<div id="scrim"></div>
 
 <!-- 信息面板 -->
 <div id="panel" class="glass">
@@ -685,26 +759,55 @@ function screenToWorld(sx,sy){
   return{x:(sx-view.tx)/view.s,y:(sy-view.ty)/view.s};
 }
 
-// ===== 适应屏幕 =====
+// ===== 可视区域（避开侧边栏 / 面板 / 状态栏）=====
+function getInsets(){
+  const ins={left:0,right:0,top:0,bottom:0};
+  const sb=document.getElementById("sidebar");
+  const panel=document.getElementById("panel");
+  const isMobile=window.innerWidth<=768;
+  ins.top=isMobile?60:84;
+  if(!document.body.classList.contains("sidebar-collapsed")){
+    ins.left=sb.offsetWidth+(isMobile?0:24);
+  }
+  if(panel.classList.contains("show")){
+    if(isMobile)ins.bottom=Math.min(panel.offsetHeight,window.innerHeight*0.78)+12;
+    else ins.right=panel.offsetWidth+24;
+  }
+  if(isMobile){
+    const ab=document.getElementById("actionbar");
+    if(ab)ins.bottom+=ab.offsetHeight+24;
+  }
+  return ins;
+}
+function availRect(){
+  const ins=getInsets();
+  return{x:ins.left,y:ins.top,
+    w:Math.max(50,W-ins.left-ins.right),
+    h:Math.max(50,H-ins.top-ins.bottom)};
+}
+
+// ===== 适应屏幕（按可视区域居中）=====
 function fitScreen(){
   if(!LAYOUT)return;
-  const padding=80;
+  const padding=40;
   const maxR=LAYOUT.maxR;
-  const s=Math.min((W-padding*2)/(maxR*2),(H-padding*2)/(maxR*2));
-  view.targetS=s;
-  view.targetTx=W/2;
-  view.targetTy=H/2;
+  const a=availRect();
+  const s=Math.min((a.w-padding*2)/(maxR*2),(a.h-padding*2)/(maxR*2));
+  view.targetS=Math.max(0.05,Math.min(20,s));
+  view.targetTx=a.x+a.w/2;
+  view.targetTy=a.y+a.h/2;
 }
 
 // 初始视图：放大星系中心核心，使其充满首屏（而非适配全图）
 const INITIAL_ZOOM=18; // 相对「适配全图」的放大倍数
 function initialZoom(){
   if(!LAYOUT)return;
-  const padding=80;
+  const padding=40;
   const maxR=LAYOUT.maxR;
-  const fit=Math.min((W-padding*2)/(maxR*2),(H-padding*2)/(maxR*2));
-  const s=fit*INITIAL_ZOOM;
-  view.targetS=s;view.targetTx=W/2;view.targetTy=H/2; // 世界原点（星系中心）居中
+  const a=availRect();
+  const fit=Math.min((a.w-padding*2)/(maxR*2),(a.h-padding*2)/(maxR*2));
+  const s=Math.max(0.05,Math.min(20,fit*INITIAL_ZOOM));
+  view.targetS=s;view.targetTx=a.x+a.w/2;view.targetTy=a.y+a.h/2; // 世界原点（星系中心）居中于可视区
 }
 // 窗口尺寸变化时保持当前视图中心，避免重置缩放导致跳回适配全图
 function preserveViewOnResize(){
@@ -1177,6 +1280,71 @@ cv.addEventListener("wheel",e=>{
   view.targetS=newS;
 },{passive:false});
 
+// ===== 触摸交互：单指平移/点选，双指缩放（移动端核心）=====
+let touchMode=null,touchStartPos=null,touchMoved=false;
+let pinchStartDist=1,pinchStartS=1,pinchWorld={x:0,y:0};
+cv.addEventListener("touchstart",e=>{
+  e.preventDefault();
+  if(e.touches.length===1){
+    touchMode="pan";
+    const t=e.touches[0];
+    dragStart={x:t.clientX,y:t.clientY};
+    dragView={tx:view.targetTx,ty:view.targetTy};
+    touchStartPos={x:t.clientX,y:t.clientY};
+    touchMoved=false;
+  }else if(e.touches.length===2){
+    touchMode="pinch";
+    const a=e.touches[0],b=e.touches[1];
+    pinchStartDist=Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY)||1;
+    pinchStartS=view.targetS;
+    const mx=(a.clientX+b.clientX)/2,my=(a.clientY+b.clientY)/2;
+    pinchWorld=screenToWorld(mx,my);
+  }
+},{passive:false});
+cv.addEventListener("touchmove",e=>{
+  e.preventDefault();
+  if(touchMode==="pan"&&e.touches.length===1){
+    const t=e.touches[0];
+    if(Math.hypot(t.clientX-touchStartPos.x,t.clientY-touchStartPos.y)>6)touchMoved=true;
+    view.targetTx=dragView.tx+(t.clientX-dragStart.x);
+    view.targetTy=dragView.ty+(t.clientY-dragStart.y);
+  }else if(e.touches.length===2){
+    touchMode="pinch";
+    const a=e.touches[0],b=e.touches[1];
+    const dist=Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY)||1;
+    const mx=(a.clientX+b.clientX)/2,my=(a.clientY+b.clientY)/2;
+    const newS=Math.max(0.05,Math.min(20,pinchStartS*dist/pinchStartDist));
+    view.targetS=newS;
+    view.targetTx=mx-pinchWorld.x*newS;
+    view.targetTy=my-pinchWorld.y*newS;
+  }
+},{passive:false});
+cv.addEventListener("touchend",e=>{
+  e.preventDefault();
+  if(touchMode==="pan"&&!touchMoved&&touchStartPos){
+    // 视为点选
+    const wp=screenToWorld(touchStartPos.x,touchStartPos.y);
+    let nearest=null,nearestDist=Infinity;
+    for(const t of TOPICS){
+      if(!isNodeVisible(t))continue;
+      const dx=wp.x-t._x,dy=wp.y-t._y;
+      const rr=(t.rarity==="legendary"?4:3)+10/view.s;
+      const d=Math.hypot(dx,dy);
+      if(d<rr&&d<nearestDist){nearest=t;nearestDist=d;}
+    }
+    if(nearest)selectNode(nearest.id);else clearSelection();
+  }
+  if(e.touches.length===0){touchMode=null;}
+  else if(e.touches.length===1){
+    const t=e.touches[0];
+    touchMode="pan";touchMoved=true;
+    dragStart={x:t.clientX,y:t.clientY};
+    dragView={tx:view.targetTx,ty:view.targetTy};
+    touchStartPos={x:t.clientX,y:t.clientY};
+  }
+},{passive:false});
+cv.addEventListener("touchcancel",()=>{touchMode=null;},{passive:false});
+
 // ===== 选中节点 + 自动聚焦 =====
 function selectNode(id){
   const t=byId[id];if(!t)return;
@@ -1425,6 +1593,13 @@ document.getElementById("btn-reset").addEventListener("click",async()=>{
   showToast("已重置所有学习进度");
 });
 
+// ===== 侧边栏折叠 / 移动端抽屉 =====
+function toggleSidebar(){document.body.classList.toggle("sidebar-collapsed");}
+document.getElementById("btn-menu").addEventListener("click",toggleSidebar);
+document.getElementById("scrim").addEventListener("click",()=>{
+  document.body.classList.add("sidebar-collapsed");
+});
+
 // ===== 数据加载 =====
 async function loadData(){
   const[t,d]=await Promise.all([
@@ -1445,6 +1620,7 @@ async function init(){
   buildSidebar();
   buildLegend();
   updateHUD();
+  document.body.classList.add("sidebar-collapsed");
   initialZoom();
   // 立即对齐视图（不动画）
   view.s=view.targetS;view.tx=view.targetTx;view.ty=view.targetTy;
