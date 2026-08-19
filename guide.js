@@ -197,22 +197,25 @@
       pop.style.visibility = "visible";
     }
 
-    // 定位调度：仅当侧栏刚从「折叠→展开」时才需等滑入过渡结束再定位（并把目标滚动到可视区中央）；
-    // 若侧栏已展开（连续侧栏步骤之间）则立即定位，避免气泡空白闪烁。
-    function schedulePosition(wait) {
+    // 定位调度：
+    //  - scrollEl：侧栏步骤的目标元素，需在定位前 scrollIntoView 到可视区中央，
+    //    否则侧栏里靠下的内容（如「星座图例」）会停在滚动区之外、看不见聚光。
+    //    注意：连续侧栏步骤（领域→搜索→图例）之间侧栏已展开，也必须滚动，不能只在首次展开时滚。
+    //  - wait：仅当侧栏刚从「折叠→展开」（确有滑入过渡）时才等 400ms；已展开则立即定位，避免气泡空白闪烁。
+    function schedulePosition(wait, scrollEl) {
+      function doPosition() {
+        if (scrollEl && scrollEl.scrollIntoView) {
+          try { scrollEl.scrollIntoView({ block: "center", inline: "nearest" }); }
+          catch (e) { try { scrollEl.scrollIntoView(); } catch (e2) {} }
+        }
+        requestAnimationFrame(position);
+      }
       if (wait) {
         spot.style.display = "none";
         pop.style.visibility = "hidden";
-        setTimeout(function () {
-          var el = targetEl(steps[idx]);
-          if (el && el.scrollIntoView) {
-            try { el.scrollIntoView({ block: "center", inline: "nearest" }); }
-            catch (e) { try { el.scrollIntoView(); } catch (e2) {} }
-          }
-          position();
-        }, 400);
+        setTimeout(doPosition, 400);
       } else {
-        requestAnimationFrame(position);
+        requestAnimationFrame(doPosition);
       }
     }
 
@@ -243,8 +246,10 @@
       var needSidebar = !!(step.expandSidebar || isInSidebar(step));
       var wasCollapsed = document.body.classList.contains("sidebar-collapsed");
       setSidebar(needSidebar);
-      // 仅当侧栏从折叠→展开（确实需要滑入过渡）时才等待；已展开则跳过等待，避免连续侧栏步骤气泡空白
-      schedulePosition(needSidebar && wasCollapsed);
+      // 侧栏步骤：把目标滚动到可视区中央（连续侧栏步骤也要滚，不能只在首次展开时滚）；
+      // 仅当侧栏从折叠→展开（确需滑入过渡）时才等 400ms，已展开则立即定位，避免气泡空白闪烁。
+      var scrollEl = needSidebar ? targetEl(step) : null;
+      schedulePosition(needSidebar && wasCollapsed, scrollEl);
 
       skipBtn.onclick = finish;
       prevBtn.onclick = function () { if (idx > 0) { idx--; render(); } };
