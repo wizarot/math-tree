@@ -95,14 +95,30 @@
 
   // 侧栏（左侧 HUD）相关：讲解侧栏内容时展开它，并把目标滚动到可视区中央，
   // 以避开移动端顶部横条 HUD 对侧栏顶部的遮挡。
+  // 注意：仅靠移除 body.sidebar-collapsed 在部分真实浏览器/缓存场景下不够可靠，
+  // 所以展开时会额外强制设置 inline style 确保侧栏和 scrim 确实可见。
+  var GUIDE_VERSION = "2026-08-19b"; // 版本标记，控制台可查
   function isInSidebar(step) {
     var el = targetEl(step);
     return !!(el && el.closest && el.closest("#sidebar"));
   }
   function setSidebar(open) {
     if (!document.body) return;
-    if (open) document.body.classList.remove("sidebar-collapsed");
-    else document.body.classList.add("sidebar-collapsed");
+    var sb = document.getElementById("sidebar");
+    var sc = document.getElementById("scrim");
+    if (open) {
+      document.body.classList.remove("sidebar-collapsed");
+      // 强制确保侧栏可见（覆盖可能的缓存样式/过渡残留）
+      if (sb) { sb.style.transform = "translateX(0)"; sb.style.display = ""; }
+      // 强制确保移动端 scrim 可见
+      if (sc) { sc.style.opacity = "1"; sc.style.pointerEvents = "auto"; sc.style.display = ""; }
+      console.log("[MathGuide v" + GUIDE_VERSION + "] sidebar FORCE EXPANDED");
+    } else {
+      document.body.classList.add("sidebar-collapsed");
+      // 收起时清除 inline style，让 CSS 类接管
+      if (sb) { sb.style.transform = ""; sb.style.display = ""; }
+      if (sc) { sc.style.opacity = ""; sc.style.pointerEvents = ""; sc.style.display = ""; }
+    }
   }
 
   // ---------- 欢迎弹层 ----------
@@ -292,6 +308,7 @@
   // ---------- 公开 API ----------
   function run(cfg) {
     injectStyle();
+    console.log("[MathGuide v" + GUIDE_VERSION + "] initialized, page=" + (cfg.page || "index"));
     var page = cfg.page || "index";
     ensureFab(cfg);
     if (!welcomeSeen()) {
