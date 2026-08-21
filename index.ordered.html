@@ -30192,37 +30192,20 @@ function bindEvents(){
     view.ty=view.ty+wpt.y*(view.s-ns);
     view.s=ns;applyView();
   },{passive:false});
-  // 平移 / 拖拽节点 / 点击选择
+  // 平移画布 / 点击节点选择（节点固定，不可拖拽）
   let drag=null;
   stage.addEventListener("pointerdown",e=>{
     const nodeEl=e.target.closest(".node");
-    const start=clientToWorld(e.clientX,e.clientY);
-    if(nodeEl){drag={type:"node",id:nodeEl.dataset.id,sx:e.clientX,sy:e.clientY,moved:false};}
-    else{drag={type:"pan",sx:e.clientX,sy:e.clientY,tx0:view.tx,ty0:view.ty};}
+    drag={type:"pan",sx:e.clientX,sy:e.clientY,tx0:  view.tx,ty0:view.ty,nodeId:nodeEl?nodeEl.dataset.id:null};
     stage.setPointerCapture(e.pointerId);
   });
   stage.addEventListener("pointermove",e=>{
     if(!drag)return;
-    if(drag.type==="pan"){
-      view.tx=drag.tx0+(e.clientX-drag.sx);view.ty=drag.ty0+(e.clientY-drag.sy);applyView();
-    }else{
-      if(Math.abs(e.clientX-drag.sx)+Math.abs(e.clientY-drag.sy)>4)drag.moved=true;
-      const w=clientToWorld(e.clientX,e.clientY);const g=render._nodeEls[drag.id];const t=byId[drag.id];
-      t._x=w.x;t._y=w.y;nodePos[drag.id]={x:w.x,y:w.y};
-      g.setAttribute("transform",`translate(${w.x},${w.y})`);
-      // 更新相连边
-      DEPS.forEach(ed=>{
-        if(ed.topicId===drag.id||ed.prerequisiteId===drag.id){
-          const a=nodePos[ed.prerequisiteId],b=nodePos[ed.topicId];
-          const path=render._edgeEls[ed.prerequisiteId+">"+ed.topicId];
-          if(a&&b&&path)path.setAttribute("d",edgePath(a,b));
-        }
-      });
-    }
+    view.tx=drag.tx0+(e.clientX-drag.sx);view.ty=drag.ty0+(e.clientY-drag.sy);applyView();
   });
   stage.addEventListener("pointerup",e=>{
     if(!drag)return;
-    if(drag.type==="node"&&!drag.moved)selectNode(drag.id);
+    if(drag.nodeId&&Math.abs(e.clientX-drag.sx)+Math.abs(e.clientY-drag.sy)<=4)selectNode(drag.nodeId);
     drag=null;
   });
   stage.addEventListener("pointerleave",()=>{drag=null;});
